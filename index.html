@@ -1,0 +1,249 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier</title>
+    <meta name="description" content="Graphiste d'exception sur Valence, visitez l'Atelier!">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/global.js" defer></script>
+
+</head>
+
+<!--
+
+    couleur mère: noir et blanc
+    police: futura
+
+
+    Header:
+    -logo
+    -nav:
+        +Accueil
+        +A propos
+        +Compétences
+        +Portfolio
+        +Services
+        +Contact
+        +
+
+    Body: (ordre non-réel)
+    +présentation/about: au centre, simpliste
+    +compétences:
+    +projets précédents: alternance gauche/droite projet-txt
+                                                  txt-projet
+
+    +offres/services: quels packaging/offres: création de logo, étiquette => catégories d'offres ou offres direct, éventuellement img ds les card
+    +contact => ici ou autre part
+    +
+
+    -->
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="">
+                    <img src="" alt="" class="logo_pic">
+                    <h2>L'Atelier</h2>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul class="list-unstyled menu-list">
+                    <li><a href="">Accueil</a></li>
+                    <li><a href="">A propos</a></li>
+                    <li><a href="">Compétences</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">services</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header_right">
+                <ul class="socials list-unstyled">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <button class="burger"><span class="bar"></span></button>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="home">
+        <div class="container">
+            <div class="grid">
+                <img src="https://picsum.photos/500/300?random=12" alt="">
+                <h1>L'Atelier</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque et sunt iure libero facilis quas
+                    distinctio, molestias unde ipsam accusantium adipisci in temporibus amet culpa expedita placeat ab
+                    soluta! Totam!</p>
+                <a href="" class="btn_more">En apprendre plus</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section_header">
+                <h2 class="section_title">Compétences/outils:</h2>
+            </div>
+            <div class="wrapper">
+                <div class="grid_item">
+                    <div class="card">
+                        <img class="skill_pic" src="img/icon-PS.svg" alt="icon adobe photoshop">
+                        <h3 class="card_title">Photoshop</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="grid_item">
+                    <div class="card">
+                        <img class="skill_pic" src="img/icon-AI.svg" alt="icon adobe illustrator">
+                        <h3 class="card_title">Skill 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="grid_item">
+                    <div class="card">
+                        <img class="skill_pic" src="https://picsum.photos/80/80?random=12" alt="icon ">
+                        <h3 class="card_title">Skill 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="grid_item">
+                    <div class="card">
+                        <img src="https://picsum.photos/80/80?random=12" alt="icon ">
+                        <h3 class="card_title">Skill 4</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section_header">
+                <h2 class="section_title">Projets précédents:</h2>
+            </div>
+            <div class="grid">
+                <div class="grid_item">
+                    <div class="grid_part grid_item_left">
+                        <img src="https://picsum.photos/400/600?random=12" alt="">
+                    </div>
+                    <div class="grid_part grid_item_right">
+                        <h2>Catégorie 1/Projet 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis earum, officia
+                            laboriosam
+                            mollitia sapiente omnis. Consequuntur dignissimos, similique porro, quasi, aut dolorum
+                            tempora
+                            libero mollitia perspiciatis voluptas esse at veritatis!</p>
+                        <a class="more-btn" href=""></a>
+                    </div>
+                </div>
+                <div id="grid_item-2" class="grid_item">
+                    <div class="grid_part grid_item_left">
+                        <h2>Catégorie 2/Projet 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis earum, officia
+                            laboriosam
+                            mollitia sapiente omnis. Consequuntur dignissimos, similique porro, quasi, aut dolorum
+                            tempora
+                            libero mollitia perspiciatis voluptas esse at veritatis!</p>
+                        <a class="more-btn" href=""></a>
+                    </div>
+                    <div class="grid_part grid_item_right">
+                        <img src="https://picsum.photos/400/600?random=12" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section_header">
+                <h2 class="section_title">Services/offre:</h2>
+            </div>
+            <div class="offers_grid">
+                <div class="grid_item">
+                    <div class="card offer_card">
+                        <h4 class="offer_card_title">Cat/offre 1</h4>
+                        <p class="offer_card_txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <a href="" class="offer_btn">Me contacter</a>
+                    </div>
+                </div>
+                <div class="grid_item">
+                    <div class="card offer_card">
+                        <h4 class="offer_card_title">Cat/offre 2</h4>
+                        <p class="offer_card_txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <a href="" class="offer_btn">Me contacter</a>
+                    </div>
+                </div>
+                <div class="grid_item">
+                    <div class="card offer_card">
+                        <h4 class="offer_card_title">Cat/offre 3</h4>
+                        <p class="offer_card_txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <a href="" class="offer_btn">Me contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section_header">
+                <h2 class="section_title">Contact</h2>
+            </div>
+            <form action="https://formsubmit.co/" method="POST" class="form">
+                <input type="text" name="_honey" style="display: none;">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="contact-names">
+                    <label id="contact-fn" for="firstname">
+                        <input type="text" name="firstname" id="firstname" placeholder="Nom" required>
+                    </label>
+                    <label id="contact-ln" for="lastname">
+                        <input type="text" name="lastname" id="lastname" placeholder="Prénom">
+                    </label>
+                </div>
+                <label id="contact-mail" for="email">
+                    <input type="email" name="email" id="email" placeholder="Votre adresse e-mail" required>
+                </label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                <div class="contact-btn-container">
+                    <input class="contact_btn" type="submit" value="Envoyer">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="left-footer">
+                <div class="logo">
+                    <a href="">
+                        <img src="" alt="" class="logo_pic">
+                        <h2>L'Atelier</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="middle-footer">
+                <span>Copyright © 2024 - L'Atelier</span>
+            </div>
+            <div class="right-footer">
+                <ul class="socials list-unstyled">
+                    <li><a href=""><img src="" alt="" loading="lazy"></a></li>
+                    <li><a href=""><img src="" alt="" loading="lazy"></a>
+                    </li>
+                    <li><a href=""><img src="" alt="" loading="lazy"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
