@@ -90,18 +90,20 @@ const modalsManagement = () => {
 
     const closeModal = () => {
         overlay.addEventListener('click', () => {
-            let activeModal = document.querySelector('.project_modal.active')
-            activeModal.classList.remove('active')
+            closeActiveModal();
             overlay.classList.remove('active')
         })
 
         closeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                let activeModal = document.querySelector('.project_modal.active')
+                closeActiveModal();
                 overlay.classList.remove('active')
-                activeModal.classList.remove('active')
             })
         })
+        closeActiveModal = () => {
+            let activeModal = document.querySelector('.project_modal.active')
+            activeModal.classList.remove('active')
+        }
     }
     closeModal();
 

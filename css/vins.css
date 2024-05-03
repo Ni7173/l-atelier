@@ -38,12 +38,12 @@ header {
     flex-direction: column-reverse;
 }
 
-/* .lateral_content {
-    margin-bottom: 2rem;
-} */
+.lateral_content {
+    display: none;
+}
 
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:1350px) {
     .container-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -86,9 +86,8 @@ header {
         transition-delay: 0ms;
         position: sticky;
     }
-}
 
-.carousel {
+    .carousel {
   position: relative;
   height: 100%;
   width: 100%;
@@ -137,6 +136,7 @@ header {
 
 .carousel-button.next {
   right: 1rem;
+}
 }
 
 
@@ -190,8 +190,8 @@ header {
     background: white;
     height: 0%;
     width: 0%;
-    top: 10%;
-    left: 8%;
+    top: 50%;
+    left: 50%;
     opacity: 0;
     overflow: hidden;
 }
@@ -200,16 +200,21 @@ header {
 .modal__overlay.active {
     height: 100%;
     width: 100%;
-    opacity: .6;
+    opacity: .5;
     transition: all .3s ease-out;
 }
 
 .project_modal.active .modal_content {
-    transition: opacity .5s ease-out .4s ;
+    transition: all 0.7s ease-out;
+    /* transition: opacity .5s ease-out .4s ; */
+    transition-delay: .5s;
     opacity: 1;
-    width: 75%;
-    height: 80%;
+    width: 65%;
+    height: 65%;
     z-index: 6;
+    top: 17.5%;
+    left: 17.5%;
+    /* box-shadow: 0 0 60px rgb(0, 0, 0); */
 }
 
 
@@ -295,13 +300,14 @@ header {
 }
 
     .project_modal.active .modal_content {
-    width: 80%;
-    height: 85%;
+    width: 65%;
+    height: 65%;
     z-index: 6;
 }
 
 .project_modal .modal_content {
-    top: 7.5%;
+    top: 17.5%;
+    left: 17.5;
 }
 }
 
@@ -349,7 +355,7 @@ header {
 }
 } */
 
-@media screen and (max-width:1050px) {
+@media screen and (max-width:950px) {
    .project_modal.active .modal_content {
     transition: opacity .4s ease-out .2s ;
     width: 100%;
