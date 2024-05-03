@@ -193,7 +193,6 @@ header {
     top: 50%;
     left: 50%;
     opacity: 0;
-    overflow: hidden;
 }
 
 
@@ -205,16 +204,15 @@ header {
 }
 
 .project_modal.active .modal_content {
-    transition: all 0.7s ease-out;
-    /* transition: opacity .5s ease-out .4s ; */
-    transition-delay: .5s;
+    transition:  top .8s ease 0s, left .8s ease 0s, height 0.5s ease-out .3s, width 0.5s ease-out .3s, opacity .5s ease-out .5s;
+    /* transition: all .7s ease-out .3s; */
+    /* transition-delay: .3s; */
     opacity: 1;
     width: 65%;
     height: 65%;
     z-index: 6;
     top: 17.5%;
     left: 17.5%;
-    /* box-shadow: 0 0 60px rgb(0, 0, 0); */
 }
 
 
@@ -278,9 +276,6 @@ header {
     object-fit: cover;
 }
 
-
-
-
 .modal_right_img {
     max-height: 100%;
     width: 100%;
@@ -299,15 +294,17 @@ header {
     height: 100%;
 }
 
+.project_modal .modal_content {
+    top: 50%;
+    left: 50%;
+}
+
     .project_modal.active .modal_content {
     width: 65%;
     height: 65%;
     z-index: 6;
-}
-
-.project_modal .modal_content {
     top: 17.5%;
-    left: 17.5;
+    left: 17.5%;
 }
 }
 
@@ -465,6 +462,9 @@ header {
     scale: 1;
     filter: grayscale(100%) brightness(90%);
     transition: all .7s ease-out;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
 }
 
 .more_icon {
