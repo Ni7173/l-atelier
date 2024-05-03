@@ -1,0 +1,502 @@
+.container {
+    max-width: none;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    background: white;
+}
+
+.header-container {
+    height: max-content;
+}
+
+.burger span.bar, .burger span.bar::before, .burger span.bar::after {
+    background: #000;
+}
+
+.project {
+    display: flex;
+}
+
+.project_img {
+    width: 50%;
+}
+
+.project_content {
+    border: 1px solid var(--light-color);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.container-grid {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* .lateral_content {
+    margin-bottom: 2rem;
+} */
+
+
+@media screen and (min-width:1000px) {
+    .container-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "projects projects lateral";
+        flex-direction: unset;
+    }
+
+    .slide img {
+        height: calc(100vh - (var(--header-height)));
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+    }
+
+    .lateral_content {
+        grid-area: lateral;
+        margin: 0;
+        display: block;
+    }
+
+    .projects_container {
+        grid-area: projects;    
+    }
+
+    .slide {
+        inset: 0;
+        opacity: 0;
+        transition: 200ms opacity ease-in-out;
+        transition-delay: 200ms;
+        max-width: 100%;
+        position: absolute;
+        top: calc(var(--header-height));
+    }
+
+    .slide[data-active] {
+        opacity: 1;
+        z-index: 1;
+        transition-delay: 0ms;
+        position: sticky;
+    }
+}
+
+.carousel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+    max-width: 100%;
+    position: absolute;
+    top: calc(var(--header-height));
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  border-radius: .25rem;
+  padding: 0 .5rem;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+
+
+
+
+
+
+.project_img {
+    overflow: hidden; 
+    position: relative;
+}
+
+.project_link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    z-index: 2;
+    height: 100%;
+}
+
+.project_link:hover + .small_img, .project_link:focus + .small_img, .project_link:active + .small_img {
+    scale: 1.05;
+    filter: grayscale(0%) brightness(100%);
+}
+
+
+
+/* modals */
+
+
+.modal__overlay {
+    position: fixed;
+    align-self: center;
+    justify-self: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--main-color);
+    height: 0;
+    width: 0;
+    opacity: 0;
+    z-index: 6;
+}
+
+.project_modal .modal_content {
+    position: fixed;
+    background: white;
+    height: 0%;
+    width: 0%;
+    top: 10%;
+    left: 8%;
+    opacity: 0;
+    overflow: hidden;
+}
+
+
+.modal__overlay.active {
+    height: 100%;
+    width: 100%;
+    opacity: .6;
+    transition: all .3s ease-out;
+}
+
+.project_modal.active .modal_content {
+    transition: opacity .5s ease-out .4s ;
+    opacity: 1;
+    width: 75%;
+    height: 80%;
+    z-index: 6;
+}
+
+
+.project_modal .wrapper {
+    flex-wrap: nowrap;
+    align-items: unset;
+}
+
+.modal_left_content {
+    width: 60%;
+}
+
+.modal_right_content {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+.modal_left_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal_text {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* btn close */
+
+
+.modal__btn__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    opacity: .8;
+    transition: all .3s ease-out;
+    cursor: pointer;
+}
+
+.modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
+    opacity: 1;
+    scale: 1.03;
+}
+
+.modal__btn__close img {
+    height: 25px;
+    width: 25px;
+}
+
+.modal_left_content img {
+    object-fit: cover;
+}
+
+
+
+
+.modal_right_img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    min-height: 100%;
+}
+
+.modal_img {
+    width: 100%;
+    height: 40%;
+}
+
+
+@media screen and (max-width:1350px) {
+    .modal_left_content img {
+    height: 100%;
+}
+
+    .project_modal.active .modal_content {
+    width: 80%;
+    height: 85%;
+    z-index: 6;
+}
+
+.project_modal .modal_content {
+    top: 7.5%;
+}
+}
+
+@media screen and (max-width:1250px) {
+    .modal_left_content {
+    width: 55%;
+}
+
+    .modal_right_content {
+        width: 45%;
+    }
+}
+
+/* @media screen and (max-width:1050px) {
+    .modal_left_content {
+    width: 50%;
+}
+
+    .modal_right_content {
+        width: 50%;
+    }
+} */
+
+/* @media screen and (max-width:950px) {
+    .modal_left_content {
+    width: 50%;
+}
+
+    .modal_right_content {
+        width: 50%;
+        height: 100%;
+    }
+
+    .modal_right_img{
+        height: 50%;
+    }
+
+    .modal_text{
+        height: 50%;
+    }
+
+    .modal_img {
+    width: 100%;
+    height: 50%;
+}
+} */
+
+@media screen and (max-width:1050px) {
+   .project_modal.active .modal_content {
+    transition: opacity .4s ease-out .2s ;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+   }
+
+   .modal_left_content {
+    height: 60%;
+    width: 100%;
+    position: relative;
+   }
+
+   .modal_right_content {
+    height: 40%;
+    width: 100%;
+    flex-direction: row;
+}
+
+    .modal_text {
+        position: static;
+        height: 100%;
+    }
+
+    .modal_right_img{
+        height: 100%;
+    }
+
+    .modal_img {
+        height: 100%;
+    }
+
+   .modal__btn__close {
+    top: 3rem;
+    right: 3rem;
+}
+
+.modal__btn__close img {
+    height: 38px;
+    width: 38px;
+}
+
+.modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
+    opacity: 1;
+    scale: 1.1;
+}
+
+.modal__btn__close img {
+    color: white;
+    background: white;
+    fill: white;
+}
+
+.modal__btn__close {
+    background: white;
+    padding: 1rem;
+    border-radius: 50%;
+    top: 2.5rem;
+    right: 2.5rem;
+}
+
+}
+
+@media screen and (max-width:550px) {
+    .wrapper {
+    flex-direction: column;
+}
+
+   .modal_left_content {
+    height: 40%;
+    width: 100%;
+    position: relative;
+   }
+
+   .modal_right_content {
+    height: 60%;
+    width: 100%;
+    flex-direction: column-reverse;
+}
+
+.modal_text {
+    position: static;
+    height: 40%;
+}
+
+.modal_right_img, .modal_img {
+    height: 60%;
+}
+
+.modal__btn__close {
+    background: white;
+    padding: 1rem;
+    border-radius: 50%;
+    top: 2.5rem;
+    right: 2.5rem;
+}
+}
+
+
+
+
+/* animations */
+
+.small_img {
+    scale: 1;
+    filter: grayscale(100%) brightness(90%);
+    transition: all .7s ease-out;
+}
+
+.more_icon {
+    top: 5%;
+    right: 5%;
+    opacity: .3;
+    transition: all .7s ease-out;
+    position: absolute;
+    transform: rotate(0deg);
+    pointer-events: none;
+}
+
+.small_img:hover, .small_img:focus {
+    scale: 1.07;
+    filter: grayscale(0%) brightness(100%);
+}
+
+.project_img:hover .more_icon, .project_img:focus .more_icon {
+    opacity: .9;
+    transform: rotate(360deg);
+}
+
+/* proposition card avec overlay */
+
+.project-overlay {
+    width: 100%;
+    height: 0%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: linear-gradient(to top, transparent, rgb(0, 0, 0));
+    transition: all .7s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.project_img:hover .project-overlay {
+    height: 100%;
+    opacity: .6;
+}

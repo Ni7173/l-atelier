@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Atelier</title>
     <meta name="description" content="Graphiste d'exception sur Valence, visitez l'Atelier!">
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="img/ETOILE-black.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -42,6 +42,12 @@
     +contact => ici ou autre part
     +
 
+    image avec opacité qui baisse pour laisser le texte apparaître
+
+
+    Logo plus bas et plus gros
+    Vidéo d'accueil 100vh
+
     -->
 
 <body>
@@ -49,17 +55,16 @@
         <div class="header-container">
             <div class="logo">
                 <a href="">
-                    <img src="" alt="" class="logo_pic">
-                    <h2>L'Atelier</h2>
+                    <img src="img/LOGO-L-ATELIER-white.svg" alt="logo" class="logo_pic">
                 </a>
             </div>
             <nav class="navbar">
                 <ul class="list-unstyled menu-list">
                     <li><a href="">Accueil</a></li>
+                    <li><a href="/vins.html">Vins</a></li>
+                    <li><a href="">Illustration</a></li>
+                    <li><a href="">Graphisme</a></li>
                     <li><a href="">A propos</a></li>
-                    <li><a href="">Compétences</a></li>
-                    <li><a href="">Portfolio</a></li>
-                    <li><a href="">services</a></li>
                     <li><a href="">Contact</a></li>
                 </ul>
             </nav>
@@ -70,7 +75,9 @@
                     <li></li>
                     <li></li>
                 </ul>
-                <button class="burger"><span class="bar"></span></button>
+                <div class="burger_container">
+                    <button class="burger"><span class="bar"></span></button>
+                </div>
             </div>
         </div>
     </header>
@@ -78,15 +85,50 @@
     <section id="home" class="home">
         <div class="container">
             <div class="grid">
-                <img src="https://picsum.photos/500/300?random=12" alt="">
-                <h1>L'Atelier</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque et sunt iure libero facilis quas
-                    distinctio, molestias unde ipsam accusantium adipisci in temporibus amet culpa expedita placeat ab
-                    soluta! Totam!</p>
-                <a href="" class="btn_more">En apprendre plus</a>
-            </div>
+                <video autoplay loop src="videos/1059120338-preview.mp4" alt=""></video>
+                    <p class="logo-test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eveniet odit in laborum. Laborum porro culpa.</p>
+                </div>
         </div>
     </section>
+
+    <br>
+
+  <br>
+
+  <section>
+    <div class="container">
+        <div class="wrapper">
+            <div class="text_img-container">
+                <img class="color-img" src="img/SERINE-light.jpg" width="400px" alt="">
+                <p class="txt">Domaine des Clairmonts
+                </p>
+            </div>
+            <div class="img-container">
+                <img class="color-img" src="img/SERINE.jpg" width="400px" alt="">
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+        <div class="container">
+        <div class="carousel" data-carousel>
+          <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+          <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+          <ul data-slides class="slides-list">
+            <li class="slide" data-active>
+              <img width="800px" height="500px" src="https://source.unsplash.com/78A265wPiO4" alt="Nature Image #1">
+            </li>
+            <li class="slide">
+              <img width="800px" height="500px" src="https://source.unsplash.com/eOpewngf68w" alt="Nature Image #2">
+            </li>
+            <li class="slide">
+              <img width="800px" height="500px" src="https://source.unsplash.com/ndN00KmbJ1c" alt="Nature Image #3">
+            </li>
+          </ul>
+        </div>
+        </div>
+  </section>
 
     <section id="skills" class="skills">
         <div class="container">
@@ -227,8 +269,7 @@
             <div class="left-footer">
                 <div class="logo">
                     <a href="">
-                        <img src="" alt="" class="logo_pic">
-                        <h2>L'Atelier</h2>
+                        <img src="img/LOGO-L-ATELIER-black.svg" alt="" class="logo_pic">
                     </a>
                 </div>
             </div>

@@ -10,6 +10,7 @@ function menuMobile() {
         link.addEventListener('click', () => {
             header.classList.remove('show-nav');
         })
-    );    
+    );
 }
 menuMobile();
+
