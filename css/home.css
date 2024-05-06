@@ -71,18 +71,11 @@ video {
     left: 0;
     height: 100%;
     width: 100%;
-    /* background: #333333; */
     z-index: 2;
     bottom: 0;
     right: 0;
-    background-image: url(/img/cercle-fd.svg);
+    background-image: url(../img/cercle-fd.svg);
     background-repeat: no-repeat;
-    /* mask-image: url(../img/cercle.svg);
-    -webkit-mask-image: url(../img/cercle.svg) ;
-    mask-size: 25% 25%;
-    mask-position: center center;
-    -webkit-mask-origin: border-box;
-    mask-origin: border-box; */
 }
 
 .jumping__star {
