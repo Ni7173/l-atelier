@@ -33,23 +33,23 @@ header {
 }
 
 .projects_container .project:nth-child(1) {
-    background-color: hsl(350, 87%, 80%);
+    background-color: hsl(350, 87%, 80%, .3);
 }
 
 .projects_container .project:nth-child(2) {
-    background-color: hsl(32, 82%, 69%);
+    background-color: hsl(32, 82%, 69%, .3);
 }
 
 .projects_container .project:nth-child(3) {
-    background-color: hsl(167, 74%, 82%);
+    background-color: hsl(167, 74%, 82%, .3);
 }
 
 .projects_container .project:nth-child(4) {
-    background-color: hsl(34, 87%, 80%);
+    background-color: hsl(34, 87%, 80%, .3);
 }
 
 .projects_container .project:nth-child(5) {
-    background-color: hsl(304, 87%, 80%);
+    background-color: hsl(304, 87%, 80%, .3);
 }
 
 .container-grid {
@@ -201,11 +201,6 @@ header {
     height: 100%;
 }
 
-.project_link:hover + .small_img, .project_link:focus + .small_img, .project_link:active + .small_img {
-    scale: 1.05;
-    filter: grayscale(0%) brightness(100%);
-}
-
 
 
 /* modals */
@@ -241,13 +236,11 @@ header {
     height: 100%;
     width: 100%;
     opacity: .5;
-    transition: all .3s ease-out;
+    transition: opacity .3s ease-out;
 }
 
 .project_modal.active .modal_content {
-    /* transition:  top .8s ease 0s, left .8s ease 0s, height 0.5s ease-out .3s, width 0.5s ease-out .3s; */
-    transition: all .5s ease-out .3s;
-    /* transition-delay: .3s; */
+    transition: all .5s ease-out;
     opacity: 1;
     width: 65%;
     height: 65%;
@@ -429,7 +422,14 @@ header {
     top: 2.5rem;
     right: 2.5rem;
 }
+}
 
+
+@media screen and (min-width:550px) {
+    .project_link:hover + .small_img, .project_link:focus + .small_img, .project_link:active + .small_img {
+    scale: 1.05;
+    filter: grayscale(0%) brightness(100%);
+}
 }
 
 @media screen and (max-width:550px) {
@@ -490,15 +490,18 @@ header {
     .project_content {
         width: 100%;
         height: 50%;
-        position: relative;
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-evenly;
     }
 
     .next__project {
     display: block;
-    position: absolute;
+    /* position: absolute;
     bottom: 3rem;
-    left: calc(50% - ((30px + 1rem) / 2));
+    left: calc(50% - ((30px + 1rem) / 2)); */
     padding: 1rem;
     border-radius: 50%;
     background: var(--white);
@@ -512,6 +515,9 @@ header {
     rotate: -90deg;
     }
 
+    .project_link {
+        display: none;
+    }
 }
 
 
@@ -543,23 +549,13 @@ header {
     pointer-events: none;
 }
 
-.small_img:hover, .small_img:focus {
-    scale: 1.07;
-    filter: grayscale(0%) brightness(100%);
-}
-
-.project_img:hover .more_icon, .project_img:focus .more_icon {
-    opacity: .9;
-    transform: rotate(360deg);
-}
-
 
 
 
 
 
 /* proposition card avec overlay */
-
+/* 
 .project-overlay {
     width: 100%;
     height: 0%;
@@ -571,9 +567,9 @@ header {
     transition: all .7s ease-out;
     opacity: 0;
     pointer-events: none;
-}
-
+} */
+/* 
 .project_img:hover .project-overlay {
     height: 100%;
     opacity: .6;
-}
+} */
