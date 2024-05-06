@@ -9,12 +9,6 @@ const switchingTxtOperator = () => {
 
     let newIndex = 0;
 
-    // const changeText = () => {
-    //     switchingTxt.innerText = texts[newIndex];
-    //     if (newIndex >= 3) newIndex = 0
-    //     else newIndex++;
-    // }
-
     const changeText = () => {
         switchingTxt.style.opacity = 0;
         setTimeout(() => {
@@ -28,7 +22,7 @@ const switchingTxtOperator = () => {
     setInterval(changeText, 2500);
 }
 
-const setStarAnimation = () => {
-    const star = document.querySelector('.jumping__star');
-    star.style.animation = "jumpingStar 2.5s infinite";
-}
+// const setStarAnimation = () => {
+//     const star = document.querySelector('.jumping__star');
+//     star.style.animation = "jumpingStar 2.5s infinite";
+// }
