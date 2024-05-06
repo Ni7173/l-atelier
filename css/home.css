@@ -52,7 +52,7 @@
 }
 
 #switching-text {
-    color: #de730f;
+    color: var(--red);
     opacity: 1;
     transition: all .5s ease-out;
 }
@@ -89,14 +89,19 @@ video {
     right: 0;
 }
 
-.jumping__star {
+.logo__star {
+    fill: var(--red);
+    transform-origin: 94.5% 42%;
+}
+
+/* .jumping__star {
     position: absolute;
     bottom: 47%;
     left: 70%;
     z-index: 2;
     width: 30px;
     height: 30px;
-}
+} */
 
 @media screen and (max-width: 550px) {
     video {
@@ -105,7 +110,25 @@ video {
 }
 }
 
-@keyframes jumpingStar {
+@keyframes turningStar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    5% {
+        transform: rotate(-5deg);
+    }
+
+    95% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(355deg);
+    }
+}
+
+ /* @keyframes jumpingStar {
     0% {
         transform: translateY(0px);
         height: 30px;
@@ -139,4 +162,4 @@ video {
         transform: translateY(0px) rotate(355deg);
     }
 
-}
+} */

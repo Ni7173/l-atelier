@@ -16,13 +16,13 @@ const switchingTxtOperator = () => {
             switchingTxt.style.opacity = 1;
             if (newIndex > texts.length - 2) newIndex = 0
             else newIndex++
-        }, 400);
+        }, 500);
     }
 
     setInterval(changeText, 2500);
 }
 
-// const setStarAnimation = () => {
-//     const star = document.querySelector('.jumping__star');
-//     star.style.animation = "jumpingStar 2.5s infinite";
-// }
+const setStarAnimation = () => {
+    const star = document.querySelector('.logo__star');
+    star.style.animation = "turningStar 2.5s infinite";
+}
