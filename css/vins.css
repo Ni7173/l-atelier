@@ -141,10 +141,11 @@ header {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  border-radius: .25rem;
+  border-radius: 50%;
   padding: .5rem;
   color: var(--light-color);
   transition: all .3S ease-out;
+  background-color: var(--white);
 }
 
 .carousel-button:hover,
@@ -157,7 +158,7 @@ header {
   left: 1rem;
 }
 
-.carousel-button.next img {
+.carousel-button.prev img {
     transform: rotate(180deg);
 }
 
@@ -537,16 +538,6 @@ header {
     height: 100%;
     object-fit: cover;
     width: 100%;
-}
-
-.more_icon {
-    top: 5%;
-    right: 5%;
-    opacity: .3;
-    transition: all .7s ease-out;
-    position: absolute;
-    transform: rotate(0deg);
-    pointer-events: none;
 }
 
 

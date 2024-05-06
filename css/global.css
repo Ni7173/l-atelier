@@ -7,6 +7,7 @@
     --white: #fff;
     --black: #000;
     --red: #FF4438;
+    --grey: #333333;
     --header-height: 145px;
     --mobile-header-height: 115px;
 }
@@ -294,6 +295,18 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
     transform: translateY(8px);
 }
 
+@media screen and (min-width:1500px) {
+    header {
+        padding-top: 7rem;
+    }
+}
+
+@media screen and (min-width:1500px) {
+    header {
+        padding-top: 6rem;
+    }
+}
+
 @media screen and (min-width:750px) {
     header {
         padding: 5rem 0 4rem;
@@ -320,6 +333,7 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
         justify-content: center;
         align-items: center;
         transition: all .6s;
+        box-shadow: -5px 0 30px var(--grey);
     }
 
     .show-nav .navbar {
