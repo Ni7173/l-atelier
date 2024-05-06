@@ -95,6 +95,17 @@ video {
     rotate: 180deg;
 }
 
+@media screen and (min-width: 768px) {
+    .mask__double__video.left {
+    background: radial-gradient(circle at 75%, transparent 30%, black 30.1%, black 100%);
+}
+
+
+.mask__double__video.right {
+    background: radial-gradient(circle at 75%, transparent 30%, black 30.1%, black 100%);
+}
+}
+
 
 
 .logo__star {

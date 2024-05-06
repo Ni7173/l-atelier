@@ -333,7 +333,7 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
         justify-content: center;
         align-items: center;
         transition: all .6s;
-        box-shadow: -5px 0 30px var(--grey);
+        box-shadow: -5px 0 50px var(--grey);
     }
 
     .show-nav .navbar {
