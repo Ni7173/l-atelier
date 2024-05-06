@@ -231,25 +231,6 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
     display: flex;
 }
 
-
-@media screen and (min-width:750px) {
-    .logo_pic {
-    height: 70px;
-    max-width: none;
-}
-
-header {
-        padding: 5rem 0 4rem;
-}
-
-.burger_container {
-    position: absolute;
-    right: 2em;
-    top: 4em;
-    z-index: 4;
-}
-}
-
 /* suppr pr le moment le socials */
 
 
@@ -310,6 +291,19 @@ header {
 
 .burger .bar::after {
     transform: translateY(8px);
+}
+
+@media screen and (min-width:750px) {
+    header {
+        padding: 5rem 0 4rem;
+    }
+
+    .burger_container {
+    position: absolute;
+    right: 2em;
+    top: 4em;
+    z-index: 4;
+    }
 }
 
     .navbar {

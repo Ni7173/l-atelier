@@ -1,3 +1,21 @@
+.logo svg{
+    color: white;
+    fill: #ffffff;
+    height: 72px;
+    width: 180px;
+}
+
+.logo__star {
+    fill: red;
+}
+
+/* .logo a {
+    height: 55px;
+    width: 100%;
+    color: white;
+    fill: currentColor;
+} */
+
 .home .container, .home .grid {
     margin:0;
     width: 100%;
@@ -7,17 +25,41 @@
 
 .home .grid {
     position: relative;
+    width: 100%;
+    height: 100vh;
+    justify-items: center;
+    align-items: center;
+}
+
+.home__text__container {
+     position: absolute;
+    bottom: 10%;
+    left: 15%;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: fit-content;
+    line-break: unset;
+    gap: 1rem;
+    white-space: nowrap;
+}
+
+.home__text__container p {
+    margin: 0;
+    padding: 0;
 }
 
 .home__text {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    /* margin: 0 auto; */
     color: white;
     text-shadow: 0 0 20px #000000;
     font-size: 2rem;
     z-index: 2;
+}
+
+.home__text-2 {
+    bottom: 10%;
+    left: 24.3%;
 }
 
 #switching-text {
@@ -31,11 +73,31 @@
 } */
 
 video {
-    width: 100%;
-    height: 100vh;
+    width: 80%;
+    height: 80vh;
     object-fit: cover;
     object-position: center center;
     filter: brightness(103%);
+}
+
+.mask__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background: #333333; */
+    z-index: 2;
+    bottom: 0;
+    right: 0;
+    background-image: url(/img/cercle-fd.svg);
+    background-repeat: no-repeat;
+    /* mask-image: url(../img/cercle.svg);
+    -webkit-mask-image: url(../img/cercle.svg) ;
+    mask-size: 25% 25%;
+    mask-position: center center;
+    -webkit-mask-origin: border-box;
+    mask-origin: border-box; */
 }
 
 .jumping__star {
