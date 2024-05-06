@@ -74,8 +74,19 @@ video {
     z-index: 2;
     bottom: 0;
     right: 0;
-    background-image: url(../img/cercle-fd.svg);
-    background-repeat: no-repeat;
+}
+
+.mask__video img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    bottom: 0;
+    right: 0;
 }
 
 .jumping__star {
