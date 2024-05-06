@@ -14,3 +14,12 @@ function menuMobile() {
 }
 menuMobile();
 
+const loading = () => {
+
+    const loader = document.getElementById('loader')
+
+    window.addEventListener('load', () => {
+        loader.classList.remove('is-loading')
+    })
+}
+loading();

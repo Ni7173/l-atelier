@@ -18,6 +18,8 @@
 </head>
 
 <body>
+    <div id="loader" class="is-loading"><img width="50px" height="50px" src="../img/ETOILE-black.svg" alt="icon etoile">
+    </div>
 
     <header>
         <div class="header-container">
@@ -28,7 +30,7 @@
             </div>
             <nav class="navbar">
                 <ul class="list-unstyled menu-list">
-                    <li><a href="">Accueil</a></li>
+                    <li><a href="/index.html">Accueil</a></li>
                     <li><a href="../html/vins.html">Vins</a></li>
                     <li><a href="">Illustration</a></li>
                     <li><a href="">Graphisme</a></li>
@@ -123,23 +125,29 @@
                 <div data-slides class="carousel">
                     <div class="slide" data-active>
                         <img src="../img/IDYLLE.jpg" alt="">
-                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                        <button class="carousel-button prev" data-carousel-button="prev"><img
+                                src="../img/arrow-left.svg" alt="arrow icon"></button>
+                        <button class="carousel-button next" data-carousel-button="next"><img
+                                src="../img/arrow-left.svg" alt="arrow icon"></button>
                     </div>
                     <div class="slide">
                         <img src="../img/BOIS-FARDEAU.jpg" alt="">
-                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                        <button class="carousel-button prev" data-carousel-button="prev"><img
+                                src="../img/arrow-left.svg" alt="arrow icon"></button>
+                        <button class="carousel-button next" data-carousel-button="next"><img
+                                src="../img/arrow-left.svg" alt="arrow icon"></button>
                     </div>
                     <div class="slide">
                         <img src="../img/SERINE-light.jpg" alt="">
-                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                        <button class="carousel-button prev" data-carousel-button="prev"><img
+                                src="../img/arrow-left.svg" alt="arrow icon"></button>
+                        <button class="carousel-button next" data-carousel-button="next"><img
+                                src="../img/arrow-left.svg" alt="arrow icon"></button>
                     </div>
                 </div>
             </div>
             <div class="projects_container wrapper">
-                <div class="project">
+                <div id="project-1" class="project">
                     <div class="project_img">
                         <a data-project-link="modal-1" href="" class="project_link"></a>
                         <img class="small_img" src="../img/BOIS-FARDEAU.jpg" alt="">
@@ -147,13 +155,17 @@
                     </div>
                     <div class="project_content">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <a class="next__project" href="#project-2"><img src="../img/arrow-left.svg"
+                                alt="next project icon"></a>
                     </div>
 
                 </div>
 
-                <div class="project">
+                <div id="project-2" class="project">
                     <div class="project_content">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <a class="next__project" href="#project-3"><img src="../img/arrow-left.svg"
+                                alt="next project icon"></a>
                     </div>
                     <div class="project_img img-with-overlay">
                         <a data-project-link="modal-2" href="" class="project_link"></a>
@@ -161,31 +173,37 @@
                     </div>
                 </div>
 
-                <div class="project">
+                <div id="project-3" class="project">
                     <div class="project_img">
                         <a data-project-link="modal-3" href="" class="project_link"></a>
                         <img class="small_img" src="../img/LOU.jpg" alt="">
                     </div>
                     <div class="project_content">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <a class="next__project" href="#project-4"><img src="../img/arrow-left.svg"
+                                alt="next project icon"></a>
                     </div>
                 </div>
 
-                <div class="project">
+                <div id="project-4" class="project">
                     <div class="project_content">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <a class="next__project" href="#project-5"><img src="../img/arrow-left.svg"
+                                alt="next project icon"></a>
                     </div>
                     <div class="project_img">
                         <img class="small_img" src="../img/SERINE-light.jpg" alt="">
                     </div>
                 </div>
 
-                <div class="project">
+                <div id="project-5" class="project">
                     <div class="project_img">
                         <img class="small_img" src="../img/LOU.jpg" alt="">
                     </div>
                     <div class="project_content">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <!-- <a class="next__project" href="#project-"><img src="../img/arrow-left.svg"
+                                alt="next project icon"></a> -->
                     </div>
                 </div>
 

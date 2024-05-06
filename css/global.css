@@ -4,7 +4,10 @@
     --main-color: #000;
     --text-color: #000;
     --light-color: #EEE;
+    --white: #fff;
+    --black: #000;
     --header-height: 145px;
+    --mobile-header-height: 115px;
 }
 
 *, *::before, *::after {
@@ -75,6 +78,12 @@ img {
     height: auto;
 }
 
+.grid {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
 .section_header {
     display: flex;
     justify-content: center;
@@ -88,6 +97,66 @@ img {
 @media screen and (min-width:751px) {
     .section_title {
         margin-bottom: 9rem;
+    }
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    background-color: var(--white);
+    z-index: 0;
+    transition: opacity .5s ease;
+    overflow: hidden;
+}
+
+#loader.is-loading {
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 1;
+    z-index: 100;
+    overflow: hidden;
+}
+
+#loader img {
+    position: fixed;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    height: 50px;
+    width: 50px;
+}
+
+#loader.is-loading img{
+    position: fixed;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    height: 50px;
+    width: 50px;
+    animation: rotatingStar 2s infinite;
+}
+
+@keyframes rotatingStar {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    94% {
+        transform: rotate(363deg);
+    }
+
+    97% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -243,7 +312,6 @@ header {
     transform: translateY(8px);
 }
 
-/* @media screen and (max-width: 990px) { */
     .navbar {
         display: flex;
         position: fixed;
@@ -305,55 +373,8 @@ header {
         max-width: none;
         width: 100%;
     }
-/* } */
-
-/* @media screen and (min-width: 990px) {
-    .burger {
-        display: none;
-    }
- } */
-
 
 /* body */
-
-/* home */
-
-.home .container, .home .grid {
-    margin:0;
-    width: 100%;
-    padding: 0;
-    max-width: none;
-}
-
-video {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center center;
-    filter: brightness(103%);
-}
-
-.grid {
-    display: grid;
-    justify-items: center;
-    text-align: center;
-}
-
-.btn_more {
-    border: 3px solid;
-    border-color: var(--main-color);
-    padding: 1rem 1.5rem;
-    background: var(--main-color);
-    color: white;
-    border-radius: 5px;
-    transition: all .3s ease-in-out;
-}
-
-.btn_more:hover {
-    background: white;
-    color: black;
-}
-
 
 /* skills */
 
@@ -563,10 +584,3 @@ footer {
     align-items: center;
     justify-content: center
 }
-
-
-/* essais images/mask */
-
-/* .color-img {
-    mask-image: ;
-} */

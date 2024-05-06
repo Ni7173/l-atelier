@@ -25,12 +25,31 @@ header {
 }
 
 .project_content {
-    border: 1px solid var(--light-color);
     text-align: center;
     justify-content: center;
     display: flex;
     align-items: center;
     width: 50%;
+}
+
+.projects_container .project:nth-child(1) {
+    background-color: hsl(350, 87%, 80%);
+}
+
+.projects_container .project:nth-child(2) {
+    background-color: hsl(32, 82%, 69%);
+}
+
+.projects_container .project:nth-child(3) {
+    background-color: hsl(167, 74%, 82%);
+}
+
+.projects_container .project:nth-child(4) {
+    background-color: hsl(34, 87%, 80%);
+}
+
+.projects_container .project:nth-child(5) {
+    background-color: hsl(304, 87%, 80%);
 }
 
 .container-grid {
@@ -39,6 +58,10 @@ header {
 }
 
 .lateral_content {
+    display: none;
+}
+
+.next__project {
     display: none;
 }
 
@@ -117,25 +140,43 @@ header {
   font-size: 4rem;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(255, 255, 255, .5);
   cursor: pointer;
   border-radius: .25rem;
-  padding: 0 .5rem;
-  background-color: rgba(0, 0, 0, .1);
+  padding: .5rem;
+  color: var(--light-color);
+  transition: all .3S ease-out;
 }
 
 .carousel-button:hover,
-.carousel-button:focus {
-  color: white;
-  background-color: rgba(0, 0, 0, .2);
+.carousel-button:focus,
+.carousel-button:active {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .carousel-button.prev {
   left: 1rem;
 }
 
+.carousel-button.next img {
+    transform: rotate(180deg);
+}
+
 .carousel-button.next {
   right: 1rem;
+}
+
+.carousel-button img {
+    height: 40px;
+    width: 40px;
+    opacity: .7;
+}
+
+.carousel .carousel-button {
+    opacity: 0;
+}
+
+.carousel:hover .carousel-button {
+    opacity: 1;
 }
 }
 
@@ -204,8 +245,8 @@ header {
 }
 
 .project_modal.active .modal_content {
-    transition:  top .8s ease 0s, left .8s ease 0s, height 0.5s ease-out .3s, width 0.5s ease-out .3s, opacity .5s ease-out .5s;
-    /* transition: all .7s ease-out .3s; */
+    /* transition:  top .8s ease 0s, left .8s ease 0s, height 0.5s ease-out .3s, width 0.5s ease-out .3s; */
+    transition: all .5s ease-out .3s;
     /* transition-delay: .3s; */
     opacity: 1;
     width: 65%;
@@ -249,6 +290,8 @@ header {
     padding: 2rem;
     text-align: center;
 }
+
+
 
 /* btn close */
 
@@ -318,48 +361,19 @@ header {
     }
 }
 
-/* @media screen and (max-width:1050px) {
-    .modal_left_content {
-    width: 50%;
-}
-
-    .modal_right_content {
-        width: 50%;
-    }
-} */
-
-/* @media screen and (max-width:950px) {
-    .modal_left_content {
-    width: 50%;
-}
-
-    .modal_right_content {
-        width: 50%;
-        height: 100%;
-    }
-
-    .modal_right_img{
-        height: 50%;
-    }
-
-    .modal_text{
-        height: 50%;
-    }
-
-    .modal_img {
-    width: 100%;
-    height: 50%;
-}
-} */
-
 @media screen and (max-width:950px) {
    .project_modal.active .modal_content {
-    transition: opacity .4s ease-out .2s ;
+    /* transition: opacity .4s ease-out .2s ; */
+    transition-delay: 0s;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
     flex-direction: column;
+   }
+
+   .modal__overlay.active {
+    opacity: 0;
    }
 
    .modal_left_content {
@@ -421,7 +435,7 @@ header {
 @media screen and (max-width:550px) {
     .wrapper {
     flex-direction: column;
-}
+    }
 
    .modal_left_content {
     height: 40%;
@@ -451,9 +465,61 @@ header {
     top: 2.5rem;
     right: 2.5rem;
 }
+
+
+/* responsive grid mobile */
+
+    .project {
+        flex-direction: column;
+        overflow: hidden;
+        height: calc(100vh - var(--mobile-header-height));
+        max-width: 100%;
+    }
+
+    .project:nth-of-type(even) {
+        flex-direction: column-reverse;        
+    }
+
+    .project_img {
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .project_content {
+        width: 100%;
+        height: 50%;
+        position: relative;
+        max-width: 100%;
+    }
+
+    .next__project {
+    display: block;
+    position: absolute;
+    bottom: 3rem;
+    left: calc(50% - ((30px + 1rem) / 2));
+    padding: 1rem;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    }
+
+    .next__project img {
+    width: 30px;
+    height: 30px;
+    rotate: -90deg;
+    }
+
 }
 
 
+
+
+.project_modal .modal_right_content{
+    overflow: hidden;
+}
 
 
 /* animations */
@@ -486,6 +552,11 @@ header {
     opacity: .9;
     transform: rotate(360deg);
 }
+
+
+
+
+
 
 /* proposition card avec overlay */
 

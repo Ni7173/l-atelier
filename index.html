@@ -11,7 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/mask.css">
     <script src="js/global.js" defer></script>
+    <script src="js/home.js" defer></script>
+
 
 </head>
 
@@ -51,6 +55,8 @@
     -->
 
 <body>
+    <div id="loader" class="is-loading"><img width="50px" height="50px" src="img/ETOILE-black.svg" alt="icon etoile">
+    </div>
     <header>
         <div class="header-container">
             <div class="logo">
@@ -86,8 +92,9 @@
         <div class="container">
             <div class="grid">
                 <video autoplay loop src="videos/1059120338-preview.mp4" alt=""></video>
-                <p class="logo-test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eveniet odit in
-                    laborum. Laborum porro culpa.</p>
+                <p class="home__text">L'atelier, un lieu de <span id="switching-text">création</span>.
+                </p>
+                <img src="img/ETOILE-black.svg" alt="" class="jumping__star">
             </div>
         </div>
     </section>
@@ -96,11 +103,15 @@
 
     <br>
 
-    <section>
+    <section id="big__menu" class="big__menu">
         <div class="container">
             <div class="wrapper">
-                <div class="text_img-container">
-                    <img class="color-img" src="img/SERINE-light.jpg" width="400px" alt="">
+                <div class="line__container">
+                    <div class="bg__piece"> </div>
+                    <div class="clip__img-container">
+                        <img class="clip-img" src="img/SERINE-light.jpg" width="400px" alt="">
+                    </div>
+                    <h1 class="menu__title">Le vin</h1>
                 </div>
                 <div class="img-container">
                     <img class="color-img" src="img/SERINE.jpg" width="400px" alt="">
@@ -108,6 +119,8 @@
             </div>
         </div>
     </section>
+
+    <br>
 
     <!-- <section class="carousel-section">
         <div class="container">
