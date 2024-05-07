@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     switchingTxtOperator();
-    setStarAnimation();
+    // setStarAnimation();
 })
 
 const switchingTxtOperator = () => {
@@ -11,15 +11,17 @@ const switchingTxtOperator = () => {
 
     const changeText = () => {
         switchingTxt.style.opacity = 0;
+        // switchingTxt.style.width = "0%";
         setTimeout(() => {
             switchingTxt.innerText = texts[newIndex];
             switchingTxt.style.opacity = 1;
+            // switchingTxt.style.width = "100%";
             if (newIndex > texts.length - 2) newIndex = 0
             else newIndex++
-        }, 500);
+        }, 600);
     }
 
-    setInterval(changeText, 2500);
+    setInterval(changeText, 4000);
 }
 
 const setStarAnimation = () => {

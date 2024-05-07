@@ -12,14 +12,12 @@ const sliderImg = () => {
             const slides = document.querySelector("[data-slides]");
             const activeSlide = slides.querySelector("[data-active]");
             transitionSetting(slidesTransition, `${transitionDuration}s`)
-
-            console.log(slides)
+            if (window.innerWidth > 1350) activeSlide.style.position = "sticky"
 
             let newIndex = [...slides.children].indexOf(activeSlide) + offset;
             if (newIndex < 0) newIndex = slides.children.length - 1;
             if (newIndex >= slides.children.length) newIndex = 0;
 
-            // slidesTransition.style.transitionDuration = `${transitionDuration}s`;
             slides.children[newIndex].dataset.active = true;
             delete activeSlide.dataset.active;
 

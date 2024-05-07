@@ -14,12 +14,12 @@ function menuMobile() {
 }
 menuMobile();
 
-const loading = () => {
+// const loading = () => {
 
-    const loader = document.getElementById('loader')
+//     const loader = document.getElementById('loader')
 
-    window.addEventListener('load', () => {
-        loader.classList.remove('is-loading')
-    })
-}
-loading();
+//     window.addEventListener('load', () => {
+//         loader.classList.remove('is-loading')
+//     })
+// }
+// loading();
