@@ -46,14 +46,6 @@
     position: relative;
 }
 
-.menu__title {
-    position: absolute;
-    left: 30%;
-    z-index: 3;
-    font-size: 4rem;
-    top: 30%;
-}
-
 .logo-test {
     position: relative;
 }
