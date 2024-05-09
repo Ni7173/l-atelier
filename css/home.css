@@ -25,6 +25,7 @@
     text-align: center;
     width:auto;
     justify-content: center;
+    white-space: nowrap;
     /* gap: 1rem; */
 }
 
@@ -41,6 +42,7 @@
     z-index: 2;
     display: flex;
     gap: 0.5rem;
+    white-space: nowrap;
 }
 
 /* .home__text-2 {
@@ -53,7 +55,7 @@
     opacity: 1;
     transition: opacity 1s ease, width 1s ease-in-out;
     width: fit-content;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: hidden;
     display: block;
 }
