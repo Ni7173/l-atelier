@@ -1,29 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     switchingTxtOperator();
-    // setStarAnimation();
-    setVideo();
+    // setVideo();
 })
-
-// const switchingTxtOperator = () => {
-//     let switchingTxt = document.querySelector('.home__text #switching-text');
-//     const texts = ["accueillant", "de création", "chaleureux", "d'échange", "de conception", "bienveillant", "d'écoute"];
-
-//     let newIndex = 0;
-
-//     const changeText = () => {
-//         switchingTxt.style.opacity = 0;
-//         switchingTxt.style.width = "0%"
-//         setTimeout(() => {
-//             switchingTxt.innerText = texts[newIndex];
-//             switchingTxt.style.opacity = 1;
-//             switchingTxt.style.width = "100%";
-//             if (newIndex > texts.length - 2) newIndex = 0
-//             else newIndex++
-//         }, 2000);
-//     }
-
-//     setInterval(changeText, 5000);
-// }
 
 
 const switchingTxtOperator = () => {
@@ -39,8 +17,8 @@ const switchingTxtOperator = () => {
             switchingTxt.innerText = texts[newIndex];
             switchingTxt.style.opacity = 1;
             switchingTxt.style.width = "100%";
-            switchingTxt.style.transition = "width 3s ease"; // Longer transition duration for width
-        }, 800); // Short delay for text to stay hidden
+            switchingTxt.style.transition = "width 3s ease";
+        }, 800);
 
         setTimeout(() => {
             if (newIndex > texts.length - 2) newIndex = 0;
