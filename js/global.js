@@ -23,3 +23,7 @@ menuMobile();
 //     })
 // }
 // loading();
+
+// if (window.history.replaceState) {
+//     window.history.replaceState(null, null, window.location.pathname.slice(0, -5));
+// }
