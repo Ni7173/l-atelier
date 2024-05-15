@@ -72,7 +72,7 @@ const setStarAnimation = () => {
 const setVideo = () => {
     const video = document.querySelector('.hero__video');
 
-    video.setAttribute('autoplay', 'true');
-    video.setAttribute('loop', 'true');
-    video.setAttribute('muted', 'true');
+    video.setAttribute('autoplay', '');
+    video.setAttribute('loop', '');
+    video.setAttribute('muted', '');
 }
