@@ -141,38 +141,38 @@ header .logo .turning__star {
         max-width: 100%;
         position: absolute;
         top: calc(var(--header-height));
-}  
+    }  
 
     .slide[data-active] {
-    opacity: 1;
-    z-index: 1;
-    transition-delay: 0ms;
+        opacity: 1;
+        z-index: 1;
+        transition-delay: 0ms;
     }
 
     .carousel-button {
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    font-size: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    border-radius: 50%;
-    padding: .5rem;
-    color: var(--light-color);
-    transition: all .3S ease-out;
-    background-color: var(--white);
+        position: absolute;
+        z-index: 2;
+        background: none;
+        border: none;
+        font-size: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        border-radius: 50%;
+        padding: .5rem;
+        color: var(--light-color);
+        transition: all .3S ease-out;
+        background-color: var(--white);
     }
 
     .carousel-button:hover,
     .carousel-button:focus,
     .carousel-button:active {
-    background-color: rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.4);
     }
 
     .carousel-button.prev {
-    left: 1rem;
+        left: 1rem;
     }
 
     .carousel-button.prev img {
@@ -180,7 +180,7 @@ header .logo .turning__star {
     }
 
     .carousel-button.next {
-    right: 1rem;
+        right: 1rem;
     }
 
     .carousel-button img {

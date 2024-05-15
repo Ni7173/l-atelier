@@ -1,0 +1,82 @@
+header {
+    position: sticky;
+    background: white;
+}
+
+.logo svg {
+    color: var(--black);
+    fill: var(--black);
+}
+
+.graphisme__content {
+    width: 100vw;
+    max-width: 100%;
+}
+
+.project, .img__container, .project__content {
+    width: 50%;
+    height: 100%;
+    min-height: 100%;
+    max-width: 50%;
+}
+
+.project__reversed {
+    flex-direction: row-reverse;
+}
+
+
+/* project img  */
+
+.img__container {
+    position: relative;
+}
+
+.img__container::before {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0%;
+    right: 0;
+    background: var(--black);
+    transition: var(--smooth-transition);
+    pointer-events: none;
+}
+
+.img__container:hover::before {
+    opacity: .8;
+    /* left: 0; */
+    width: 100%;
+}
+
+.img__container img {
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+
+
+/* project content  */
+
+.project__content {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    padding: 3rem;
+    color: #555;
+}
+
+.project__content p {
+    opacity: 0;
+    transition: var(--quick-transition);    
+}
+
+
+.project__content:hover p {
+    opacity: 1;
+}

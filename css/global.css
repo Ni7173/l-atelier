@@ -11,10 +11,12 @@
     --brown: #7C756C;
     --blue: #5f6db2;
     --green: #AEC199;
-    --orange: #FF7F30;
-    --header-height: 145px;
+    --orange: #FF5F00;
+    --header-height: 155px;
     --mobile-header-height: 115px;
     --header-transition: all .6s ease-out;
+    --smooth-transition: all .6s ease-out;
+    --quick-transition: all .3s ease-out;
 }
 
 *, *::before, *::after {
@@ -104,10 +106,6 @@ img {
     justify-content: center;
     text-align: center;
     align-items: center;
-}
-
-.section_title {
-    margin-bottom: 4rem;
 }
 
 .absoluted {

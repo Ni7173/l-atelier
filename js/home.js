@@ -26,7 +26,7 @@ const switchingTxtOperator = () => {
         }, 2500);
 
         switchingTxt.style.opacity = 0;
-        switchingTxt.style.transition = "opacity 0.2s ease-in-out"; // Short transition duration for opacity
+        switchingTxt.style.transition = "opacity 0.2s ease-in-out";
 
         setTimeout(() => {
             switchingTxt.style.width = "0%"
@@ -34,8 +34,7 @@ const switchingTxtOperator = () => {
 
     }
 
-    // Trigger the changeText function at an interval
-    setInterval(changeText, 4500); // Interval set to 5000ms (5 seconds) for text change
+    setInterval(changeText, 4500);
 }
 
 switchingTxtOperator();
