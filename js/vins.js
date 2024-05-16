@@ -33,7 +33,6 @@ const sliderImg = () => {
     }
 
     const switchSlideAutomatically = () => {
-
         let transitionDuration = 2.5;
         const slidesTransition = document.querySelectorAll('.slide');
 
