@@ -118,6 +118,13 @@ img {
     width: 100%;
 }
 
+.object__fit-cover {
+    object-fit: cover;
+    object-position: center center;
+    -o-object-fit: cover;
+    -o-object-position: center;
+}
+
 /* header */
 
 header {
@@ -642,3 +649,31 @@ footer p {
     }
 }
 
+
+
+
+/* modals et overlay  */
+
+.modal__overlay {
+    position: fixed;
+    align-self: center;
+    justify-self: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--main-color);
+    height: 0;
+    width: 0;
+    opacity: 0;
+    z-index: 6;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.modal__overlay.active {
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+    transition: opacity .3s ease-out;
+}

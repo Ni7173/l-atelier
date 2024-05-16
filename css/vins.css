@@ -95,8 +95,6 @@ header .logo .turning__star {
     .slide img {
         height: calc(100vh - (var(--header-height)));
         width: 100%;
-        object-fit: cover;
-        object-position: center;
         position: relative;
     }
 
@@ -161,7 +159,7 @@ header .logo .turning__star {
         border-radius: 50%;
         padding: .5rem;
         color: var(--light-color);
-        transition: all .3S ease-out;
+        transition: var(--quick-transition);
         background-color: var(--white);
     }
 
@@ -223,23 +221,6 @@ header .logo .turning__star {
 
 /* modals */
 
-
-.modal__overlay {
-    position: fixed;
-    align-self: center;
-    justify-self: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--main-color);
-    height: 0;
-    width: 0;
-    opacity: 0;
-    z-index: 6;
-    pointer-events: auto;
-}
-
 .project_modal {
     pointer-events: auto;
 }
@@ -255,15 +236,8 @@ header .logo .turning__star {
 }
 
 
-.modal__overlay.active {
-    height: 100%;
-    width: 100%;
-    opacity: .5;
-    transition: opacity .3s ease-out;
-}
-
 .project_modal.active .modal_content {
-    transition: all .5s ease-out;
+    transition: var(--smooth-transition);
     opacity: 1;
     width: 65%;
     height: 65%;
@@ -292,7 +266,6 @@ header .logo .turning__star {
 .modal_left_img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 .modal_text {
@@ -317,13 +290,13 @@ header .logo .turning__star {
     top: 2rem;
     right: 2rem;
     opacity: .8;
-    transition: all .3s ease-out;
+    transition: var(--quick-transition);
     cursor: pointer;
 }
 
 .modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
     opacity: 1;
-    scale: 1.03;
+    scale: 1.05;
 }
 
 .modal__btn__close img {
@@ -331,14 +304,9 @@ header .logo .turning__star {
     width: 25px;
 }
 
-.modal_left_content img {
-    object-fit: cover;
-}
-
 .modal_right_img {
     max-height: 100%;
     width: 100%;
-    object-fit: cover;
     min-height: 100%;
 }
 
@@ -379,7 +347,6 @@ header .logo .turning__star {
 
 @media screen and (max-width:950px) {
    .project_modal.active .modal_content {
-    /* transition: opacity .4s ease-out .2s ; */
     transition-delay: 0s;
     width: 100%;
     height: 100%;
@@ -556,9 +523,8 @@ header .logo .turning__star {
 .small_img {
     scale: 1;
     filter: grayscale(100%) brightness(90%);
-    transition: all .7s ease-out;
+    transition: var(--smooth-transition);
     height: 100%;
-    object-fit: cover;
     width: 100%;
 }
 

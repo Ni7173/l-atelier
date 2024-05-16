@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const switchingTxtOperator = () => {
-    let switchingTxt = document.querySelector('.home__text #switching-text');
+    let switchingTxt = document.querySelector('.right__home__text #switching-text');
     const texts = ["accueillant", "de création", "chaleureux", "d'échange", "de conception", "bienveillant", "d'écoute"];
 
     let newIndex = 0;
@@ -17,7 +17,7 @@ const switchingTxtOperator = () => {
             switchingTxt.innerText = texts[newIndex];
             switchingTxt.style.opacity = 1;
             switchingTxt.style.width = "100%";
-            switchingTxt.style.transition = "width 3s ease";
+            switchingTxt.style.transition = "width 2.5s ease";
         }, 800);
 
         setTimeout(() => {

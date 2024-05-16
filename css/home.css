@@ -24,16 +24,15 @@ header {
 
 .home__text__container {
     position: absolute;
-    top: 25%;
-    left:5%;
-    justify-self: center;
-    font-size: 1.4;
+    top: 70%;
+    left: 6%;
     z-index: 2;
     display: flex;
     flex-direction: row;
     width: auto;
     white-space: nowrap;
     font-family: "EB Garamond", serif;
+    font-size: 2.3rem;
     font-weight: 300;
     font-style: normal;
     color: white;
@@ -49,16 +48,18 @@ header {
 .home__text {
     color: white;
     text-shadow: 0 0 20px #000000;
-    font-size: 2.3rem;
     z-index: 2;
     display: flex;
     gap: 0.5rem;
 }
 
-/* .home__text-2 {
-    bottom: 10%;
-    left: 24.3%;
-} */
+.right__home__text {
+    margin-left: 5px;
+}
+
+.home__text-2 {
+    justify-content: left;
+}
 
 #switching-text {
     color: var(--red);
@@ -68,6 +69,7 @@ header {
     display: block;
     font-weight: 500;
     letter-spacing: .6px;
+    margin-left: 6px;
 }
 
 
@@ -80,8 +82,6 @@ header {
 .hero__video {
     width: 100%;
     height: 100vh;
-    object-fit: cover;
-    object-position: center center;
     filter: brightness(103%);
     mask-image: url("../img/LUNETTES-MASQUE.svg");
     mask-size: 45%;
@@ -121,20 +121,15 @@ header {
     .video__mask__lunet {
         width: 80%;
     }
-
-    .home__text__container {
-        top: 20%;
-        left: 7%;
-    }
 }
 
 @media screen and (min-width: 550px) {
     .home__text__container {
-    top: 13%;
-    left: 40%;
-    white-space: nowrap;
-    text-align: left;
-    font-size: 1.6rem;
+        top: 69%;
+        left: 33.5%;
+        white-space: nowrap;
+        text-align: left;
+        /* font-size: 1.6rem; */
     }
 }
 
@@ -151,8 +146,8 @@ header {
     }
 
     .home__text__container {
-        top: 15%;
-        left: 40%;
+        top: 70%;
+        left: 37%;
         white-space: nowrap;
         text-align: left;
         font-size: 1.6rem;
@@ -172,44 +167,24 @@ header {
     }
 
     .home__text__container {
-        top: 12%;
-        left: 50%;
+        top: 75%;
+        left: 40%;
     }
     }
 
 @media screen and (min-width: 1100px) {
     .home__text__container {
-        top: 15%;
-        left: 54%;
+        top: 75%;
+        left: 45%;
     }
 }
 
 @media screen and (min-width: 1700px) {
     .home__text__container {
-        top: 14%;
+        top: 80%;
         font-size: 2.2rem;
     }
 }
-
-
-
-
-/* .logo__star {
-    fill: var(--red);
-    transform-origin: 94.5% 42%;
-    -o-transform-origin: 94.5% 42%;
-    -ms-transform-origin: 94.5% 42%;
-    -moz-transform-origin: 94.5% 42%;
-    -webkit-transform-origin: 94.5% 42%;
-} */
-
-
-
-
-
-
-
-
 
 
 
@@ -237,6 +212,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    -o-object-fit: cover;
     transition: all .5s ease-out;
 }
 
