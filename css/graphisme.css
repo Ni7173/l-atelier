@@ -43,7 +43,7 @@ body {
 
     .project {
         width: 100vw;
-        height: calc(50vh - var(--mobile-header-height));
+        height: auto;
     }
 }
 
