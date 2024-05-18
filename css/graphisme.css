@@ -3,6 +3,11 @@ header {
     background: white;
 }
 
+body {
+    font-weight: 300;
+    letter-spacing: .7px;
+}
+
 .logo svg {
     color: var(--black);
     fill: var(--black);
@@ -16,6 +21,7 @@ header {
 .project {
     width: 100%;
     transition: var(--smooth-transition);
+    position: relative;
 }
 
 .img__container, .project__content {
@@ -51,7 +57,7 @@ header {
 }
 
 .img__container {
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
 }
 
@@ -65,8 +71,16 @@ header {
 }
 
 .project:hover .object__fit-cover, .project:focus .object__fit-cover, .project:active .object__fit-cover {
-    scale: 1.01;
+    scale: 1.04;
     filter: grayscale(0);
+}
+
+.project:hover .project__content p {
+    opacity: 1;
+}
+
+.project:hover .project__content svg {
+    opacity: 1;
 }
 
 
@@ -89,15 +103,18 @@ header {
 
 .project__content p {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     white-space: pre-line;
     color: var(--white);
+    opacity: 0;
+    transition: var(--smooth-transition);
 }
 
 .project__content svg {
     width: 25px;
     height: 25px;
     margin-bottom: 1.5rem;
+    opacity: 0;
 }
 
 
@@ -225,6 +242,10 @@ button[data-slider-button="next"] {
     right: 1rem;
 }
 
+.slider__container .slider__img_container:nth-child(9) img{
+    object-position: center 100%;
+    -webkit-object-position: center 100%;
+}
 
 
 
@@ -237,7 +258,7 @@ button[data-slider-button="next"] {
     position: absolute;
     top: 2.5rem;
     right: 2.5rem;
-    color: var(--white);
+    color: #EEE;
     height: fit-content;
     width: fit-content;
 }
@@ -247,6 +268,7 @@ button[data-slider-button="next"] {
     height: 35px;
     opacity: 1;
     transition: var(--quick-transition);
+    box-shadow: 0 0 15px #EEE;
 }
 
 .modal__btn__close svg:hover {
