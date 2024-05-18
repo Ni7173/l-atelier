@@ -59,11 +59,3 @@ const setVideo = () => {
         video.setAttribute('muted', 'true');
     }
 }
-
-// document.addEventListener('DOMContentLoaded', (event) => {
-//     var video = document.querySelector('video');
-//     if (video) {
-//         video.muted = true;
-//         video.play();
-//     }
-// })
