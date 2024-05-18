@@ -48,8 +48,22 @@ const setStarAnimation = () => {
 
 const setVideo = () => {
     const video = document.querySelector('.hero__video');
-
-    video.setAttribute('autoplay', '');
-    video.setAttribute('loop', '');
-    video.setAttribute('muted', '');
+    console.log(video)
+    if (video) {
+        video.muted = true;
+        video.loop = true;
+        video.autoplay = true;
+        video.play();
+        video.setAttribute('autoplay', 'true');
+        video.setAttribute('loop', 'true');
+        video.setAttribute('muted', 'true');
+    }
 }
+
+// document.addEventListener('DOMContentLoaded', (event) => {
+//     var video = document.querySelector('video');
+//     if (video) {
+//         video.muted = true;
+//         video.play();
+//     }
+// })
