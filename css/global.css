@@ -17,6 +17,7 @@
     --header-transition: all .6s ease-out;
     --smooth-transition: all .6s ease-out;
     --quick-transition: all .3s ease-out;
+    --long-transition: all 1s ease-out;
 }
 
 *, *::before, *::after {
@@ -32,7 +33,7 @@ body {
     color: var(--text-color);
     font-size: 1.6rem;
     line-height: 1.6;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
 }
 

@@ -7,7 +7,7 @@ const graphismeSlider = () => {
     const switchBtns = document.querySelectorAll('[data-slider-button]');
 
     let newIndex;
-    let intervalId;
+    // let intervalId;
 
 
 
@@ -31,10 +31,10 @@ const graphismeSlider = () => {
 
     switchBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            let transitionDuration = 0.6;
-            transitionSetting(images, `${transitionDuration}s`);
-            clearInterval(intervalId);
-            intervalId = setInterval(switchImgAutomatically, 5000);
+            // let transitionDuration = 0.6;
+            transitionSetting(images, "var(--long-transition)");
+            // clearInterval(intervalId);
+            // intervalId = setInterval(switchImgAutomatically, 5000);
 
             if (btn.dataset.sliderButton === "prev") {
                 let activeSlide = document.querySelector('[data-active]');
@@ -56,33 +56,32 @@ const graphismeSlider = () => {
     })
 
 
-    const switchImgAutomatically = () => {
-        let transitionDuration = 1.5;
+    // const switchImgAutomatically = () => {
+    //     let transitionDuration = 1.5;
 
-        let activeSlide = document.querySelector('[data-active]');
+    //     let activeSlide = document.querySelector('[data-active]');
 
-        transitionSetting(images, `${transitionDuration}s`);
-        newIndex++
-        if (newIndex >= images.length) newIndex = 0;
-        if (newIndex < 0) newIndex = images.length - 1;
+    //     transitionSetting(images, `${transitionDuration}s`);
+    //     newIndex++
+    //     if (newIndex >= images.length) newIndex = 0;
+    //     if (newIndex < 0) newIndex = images.length - 1;
 
-        images[newIndex].dataset.active = true;
-        if (activeSlide) delete activeSlide.dataset.active;
-    }
+    //     images[newIndex].dataset.active = true;
+    //     if (activeSlide) delete activeSlide.dataset.active;
+    // }
 
 
     // démarre le slide auto
-    imagesLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            // setInterval(switchImgAutomatically, 5000)
-            intervalId = setInterval(switchImgAutomatically, 5000);
-        })
-    })
+    // imagesLinks.forEach(link => {
+    //     link.addEventListener('click', () => {
+    //         intervalId = setInterval(switchImgAutomatically, 4500);
+    //     })
+    // })
 
     // fixe la durée de transition
-    const transitionSetting = (elements, duration) => {
+    const transitionSetting = (elements, transition) => {
         elements.forEach(elem =>
-            elem.style.transitionDuration = duration
+            elem.style.transition = transition
         )
     }
 
@@ -97,11 +96,12 @@ const graphismeSlider = () => {
         })
 
         const closeSlider = () => {
+            transitionSetting(images, "var(--quick-transition)");
             let activeSlide = document.querySelector('[data-active]');
             overlay.classList.remove('active');
             sliderModal.classList.remove('active');
             if (activeSlide) delete activeSlide.dataset.active;
-            clearInterval(intervalId);
+            // clearInterval(intervalId);
         }
     }
     sliderClosing();

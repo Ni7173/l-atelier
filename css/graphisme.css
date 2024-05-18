@@ -15,6 +15,7 @@ header {
 
 .project {
     width: 100%;
+    transition: var(--smooth-transition);
 }
 
 .img__container, .project__content {
@@ -24,9 +25,6 @@ header {
     max-width: 50%;
 }
 
-.project__reversed {
-    flex-direction: row;
-}
 
 @media screen and (max-width: 1199px) {
     .wrapper .project:nth-child(even) {
@@ -39,7 +37,7 @@ header {
     .project {
         width: 50%;
     }
-
+    
     .project__reversed {
         flex-direction: row-reverse;
     }
@@ -66,21 +64,42 @@ header {
     transition: var(--smooth-transition);
 }
 
-.project__link:hover + .object__fit-cover, .project__link:focus + .object__fit-cover, .project__link:active + .object__fit-cover {
-    scale: 1.05;
+.project:hover .object__fit-cover, .project:focus .object__fit-cover, .project:active .object__fit-cover {
+    scale: 1.01;
     filter: grayscale(0);
 }
 
 
-
 /* project content  */
+.project__reversed .project__content{
+    text-align: right;
+    align-items: end;
+}
 
 .project__content {
+    flex-direction: column;
     aspect-ratio: 1/1;
     overflow: hidden;
-    padding: 3rem;
+    padding: 6rem;
     color: #555;
+    justify-content: end;
+    text-align: left;
+    align-items: start;
 }
+
+.project__content p {
+    margin: 0;
+    font-size: 1.8rem;
+    white-space: pre-line;
+    color: var(--white);
+}
+
+.project__content svg {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 1.5rem;
+}
+
 
 
 /* modals  */
@@ -141,6 +160,7 @@ header {
 .slider__img_container {
     position: absolute;
     opacity: 0;
+    transition: var(--long-transition);
 }
 
 .slider__img_container[data-active] {
@@ -177,15 +197,27 @@ button[data-slider-button] {
     border: unset;
     background: unset;
     color: var(--white);
-    /* height: 40px;
-    width: 40px; */
     cursor: pointer;
     opacity: 0;
     transition: var(--quick-transition);
+    height: fit-content;
+    width: fit-content;
+}
+
+@media screen and (max-width: 1200px) {
+    button[data-slider-button] {
+        opacity: 1;
+    }
+}
+
+button[data-slider-button] svg {
+    height: 30px;
+    width: 30px;
+    opacity: 1;
 }
 
 button[data-slider-button="prev"] {
-    rotate: 180deg;
+    /* rotate: 180deg; */
     left: 1rem;
 }
 

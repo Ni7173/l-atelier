@@ -25,14 +25,14 @@ header {
 .home__text__container {
     position: absolute;
     top: 70%;
-    left: 6%;
+    left: 4%;
     z-index: 2;
     display: flex;
     flex-direction: row;
     width: auto;
     white-space: nowrap;
     font-family: "EB Garamond", serif;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-weight: 300;
     font-style: normal;
     color: white;
@@ -83,11 +83,11 @@ header {
     width: 100%;
     height: 100vh;
     filter: brightness(103%);
-    mask-image: url("../img/LUNETTES-MASQUE.svg");
+    mask-image: url("../img/lunettes/LUNETTES-MASQUE.svg");
     mask-size: 45%;
     mask-repeat: no-repeat;
     mask-position: center center;
-    -webkit-mask-image: url("../img/LUNETTES-MASQUE.svg");
+    -webkit-mask-image: url("../img/lunettes/LUNETTES-MASQUE.svg");
     -webkit-mask-size: 45%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center center;
@@ -129,7 +129,7 @@ header {
         left: 33.5%;
         white-space: nowrap;
         text-align: left;
-        /* font-size: 1.6rem; */
+        font-size: 2.3rem;
     }
 }
 
@@ -150,7 +150,6 @@ header {
         left: 37%;
         white-space: nowrap;
         text-align: left;
-        font-size: 1.6rem;
     }
 }
 
@@ -182,7 +181,6 @@ header {
 @media screen and (min-width: 1700px) {
     .home__text__container {
         top: 80%;
-        font-size: 2.2rem;
     }
 }
 
@@ -356,9 +354,16 @@ header {
 }
 
 @media screen and (max-width: 700px) {
+
+    #home__menu {
+        height: 80vh;
+    }
+
+    .home__menu .wrapper {
+        height: 100%;
+    }
     .home__menu__item {
-        width: 100%;
-        height: 25%;
+        height: 50%;
     }
 
     .menu__hovered__container .menu__title {
