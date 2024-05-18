@@ -44,6 +44,7 @@ body {
     .project {
         width: 100vw;
         height: auto;
+        flex: auto;
     }
 }
 
