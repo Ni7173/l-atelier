@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     switchingTxtOperator();
-    // setVideo();
+    setVideo();
 })
 
 
