@@ -201,8 +201,10 @@ body {
 
 /* buttons on the side */
 
-.slider__modal:hover button[data-slider-button] {
-    opacity: 1;
+.slider__modal button, .slider__modal button svg {
+    max-width: 0%;
+    max-height: 0%;
+    padding: 0;
 }
 
 button[data-slider-button] {
@@ -214,8 +216,18 @@ button[data-slider-button] {
     cursor: pointer;
     opacity: 0;
     transition: var(--quick-transition);
+}
+
+.slider__modal.active:hover button[data-slider-button] {
+    opacity: 1;
     height: fit-content;
     width: fit-content;
+}
+
+.slider__modal.active:hover .modal__btn__close {
+    opacity: 1;
+    width: auto;
+    height: auto;
 }
 
 @media screen and (max-width: 1200px) {
