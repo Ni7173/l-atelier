@@ -43,8 +43,8 @@ body {
 
     .project {
         width: 100vw;
-        height: auto;
-        flex: auto;
+        height: 50vw;
+        /* flex: auto; */
     }
 }
 
