@@ -40,10 +40,6 @@ body {
     .wrapper .project:nth-child(even) {
         flex-direction: row-reverse;
     }
-
-    .project {
-        max-width: 50vh;
-    }
 }
 
 
@@ -71,6 +67,7 @@ body {
 
 .img__container img {
     aspect-ratio: 1/1;
+    /* aspect-ratio: ; */
     height: 100%;
     width: 100%;
     cursor: pointer;
