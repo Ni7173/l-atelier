@@ -43,7 +43,10 @@ body {
 
     .project {
         width: 100vw;
+        max-width: 100vw;
         height: 50vw;
+        max-height: 50vh;
+        flex: 1;
         /* flex: auto; */
     }
 }
