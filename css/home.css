@@ -345,11 +345,11 @@ header {
     height: 100%;
 }
 
-.home__menu__item:hover .menu__img, .home__menu__item:active .menu__img, .home__menu__item:focus .menu__img {
+.menu__link:hover .menu__img, .menu__link:active .menu__img, .menu__link:focus .menu__img {
     opacity: 0;
 }
 
-.home__menu__item:hover .menu__hovered, .home__menu__item:active .menu__hovered, .home__menu__item:focus .menu__hovered {
+.menu__link:hover .menu__hovered, .menu__link:active .menu__hovered, .menu__link:focus .menu__hovered {
     opacity: 1!important;
 }
 
