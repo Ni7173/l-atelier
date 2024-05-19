@@ -36,21 +36,6 @@ body {
 }
 
 
-@media screen and (max-width: 1199px) {
-    .wrapper .project:nth-child(even) {
-        flex-direction: row-reverse;
-    }
-
-    .project {
-        width: 100vw;
-        max-width: 100vw;
-        height: auto;
-        aspect-ratio: 2/1;
-        /* flex: auto; */
-    }
-}
-
-
 @media screen and (min-width: 1200px) {
     .project {
         width: 50%;
@@ -79,35 +64,18 @@ body {
     height: 100%;
     width: 100%;
     cursor: pointer;
-    filter: grayscale(100%);
     transition: var(--smooth-transition);
 }
 
-.project:hover .object__fit-cover, .project:focus .object__fit-cover, .project:active .object__fit-cover {
-    scale: 1.04;
-    filter: grayscale(0);
-}
 
-.project:hover .project__content p {
-    opacity: 1;
-}
-
-.project:hover .project__content svg {
-    opacity: 1;
-}
 
 
 /* project content  */
-.project__reversed .project__content{
-    text-align: right;
-    align-items: end;
-}
 
 .project__content {
     flex-direction: column;
     aspect-ratio: 1/1;
     overflow: hidden;
-    padding: 6rem;
     color: #555;
     justify-content: end;
     text-align: left;
@@ -119,7 +87,6 @@ body {
     font-size: 1.6rem;
     white-space: pre-line;
     color: var(--white);
-    opacity: 0;
     transition: var(--smooth-transition);
 }
 
@@ -166,6 +133,11 @@ body {
         top: 12.5%;
         bottom: 12.5%;
         right: 20%;
+    }
+
+    .project__reversed .project__content{
+        text-align: right;
+        align-items: end;
     }
 }
 
@@ -233,20 +205,12 @@ button[data-slider-button] {
     transition: var(--quick-transition);
 }
 
-.slider__modal.active:hover button[data-slider-button] {
-    opacity: 1;
-    height: fit-content;
-    width: fit-content;
-}
-
-.slider__modal.active:hover .modal__btn__close {
-    opacity: 1;
-    width: auto;
-    height: auto;
-}
-
 @media screen and (max-width: 1200px) {
     button[data-slider-button] {
+        opacity: 1;
+    }
+
+    .project__content svg {
         opacity: 1;
     }
 }
@@ -294,21 +258,102 @@ button[data-slider-button="next"] {
     transition: var(--quick-transition);
 }
 
-.modal__btn__close svg:hover {
-    opacity: 1;
-    scale: 1.05;
+
+/* responsive */
+
+@media screen and (max-width: 1199px) {
+    .wrapper .project:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    
+    .project {
+        width: 100vw;
+        max-width: 100vw;
+        height: auto;
+        aspect-ratio: 2/1;
+    }
+    
+    .project__content {
+        padding: 3rem;
+    }
+    
+    .project__content p {
+        text-align: left;
+    }
+
+    .wrapper .project:nth-child(even) .project__content p {
+        text-align: right;
+    }
+    
+    .wrapper .project:nth-child(even) .project__content {
+        text-align: right;
+        align-items:end;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .project__content {
+        padding: 5rem;
+    }
+
+    .project__content p {
+        margin-bottom: 1rem;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-    .modal__btn__close {
-    top: 2rem;
-    right: 2rem;
+        .modal__btn__close {
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .modal__btn__close svg {
+        width: 20px;
+        height: 20px;
+        opacity: .8;
+        transition: var(--quick-transition);
+    }
+
+    .project__content p {
+        margin-bottom: 0;
+    }
 }
 
-.modal__btn__close svg {
-    width: 20px;
-    height: 20px;
-    opacity: .8;
-    transition: var(--quick-transition);
+@media screen and (min-width: 1350px) {
+    .project__content {
+        padding: 6rem;
+    }
 }
+
+/* hover */
+
+
+/* .project:hover .object__fit-cover, .project:focus .object__fit-cover, .project:active .object__fit-cover {
+    scale: 1.04;
+    filter: grayscale(0);
+} */
+
+/* .project:hover .project__content p {
+    opacity: 1;
+}
+
+.project:hover .project__content svg {
+    opacity: 1;
+} */
+
+.slider__modal.active:hover button[data-slider-button] {
+    opacity: 1;
+    height: fit-content;
+    width: fit-content;
+}
+
+.slider__modal.active:hover .modal__btn__close {
+    opacity: 1;
+    width: auto;
+    height: auto;
+}
+
+.modal__btn__close svg:hover {
+    opacity: 1;
+    scale: 1.05;
 }
