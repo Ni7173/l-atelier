@@ -35,6 +35,7 @@ header .logo .turning__star {
 .project {
     display: flex;
     width: 100%;
+    position: relative;
 }
 
 .project_img {
@@ -75,10 +76,6 @@ header .logo .turning__star {
 }
 
 .lateral_content {
-    display: none;
-}
-
-.next__project {
     display: none;
 }
 
@@ -204,7 +201,7 @@ header .logo .turning__star {
 
 .project_img {
     overflow: hidden; 
-    position: relative;
+    /* position: relative; */
 }
 
 .project_link {
@@ -315,6 +312,14 @@ header .logo .turning__star {
     height: 40%;
 }
 
+.project_modal {
+        pointer-events: none;
+   }
+
+   
+   .project_modal.active {
+        pointer-events: auto;
+   }
 
 @media screen and (max-width:1350px) {
     .modal_left_content img {
@@ -329,7 +334,6 @@ header .logo .turning__star {
     .project_modal.active .modal_content {
     width: 65%;
     height: 65%;
-    z-index: 6;
     top: 17.5%;
     left: 17.5%;
 }
@@ -385,33 +389,33 @@ header .logo .turning__star {
     }
 
    .modal__btn__close {
-    top: 3rem;
-    right: 3rem;
-}
+        top: 3rem;
+        right: 3rem;
+    }
 
-.modal__btn__close img {
-    height: 38px;
-    width: 38px;
-}
+    .modal__btn__close img {
+        height: 26px;
+        width: 26px;
+    }
 
-.modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
-    opacity: 1;
-    scale: 1.1;
-}
+    .modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
+        opacity: 1;
+        scale: 1.1;
+    }
 
-.modal__btn__close img {
-    color: white;
-    background: white;
-    fill: white;
-}
+    .modal__btn__close img {
+        color: white;
+        background: white;
+        fill: white;
+    }
 
-.modal__btn__close {
-    background: white;
-    padding: 1rem;
-    border-radius: 50%;
-    top: 2.5rem;
-    right: 2.5rem;
-}
+    .modal__btn__close {
+        background: white;
+        padding: 1rem;
+        border-radius: 50%;
+        top: 2.5rem;
+        right: 2.5rem;
+    }
 }
 
 
@@ -424,89 +428,62 @@ header .logo .turning__star {
 
 @media screen and (max-width:550px) {
     .wrapper {
-    flex-direction: column;
+        flex-direction: column;
     }
 
    .modal_left_content {
-    height: 40%;
-    width: 100%;
-    position: relative;
+        height: 40%;
+        width: 100%;
+        position: relative;
    }
 
-   .modal_right_content {
-    height: 60%;
-    width: 100%;
-    flex-direction: column-reverse;
-}
+    .project_modal.active .modal_right_content {
+        height: 60%;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
 
-.modal_text {
-    position: static;
-    height: 40%;
-}
+    .project_modal.active .modal_text {
+        position: static;
+        height: 40%;
+    }
 
-.modal_right_img, .modal_img {
-    height: 60%;
-}
-
-.modal__btn__close {
-    background: white;
-    padding: 1rem;
-    border-radius: 50%;
-    top: 2.5rem;
-    right: 2.5rem;
-}
+    .modal_right_img, .modal_img {
+        height: 60%;
+    }
 
 
 /* responsive grid mobile */
 
     .project {
-        flex-direction: column;
+        flex-direction: row;
         overflow: hidden;
-        height: calc(100vh - var(--mobile-header-height));
+        /* height: calc(100vh - var(--mobile-header-height)); */
         max-width: 100%;
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 2/1;
     }
 
-    .project:nth-of-type(even) {
+    /* .project:nth-of-type(even) {
         flex-direction: column-reverse;        
-    }
+    } */
 
     .project_img {
         width: 100%;
-        height: 50%;
+        /* height: 50%; */
         overflow: hidden;
         max-width: 100%;
     }
 
     .project_content {
         width: 100%;
-        height: 50%;
+        height: 100%;
         max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content:space-evenly;
-    }
-
-    .next__project {
-    display: block;
-    /* position: absolute;
-    bottom: 3rem;
-    left: calc(50% - ((30px + 1rem) / 2)); */
-    padding: 1rem;
-    border-radius: 50%;
-    background: var(--white);
-    display: flex;
-    align-items: center;
-    }
-
-    .next__project img {
-    width: 30px;
-    height: 30px;
-    rotate: -90deg;
-    }
-
-    .project_link {
-        display: none;
     }
 }
 
