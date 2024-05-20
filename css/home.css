@@ -169,7 +169,12 @@ header {
         top: 75%;
         left: 40%;
     }
+
+    .menu__link:active .menu__hovered, .menu__link:focus .menu__hovered {
+        opacity: 1!important;
     }
+
+}
 
 @media screen and (min-width: 1100px) {
     .home__text__container {
@@ -211,7 +216,7 @@ header {
     height: 100%;
     object-fit: cover;
     -o-object-fit: cover;
-    transition: all .5s ease-out;
+    transition: var(--smooth-transition);
 }
 
 .home__menu__item {
@@ -345,11 +350,11 @@ header {
     height: 100%;
 }
 
-.menu__link:hover .menu__img, .menu__link:active .menu__img, .menu__link:focus .menu__img {
+.menu__link:hover .menu__img {
     opacity: 0;
 }
 
-.menu__link:hover .menu__hovered, .menu__link:active .menu__hovered, .menu__link:focus .menu__hovered {
+.menu__link:hover .menu__hovered {
     opacity: 1!important;
 }
 

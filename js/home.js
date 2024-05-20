@@ -45,12 +45,20 @@ const menuOnClick = () => {
 
     menuLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // e.preventDefault();
+            if (window.innerWidth < 800) e.preventDefault();
             let menuHovered = link.childNodes[3];
             let menuImg = link.childNodes[1];
+            let targetUrl = link.getAttribute('href');
+            if (menuHovered.style.opacity != "1") {
+                menuHovered.style.opacity = "1";
+                menuImg.style.opacity = "0";
+            }
 
-            menuHovered.style.opacity = "1";
-            menuImg.style.opacity = "0";
+            if (window.innerWidth < 800) {
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 300);
+            }
         })
     })
 }
