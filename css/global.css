@@ -23,6 +23,11 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+/* 
+*:focus, *:active {
+    background: unset;
+    color: unset;
+} */
 
 html {
     font-size: 62.5%;

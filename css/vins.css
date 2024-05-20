@@ -286,19 +286,24 @@ header .logo .turning__star {
     position: absolute;
     top: 2rem;
     right: 2rem;
-    opacity: .8;
+    opacity: 1;
     transition: var(--quick-transition);
     cursor: pointer;
+    background: var(--white);
+    color: #CCC;
+    padding: 0.5rem;
+    border-radius: 50%;
 }
+
 
 .modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
     opacity: 1;
     scale: 1.05;
 }
 
-.modal__btn__close img {
-    height: 25px;
-    width: 25px;
+.modal__btn__close svg {
+    height: 20px;
+    width: 20px;
 }
 
 .modal_right_img {
@@ -339,13 +344,26 @@ header .logo .turning__star {
 }
 }
 
+.small_img {
+    filter: grayscale(100%) brightness(90%);
+}
+
+.project_link:hover + .small_img, .project_link:focus + .small_img, .project_link:active + .small_img {
+    scale: 1.05;
+    filter: grayscale(0%) brightness(100%);
+}
+
 @media screen and (max-width:1250px) {
     .modal_left_content {
-    width: 55%;
-}
+        width: 55%;
+    }
 
     .modal_right_content {
         width: 45%;
+    }
+
+    .small_img {
+        filter: grayscale(0%) brightness(100%);
     }
 }
 
@@ -388,29 +406,23 @@ header .logo .turning__star {
         height: 100%;
     }
 
+    .modal__btn__close svg {
+        height: 17px;
+        width: 17px;
+    }
+
+
    .modal__btn__close {
+    opacity: 1;
         top: 3rem;
         right: 3rem;
     }
 
-    .modal__btn__close img {
-        height: 26px;
-        width: 26px;
-    }
-
     .modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
-        opacity: 1;
         scale: 1.1;
     }
 
-    .modal__btn__close img {
-        color: white;
-        background: white;
-        fill: white;
-    }
-
     .modal__btn__close {
-        background: white;
         padding: 1rem;
         border-radius: 50%;
         top: 2.5rem;
@@ -419,12 +431,9 @@ header .logo .turning__star {
 }
 
 
-@media screen and (min-width:550px) {
-    .project_link:hover + .small_img, .project_link:focus + .small_img, .project_link:active + .small_img {
-    scale: 1.05;
-    filter: grayscale(0%) brightness(100%);
-}
-}
+/* @media screen and (min-width:550px) {
+
+} */
 
 @media screen and (max-width:550px) {
     .wrapper {
@@ -499,7 +508,6 @@ header .logo .turning__star {
 
 .small_img {
     scale: 1;
-    filter: grayscale(100%) brightness(90%);
     transition: var(--smooth-transition);
     height: 100%;
     width: 100%;
