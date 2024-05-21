@@ -64,6 +64,31 @@ const menuOnClick = () => {
 }
 menuOnClick();
 
+const adjustHomeLogo = () => {
+    const logo = document.querySelector('.logo a');
+    const trigger = document.querySelector('.trigger');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                logo.classList.remove('logo--is-translated');
+            } else {
+                logo.classList.add('logo--is-translated');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observer.observe(trigger);
+}
+
+adjustHomeLogo();
 
 const setStarAnimation = () => {
     const star = document.querySelector('.logo__star');

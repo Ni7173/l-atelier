@@ -164,7 +164,7 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
 }
 
 .logo__svg {
-    transition: all .6s;
+    transition: var(--smooth-transition);
 }
 
 
@@ -343,7 +343,7 @@ header .socials {
     }
 
     .logo svg{
-        width: 220px;
+        width: 260px;
     }
 
     .show-nav .socials li svg {
@@ -361,7 +361,7 @@ header .socials {
     }
 
     .logo svg{
-        width: 200px;
+        width: 240px;
     }
 }
 

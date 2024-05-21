@@ -6,6 +6,40 @@ header {
     pointer-events: auto;
 }
 
+.logo a {
+    transition: all .1s;
+}
+
+.logo--is-translated {
+    transform: translateY(100px);
+}
+
+@media screen and (min-width: 599px) {
+    .logo--is-translated {
+        transform: translateY(70px);
+    }
+}
+
+@media screen and (min-width: 699px) {
+    .logo--is-translated {
+        transform: translateY(50px);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .logo a {
+        transition: var(--quick-transition);
+    }
+
+    .logo--is-translated {
+        transform: translateY(30px);
+    }
+}
+
+
+
+
+
 .home .container, .home .grid {
     margin:0;
     width: 100%;
