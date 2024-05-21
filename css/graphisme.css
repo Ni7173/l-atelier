@@ -231,19 +231,24 @@ button[data-slider-button="next"] {
 
 /* button  */
 
+.slider__modal .modal__btn__close {
+    opacity: .7;
+}
+
 .modal__btn__close {
     cursor: pointer;
     border: unset;
     background: unset;
     position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
+    top: 1.5rem;
+    right: 1.5rem;
     color: #CCC;
     background: var(--white);
     padding: .5rem;
     height: fit-content;
     width: fit-content;
     border-radius: 50%;
+    transition: var(--quick-transition);
 }
 
 .modal__btn__close svg {
@@ -265,6 +270,11 @@ button[data-slider-button="next"] {
         margin-bottom: 1rem;
         line-height: 1.4em;
         font-size: 1.45rem;
+    }
+
+    
+    .slider__modal .modal__btn__close {
+        opacity: 1;
     }
 }
 
@@ -309,13 +319,13 @@ button[data-slider-button="next"] {
 
 @media screen and (min-width: 1200px) {
         .modal__btn__close {
-        top: 2rem;
-        right: 2rem;
+        top: 1.5rem;
+        right: 1.5rem;
     }
 
     .modal__btn__close svg {
-        width: 20px;
-        height: 20px;
+        width: 17px;
+        height: 17px;
         transition: var(--quick-transition);
     }
 
@@ -347,18 +357,12 @@ button[data-slider-button="next"] {
 } */
 
 .slider__modal.active:hover button[data-slider-button] {
-    opacity: 1;
+    opacity: .7;
     height: fit-content;
     width: fit-content;
 }
 
-.slider__modal.active:hover .modal__btn__close {
+.modal__btn__close:hover {
     opacity: 1;
-    width: auto;
-    height: auto;
-}
-
-.modal__btn__close svg:hover {
-    opacity: 1;
-    scale: 1.05;
+    scale: 1.08;
 }
