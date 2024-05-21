@@ -32,7 +32,13 @@ header {
     }
 
     .logo--is-translated {
-        transform: translateY(30px);
+        transform: translateY(3rem);
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .logo--is-translated {
+        transform: translateY(16rem);
     }
 }
 
