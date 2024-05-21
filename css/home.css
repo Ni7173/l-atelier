@@ -6,39 +6,45 @@ header {
     pointer-events: auto;
 }
 
-.logo a {
+.header-container .logo a {
     transition: all .1s;
+    transform: translateY(0) translateX(5px);
 }
 
-.logo--is-translated {
-    transform: translateY(100px);
+.header-container .logo .logo--is-translated {
+    transform: translateY(17rem);
 }
 
 @media screen and (min-width: 599px) {
-    .logo--is-translated {
+    .header-container .logo .logo--is-translated {
         transform: translateY(70px);
     }
 }
 
 @media screen and (min-width: 699px) {
-    .logo--is-translated {
-        transform: translateY(50px);
+    .header-container .logo .logo--is-translated {
+        transform: translateY(18rem);
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .logo a {
+    .header-container .logo a {
         transition: var(--quick-transition);
+         transform: translateY(0) translateX(1rem);
     }
 
-    .logo--is-translated {
-        transform: translateY(3rem);
+    .header-container .logo .logo--is-translated {
+        transform: translateY(2.5rem) translateX(1rem);
     }
 }
 
 @media screen and (min-width: 1700px) {
-    .logo--is-translated {
-        transform: translateY(16rem);
+    .header-container .logo .logo--is-translated {
+        transform: translateY(16rem) translateX(1.5rem);
+    }
+
+    .header-container .logo a {
+        transition: all .1s;
     }
 }
 
