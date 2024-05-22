@@ -632,7 +632,7 @@ footer p {
 }   
 
 .right-footer {
-    width: var(--footer-width);
+    width: 100%;
     justify-content: start;
 }
 
@@ -644,13 +644,14 @@ footer p {
     }
 
     .right__footer__container .top__right__footer {
-        width: 100%;
+        width: var(--footer-width);
         justify-content: left;
         align-items: start;
     }
 
     .right__footer__container {
         width: 100%;
+        align-items: center;
     }
 
     .bottom__right__footer {
@@ -708,6 +709,7 @@ footer p {
         flex-wrap: nowrap;
         flex-direction: row;
         width: 45%;
+        align-items: flex-start;
     }
 
     .footer__logo {
@@ -756,7 +758,7 @@ footer p {
 
 @media screen and (min-width: 1250px) {
     .footer__img__container {
-        width: 15%;
+        width: 17%;
     }
 }
 
