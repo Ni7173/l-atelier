@@ -587,7 +587,7 @@ footer p {
 .logo_pic {
     height: auto;
     max-width: none;
-    width: 200px;
+    width: 180px;
 }
 
 .right-footer h3{
@@ -627,7 +627,7 @@ footer p {
 }
 
 .footer__txt__container {
-        width: var(--footer-width);
+    width: var(--footer-width);
 }   
 
 .right-footer {
@@ -643,7 +643,7 @@ footer p {
     }
 
     .footer__logo {
-        width: 80%;
+        width: 70%;
     }
 
     .right__footer__container .top__right__footer {
@@ -660,6 +660,7 @@ footer p {
     .bottom__right__footer {
         justify-content: center;
         width: 100%;
+        white-space: nowrap;
     }
 
     .bottom__right__footer span {

@@ -15,6 +15,12 @@ header {
     transform: translateY(17rem);
 }
 
+@media screen and (max-width: 400px) {
+    .header-container .logo .logo--is-translated {
+        transform: translateY(14rem);
+    }
+}
+
 @media screen and (min-width: 599px) {
     .header-container .logo .logo--is-translated {
         transform: translateY(70px);
@@ -23,7 +29,7 @@ header {
 
 @media screen and (min-width: 699px) {
     .header-container .logo .logo--is-translated {
-        transform: translateY(18rem);
+        transform: translateY(3rem);
     }
 }
 
