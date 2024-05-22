@@ -571,9 +571,8 @@ footer p {
 }
 
 .footer__logo {
-    /* width: 80%; */
     height: fit-content;
-    margin: 1rem 3rem 1.5rem 0;
+    margin: 1rem 2rem 1.5rem 0;
 }
 
 .footer__txt__container {
@@ -643,6 +642,10 @@ footer p {
         display: none;
     }
 
+    .footer__logo {
+        width: 80%;
+    }
+
     .right__footer__container .top__right__footer {
         width: var(--footer-width);
         justify-content: left;
@@ -661,6 +664,7 @@ footer p {
 
     .bottom__right__footer span {
         min-width: 100%;
+        white-space: nowrap;
     }
 
     
