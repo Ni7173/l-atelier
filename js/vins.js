@@ -70,6 +70,7 @@ const modalsManagement = () => {
         projectLinks.forEach(projectLink => {
             projectLink.addEventListener('click', (e) => {
                 e.preventDefault();
+                disableScrolling();
                 overlay.classList.add('active')
                 let projectId = projectLink.dataset.projectLink;
                 console.log(projectId)
@@ -84,6 +85,16 @@ const modalsManagement = () => {
         })
     }
     showModal();
+
+    const disableScrolling = () => {
+        var x = window.scrollX;
+        var y = window.scrollY;
+        window.onscroll = function () { window.scrollTo(x, y); };
+    }
+
+    const enableScrolling = () => {
+        window.onscroll = function () { };
+    }
 
     const closeModal = () => {
         overlay.addEventListener('click', () => {
@@ -100,30 +111,10 @@ const modalsManagement = () => {
         closeActiveModal = () => {
             let activeModal = document.querySelector('.project_modal.active')
             activeModal.classList.remove('active')
+            enableScrolling();
         }
     }
     closeModal();
 
 }
 modalsManagement();
-
-// const scrollToProject = () => {
-//     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//         anchor.addEventListener('click', function (e) {
-//             e.preventDefault();
-
-//             const targetId = this.getAttribute('href').substring(1);
-//             const targetElement = document.getElementById(targetId);
-
-//             if (targetElement) {
-//                 const headerHeight = document.querySelector('header').offsetHeight; // Adjust as needed
-
-//                 window.scrollTo({
-//                     top: targetElement.offsetTop - headerHeight,
-//                     behavior: 'smooth'
-//                 });
-//             }
-//         });
-//     });
-// }
-// scrollToProject();

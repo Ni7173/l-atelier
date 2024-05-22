@@ -7,14 +7,11 @@ const graphismeSlider = () => {
     const switchBtns = document.querySelectorAll('[data-slider-button]');
 
     let newIndex;
-    // let intervalId;
-
-
-
 
     imagesLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+            disableScrolling();
             overlay.classList.add('active');
             sliderModal.classList.add('active');
             images.forEach(img => {
@@ -31,10 +28,7 @@ const graphismeSlider = () => {
 
     switchBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // let transitionDuration = 0.6;
             transitionSetting(images, "var(--long-transition)");
-            // clearInterval(intervalId);
-            // intervalId = setInterval(switchImgAutomatically, 5000);
 
             if (btn.dataset.sliderButton === "prev") {
                 let activeSlide = document.querySelector('[data-active]');
@@ -55,30 +49,16 @@ const graphismeSlider = () => {
         })
     })
 
+    const disableScrolling = () => {
+        var x = window.scrollX;
+        var y = window.scrollY;
+        window.onscroll = function () { window.scrollTo(x, y); };
+    }
 
-    // const switchImgAutomatically = () => {
-    //     let transitionDuration = 1.5;
+    const enableScrolling = () => {
+        window.onscroll = function () { };
+    }
 
-    //     let activeSlide = document.querySelector('[data-active]');
-
-    //     transitionSetting(images, `${transitionDuration}s`);
-    //     newIndex++
-    //     if (newIndex >= images.length) newIndex = 0;
-    //     if (newIndex < 0) newIndex = images.length - 1;
-
-    //     images[newIndex].dataset.active = true;
-    //     if (activeSlide) delete activeSlide.dataset.active;
-    // }
-
-
-    // démarre le slide auto
-    // imagesLinks.forEach(link => {
-    //     link.addEventListener('click', () => {
-    //         intervalId = setInterval(switchImgAutomatically, 4500);
-    //     })
-    // })
-
-    // fixe la durée de transition
     const transitionSetting = (elements, transition) => {
         elements.forEach(elem =>
             elem.style.transition = transition
@@ -101,7 +81,7 @@ const graphismeSlider = () => {
             overlay.classList.remove('active');
             sliderModal.classList.remove('active');
             if (activeSlide) delete activeSlide.dataset.active;
-            // clearInterval(intervalId);
+            enableScrolling();
         }
     }
     sliderClosing();
