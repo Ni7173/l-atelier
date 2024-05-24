@@ -36,6 +36,7 @@ header .logo .turning__star {
     display: flex;
     width: 100%;
     position: relative;
+    transition: var(--smooth-transition);
 }
 
 .project_img {
@@ -48,26 +49,6 @@ header .logo .turning__star {
     display: flex;
     align-items: center;
     width: 50%;
-}
-
-.projects_container .project:nth-child(1) {
-    background-color: hsl(350, 87%, 80%, .3);
-}
-
-.projects_container .project:nth-child(2) {
-    background-color: hsl(32, 82%, 69%, .3);
-}
-
-.projects_container .project:nth-child(3) {
-    background-color: hsl(167, 74%, 82%, .3);
-}
-
-.projects_container .project:nth-child(4) {
-    background-color: hsl(34, 87%, 80%, .3);
-}
-
-.projects_container .project:nth-child(5) {
-    background-color: hsl(304, 87%, 80%, .3);
 }
 
 .container-grid {
@@ -90,7 +71,7 @@ header .logo .turning__star {
     }
 
     .slide img {
-        height: calc(100vh - (var(--header-height)));
+        height: 100%;
         width: 100%;
         position: relative;
     }
@@ -99,6 +80,10 @@ header .logo .turning__star {
         grid-area: lateral;
         margin: 0;
         display: block;
+        max-height: 100%;
+        position: sticky;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
     }
 
     .projects_container {
@@ -106,20 +91,19 @@ header .logo .turning__star {
     }
 
     .slide {
-        inset: 0;
         opacity: 0;
         transition: 200ms opacity ease-in-out;
         transition-delay: 200ms;
         max-width: 100%;
-        position: absolute;
-        top: calc(var(--header-height));
+        /* position: absolute; */
+        /* top: calc(var(--header-height)); */
     }
 
     .slide[data-active] {
         opacity: 1;
         z-index: 1;
         transition-delay: 0ms;
-        position: sticky;
+        /* position: sticky; */
     }
 
     .carousel {
@@ -127,16 +111,6 @@ header .logo .turning__star {
         height: 100%;
         width: 100%;
     }
-
-    .slide {
-        inset: 0;
-        opacity: 0;
-        transition: 200ms opacity ease-in-out;
-        transition-delay: 200ms;
-        max-width: 100%;
-        position: absolute;
-        top: calc(var(--header-height));
-    }  
 
     .slide[data-active] {
         opacity: 1;
@@ -204,13 +178,33 @@ header .logo .turning__star {
 }
 
 .project_link {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 0;
     z-index: 2;
-    height: 100%;
+}
+
+
+
+.project_content {
+    padding: 6rem;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    flex-direction: column;
+}
+
+.projects_container .project:nth-of-type(even) .project_content {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.project_content svg {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 2rem;
+}
+
+.project_content p {
+    white-space: pre-line;
+    margin: 0;
 }
 
 
@@ -466,32 +460,31 @@ header .logo .turning__star {
     .project {
         flex-direction: row;
         overflow: hidden;
-        /* height: calc(100vh - var(--mobile-header-height)); */
         max-width: 100%;
         width: 100vw;
         height: auto;
         aspect-ratio: 2/1;
     }
 
-    /* .project:nth-of-type(even) {
-        flex-direction: column-reverse;        
-    } */
-
     .project_img {
-        width: 100%;
-        /* height: 50%; */
+        width: 50%;
         overflow: hidden;
-        max-width: 100%;
+        height: 100%;
+        max-width: 50%;
+        aspect-ratio: 1/1;
     }
 
     .project_content {
-        width: 100%;
+        aspect-ratio: 1/1;
+        width: 50%;
         height: 100%;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content:space-evenly;
+        max-width: 50%;
+        padding: 3rem;
+        font-size: 1.4rem;
+    }
+
+    .project_content svg {
+        margin-bottom: 1rem;
     }
 }
 
@@ -511,28 +504,3 @@ header .logo .turning__star {
     height: 100%;
     width: 100%;
 }
-
-
-
-
-
-
-/* proposition card avec overlay */
-/* 
-.project-overlay {
-    width: 100%;
-    height: 0%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    background: linear-gradient(to top, transparent, rgb(0, 0, 0));
-    transition: all .7s ease-out;
-    opacity: 0;
-    pointer-events: none;
-} */
-/* 
-.project_img:hover .project-overlay {
-    height: 100%;
-    opacity: .6;
-} */

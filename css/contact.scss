@@ -1,0 +1,64 @@
+.logo svg {
+    color: var(--black);
+    fill: var(--black);
+}
+
+header {
+    position: sticky;
+    background: white;
+}
+
+section {
+    width: 100%;
+    text-align: center;
+}
+
+.section__contact__map {
+    height: 60%;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+.contact__details {
+    padding-bottom: 2rem;
+
+    .contact__details__container,
+    .contact__details__content {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contact__details__txt {
+        width: 85%;
+        margin-bottom: .3rem;
+    }
+}
+
+.contact__form {
+    .contact__form__container {
+        width: 80%;
+        flex-direction: column;
+
+        .wrapper {
+            width: 100%;
+
+            .contact__form__p:nth-of-type(0) {
+                width: 20%;
+            }
+
+            .contact__form__input {
+                width: 80%;
+            }
+        }
+
+    }
+
+}
