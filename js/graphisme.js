@@ -98,7 +98,6 @@ const graphismeSlider = () => {
                 for (let i = 0; i < squareImages.length; i++) {
                     sliderImages.forEach(img => {
                         img.setAttribute('src', squareImages[i].src);
-                        i++;
                     })
                 }
             }
