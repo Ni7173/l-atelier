@@ -21,20 +21,6 @@
 
     <header>
         <div class="header-container d-flex">
-            <div class="header__left">
-                <svg class="page__icon" id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 117.19 46.79">
-                    <path class="cls-1"
-                        d="M64.09,12.7c-9.61,0-15.71-1.65-22.08-3.36A116.26,116.26,0,0,0,29.23,6.46C20.55,5.11,16,6.56,12,7.83,9,8.78,6.16,9.69,2.34,9.31a2.59,2.59,0,0,1,.51-5.16h0c2.76.26,4.9-.41,7.61-1.27C14.77,1.51,20.14-.19,30,1.34a116.88,116.88,0,0,1,13.34,3c7.88,2.12,14.68,4,28.43,2.85C77.61,6.71,86.61,5.31,95.38,4c7.61-1.18,14.79-2.29,19-2.64a2.59,2.59,0,1,1,.43,5.17c-4.06.34-11.15,1.43-18.66,2.6-8.83,1.36-18,2.77-24,3.26C69.23,12.59,66.54,12.7,64.09,12.7Z"
-                        transform="translate(0 -0.74)" />
-                    <path class="cls-1"
-                        d="M52,32c-6.5,0-13.28-3.66-18.85-6.66-3-1.64-5.9-3.19-7.62-3.5-2.66-.49-6.76,1-11.09,2.51A57.73,57.73,0,0,1,2.93,27.53a2.6,2.6,0,0,1-.67-5.12,53.65,53.65,0,0,0,10.46-3c5-1.78,9.72-3.46,13.75-2.73,2.53.46,5.61,2.12,9.17,4,5.55,3,12.46,6.73,17.93,5.94a56.47,56.47,0,0,0,11.18-3.21c5.76-2.16,11.71-4.35,17.86-3.46,2.52.38,5.23,1,8.1,1.57,7.56,1.61,16.13,3.45,23.38,1.83a2.6,2.6,0,0,1,1.1,5.06c-8.36,1.86-17.52-.1-25.6-1.83-2.78-.59-5.41-1.15-7.77-1.5-4.82-.72-9.89,1.16-15.27,3.15A60.67,60.67,0,0,1,54.31,31.8,15.93,15.93,0,0,1,52,32Z"
-                        transform="translate(0 -0.74)" />
-                    <path class="cls-1"
-                        d="M92.05,47.53c-4.14,0-8.44-2.12-12.69-4.19a53.13,53.13,0,0,0-6.18-2.72c-3.81-1.24-9.5.3-15,1.79-5.87,1.59-11.93,3.22-16.8,1.8C34,42.05,29,43.08,24.19,44.07l-1,.2c-5.61,1.14-17,.41-20.89,0a2.6,2.6,0,0,1,.49-5.17c4.34.42,14.77,1,19.37,0l.93-.19c5.18-1.07,11-2.28,19.7.25,3.46,1,8.81-.44,14-1.84,6.24-1.69,12.69-3.44,18-1.71a56.38,56.38,0,0,1,6.85,3c3.67,1.8,7.47,3.66,10.41,3.66,4.34,0,17.35-2.78,22-3.85a2.6,2.6,0,0,1,1.17,5.06C114.5,43.71,97.87,47.53,92.05,47.53Z"
-                        transform="translate(0 -0.74)" />
-                </svg>
-            </div>
             <div class="logo d-flex">
                 <a href="../index.html">
                     <svg class="logo__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -201,31 +187,33 @@
                     <form action="https://formsubmit.co/" method="POST" class="contact__form__form"></form>
                     <input type="text" name="_honey" style="display: none;">
                     <input type="hidden" name="_captcha" value="false">
-                    <p class="contact__form__p">Je suis</p>
+                    <!-- <p class="contact__form__p">Je suis</p> -->
                     <div class="contact__form__input">
-                        <label for="name">
-                            <input type="text" name="firstname" id="firstname" placeholder="" required>
+                        <label for="name" class="label label__first d-flex">
+                            Je suis
                         </label>
+                        <input type="text" name="name" id="name" required>
                     </div>
-                    <div class="contact__form__p__container">
-                        <p class="contact__form__p">
-                            et je souhaiterais discuter avec vous
+                    <div class="contact__form__p__container d-flex">
+                        <p class="contact__form__p">et je souhaiterais discuter avec vous
                             de mon futur projet,
                             que je vous décris en quelques mots :
                         </p>
                     </div>
-                    <div class="contact__form__txt">
-                        <textarea name="message" id="message" cols="30" rows="10" placeholder=""></textarea>
+                    <div class="contact__form__txt d-flex">
+                        <textarea name="message" id="message" cols="10" rows="10"></textarea>
                     </div>
                     <div class="contact__form__name__container">
                         <label for="email">
-                            <input type="email" name="email" id="email" placeholder="">
+                            Merci de me contacter par Email
                         </label>
-                        <label for="number">
-                            <input type="number" name="number" id="number" placeholder="">
+                        <input type="email" name="email" id="email" placeholder="">
+                        <label for="tel">
+                            ou par téléphone
                         </label>
+                        <input type="tel" name="tel" id="tel" placeholder="">
                     </div>
-                    <div class="contact__form__btn__container">
+                    <div class="contact__form__btn__container d-flex">
                         <button class="contact__form__btn">Envoyer</button>
                     </div>
                 </div>
@@ -286,7 +274,7 @@
                 <div class="right-footer d-flex">
                     <div class="right__footer__container d-flex">
                         <div class="top__right__footer d-flex">
-                            <h3>CONTACT</h3>
+                            <h3><a href="../html/contact.html">CONTACT</a></h3>
                             <ul class="socials list-unstyled d-flex">
                                 <li class="d-flex"><a href="">
                                         <svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg"
