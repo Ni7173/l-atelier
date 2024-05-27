@@ -261,6 +261,7 @@
     }
 
     .graphisme__content .wrapper {
+
         .project:nth-child(1):hover {
             background-color: hsl(var(--project-1-color));
 
@@ -390,21 +391,26 @@
             filter: grayscale(100%);
         }
 
-        &:hover,
-        &:focus,
-        &:active {
-            .object__fit-cover {
-                scale: 1.04;
-                filter: grayscale(0%);
-            }
+        .project__link {
+            width: 100%;
 
-            .project__content {
+            &:hover,
+            &:focus,
+            &:active {
+                ~.img__container .object__fit-cover {
+                    scale: 1.04;
+                    filter: grayscale(0%);
+                }
 
-                p,
-                svg {
-                    opacity: 1;
+                ~.project__content {
+
+                    p,
+                    svg {
+                        opacity: 1;
+                    }
                 }
             }
         }
+
     }
 }

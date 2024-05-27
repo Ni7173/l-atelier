@@ -12,6 +12,7 @@ const graphismeSlider = () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             disableScrolling();
+            document.body.style.pointerEvents = "unset";
             overlay.classList.add('active');
             sliderModal.classList.add('active');
             images.forEach(img => {
@@ -82,6 +83,7 @@ const graphismeSlider = () => {
             sliderModal.classList.remove('active');
             if (activeSlide) delete activeSlide.dataset.active;
             enableScrolling();
+            document.body.style.pointerEvents = "auto";
         }
     }
     sliderClosing();
@@ -92,9 +94,6 @@ const graphismeSlider = () => {
             if (window.innerWidth <= 550) {
                 const squareImages = document.querySelectorAll('.img__container > img');
                 const sliderImages = document.querySelectorAll('.slider__img');
-                console.log(squareImages);
-                console.log(sliderImages);
-                // console.log(sliderImages[2].src)
 
                 for (let i = 0; i < squareImages.length; i++) {
                     sliderImages.forEach(img => {
@@ -108,5 +107,43 @@ const graphismeSlider = () => {
         })
     }
     setMobileSliderImg();
+
+
+    const mobileSwipe = () => {
+        document.addEventListener('DOMContentLoaded', function () {
+            // if (sliderModal.classList == "active") {
+            let startX = 0;
+            let endX = 0;
+
+            sliderModal.addEventListener('touchstart', (event) => {
+                startX = event.touches[0].clientX;
+            });
+
+            sliderModal.addEventListener('touchmove', (event) => {
+                endX = event.touches[0].clientX;
+            });
+
+            sliderModal.addEventListener('touchend', () => {
+                let activeSlide = document.querySelector('[data-active]');
+                if (startX > endX + 50) {
+                    if (activeSlide) delete activeSlide.dataset.active;
+                    newIndex = newIndex + 1;
+                    if (newIndex >= images.length) newIndex = 0;
+                    if (newIndex < 0) newIndex = images.length - 1;
+                    images[newIndex].dataset.active = true;
+                } else if (startX < endX - 50) {
+                    if (activeSlide) delete activeSlide.dataset.active;
+                    newIndex = newIndex - 1;
+                    if (newIndex >= images.length) newIndex = 0;
+                    if (newIndex < 0) newIndex = images.length - 1;
+                    images[newIndex].dataset.active = true;
+                } else if (endX === 0) {
+                    return
+                }
+            });
+            // }
+        });
+    }
+    mobileSwipe();
 }
 graphismeSlider();
