@@ -98,6 +98,7 @@ const graphismeSlider = () => {
                 for (let i = 0; i < squareImages.length; i++) {
                     sliderImages.forEach(img => {
                         img.setAttribute('src', squareImages[i].src);
+                        i++;
                     })
                 }
             }
@@ -109,24 +110,24 @@ const graphismeSlider = () => {
 
 
     const mobileSwipe = () => {
+        const imgList = document.querySelector('.slider__img__list');
         document.addEventListener('DOMContentLoaded', function () {
-            // if (sliderModal.classList == "active") {
             let startX = 0;
             let endX = 0;
 
-            sliderModal.addEventListener('touchstart', (event) => {
+            imgList.addEventListener('touchstart', (event) => {
                 startX = event.touches[0].clientX;
             });
 
-            sliderModal.addEventListener('touchmove', (event) => {
+            imgList.addEventListener('touchmove', (event) => {
                 endX = event.touches[0].clientX;
             });
 
-            sliderModal.addEventListener('touchend', () => {
+            imgList.addEventListener('touchend', () => {
                 let activeSlide = document.querySelector('[data-active]');
                 if (startX > endX + 50) {
                     if (activeSlide) delete activeSlide.dataset.active;
-                    newIndex = newIndex++;
+                    newIndex++;
                     if (newIndex >= images.length) newIndex = 0;
                     if (newIndex < 0) newIndex = images.length - 1;
                     images[newIndex].dataset.active = true;
@@ -136,11 +137,8 @@ const graphismeSlider = () => {
                     if (newIndex >= images.length) newIndex = 0;
                     if (newIndex < 0) newIndex = images.length - 1;
                     images[newIndex].dataset.active = true;
-                } else if (endX === 0) {
-                    return
                 }
             });
-            // }
         });
     }
     mobileSwipe();
