@@ -85,5 +85,28 @@ const graphismeSlider = () => {
         }
     }
     sliderClosing();
+
+
+    const setMobileSliderImg = () => {
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.innerWidth <= 550) {
+                const squareImages = document.querySelectorAll('.img__container > img');
+                const sliderImages = document.querySelectorAll('.slider__img');
+                console.log(squareImages);
+                console.log(sliderImages);
+                // console.log(sliderImages[2].src)
+
+                for (let i = 0; i < squareImages.length; i++) {
+                    sliderImages.forEach(img => {
+                        img.setAttribute('src', squareImages[i].src);
+                        i++;
+                    })
+                }
+            }
+
+            else return
+        })
+    }
+    setMobileSliderImg();
 }
 graphismeSlider();

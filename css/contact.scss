@@ -131,6 +131,7 @@ input {
                 margin-bottom: 1.5rem;
 
                 .contact__form__btn {
+                    cursor: pointer;
                     width: 35%;
                     padding: 1rem 2rem;
                     border: 1px solid var(--black);
@@ -218,7 +219,7 @@ input {
         &:active,
         &:focus,
         &:focus-visible {
-            border: 1px solid var(--black);
+            box-shadow: 0 0 1px var(--black);
             outline: unset;
         }
     }

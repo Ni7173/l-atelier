@@ -561,7 +561,6 @@ footer p {
 
 .left-footer {
     flex-direction: column;
-    /* justify-content: space-evenly; */
     width: 100%;
     line-height: 1.4;
 }
@@ -574,6 +573,7 @@ footer p {
 .footer__logo {
     height: fit-content;
     margin: 1rem 2rem 1.5rem 0;
+    z-index: 1;
 }
 
 .footer__txt__container {
