@@ -72,10 +72,6 @@ input {
             width: 100%;
             row-gap: 1rem;
 
-            .contact__form__p:nth-of-type(0) {
-                width: 0%;
-            }
-
             .contact__form__input {
                 width: 100%;
                 // padding-inline: 1rem;
@@ -96,10 +92,11 @@ input {
                 width: 100%;
                 max-width: 100%;
                 height: auto;
+                margin-block: 1rem;
 
                 p {
                     height: auto;
-                    max-width: 95%;
+                    // max-width: 95%;
                     white-space: pre-line;
                 }
             }

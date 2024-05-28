@@ -97,13 +97,18 @@ const graphismeSlider = () => {
 
                 for (let i = 0; i < squareImages.length; i++) {
                     sliderImages.forEach(img => {
-                        img.setAttribute('src', squareImages[i].src);
-                        i++;
+                        if (img.classList.contains("vehicle")) {
+                            img.parentElement.style.paddingBlock = "7rem"
+                            i++;
+                        } else {
+                            img.setAttribute('src', squareImages[i].src);
+                            i++;
+                        }
                     })
                 }
             }
 
-            else return
+            // else return
         })
     }
     setMobileSliderImg();
