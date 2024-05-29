@@ -377,3 +377,31 @@
         }
     }
 }
+
+
+.project_modal {
+
+    .modal_content {
+
+        .modal_right_content .modal_text {
+            p {
+                margin: 0;
+                font-size: 1.2rem;
+                white-space: pre-line;
+                letter-spacing: 0.4px;
+                font-weight: 300;
+                line-height: 1.2;
+            }
+
+            h3 {
+                font-weight: 400;
+            }
+        }
+    }
+
+}
+
+
+.project_modal:nth-child(1) .modal_content {
+    background-color: red;
+}

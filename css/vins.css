@@ -243,13 +243,13 @@ header .logo .turning__star {
 }
 
 .modal_left_content {
-    width: 60%;
+    width: 55%;
 }
 
 .modal_right_content {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 45%;
     height: 100%;
 }
 
@@ -260,17 +260,27 @@ header .logo .turning__star {
 
 .modal_text {
     width: 100%;
-    height: 60%;
+    max-height: 100%;
+    height: inherit;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
     color: var(--main-color);
-    padding: 2rem;
-    text-align: center;
+    /* padding: 2rem; */
+    text-align: left;
+    padding: 0 5rem 7rem;
 }
 
-
+.project_modal p {
+    margin: 0;
+    font-size: 1.2rem;
+    white-space: pre-line;
+    letter-spacing: 0.4px;
+    font-weight: 300;
+    line-height: 1.2;
+}
 
 /* btn close */
 
