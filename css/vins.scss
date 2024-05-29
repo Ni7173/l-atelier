@@ -379,17 +379,332 @@
 }
 
 
-.project_modal:nth-child(1) {
+.modals__container {
+    .project_modal:nth-of-type(1) {
 
-    .modal_content {
+        .modal_content {
 
-        .modal_right_content .modal_text {
-            // p {}
+            .modal_right_content .modal_text {
 
-            h3 {
-                color: #7C4DD0;
+                h3 {
+                    color: #7C4DD0;
+                }
+
+                .modal__bar {
+                    width: 90%;
+                }
             }
         }
+
     }
 
+    .project_modal:nth-of-type(2) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                background: #C9C7C8;
+
+                h3 {
+                    color: #856163;
+                }
+
+                .modal__bar {
+                    background-color: #856163;
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(3) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                background: #D9B7B6;
+                padding-inline: 9rem;
+
+                h3 {
+                    color: #BB676E;
+                }
+
+                .modal__bar {
+                    background-color: var(--grey);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(4) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                background: #E3DDD9;
+                padding-inline: 9rem;
+
+                h3 {
+                    color: #775822;
+                }
+
+                .modal__bar {
+                    background-color: var(--grey);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(5) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 5rem 6rem;
+
+                p {
+                    white-space: inherit;
+                }
+
+                h3 {
+                    color: #C6A443;
+                }
+
+                .modal__bar {
+                    background-color: var(--grey);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(6) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 2.5rem 6rem;
+                background: #E4E3E0;
+
+                p {
+                    white-space: inherit;
+                }
+
+                h3 {
+                    color: #994554;
+                }
+
+                .modal__bar {
+                    margin-block: 2rem;
+                    background-color: var(--grey);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(7) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 8rem 6rem;
+                background: #156EA3;
+
+                h3 {
+                    color: var(--white);
+                }
+
+                p {
+                    white-space: inherit;
+                    color: var(--white);
+                }
+
+                .modal__bar {
+                    background-color: var(--white);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(8) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 8rem 6rem;
+                background: #50405D;
+
+                h3 {
+                    color: var(--white);
+                }
+
+                p {
+                    color: var(--white);
+                }
+
+                .modal__bar {
+                    background-color: var(--white);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(9) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 2.5rem 6rem;
+                background: #E4E3E0;
+
+                h3 {
+                    color: #655e7a;
+                }
+
+                p {
+                    white-space: inherit;
+                }
+
+                .modal__bar {
+                    margin-block: 2rem;
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(10) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 8rem;
+                background: #BA4A61;
+
+                h3 {
+                    color: var(--white);
+                }
+
+                p {
+                    white-space: inherit;
+                    color: var(--white);
+                }
+
+                .modal__bar {
+                    background-color: var(--white);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(11) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 8rem;
+                background: #729462;
+
+                h3 {
+                    color: var(--white);
+                }
+
+                p {
+                    white-space: inherit;
+                    color: var(--white);
+                }
+
+                .modal__bar {
+                    background-color: var(--white);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(12) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 8rem;
+                background: #56413A;
+
+                h3 {
+                    color: var(--white);
+                }
+
+                p {
+                    white-space: inherit;
+                    color: var(--white);
+                }
+
+                .modal__bar {
+                    background-color: var(--white);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(13) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 3.5rem 7rem;
+
+                p {
+                    white-space: inherit;
+                }
+
+                .modal__bar {
+                    width: 90%;
+                }
+            }
+        }
+
+    }
+
+    .project_modal:nth-of-type(14) {
+
+        .modal_content {
+
+            .modal_right_content .modal_text {
+                padding: 10rem 9rem;
+                background: #68686B;
+
+                h3 {
+                    color: var(--white);
+                }
+
+                p {
+                    color: var(--white);
+                }
+
+                .modal__bar {
+                    background-color: var(--white);
+                    width: 90%;
+                }
+            }
+        }
+
+    }
 }

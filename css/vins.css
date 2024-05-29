@@ -280,13 +280,14 @@ header .logo .turning__star {
     letter-spacing: 0.4px;
     font-weight: 300;
     line-height: 1.2;
+    color: var(--black);
 }
 
-.project_modal h3 {
+.project_modal .project__modal__title {
     font-weight: 500;
-                font-size: 1.8rem;
-                margin: 0;
-                line-height: 1;
+    font-size: 1.8rem;
+    margin: 0;
+    line-height: 1;
 }
 
 .modal__bar {
@@ -529,3 +530,8 @@ header .logo .turning__star {
     height: 100%;
     width: 100%;
 }
+
+
+/* .modals__container .project_modal:nth-child(1) .project__modal__title {
+    color: #7C4DD0;
+} */
