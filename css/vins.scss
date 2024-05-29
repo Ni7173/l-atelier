@@ -379,25 +379,15 @@
 }
 
 
-.project_modal {
+.project_modal:nth-child(1) {
 
     .modal_content {
 
         .modal_right_content .modal_text {
-            p {
-                margin: 0;
-                font-size: 1.2rem;
-                white-space: pre-line;
-                letter-spacing: 0.4px;
-                font-weight: 300;
-                line-height: 1.2;
-            }
+            // p {}
 
             h3 {
-                font-weight: 500;
-                font-size: 1.8rem;
-                margin: 0;
-                line-height: 1;
+                color: #7C4DD0;
             }
         }
     }
