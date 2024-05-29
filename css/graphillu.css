@@ -188,23 +188,12 @@ body {
 
 /* buttons on the side */
 
-button[data-slider-button] {
-    position: absolute;
-    top: calc(50% - 20px);
-    border: unset;
-    background: unset;
-    color: var(--white);
-    cursor: pointer;
-    opacity: 0;
-    transition: var(--quick-transition);
-    padding: 0;
-}
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
     button[data-slider-button] {
-        opacity: 1;
+        display: none;
     }
-
+    
     .project__content svg {
         opacity: 1;
         width: 20px;
@@ -212,20 +201,35 @@ button[data-slider-button] {
     }
 }
 
-button[data-slider-button] svg {
-    height: 30px;
-    width: 30px;
-    opacity: 1;
-}
+@media screen and (min-width: 1001px) {
+    button[data-slider-button] {
+        display: block;
+        position: absolute;
+        top: calc(50% - 20px);
+        border: unset;
+        background: unset;
+        color: var(--white);
+        cursor: pointer;
+        opacity: 0;
+        transition: var(--quick-transition);
+        padding: 0;
+    }
 
-button[data-slider-button="prev"] {
-    /* rotate: 180deg; */
-    left: 0rem;
-}
+    button[data-slider-button] svg {
+        height: 30px;
+        width: 30px;
+        opacity: 1;
+    }
 
-button[data-slider-button="next"] {
-    right: 0rem;
-    rotate: 180deg;
+    button[data-slider-button="prev"] {
+        rotate: 180deg;
+        left: 1rem;
+    }
+
+    button[data-slider-button="next"] {
+        right: 1rem;
+        /* rotate: 180deg; */
+    }
 }
 
 .slider__container .slider__img_container:nth-child(9) img{
