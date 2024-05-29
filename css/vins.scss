@@ -394,14 +394,12 @@
             }
 
             h3 {
-                font-weight: 400;
+                font-weight: 500;
+                font-size: 1.8rem;
+                margin: 0;
+                line-height: 1;
             }
         }
     }
 
-}
-
-
-.project_modal:nth-child(1) .modal_content {
-    background-color: red;
 }
