@@ -3,6 +3,7 @@ const sliderImg = () => {
 
     const sliderButtons = document.querySelectorAll("[data-carousel-button]");
 
+
     sliderButtons.forEach(sliderButton => {
         sliderButton.addEventListener("click", () => {
 
@@ -10,14 +11,15 @@ const sliderImg = () => {
             const slidesTransition = document.querySelectorAll('.slide');
             const offset = sliderButton.dataset.carouselButton === "next" ? 1 : -1;
             const slides = document.querySelector("[data-slides]");
-            const activeSlide = slides.querySelector("[data-active]");
+            const slideChildren = [...slides.children].filter(child => !child.matches('button'));
+            const activeSlide = document.querySelector("[data-active]");
             transitionSetting(slidesTransition, `${transitionDuration}s`)
 
-            let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-            if (newIndex < 0) newIndex = slides.children.length - 1;
-            if (newIndex >= slides.children.length) newIndex = 0;
+            let newIndex = slideChildren.indexOf(activeSlide) + offset;
+            if (newIndex < 0) newIndex = slideChildren.length - 1;
+            if (newIndex >= slideChildren.length) newIndex = 0;
 
-            slides.children[newIndex].dataset.active = true;
+            slideChildren[newIndex].dataset.active = true;
             delete activeSlide.dataset.active;
 
             clearInterval(intervalId);
@@ -40,13 +42,16 @@ const sliderImg = () => {
         const slides = document.querySelector('[data-slides]');
         const activeSlide = document.querySelector("[data-active]");
         const slider = document.querySelector('.lateral_content')
+        const slideChildren = [...slides.children].filter(child => !child.matches('button'));
+
+        // console.log(slideChildren)
 
         transitionSetting(slidesTransition, `${transitionDuration}s`);
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-        if (newIndex < 0) newIndex = slides.children.length - 1;
-        if (newIndex >= slides.children.length) newIndex = 0;
+        let newIndex = slideChildren.indexOf(activeSlide) + offset;
+        if (newIndex < 0) newIndex = slideChildren.length - 1;
+        if (newIndex >= slideChildren.length) newIndex = 0;
 
-        slides.children[newIndex].dataset.active = true;
+        slideChildren[newIndex].dataset.active = true;
         delete activeSlide.dataset.active;
     };
 
