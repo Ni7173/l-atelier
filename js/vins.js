@@ -12,7 +12,6 @@ const sliderImg = () => {
             const slides = document.querySelector("[data-slides]");
             const activeSlide = slides.querySelector("[data-active]");
             transitionSetting(slidesTransition, `${transitionDuration}s`)
-            // if (window.innerWidth > 1350) activeSlide.style.position = "sticky"
 
             let newIndex = [...slides.children].indexOf(activeSlide) + offset;
             if (newIndex < 0) newIndex = slides.children.length - 1;
@@ -36,20 +35,11 @@ const sliderImg = () => {
         let transitionDuration = 2.5;
         const slidesTransition = document.querySelectorAll('.slide');
 
-        // const slidePosition = () => {
-        //     slides.forEach(slide =>
-        //         slide.style.position = "block"
-        //     )
-        //     activeSlide.style.position = "sticky"
-        // }
 
         const offset = 1;
         const slides = document.querySelector('[data-slides]');
         const activeSlide = document.querySelector("[data-active]");
         const slider = document.querySelector('.lateral_content')
-        // if (slider) {
-        //     slidePosition();
-        // }
 
         transitionSetting(slidesTransition, `${transitionDuration}s`);
         let newIndex = [...slides.children].indexOf(activeSlide) + offset;
@@ -83,7 +73,6 @@ const modalsManagement = () => {
                 disableScrolling();
                 overlay.classList.add('active')
                 let projectId = projectLink.dataset.projectLink;
-                console.log(projectId)
                 modals.forEach(modal => {
                     if (modal.dataset.modalsId === projectId) {
                         modal.classList.add('active')

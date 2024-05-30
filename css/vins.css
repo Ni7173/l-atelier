@@ -273,6 +273,14 @@ header .logo .turning__star {
     padding: 0 5rem 7rem;
 }
 
+.modal_text.white__text h3, .modal_text.white__text p {
+    color: var(--white);
+}
+
+.modal_text.white__text .modal__bar {
+    background: var(--white);
+}
+
 .project_modal p {
     margin: 0;
     font-size: 1.2rem;
@@ -294,7 +302,7 @@ header .logo .turning__star {
     content: "";
     height: 1px;
     background-color: var(--black);
-    width: 100%;
+    width: 90%;
     margin-block: 2.5rem;
 }
 
