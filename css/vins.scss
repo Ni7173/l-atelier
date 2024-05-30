@@ -395,8 +395,17 @@
 
         }
 
-        .modal__bar {
-            margin: 1.2rem 0;
+        .project_modal:nth-child(1) .modal_content,
+        .project_modal:nth-child(2) .modal_content,
+        .project_modal:nth-child(5) .modal_content,
+        .project_modal:nth-child(6) .modal_content,
+        .project_modal:nth-child(9) .modal_content,
+        .project_modal:nth-child(10) .modal_content,
+        .project_modal:nth-child(11) .modal_content,
+        .project_modal:nth-child(13) .modal_content {
+            .modal__bar {
+                margin: 1.2rem 0;
+            }
         }
     }
 }
