@@ -381,6 +381,10 @@
 @media screen and (max-width:550px) {
     .modals__container {
 
+        p {
+            white-space: inherit;
+        }
+
         .project_modal:nth-child(3) .modal_content,
         .project_modal:nth-child(4) .modal_content,
         .project_modal:nth-child(14) .modal_content {
@@ -391,15 +395,8 @@
 
         }
 
-        .project_modal:nth-child(2) .modal_content,
-        .project_modal:nth-child(6) .modal_content {
-            p {
-                white-space: inherit;
-            }
-
-            .modal__bar {
-                margin: 1.7rem 0;
-            }
+        .modal__bar {
+            margin: 1.2rem 0;
         }
     }
 }
