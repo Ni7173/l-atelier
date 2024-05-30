@@ -128,9 +128,7 @@ header .logo .turning__star {
         cursor: pointer;
         border-radius: 50%;
         padding: .5rem;
-        color: var(--light-color);
         transition: var(--quick-transition);
-        background-color: var(--white);
     }
 
     .carousel-button:hover,
