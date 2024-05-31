@@ -59,7 +59,6 @@ const sliderImg = () => {
         intervalId = setInterval(switchSlideAutomatically, 3800);
     });
 }
-
 sliderImg();
 
 
@@ -67,6 +66,7 @@ sliderImg();
 
 const modalsManagement = () => {
     const modals = document.querySelectorAll('[data-modals-id]');
+    const modalsTransition = document.querySelectorAll('.modal_content')
     const projectLinks = document.querySelectorAll('[data-project-link]');
     const overlay = document.querySelector('.modal__overlay')
     const closeBtns = document.querySelectorAll('.modal__btn__close')
@@ -80,7 +80,7 @@ const modalsManagement = () => {
                 let projectId = projectLink.dataset.projectLink;
                 modals.forEach(modal => {
                     if (modal.dataset.modalsId === projectId) {
-                        modal.classList.add('active')
+                        modal.dataset.modalActive = true;
                     } else {
 
                     }
@@ -103,22 +103,67 @@ const modalsManagement = () => {
     const closeModal = () => {
         overlay.addEventListener('click', () => {
             closeActiveModal();
-            overlay.classList.remove('active')
         })
 
         closeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 closeActiveModal();
-                overlay.classList.remove('active')
             })
         })
         closeActiveModal = () => {
-            let activeModal = document.querySelector('.project_modal.active')
-            activeModal.classList.remove('active')
+            overlay.classList.remove('active')
+            let activeModal = document.querySelector('[data-modal-active]');
+            if (activeModal) delete activeModal.dataset.modalActive;
             enableScrolling();
+            transitionSetting(modalsTransition, "var(--smooth-transition)")
         }
     }
     closeModal();
+
+    const transitionSetting = (elements, transition) => {
+        elements.forEach(elem =>
+            elem.style.transition = transition
+        )
+    }
+
+    const mobileSwipe = () => {
+        document.addEventListener('DOMContentLoaded', function () {
+            let startX = 0;
+            let endX = 0;
+            let newIndex = 0;
+
+            modals.forEach((modal) => {
+                modal.addEventListener('touchstart', (event) => {
+                    startX = event.touches[0].clientX;
+                });
+
+                modal.addEventListener('touchmove', (event) => {
+                    endX = event.touches[0].clientX;
+                });
+
+                modal.addEventListener('touchend', () => {
+                    let activeModal = document.querySelector('[data-modal-active]');
+                    transitionSetting(modalsTransition, "opacity .6s ease-out, width 0s")
+
+
+                    if (startX > endX + 50) {
+                        if (activeModal) delete activeModal.dataset.modalActive;
+                        newIndex++;
+                        if (newIndex >= modals.length) newIndex = 0;
+                        modals[newIndex].dataset.modalActive = true;
+                    } else if (startX < endX - 50) {
+                        if (activeModal) delete activeModal.dataset.modalActive;
+                        newIndex--;
+                        if (newIndex < 0) newIndex = modals.length - 1;
+                        modals[newIndex].dataset.modalActive = true;
+                    }
+                });
+            });
+        });
+    }
+    mobileSwipe();
+
+
 
 }
 modalsManagement();
