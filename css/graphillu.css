@@ -362,7 +362,7 @@ body {
 /* hover */
 
 .slider__modal.active:hover button[data-slider-button] {
-    opacity: 1;
+    opacity: .7;
 }
 
 .modal__btn__close:hover {

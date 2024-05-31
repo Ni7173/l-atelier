@@ -157,7 +157,7 @@ header .logo .turning__star {
     }
 
     .carousel:hover .carousel-button {
-        opacity: 1;
+        opacity: .7;
     }
 }
 
@@ -205,10 +205,6 @@ header .logo .turning__star {
 
 
 /* modals */
-
-.project_modal {
-    pointer-events: auto;
-}
 
 .project_modal .modal_content {
     position: fixed;
@@ -341,13 +337,55 @@ header .logo .turning__star {
 }
 
 .project_modal {
-        pointer-events: none;
-   }
+    pointer-events: none;
+}
 
    
-   .project_modal[data-modal-active] {
-        pointer-events: auto;
-   }
+.project_modal[data-modal-active] {
+    pointer-events: auto;
+}
+
+
+
+
+
+
+
+button[data-modal-button] {
+    display: block;
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    top: calc(50% - 20px);
+    border: unset;
+    background: unset;
+    position: fixed;
+    z-index: 8;
+    transform: translateY(20px);
+    padding: 0;
+}    
+
+button[data-modal-button] svg {
+    height: 30px;
+    width: 30px;
+    opacity: 1;
+}
+
+button[data-modal-button="prev"] {
+    left:20%;
+}
+
+button[data-modal-button="next"] {
+    right: 20%;
+}
+
+button[data-modal-button].active {
+    pointer-events: auto;
+    transform: translateY(0px);
+    cursor: pointer;
+    transition: var(--quick-transition) 0.4s;
+    opacity: .7;
+}
 
 @media screen and (max-width:1350px) {
     .modal_left_content img {
@@ -359,7 +397,7 @@ header .logo .turning__star {
     left: 50%;
 }
 
-    .project_modal[data-modal-active] .modal_content {
+.project_modal[data-modal-active] .modal_content {
     width: 65%;
     height: 65%;
     top: 17.5%;
@@ -448,6 +486,10 @@ header .logo .turning__star {
         border-radius: 50%;
         top: 2.5rem;
         right: 2.5rem;
+    }
+
+    button[data-modal-button] {
+        display: none;
     }
 }
 

@@ -68,8 +68,12 @@ const modalsManagement = () => {
     const modals = document.querySelectorAll('[data-modals-id]');
     const modalsTransition = document.querySelectorAll('.modal_content')
     const projectLinks = document.querySelectorAll('[data-project-link]');
-    const overlay = document.querySelector('.modal__overlay')
-    const closeBtns = document.querySelectorAll('.modal__btn__close')
+    const overlay = document.querySelector('.modal__overlay');
+    const closeBtns = document.querySelectorAll('.modal__btn__close');
+    const switchBtns = document.querySelectorAll('.modal-button')
+
+    let newIndex = 0;
+
 
     const showModal = () => {
         projectLinks.forEach(projectLink => {
@@ -77,6 +81,9 @@ const modalsManagement = () => {
                 e.preventDefault();
                 disableScrolling();
                 overlay.classList.add('active')
+                switchBtns.forEach(btn => {
+                    btn.classList.add('active');
+                })
                 let projectId = projectLink.dataset.projectLink;
                 modals.forEach(modal => {
                     if (modal.dataset.modalsId === projectId) {
@@ -112,6 +119,9 @@ const modalsManagement = () => {
         })
         closeActiveModal = () => {
             overlay.classList.remove('active')
+            switchBtns.forEach(btn => {
+                btn.classList.remove('active');
+            })
             let activeModal = document.querySelector('[data-modal-active]');
             if (activeModal) delete activeModal.dataset.modalActive;
             enableScrolling();
@@ -126,11 +136,35 @@ const modalsManagement = () => {
         )
     }
 
+    const modalSwitch = () => {
+
+        switchBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                transitionSetting(modalsTransition, "opacity .6s ease-out, width 0s");
+                let activeModal = document.querySelector('[data-modal-active]');
+
+
+                if (btn.dataset.modalButton === "next") {
+                    if (activeModal) delete activeModal.dataset.modalActive;
+                    newIndex++;
+                    if (newIndex >= modals.length) newIndex = 0;
+                    modals[newIndex].dataset.modalActive = true;
+                }
+                else if (btn.dataset.modalButton === "prev") {
+                    if (activeModal) delete activeModal.dataset.modalActive;
+                    newIndex--;
+                    if (newIndex < 0) newIndex = modals.length - 1;
+                    modals[newIndex].dataset.modalActive = true;
+                }
+            })
+        })
+    }
+    modalSwitch();
+
     const mobileSwipe = () => {
         document.addEventListener('DOMContentLoaded', function () {
             let startX = 0;
             let endX = 0;
-            let newIndex = 0;
 
             modals.forEach((modal) => {
                 modal.addEventListener('touchstart', (event) => {

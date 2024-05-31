@@ -698,8 +698,6 @@ footer p {
 
 .modal__overlay {
     position: fixed;
-    align-self: center;
-    justify-self: center;
     top: 0;
     left: 0;
     right: 0;
@@ -709,7 +707,7 @@ footer p {
     width: 0;
     opacity: 0;
     z-index: 6;
-    pointer-events: auto;
+    pointer-events: none;
     cursor: pointer;
 }
 
@@ -718,4 +716,5 @@ footer p {
     width: 100%;
     opacity: .5;
     transition: opacity .3s ease-out;
+    pointer-events: auto;
 }
