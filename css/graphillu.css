@@ -99,6 +99,7 @@ body {
     height: 25px;
     margin-bottom: 1.5rem;
     opacity: 0;
+    transition: var(--smooth-transition);
 }
 
 

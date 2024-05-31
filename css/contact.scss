@@ -42,6 +42,8 @@ textarea {
     border: unset;
     background-color: var(--light-grey);
     padding: 6px;
+    font-size: 1.6rem;
+    // letter-spacing: 1;
 }
 
 input {
@@ -61,6 +63,10 @@ input {
         width: 85%;
         margin-bottom: .3rem;
     }
+}
+
+.error__container {
+    color: red;
 }
 
 .contact__form {
