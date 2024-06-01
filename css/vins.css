@@ -4,11 +4,6 @@
     margin-bottom: 0;
 }
 
-header {
-    position: sticky;
-    background: white;
-}
-
 .header__left {
     fill: #c0ca80;
     color: #c0ca80;
@@ -26,10 +21,6 @@ header .logo .turning__star {
 
 .header-container {
     height: max-content;
-}
-
-.burger span.bar, .burger span.bar::before, .burger span.bar::after {
-    background: #000;
 }
 
 .project {

@@ -135,12 +135,12 @@ img {
 /* header */
 
 header {
-    position: fixed;
+    position: sticky;
     width: 100%;
     color: var(--light-color);
     z-index: 5;
     top: 0;
-    background: transparent;
+    background: white;
     padding: 3rem 0;
 }
 
@@ -169,14 +169,13 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
 
 .logo {
     height: 35px;
-    color: white;
     z-index: 5;
     transition: var(--header-transition);
 }
 
 .logo svg{
-    color: white;
-    fill: #ffffff;
+    color: var(--black);
+    fill: var(--black);
     height: auto;
     width: 180px;
 }
@@ -274,7 +273,7 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
     display: block;
     width: 25px;
     height: 2px;
-    background-color: var(--light-color);
+    background-color: var(--black);
 }
 
 .burger .bar::before,
@@ -282,7 +281,7 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
     display: block;
     width: 25px;
     height: 2px;
-    background-color: var(--light-color);
+    background-color: var(--black);
     content: "";
     position: absolute;
 }

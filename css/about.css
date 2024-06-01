@@ -1,3 +1,163 @@
 .burger span.bar, .burger span.bar::before, .burger span.bar::after {
     background: #000;
 }
+
+p {
+    white-space: inherit;
+}
+
+section {
+    width: 100%;
+    height: auto;
+    margin-block: 2rem;
+}
+
+section > div {
+    max-width: 80%;
+}
+
+.home__hero {
+    width: 60%;
+    height: auto;
+    position: relative;
+}
+
+.home__hero__lunettes__img {
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+}
+
+.home__hero__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    clip-path: circle(49%);
+}
+
+.home__p__container {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.home__p {
+    font-weight: 600;
+    width: auto;
+    white-space: pre-line;
+}
+
+
+/* reviews slider */
+
+.reviews__section__container {
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.reviews__viewport {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    transition: var(--quick-transition);
+    width: 100%;
+}
+
+.reviews__list {
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(180%);
+    height: 100%;
+    width: 100%;
+}
+
+.review {
+    min-width: 90%;
+    padding-inline: 2rem;
+    height: 100%;
+}
+
+button[data-slider-button] {
+    display: none;
+}
+
+
+.dot {
+    height: 18px;
+    width: 18px;
+    margin: 0 6px;
+    border: 2px solid #000;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #000;
+}
+
+@media screen and (min-width:550px) {
+    section > div {
+        max-width: 70%;
+    }
+
+    .review {
+        padding-inline: 4rem;
+    }
+}
+
+@media screen and (min-width:950px) {
+    section > div {
+        max-width: 55%;
+    }
+
+    .reviews__viewport {
+        max-width: 70%
+    }
+
+    .review {
+        padding-inline: 5rem;
+    }
+
+    button[data-slider-button] {
+        display: block;
+        position: absolute;
+        top: calc(50% - 15px);
+        border: unset;
+        background: unset;
+        cursor: pointer;
+        transition: var(--quick-transition);
+        padding: 0;
+        z-index: 3;
+    }
+
+    button[data-slider-button] svg {
+        height: 30px;
+        width: 30px;
+        opacity: 1;
+    }
+
+    button.next {
+        right: 1rem;
+    }
+
+    button.prev {
+        left: 1rem;
+    }
+
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+    }
+}
+
+@media screen and (min-width:1650px) {
+    section > div {
+        max-width: 40%;
+    }
+}
+
+

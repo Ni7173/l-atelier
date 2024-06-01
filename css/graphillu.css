@@ -1,20 +1,6 @@
-header {
-    position: sticky;
-    background: white;
-}
-
 body {
     font-weight: 300;
     letter-spacing: .7px;
-}
-
-.burger span.bar, .burger span.bar::before, .burger span.bar::after {
-    background: #000;
-}
- 
-.logo svg {
-    color: var(--black);
-    fill: var(--black);
 }
 
 .graphisme__content {

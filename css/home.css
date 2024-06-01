@@ -1,7 +1,18 @@
 header {
     pointer-events: none;
+    position: fixed;
+    background: transparent;
 }
 
+.logo svg {
+    color: var(--white);
+    fill: var(--white);
+}
+
+.burger .bar::after,.burger .bar::before, .burger .bar {
+    background: var(--white);
+}
+ 
 .logo, .burger_container, .navbar, .bottom-footer {
     pointer-events: auto;
 }
@@ -40,7 +51,7 @@ header {
     }
 
     .header-container .logo .logo--is-translated {
-        transform: translateY(2.5rem) translateX(1rem);
+        transform: translateY(6.5rem) translateX(1rem);
     }
 }
 
@@ -149,8 +160,6 @@ header {
 .video__mask__lunet {
     position: absolute;
     z-index: 2;
-    /* top: 30.5%;
-    left: 27.5%; */
     justify-self: center;
     width: 45%;
     height: auto;
