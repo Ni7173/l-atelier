@@ -51,6 +51,10 @@ section > div {
 
 /* reviews slider */
 
+.reviews__section {
+    margin-bottom: 4rem;
+}
+
 .reviews__section__container {
     flex-direction: column;
     max-width: 100%;
@@ -140,11 +144,11 @@ button[data-slider-button] {
     }
 
     button.next {
-        right: 1rem;
+        right: 2.5rem;
     }
 
     button.prev {
-        left: 1rem;
+        left: 2.5rem;
     }
 
     .dot {
@@ -158,6 +162,31 @@ button[data-slider-button] {
     section > div {
         max-width: 40%;
     }
+
+    .home__hero {
+        width: 80%;
+    }
+
+    p {
+        margin-block: 4rem;
+    }
+
+    .reviews__viewport {
+        max-width: 50%;
+    }
+
+    .review {
+        padding-inline: 7rem;
+    }
+
+    button.prev {
+        left: 6rem;
+    }
+
+    button.next {
+        right: 6rem;        
+    }
+
 }
 
 
