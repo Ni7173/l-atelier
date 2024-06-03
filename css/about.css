@@ -113,6 +113,11 @@ button[data-slider-button] {
 }
 
 @media screen and (min-width:950px) {
+
+    p {
+        white-space: pre-line;
+    }
+
     section > div {
         max-width: 55%;
     }
@@ -155,6 +160,10 @@ button[data-slider-button] {
         height: 15px;
         width: 15px;
         margin: 0 2px;
+    }
+
+    .review p {
+        white-space: inherit;
     }
 }
 
