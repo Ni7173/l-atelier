@@ -6,9 +6,6 @@ const mailInput = document.getElementById('email');
 const errorContainer = document.querySelector('.error__container')
 let errorMessage = document.getElementById('error');
 
-console.log(errorMessage);
-console.log(mailInput);
-
 const contactRequired = () => {
     form.addEventListener('submit', (e) => {
         let messages = [];

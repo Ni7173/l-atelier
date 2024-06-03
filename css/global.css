@@ -657,7 +657,6 @@ footer p {
     }
 
     .right__footer__container .top__right__footer{
-        /* max-width: 20%; */
         flex-direction: row;
     }
 
@@ -675,7 +674,7 @@ footer p {
 
 @media screen and (min-width: 1500px) {
     .footer__img__container {
-        width: 10%;
+        width: 14%;
     }
 
     .left-footer {
@@ -686,11 +685,20 @@ footer p {
         justify-content: center;
     }
 
-    .footer__logo, .right-footer, .footer__txt__container {
+    .footer__logo, .right-footer {
         margin-top: 3rem;
+    }
+
+    .footer__txt__container {
+        margin-top: 2.5rem;
     }
 }
 
+@media screen and (min-width: 1900px) {
+    .footer__img__container {
+        width: 10%;
+    }
+}
 
 
 
