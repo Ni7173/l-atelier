@@ -176,8 +176,13 @@ input {
 
 
     .section__contact__map {
-        height: 100%;
+        height: auto;
         margin-bottom: 3rem;
+    }
+
+    .section__contact__map .contact__map {
+        object-fit: contain;
+        height: auto;
     }
 
     .contact__details {
