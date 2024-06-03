@@ -25,6 +25,10 @@
     --project-12-star-color: 0, 0%, 83%;
 }
 
+.logo .turning__star {
+    color: var(--green);
+}
+
 .illustration__content .wrapper {
     .project:nth-child(1) {
         background-color: hsl(var(--project-1-color));
