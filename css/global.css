@@ -602,7 +602,7 @@ footer p {
 
 @media screen and (min-width: 1000px) {
     footer {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
     .top__footer {
@@ -611,6 +611,7 @@ footer p {
 
     .top__left__footer {
         justify-content: right;
+        align-items: flex-end;
     }
 
     .left-footer {
