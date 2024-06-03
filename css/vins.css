@@ -117,6 +117,7 @@ header .logo .turning__star {
         border-radius: 50%;
         padding: .5rem;
         transition: var(--quick-transition);
+        transform: translateY(2rem);
     }
 
     .carousel-button:hover,
@@ -127,10 +128,6 @@ header .logo .turning__star {
 
     .carousel-button.prev {
         left: 1rem;
-    }
-
-    .carousel-button.prev {
-        transform: rotate(180deg);
     }
 
     .carousel-button.next {
@@ -149,6 +146,7 @@ header .logo .turning__star {
 
     .carousel:hover .carousel-button {
         opacity: .7;
+        transform: translateY(0);
     }
 }
 
@@ -347,7 +345,7 @@ button[data-modal-button] {
     z-index: 0;
     opacity: 0;
     pointer-events: none;
-    top: calc(50% - 20px);
+    top: calc(50% - 15px);
     border: unset;
     background: unset;
     position: fixed;
@@ -374,7 +372,7 @@ button[data-modal-button].active {
     pointer-events: auto;
     transform: translateY(0px);
     cursor: pointer;
-    transition: var(--quick-transition) 0.4s;
+    transition: opacity .3s ease-out .6s, transform .3s ease-out .6s;
     opacity: .7;
 }
 

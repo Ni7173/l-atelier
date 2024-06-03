@@ -26,7 +26,6 @@ const graphismeSlider = () => {
         })
     })
 
-
     switchBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             transitionSetting(images, "var(--long-transition)");
@@ -146,3 +145,8 @@ const setMobileSliderImg = () => {
     })
 }
 setMobileSliderImg();
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const images = document.querySelectorAll('.img__container > img')
+//     itemsAppearing(images);
+// })

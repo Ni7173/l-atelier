@@ -18,8 +18,8 @@ header {
 }
 
 .header-container .logo a {
-    transition: all .1s;
-    transform: translateY(0) translateX(5px);
+    transition: var(--header-transition);
+    transform: translateY(1rem) translateX(5px);
 }
 
 .header-container .logo .logo--is-translated {
@@ -46,7 +46,6 @@ header {
 
 @media screen and (min-width: 1200px) {
     .header-container .logo a {
-        transition: var(--quick-transition);
          transform: translateY(0) translateX(1rem);
     }
 
@@ -106,6 +105,17 @@ header {
     margin: 0;
     padding: 0;
     max-width: unset;
+    transition: var(--smooth-transition);
+    opacity: 0;
+    transform: translateY(2.5rem);
+}
+
+/* .home__text__container .right__home__text {
+    transition: var(--smooth-transition) .2s;
+} */
+
+.home__text__container .right__home__text .home__text-2 {
+    transition: var(--smooth-transition) .3s;
 }
 
 .home__text {

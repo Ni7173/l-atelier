@@ -90,10 +90,10 @@ const adjustHomeLogo = () => {
 
 adjustHomeLogo();
 
-const setStarAnimation = () => {
-    const star = document.querySelector('.logo__star');
-    star.style.animation = "turningStar 2.5s infinite";
-}
+// const setStarAnimation = () => {
+//     const star = document.querySelector('.logo__star');
+//     star.style.animation = "turningStar 2.5s infinite";
+// }
 
 const setVideo = () => {
     const video = document.querySelector('.hero__video');
@@ -108,3 +108,27 @@ const setVideo = () => {
         video.setAttribute('muted', 'true');
     }
 }
+
+// const textsAnimation = () => {
+
+//     document.addEventListener('DOMContentLoaded', () => {
+//         const texts = document.querySelectorAll('.home__text__container p')
+//         console.log(texts)
+//         itemsAppearing(texts);
+//     })
+// }
+// textsAnimation();
+
+const textsAnimation = () => {
+    const texts = document.querySelectorAll('.home__text__container p')
+
+    document.addEventListener('DOMContentLoaded', () => {
+        texts.forEach(text => {
+            text.style.transform = "translateY(0px)";
+            text.style.opacity = "1";
+        })
+    })
+}
+textsAnimation();
+
+
