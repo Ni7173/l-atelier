@@ -28,10 +28,12 @@ header .logo .turning__star {
     width: 100%;
     position: relative;
     transition: var(--smooth-transition);
+    aspect-ratio: 2/1;
 }
 
 .project_img {
     width: 50%;
+    aspect-ratio: 1/1;
 }
 
 .project_content {
@@ -40,6 +42,7 @@ header .logo .turning__star {
     display: flex;
     align-items: center;
     width: 50%;
+    aspect-ratio: 1/1;
 }
 
 .container-grid {
