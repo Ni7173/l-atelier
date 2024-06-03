@@ -1,5 +1,5 @@
-.burger span.bar, .burger span.bar::before, .burger span.bar::after {
-    background: #000;
+.logo .turning__star {
+    color: var(--blue);
 }
 
 p {
