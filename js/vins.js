@@ -1,31 +1,31 @@
 const sliderImg = () => {
     let intervalId;
 
-    const sliderButtons = document.querySelectorAll("[data-carousel-button]");
+    // const sliderButtons = document.querySelectorAll("[data-carousel-button]");
 
 
-    sliderButtons.forEach(sliderButton => {
-        sliderButton.addEventListener("click", () => {
+    // sliderButtons.forEach(sliderButton => {
+    //     sliderButton.addEventListener("click", () => {
 
-            let transitionDuration = 1;
-            const slidesTransition = document.querySelectorAll('.slide');
-            const offset = sliderButton.dataset.carouselButton === "next" ? 1 : -1;
-            const slides = document.querySelector("[data-slides]");
-            const slideChildren = [...slides.children].filter(child => !child.matches('button'));
-            const activeSlide = document.querySelector("[data-active]");
-            transitionSetting(slidesTransition, `${transitionDuration}s`)
+    //         let transitionDuration = 1;
+    //         const slidesTransition = document.querySelectorAll('.slide');
+    //         const offset = sliderButton.dataset.carouselButton === "next" ? 1 : -1;
+    //         const slides = document.querySelector("[data-slides]");
+    //         const slideChildren = [...slides.children].filter(child => !child.matches('button'));
+    //         const activeSlide = document.querySelector("[data-active]");
+    //         transitionSetting(slidesTransition, `${transitionDuration}s`)
 
-            let newIndex = slideChildren.indexOf(activeSlide) + offset;
-            if (newIndex < 0) newIndex = slideChildren.length - 1;
-            if (newIndex >= slideChildren.length) newIndex = 0;
+    //         let newIndex = slideChildren.indexOf(activeSlide) + offset;
+    //         if (newIndex < 0) newIndex = slideChildren.length - 1;
+    //         if (newIndex >= slideChildren.length) newIndex = 0;
 
-            slideChildren[newIndex].dataset.active = true;
-            delete activeSlide.dataset.active;
+    //         slideChildren[newIndex].dataset.active = true;
+    //         delete activeSlide.dataset.active;
 
-            clearInterval(intervalId);
-            intervalId = setInterval(switchSlideAutomatically, 3800);
-        });
-    });
+    //         clearInterval(intervalId);
+    //         intervalId = setInterval(switchSlideAutomatically, 3800);
+    //     });
+    // });
 
     const transitionSetting = (elements, duration) => {
         elements.forEach(elem =>
@@ -56,7 +56,7 @@ const sliderImg = () => {
     };
 
     document.addEventListener('DOMContentLoaded', () => {
-        intervalId = setInterval(switchSlideAutomatically, 3800);
+        intervalId = setInterval(switchSlideAutomatically, 4500);
     });
 }
 sliderImg();
@@ -196,8 +196,16 @@ const modalsManagement = () => {
         });
     }
     mobileSwipe();
-
-
-
 }
 modalsManagement();
+
+const setMobileImgVeyrat = () => {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth <= 550) {
+            const imgIllustrated = document.querySelector('[data-modals-id="modal-5"] .modal_img img');
+            const imgToReplace = document.querySelector('[data-modals-id="modal-5"] .modal_left_content img');
+            imgToReplace.setAttribute('src', imgIllustrated.src)
+        }
+    })
+}
+setMobileImgVeyrat();
