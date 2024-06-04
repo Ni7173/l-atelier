@@ -464,13 +464,13 @@ nav .menu-list a {
 
 .modal__btn__close::before, .modal__btn__close::after {
     content: "";
-    width: 80%;
+    width: 65%;
     height: 1px;
     background-color: #CCC;
     position: absolute;
     top: 50%;
-    left: 10%;
-    right: 10%;
+    left: 17.5%;
+    right: 17.5%;
     transition: var(--quick-transition);
 }
 
