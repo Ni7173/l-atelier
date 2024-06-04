@@ -38,8 +38,6 @@ const sliderImg = () => {
         const slider = document.querySelector('.lateral_content')
         const slideChildren = [...slides.children].filter(child => !child.matches('button'));
 
-        // console.log(slideChildren)
-
         transitionSetting(slidesTransition, `${transitionDuration}s`);
         let newIndex = slideChildren.indexOf(activeSlide) + offset;
         if (newIndex < 0) newIndex = slideChildren.length - 1;

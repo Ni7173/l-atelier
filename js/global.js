@@ -4,6 +4,7 @@ function menuMobile() {
     const links = document.querySelectorAll('.navbar a');
     let logo = document.querySelector('.logo a');
     const menuItems = document.querySelectorAll('.menu-list li')
+    const navbar = document.querySelector('.navbar');
 
     let logoState;
 
@@ -64,6 +65,7 @@ function menuMobile() {
             logoState = 0;
         }
     })
+
     links.forEach(link =>
         link.addEventListener('click', () => {
             header.classList.remove('show-nav');
@@ -77,6 +79,9 @@ menuMobile();
 // if (window.history.replaceState) {
 //     window.history.replaceState(null, null, window.location.pathname.slice(0, -5));
 // }
+
+
+// fonctions spécifiques pour toutes pages
 
 
 const transitionSetting = (elements, transition) => {
