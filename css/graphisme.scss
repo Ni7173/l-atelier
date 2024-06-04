@@ -29,6 +29,10 @@
     --project-14-star-color: 25, 16%, 67%;
 }
 
+.logo .turning__star {
+    color: var(--brown);
+}
+
 .graphisme__content .wrapper {
     .project:nth-child(1) {
         background-color: hsl(var(--project-1-color));

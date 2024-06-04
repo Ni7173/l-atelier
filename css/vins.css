@@ -267,7 +267,7 @@ header .logo .turning__star {
 .project_modal p {
     margin: 0;
     font-size: 1.2rem;
-    white-space: pre-line;
+    white-space: inherit;
     letter-spacing: 0.4px;
     font-weight: 300;
     line-height: 1.2;
@@ -288,33 +288,6 @@ header .logo .turning__star {
     background-color: var(--black);
     width: 90%;
     margin-block: 2.5rem;
-}
-
-/* btn close */
-
-
-.modal__btn__close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    opacity: 1;
-    transition: var(--quick-transition);
-    cursor: pointer;
-    background: var(--white);
-    color: #CCC;
-    padding: 0.5rem;
-    border-radius: 50%;
-}
-
-
-.modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
-    opacity: 1;
-    scale: 1.05;
-}
-
-.modal__btn__close svg {
-    height: 20px;
-    width: 20px;
 }
 
 .modal_right_img {
