@@ -9,10 +9,6 @@ const reviewSlider = () => {
 
         const calculatePosition = newIndex => `${90 * (2 - newIndex)}%`;
 
-        const transitionSetting = (element, transition) => {
-            element.style.transition = transition;
-        }
-
         const setReview = position => {
             dots.forEach(dot => dot.classList.remove('active'));
             dots[newIndex].classList.add('active');

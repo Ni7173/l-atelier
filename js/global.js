@@ -3,6 +3,8 @@ function menuMobile() {
     const header = document.querySelector('header');
     const links = document.querySelectorAll('.navbar a');
     let logo = document.querySelector('.logo a');
+    const menuItems = document.querySelectorAll('.menu-list li')
+
     let logoState;
 
     const disableScrolling = () => {
@@ -23,14 +25,36 @@ function menuMobile() {
         }
     }
 
+    const menuEffect = () => {
+        menuItems.forEach(item => {
+            item.classList.add('--translated');
+            item.style.transition = ""
+        })
+    }
+
+    const clearMenuItemsClasses = () => {
+        menuItems.forEach(item => {
+            item.style.transition = "all 0s"
+            item.classList.remove('--translated');
+        })
+    }
+
 
     btn.addEventListener('click', () => {
         header.classList.toggle('show-nav');
         logo.style.animation = "var(--header-transition)";
 
+        if (header.classList.contains('show-nav')) {
+            setTimeout(() => {
+                menuEffect();
+            }, 300);
+        } else {
+            clearMenuItemsClasses();
+        }
+
         scrollManager();
 
-        if (logo.classList == 'logo--is-translated') {
+        if (logo.classList.contains('logo--is-translated')) {
             logo.classList.remove('logo--is-translated');
             logoState = "changed";
             return
@@ -43,6 +67,7 @@ function menuMobile() {
     links.forEach(link =>
         link.addEventListener('click', () => {
             header.classList.remove('show-nav');
+            clearMenuItemsClasses();
         })
     );
 }
@@ -53,6 +78,12 @@ menuMobile();
 //     window.history.replaceState(null, null, window.location.pathname.slice(0, -5));
 // }
 
+
+const transitionSetting = (elements, transition) => {
+    elements.forEach(element => {
+        element.style.transition = transition;
+    })
+}
 
 const itemsAppearing = (items) => {
     items.forEach(item => {

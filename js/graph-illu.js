@@ -59,12 +59,6 @@ const graphismeSlider = () => {
         window.onscroll = function () { };
     }
 
-    const transitionSetting = (elements, transition) => {
-        elements.forEach(elem =>
-            elem.style.transition = transition
-        )
-    }
-
     const sliderClosing = () => {
 
         overlay.addEventListener('click', () => {

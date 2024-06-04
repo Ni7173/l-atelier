@@ -27,12 +27,6 @@ const sliderImg = () => {
     //     });
     // });
 
-    const transitionSetting = (elements, duration) => {
-        elements.forEach(elem =>
-            elem.style.transitionDuration = duration
-        )
-    }
-
     const switchSlideAutomatically = () => {
         let transitionDuration = 2.5;
         const slidesTransition = document.querySelectorAll('.slide');
