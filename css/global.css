@@ -27,9 +27,10 @@
 }
 
 
-*:focus, *:active {
+*:focus, *:active, *:focus-visible, *:visited, *:focus-within, *:target {
     background: unset;
     color: unset;
+    outline: unset;
 }
 
 html {
@@ -813,7 +814,7 @@ footer p {
 
 @media screen and (min-width: 1900px) {
     .footer__img__container {
-        width: 10%;
+        width: 13%;
     }
 }
 
