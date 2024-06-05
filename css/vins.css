@@ -384,29 +384,6 @@ button[data-modal-button].active {
         height: 100%;
     }
 
-    .modal__btn__close svg {
-        height: 17px;
-        width: 17px;
-    }
-
-
-   .modal__btn__close {
-    opacity: 1;
-        top: 3rem;
-        right: 3rem;
-    }
-
-    .modal__btn__close:hover, .modal__btn__close:focus, .modal__btn__close:active {
-        scale: 1.1;
-    }
-
-    .modal__btn__close {
-        padding: 1rem;
-        border-radius: 50%;
-        top: 2.5rem;
-        right: 2.5rem;
-    }
-
     button[data-modal-button] {
         display: none;
     }

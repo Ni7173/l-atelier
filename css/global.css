@@ -27,7 +27,7 @@
 }
 
 
-*:focus, *:active, *:focus-visible, *:visited, *:focus-within, *:target {
+*:focus, *:active, *:focus-visible, *:visited, *:target {
     background: unset;
     color: unset;
     outline: unset;
@@ -35,7 +35,6 @@
 
 html {
     font-size: 62.5%;
-    /* scroll-behavior: smooth; */
 }
 
 body {
