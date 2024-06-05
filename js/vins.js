@@ -134,7 +134,7 @@ const modalsManagement = () => {
             btn.addEventListener('click', () => {
                 transitionSetting(modalsTransition, "opacity .6s ease-out, width 0s");
                 let activeModal = document.querySelector('[data-modal-active]');
-
+                console.log(activeModal);
 
                 if (btn.dataset.modalButton === "next") {
                     if (activeModal) delete activeModal.dataset.modalActive;

@@ -56,7 +56,7 @@ header {
 
 @media screen and (min-width: 1700px) {
     .header-container .logo .logo--is-translated {
-        transform: translateY(16rem) translateX(1.5rem);
+        transform: translateY(10rem) translateX(1.5rem);
     }
 
     .header-container .logo a {

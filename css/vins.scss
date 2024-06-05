@@ -833,7 +833,7 @@
     .modals__container .project_modal {
 
         .modal_content .modal_right_content .modal_text {
-            padding: 18rem !important;
+            padding: 14rem !important;
         }
 
         .modal_content .modal_right_content .modal_text.illustrated {
@@ -847,6 +847,16 @@
 
         h3 {
             font-size: 1.8rem;
+        }
+    }
+}
+
+@media screen and (min-width:1500px) {
+
+    .modals__container .project_modal {
+
+        .modal_content .modal_right_content .modal_text {
+            padding: 18rem !important;
         }
     }
 }
