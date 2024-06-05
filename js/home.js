@@ -34,7 +34,7 @@ const switchingTxtOperator = () => {
 
     }
 
-    setInterval(changeText, 4500);
+    setInterval(changeText, 4000);
 }
 
 switchingTxtOperator();
