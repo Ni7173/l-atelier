@@ -837,12 +837,12 @@
         }
 
         .modal_content .modal_right_content .modal_text.illustrated {
-            padding: 8rem 15rem 8rem 10rem !important;
+            padding: 6rem 15rem 6rem 8rem !important;
             justify-content: center;
         }
 
         p {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
         }
 
         h3 {
@@ -851,12 +851,21 @@
     }
 }
 
-@media screen and (min-width:1500px) {
+@media screen and (min-width:2000px) {
 
     .modals__container .project_modal {
 
         .modal_content .modal_right_content .modal_text {
             padding: 18rem !important;
+        }
+
+        .modal_content .modal_right_content .modal_text.illustrated {
+            padding: 8rem 15rem 8rem 10rem !important;
+            justify-content: center;
+        }
+
+        p {
+            font-size: 1.4rem;
         }
     }
 }

@@ -162,17 +162,13 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
 .show-nav .logo > a .logo__svg {
     fill: var(--white);
     color: var(--white);
+    transition: var(--header-transition);
 }
 
 .show-nav .logo a .turning__star {
     color: var(--red);
     transition: var(--header-transition);
 }
-
-.logo__svg {
-    transition: var(--smooth-transition);
-}
-
 
 .logo {
     height: 35px;
@@ -189,6 +185,7 @@ header.show-nav .burger .bar::after, header.show-nav .burger .bar::before{
 
 .logo a {
     position: relative;
+    transition: var(--header-transition);
 }
 
 .logo .turning__star {
@@ -360,7 +357,7 @@ li.--translated {
 }
 
 
-nav .menu-list li:hover a, nav .menu-list li:focus a, nav .menu-list li:active a {
+nav .menu-list li:hover a, nav .menu-list a:focus, nav .menu-list a:active, nav .menu-list a:focus-visible, nav .menu-list a:target {
    color: var(--red);
    scale: 1.02;
 }
@@ -523,7 +520,7 @@ nav .menu-list a {
     right: 1.5rem;
     color: var(--light-grey);
     background: var(--white);
-    padding: 1rem;
+    padding: 1.7rem;
     height: fit-content;
     width: fit-content;
     border-radius: 50%;
@@ -542,6 +539,12 @@ nav .menu-list a {
     transition: var(--quick-transition);
 }
 
+@media screen and (min-width:1000px) {
+    .modal__btn__close {
+        padding: 1rem;
+    }
+}
+
 .modal__btn__close::before {
     rotate: -45deg;
 }
@@ -554,11 +557,11 @@ nav .menu-list a {
     scale: 1.05;
 }
 
-.modal__btn__close:hover::before {
+.modal__btn__close:hover::before, .modal__btn__close:active::before, .modal__btn__close:focus::before, .modal__btn__close:focus-visible:before {
     rotate: 0deg;
 }
 
-.modal__btn__close:hover::after {
+.modal__btn__close:hover::after, .modal__btn__close:active::after, .modal__btn__close:focus::after, .modal__btn__close:focus-visible:after {
     rotate: -0deg;
 }
 
@@ -705,12 +708,6 @@ footer p {
     
 }
 
-
-@media screen and (min-width: 750px) {
-    .footer__img__container {
-        width: 12%;
-    }
-}
 
 @media screen and (min-width: 750px) {
     .footer__img__container {
