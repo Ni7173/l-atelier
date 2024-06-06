@@ -680,6 +680,10 @@ footer p {
     justify-content: start;
 }
 
+.footer__txt__container strong {
+    font-weight: 700;
+}
+
 
 @media screen and (max-width: 999px) {
 
