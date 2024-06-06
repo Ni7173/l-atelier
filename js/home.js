@@ -123,10 +123,12 @@ const textsAnimation = () => {
     const texts = document.querySelectorAll('.home__text__container p')
 
     document.addEventListener('DOMContentLoaded', () => {
-        texts.forEach(text => {
-            text.style.transform = "translateY(0px)";
-            text.style.opacity = "1";
-        })
+        setTimeout(() => {
+            texts.forEach(text => {
+                text.style.transform = "translateY(0px)";
+                text.style.opacity = "1";
+            })
+        }, 100);
     })
 }
 textsAnimation();

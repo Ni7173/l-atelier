@@ -302,8 +302,12 @@ button[data-modal-button].active {
     pointer-events: auto;
     transform: translateY(0px);
     cursor: pointer;
-    transition: opacity .3s ease-out .6s, transform .3s ease-out .6s;
-    opacity: .7;
+    transition: opacity .3s ease-out, transform .3s ease-out;
+    opacity: .5;
+}
+
+button[data-modal-button].active:hover {
+    opacity: 1;
 }
 
 @media screen and (max-width:1350px) {

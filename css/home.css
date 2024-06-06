@@ -51,7 +51,7 @@ header {
     }
 
     .header-container .logo .logo--is-translated {
-        transform: translateY(6.5rem) translateX(1rem);
+        transform: translateY(8.5rem) translateX(1rem);
     }
 }
 

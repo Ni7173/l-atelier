@@ -73,9 +73,11 @@ const modalsManagement = () => {
                 e.preventDefault();
                 disableScrolling();
                 overlay.classList.add('active')
-                switchBtns.forEach(btn => {
-                    btn.classList.add('active');
-                })
+                setTimeout(() => {
+                    switchBtns.forEach(btn => {
+                        btn.classList.add('active');
+                    })
+                }, 600);
                 let projectId = projectLink.dataset.projectLink;
                 modals.forEach(modal => {
                     if (modal.dataset.modalsId === projectId) {
