@@ -5,7 +5,6 @@ const reviewSlider = () => {
         const dots = document.querySelectorAll('.dot');
         const switchBtns = document.querySelectorAll('[data-slider-button]');
         let newIndex = 0;
-        let intervalId;
 
         const calculatePosition = newIndex => `${90 * (2 - newIndex)}%`;
 
@@ -16,23 +15,10 @@ const reviewSlider = () => {
         }
         setReview();
 
-        const resetInterval = () => {
-            clearInterval(intervalId);
-            intervalId = setInterval(switchReviewAutomatically, 8000);
-        }
-
-        const switchReviewAutomatically = () => {
-            transitionSetting(slides, "var(--long-transition)");
-            newIndex = (newIndex + 1) % dots.length;
-            setReview(calculatePosition(newIndex));
-        };
-
         switchBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                transitionSetting(slides, "var(--smooth-transition)");
                 newIndex = (newIndex + (btn.dataset.sliderButton === "prev" ? -1 : 1) + dots.length) % dots.length;
                 setReview(calculatePosition(newIndex));
-                resetInterval();
             });
         });
 
@@ -40,7 +26,6 @@ const reviewSlider = () => {
             dot.addEventListener('click', () => {
                 newIndex = parseInt(dot.dataset.dotNumber, 10);
                 setReview(calculatePosition(newIndex));
-                resetInterval();
             });
         });
 
@@ -61,18 +46,14 @@ const reviewSlider = () => {
                     newIndex++;
                     if (newIndex >= dots.length) newIndex = 0;
                     setReview(calculatePosition(newIndex));
-                    resetInterval();
                 } else if (startX < endX - 50) {
                     newIndex = newIndex - 1;
                     if (newIndex < 0) newIndex = dots.length - 1;
                     setReview(calculatePosition(newIndex));
-                    resetInterval();
                 }
             });
         }
         mobileSwipe();
-
-        intervalId = setInterval(switchReviewAutomatically, 6000);
     });
 }
 
