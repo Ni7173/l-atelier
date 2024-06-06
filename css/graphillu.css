@@ -318,3 +318,7 @@ body {
     opacity: 1;
     scale: 1.08;
 }
+
+.footer__txt__container p strong {
+    font-weight: 700;
+}

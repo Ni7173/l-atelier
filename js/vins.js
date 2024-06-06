@@ -1,3 +1,6 @@
+// au click sur slider, chgmt de diapo
+// au survol de la modal, btn apparaissent
+
 // const sliderImg = () => {
 //     let intervalId;
 
