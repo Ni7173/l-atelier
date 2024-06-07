@@ -238,6 +238,174 @@ const modalsManagement = () => {
 }
 modalsManagement();
 
+
+// modals management by chatgpt
+
+// const modalsManagement = () => {
+//     const modals = document.querySelectorAll('[data-modals-id]');
+//     const modalsTransition = document.querySelectorAll('.modal_content');
+//     const projectLinks = document.querySelectorAll('[data-project-link]');
+//     const overlay = document.querySelector('.modal__overlay');
+//     const closeBtns = document.querySelectorAll('.modal__btn__close');
+//     const switchBtns = document.querySelectorAll('.modal-button');
+
+//     let newIndex = 0;
+
+//     const showSwitchBtns = () => {
+//         let isOverModal = false;
+//         let isOverSwitchBtn = false;
+
+//         const updateSwitchBtnsVisibility = () => {
+//             if (isOverModal || isOverSwitchBtn) {
+//                 switchBtns.forEach(btn => btn.classList.add('active'));
+//             } else {
+//                 switchBtns.forEach(btn => btn.classList.remove('active'));
+//             }
+//         };
+
+//         modals.forEach(modal => {
+//             modal.addEventListener('mouseenter', () => {
+//                 isOverModal = true;
+//                 updateSwitchBtnsVisibility();
+//             });
+//             modal.addEventListener('mouseleave', () => {
+//                 isOverModal = false;
+//                 updateSwitchBtnsVisibility();
+//             });
+//         });
+
+//         switchBtns.forEach(btn => {
+//             btn.addEventListener('mouseenter', () => {
+//                 isOverSwitchBtn = true;
+//                 updateSwitchBtnsVisibility();
+//             });
+//             btn.addEventListener('mouseleave', () => {
+//                 isOverSwitchBtn = false;
+//                 updateSwitchBtnsVisibility();
+//             });
+//         });
+//     }
+//     showSwitchBtns();
+
+//     const showModal = () => {
+//         projectLinks.forEach(projectLink => {
+//             projectLink.addEventListener('click', (e) => {
+//                 e.preventDefault();
+//                 disableScrolling();
+//                 overlay.classList.add('active');
+//                 transitionSetting(switchBtns, "var(--quick-transition)");
+//                 let projectId = projectLink.dataset.projectLink;
+//                 let linkNumber = projectLink.dataset.linkNumber;
+//                 modals.forEach(modal => {
+//                     if (modal.dataset.modalsId === projectId) {
+//                         modal.dataset.modalActive = true;
+//                         setTimeout(() => {
+//                             modal.style.pointerEvents = "all";
+//                         }, 450);
+//                         newIndex = linkNumber;
+//                     }
+//                 })
+//             })
+//         })
+//     }
+//     showModal();
+
+//     const disableScrolling = () => {
+//         var x = window.scrollX;
+//         var y = window.scrollY;
+//         window.onscroll = function () { window.scrollTo(x, y); };
+//     }
+
+//     const enableScrolling = () => {
+//         window.onscroll = function () { };
+//     }
+
+//     const closeModal = () => {
+//         const closeActiveModal = () => {
+//             switchBtns.forEach(btn => btn.classList.remove('active'));
+//             overlay.classList.remove('active');
+//             let activeModal = document.querySelector('[data-modal-active]');
+//             if (activeModal) {
+//                 activeModal.style.pointerEvents = "none";
+//                 delete activeModal.dataset.modalActive;
+//             }
+//             enableScrolling();
+//             transitionSetting(modalsTransition, "var(--smooth-transition)");
+//             transitionSetting(switchBtns, "unset");
+//         };
+
+//         overlay.addEventListener('click', closeActiveModal);
+
+//         closeBtns.forEach(btn => {
+//             btn.addEventListener('click', closeActiveModal);
+//         });
+//     }
+//     closeModal();
+
+//     const transitionSetting = (elements, transition) => {
+//         elements.forEach(elem => elem.style.transition = transition);
+//     }
+
+//     const resetModalPointerEvent = (elements, pointerEvents) => {
+//         elements.forEach(elem => elem.style.pointerEvents = pointerEvents);
+//     }
+
+//     const modalSwitch = () => {
+//         switchBtns.forEach(btn => {
+//             btn.addEventListener('click', () => {
+//                 transitionSetting(modalsTransition, "opacity .6s ease-out, width 0s");
+//                 let activeModal = document.querySelector('[data-modal-active]');
+//                 if (activeModal) delete activeModal.dataset.modalActive;
+//                 newIndex = (btn.dataset.modalButton === "prev") ? (newIndex - 1 + modals.length) % modals.length : (newIndex + 1) % modals.length;
+//                 resetModalPointerEvent(modals, "none");
+//                 modals[newIndex].dataset.modalActive = true;
+//                 modals[newIndex].style.pointerEvents = "all";
+//             });
+//         });
+//     }
+//     modalSwitch();
+
+//     const mobileSwipe = () => {
+//         let startX = 0;
+//         let endX = 0;
+
+//         modals.forEach(modal => {
+//             modal.addEventListener('touchstart', (event) => {
+//                 startX = event.touches[0].clientX;
+//             });
+
+//             modal.addEventListener('touchmove', (event) => {
+//                 endX = event.touches[0].clientX;
+//             });
+
+//             modal.addEventListener('touchend', () => {
+//                 let activeModal = document.querySelector('[data-modal-active]');
+//                 transitionSetting(modalsTransition, "opacity .6s ease-out, width 0s");
+
+//                 if (startX > endX + 50) {
+//                     if (activeModal) delete activeModal.dataset.modalActive;
+//                     newIndex = (newIndex + 1) % modals.length;
+//                     resetModalPointerEvent(modals, "none");
+//                     modals[newIndex].dataset.modalActive = true;
+//                     modals[newIndex].style.pointerEvents = "all";
+//                 } else if (startX < endX - 50) {
+//                     if (activeModal) delete activeModal.dataset.modalActive;
+//                     newIndex = (newIndex - 1 + modals.length) % modals.length;
+//                     resetModalPointerEvent(modals, "none");
+//                     modals[newIndex].dataset.modalActive = true;
+//                     modals[newIndex].style.pointerEvents = "all";
+//                 }
+//             });
+//         });
+//     }
+//     document.addEventListener('DOMContentLoaded', function () {
+//         mobileSwipe();
+//     });
+// }
+// modalsManagement();
+
+
+
 const setRightMobileImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 550) {
