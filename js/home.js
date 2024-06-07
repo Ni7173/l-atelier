@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const switchingTxtOperator = () => {
     let switchingTxt = document.querySelector('.right__home__text #switching-text');
-    const texts = ["accueillant", "de création", "chaleureux", "d'échange", "de conception", "bienveillant", "d'écoute"];
+    const texts = ["accueillant", "de création", "chaleureux", "d'échange", "de conception", "bienveillant", " d'écoute "];
+
+
 
     let newIndex = 0;
 
@@ -132,5 +134,16 @@ const textsAnimation = () => {
     })
 }
 textsAnimation();
+
+const setHomeText = () => {
+    document.addEventListener('DOMContentLoaded', () => {
+        const textToChange = document.querySelector('.home__text__container .home__text');
+
+        if (window.innerWidth < 550) {
+            textToChange.innerText = "Déf. Atelier : n.m."
+        }
+    })
+}
+setHomeText();
 
 

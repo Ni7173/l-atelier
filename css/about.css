@@ -70,7 +70,7 @@ section > div {
 
 .reviews__list {
     transition: transform 0.5s ease-in-out;
-    transform: translateX(180%);
+    transform: translateX(270%);
     height: 100%;
     width: 100%;
 }

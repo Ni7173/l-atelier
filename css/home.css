@@ -101,7 +101,7 @@ header {
     white-space: nowrap;
     font-family: "EB Garamond", serif;
     font-size: 2.1rem;
-    font-weight: 300;
+    font-weight: 500;
     font-style: normal;
     color: var(--black);
     letter-spacing: .8px;
@@ -252,13 +252,14 @@ header {
 @media screen and (min-width: 1100px) {
     .home__text__container {
         top: 75%;
-        left: 45%;
+        left: 39%;
     }
 }
 
 @media screen and (min-width: 1700px) {
     .home__text__container {
         top: 80%;
+        left: 44%;
     }
 }
 
@@ -273,6 +274,7 @@ header {
 
     .home__text__container {
         top: 75%;
+        left: 45%;
     }
 }
 
@@ -475,4 +477,47 @@ header {
 #home__menu .home__menu__item:nth-child(1) .menu__picto {
     width: 80px;
     height: auto;
+}
+
+
+
+
+/* rajout mobile */
+
+@media screen and (max-width: 550px) {
+    /* .left__p {
+        display: none;
+    }*/
+    
+    .right__home__text p:nth-child(1) {
+        display: none;
+    }
+    
+    .right__home__text {
+        justify-self: center;
+        margin: 0;
+        text-align: left;
+        justify-content: left;
+    }
+
+    .home__text__container {
+        justify-self: center;
+        justify-content: left;
+        flex-direction: column;
+        left: 28%;
+        text-align: center;
+    }
+    
+    /* .home__text-2 {
+        justify-self: center;
+        flex-direction: column;
+        margin: 0;
+        display: grid;
+    } */
+
+    /* #switching-text {
+        justify-self: left;
+        margin: 0;
+        font-size: 2.3rem;
+    } */
 }
