@@ -19,6 +19,7 @@
     --smooth-transition: all .6s ease-out;
     --quick-transition: all .3s ease-out;
     --long-transition: all 1s ease-out;
+    --delayed-transition: all .3s ease-out .6s;
     --footer-width: 70%;
 }
 

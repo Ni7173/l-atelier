@@ -8,22 +8,18 @@ let errorMessage = document.getElementById('error');
 
 const contactRequired = () => {
     form.addEventListener('submit', (e) => {
-        let messages = [];
+        const pushErrorMessage = () => {
+            if (errorMessage.classList.contains('active') == false) {
+                e.preventDefault();
+                errorMessage.classList.add('active');
+            }
+        }
         if (nameInput.value === "" || nameInput.value == null) {
-            messages.push("veuillez entrer votre nom");
+            pushErrorMessage();
         }
 
         if (textInput.value.length <= 5) {
-            messages.push("veuillez indiquer votre projet")
-        }
-
-        if (mailInput.value.length == 0 && telInput.value.length == 0) {
-            messages.push("veuillez m'indiquer comment vous recontacter")
-        }
-
-        if (messages.length > 0) {
-            e.preventDefault();
-            errorMessage.innerText = messages.join(', ')
+            pushErrorMessage();
         }
     })
 }

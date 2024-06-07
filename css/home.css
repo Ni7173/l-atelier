@@ -5,12 +5,12 @@ header {
 }
 
 .logo svg {
-    color: var(--white);
-    fill: var(--white);
+    color: var(--black);
+    fill: var(--blackC);
 }
 
 .burger .bar::after,.burger .bar::before, .burger .bar {
-    background: var(--white);
+    background: var(--black);
 }
  
 .logo, .burger_container, .navbar, .bottom-footer {
@@ -88,7 +88,7 @@ header {
     height: 100vh;
     justify-items: center;
     align-items: center;
-    background: #000;
+    background: var(--white);
 }
 
 .home__text__container {
@@ -104,7 +104,7 @@ header {
     font-size: 2.1rem;
     font-weight: 300;
     font-style: normal;
-    color: white;
+    color: var(--black);
     letter-spacing: .8px;
 }
 
@@ -126,8 +126,7 @@ header {
 }
 
 .home__text {
-    color: white;
-    text-shadow: 0 0 20px #000000;
+    color: var(--black);
     z-index: 2;
     display: flex;
     gap: 0.5rem;

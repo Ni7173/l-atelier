@@ -180,6 +180,10 @@ button[data-slider-button] {
         margin-block: 4rem;
     }
 
+    .home__p {
+        margin-bottom: 0;
+    }
+
     .reviews__viewport {
         max-width: 50%;
     }
