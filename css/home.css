@@ -6,7 +6,6 @@ header {
 
 .logo svg {
     color: var(--black);
-    fill: var(--blackC);
 }
 
 .burger .bar::after,.burger .bar::before, .burger .bar {
