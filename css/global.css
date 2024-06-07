@@ -18,7 +18,7 @@
     --header-transition: all .6s ease-out;
     --smooth-transition: all .6s ease-out;
     --quick-transition: all .3s ease-out;
-    --long-transition: all 1s ease-out;
+    --long-transition: all 1s ease-out
     --delayed-transition: all .3s ease-out .6s;
     --footer-width: 70%;
 }
@@ -490,8 +490,8 @@ nav .menu-list a {
     border: unset;
     background: unset;
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 0;
+    right: 0;
     color: hsl(0, 0%, 95%, .5);
     opacity: .6;
     background: var(--white);
@@ -500,6 +500,8 @@ nav .menu-list a {
     width: fit-content;
     border-radius: 50%;
     transition: var(--quick-transition);
+    z-index: 10;
+    margin: 1.5rem;
 }
 
 .modal__btn__close::before, .modal__btn__close::after {

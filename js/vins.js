@@ -55,7 +55,6 @@ const modalsManagement = () => {
     const overlay = document.querySelector('.modal__overlay');
     const closeBtns = document.querySelectorAll('.modal__btn__close');
     const switchBtns = document.querySelectorAll('.modal-button');
-    console.log(closeBtns)
 
     let newIndex = 0;
 
