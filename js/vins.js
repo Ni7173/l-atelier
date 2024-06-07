@@ -1,6 +1,3 @@
-// au click sur slider, chgmt de diapo
-// au survol de la modal, btn apparaissent
-
 const sliderImg = () => {
     let clickZone = document.querySelector('.lateral_content');
     let intervalId;
@@ -57,7 +54,8 @@ const modalsManagement = () => {
     const projectLinks = document.querySelectorAll('[data-project-link]');
     const overlay = document.querySelector('.modal__overlay');
     const closeBtns = document.querySelectorAll('.modal__btn__close');
-    const switchBtns = document.querySelectorAll('.modal-button')
+    const switchBtns = document.querySelectorAll('.modal-button');
+    console.log(closeBtns)
 
     let newIndex = 0;
 
