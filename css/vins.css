@@ -449,6 +449,10 @@ button[data-modal-button].active:hover {
         flex-direction: column;
     }       
 
+    .project_modal[data-modal-active] .modal_content  {
+        flex-direction: column;
+    }
+
     #modals.active {
         width: 80%;
         height: 70%;

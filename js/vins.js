@@ -387,6 +387,8 @@ const modalsManagement = () => {
 
             modal.addEventListener('touchend', () => {
                 activeModal = document.querySelector('[data-modal-active]');
+                transitionSetting(modals, "opacity .6s ease-out, width 0s");
+
                 // transitionSetting(modals, "opacity .6s ease-out, width 0s")
 
 
