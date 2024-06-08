@@ -56,6 +56,7 @@ const modalsManagement = () => {
     const closeBtns = document.querySelectorAll('.modal__btn__close');
     const switchBtns = document.querySelectorAll('.modal-button');
 
+    let activeModal;
     let newIndex = 0;
 
     const showSwitchBtns = () => {
@@ -141,12 +142,13 @@ const modalsManagement = () => {
                 closeActiveModal();
             })
         })
-        closeActiveModal = () => {
+
+        const closeActiveModal = () => {
             switchBtns.forEach(btn => {
                 btn.classList.remove('active')
             })
             overlay.classList.remove('active')
-            let activeModal = document.querySelector('[data-modal-active]');
+            activeModal = document.querySelector('[data-modal-active]');
             activeModal.style.pointerEvents = "none";
             if (activeModal) delete activeModal.dataset.modalActive;
             enableScrolling();
@@ -173,7 +175,7 @@ const modalsManagement = () => {
         switchBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 transitionSetting(modalsTransition, "opacity .6s ease-out, width 0s");
-                let activeModal = document.querySelector('[data-modal-active]');
+                activeModal = document.querySelector('[data-modal-active]');
 
                 if (btn.dataset.modalButton === "prev") {
                     if (activeModal) delete activeModal.dataset.modalActive;
@@ -209,7 +211,7 @@ const modalsManagement = () => {
             });
 
             modal.addEventListener('touchend', () => {
-                let activeModal = document.querySelector('[data-modal-active]');
+                activeModal = document.querySelector('[data-modal-active]');
                 transitionSetting(modalsTransition, "opacity .6s ease-out, width 0s")
 
 

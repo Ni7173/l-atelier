@@ -447,6 +447,10 @@ button[data-modal-button].active:hover {
         justify-content: center;
     }
 
+    .project_modal[data-modal-active] .modal_right_content .modal__btn__close {
+        pointer-events: all;
+    }
+
     .project_modal[data-modal-active] .modal_text {
         position: static;
         height: 40%;
