@@ -591,6 +591,7 @@ footer p {
 .left-footer {
     flex-direction: column;
     line-height: 1.4;
+    width: 100%;
 }
 
 .top__left__footer {

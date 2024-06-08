@@ -248,11 +248,6 @@ header {
         top: 75%;
         left: 40%;
     }
-
-    .menu__link:active .menu__hovered, .menu__link:focus .menu__hovered {
-        opacity: 1!important;
-    }
-
 }
  
 @media screen and (min-width: 1100px) {
@@ -323,6 +318,22 @@ header {
 
 .home__menu__item:hover .menu__hovered {
     opacity: 1!important;
+}
+
+.menu__link:active ~ .menu__hovered, .menu__link:focus ~ .menu__hovered {
+    opacity: 1!important;
+}
+
+.menu__link:active .menu__hovered, .menu__link:focus .menu__hovered {
+    opacity: 1!important;
+}
+
+.menu__link:active ~ .menu__img, .menu__link:focus ~ .menu__img {
+    opacity: 0!important;
+}
+
+.menu__link:active .menu__img, .menu__link:focus .menu__img {
+    opacity: 0!important;
 }
 
 .menu__hovered {
@@ -515,13 +526,6 @@ header {
     height: 100%;
     transition: var(--smooth-transition);
     position: inherit;
-}
-
-.home__menu__item {
-    position: relative;
-    z-index: 1;
-    width: 50%;
-    height: 50%;
 }
 
 .menu__hovered {
