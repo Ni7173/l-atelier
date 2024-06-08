@@ -316,7 +316,7 @@ header {
     height: 50%;
 }
 
-.home__menu__item:hover .menu__hovered {
+/* .home__menu__item:hover .menu__hovered {
     opacity: 1!important;
 }
 
@@ -334,10 +334,14 @@ header {
 
 .menu__link:active .menu__img, .menu__link:focus .menu__img {
     opacity: 0!important;
+} */
+
+.menu__hovered, .menu__img, .home__menu__item {
+    pointer-events: none;
 }
 
-.menu__hovered {
-    pointer-events: none;
+.menu__link {
+    pointer-events: all;
 }
 
 
