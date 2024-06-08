@@ -23,7 +23,7 @@
     --footer-width: 70%;
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 400px) {
     :root {
     --footer-width: 80%;
     }
