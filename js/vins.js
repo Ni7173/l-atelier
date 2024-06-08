@@ -139,9 +139,21 @@ const modalsManagement = () => {
 
         closeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                closeActiveModal();
-            })
-        })
+                const closestModal = btn.closest('[data-modals-id]');
+                if (closestModal) {
+                    closestModal.style.pointerEvents = "none";
+                    delete closestModal.dataset.modalActive;
+                    enableScrolling();
+                    transitionSetting(modalsTransition, "var(--smooth-transition)");
+                    transitionSetting(switchBtns, "unset");
+                    switchBtns.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    overlay.classList.remove('active');
+                }
+            });
+        });
+
 
         const closeActiveModal = () => {
             switchBtns.forEach(btn => {

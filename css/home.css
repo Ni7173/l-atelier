@@ -508,3 +508,44 @@ header {
         font-size: 2.3rem;
     } */
 }
+
+.menu__img {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transition: var(--smooth-transition);
+    position: inherit;
+}
+
+.home__menu__item {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    height: 50%;
+}
+
+.menu__hovered {
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--smooth-transition);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.menu__hovered__container {
+    top: 35%;
+    height: 30%;
+    width: 30%;
+    left: 35%;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home__menu__item:hover .menu__hovered {
+    opacity: 1;
+}
