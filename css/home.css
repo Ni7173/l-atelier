@@ -56,7 +56,7 @@ header {
 
 @media screen and (min-width: 1750px) {
     .header-container .logo .logo--is-translated {
-        transform: translateY(7rem) translateX(1.5rem);
+        transform: translateY(6rem) translateX(1.5rem);
     }
 
     .header-container .logo a {
@@ -65,6 +65,12 @@ header {
 }
 
 @media screen and (min-width: 2100px) {
+    .header-container .logo .logo--is-translated {
+        transform: translateY(16rem) translateX(1.5rem);
+    }
+}
+
+@media screen and (min-width: 2400px) {
     .header-container .logo .logo--is-translated {
         transform: translateY(20rem) translateX(1.5rem);
     }

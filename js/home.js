@@ -42,29 +42,29 @@ const switchingTxtOperator = () => {
 switchingTxtOperator();
 
 
-const menuOnClick = () => {
-    const menuLinks = document.querySelectorAll('.menu__link');
+// const menuOnClick = () => {
+//     const menuLinks = document.querySelectorAll('.menu__link');
 
-    menuLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (window.innerWidth < 800) e.preventDefault();
-            let menuHovered = link.childNodes[3];
-            let menuImg = link.childNodes[1];
-            let targetUrl = link.getAttribute('href');
-            if (menuHovered.style.opacity != "1") {
-                menuHovered.style.opacity = "1";
-                menuImg.style.opacity = "0";
-            }
+//     menuLinks.forEach(link => {
+//         link.addEventListener('click', (e) => {
+//             if (window.innerWidth < 800) e.preventDefault();
+//             let menuHovered = link.childNodes[3];
+//             let menuImg = link.childNodes[1];
+//             let targetUrl = link.getAttribute('href');
+//             if (menuHovered.style.opacity != "1") {
+//                 menuHovered.style.opacity = "1";
+//                 menuImg.style.opacity = "0";
+//             }
 
-            if (window.innerWidth < 800) {
-                setTimeout(() => {
-                    window.location.href = targetUrl;
-                }, 300);
-            }
-        })
-    })
-}
-menuOnClick();
+//             if (window.innerWidth < 800) {
+//                 setTimeout(() => {
+//                     window.location.href = targetUrl;
+//                 }, 300);
+//             }
+//         })
+//     })
+// }
+// menuOnClick();
 
 const adjustHomeLogo = () => {
     const logo = document.querySelector('.logo a');
