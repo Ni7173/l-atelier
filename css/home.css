@@ -52,6 +52,11 @@ header {
     .header-container .logo .logo--is-translated {
         transform: translateY(8.5rem) translateX(1rem);
     }
+
+
+    .home__menu__item:hover .menu__hovered {
+        opacity: 1!important;
+    }
 }
 
 @media screen and (min-width: 1750px) {
@@ -336,10 +341,6 @@ header {
     opacity: 0!important;
 } */
 
-.menu__hovered {
-    pointer-events: none;
-}
-
 .menu__link {
     pointer-events: all;
 }
@@ -445,7 +446,7 @@ header {
 #home__menu .home__menu__item .menu__hovered {
     opacity: 0;
     z-index: 2;
-    transition: var(--smooth-transition);
+    transition: var(--quick-transition);
     width: 100%;
     height: 100%;
 }

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     switchingTxtOperator();
-    // setVideo();
+    setVideo();
 })
 
 
@@ -98,15 +98,14 @@ adjustHomeLogo();
 
 const setVideo = () => {
     const video = document.querySelector('.hero__video');
-    console.log(video)
     if (video) {
-        video.muted = true;
-        video.loop = true;
-        video.autoplay = true;
+        // video.muted = true;
+        // video.loop = true;
+        // video.autoplay = true;
         video.play();
-        video.setAttribute('autoplay', 'true');
-        video.setAttribute('loop', 'true');
-        video.setAttribute('muted', 'true');
+        // video.setAttribute('autoplay', 'true');
+        // video.setAttribute('loop', 'true');
+        // video.setAttribute('muted', 'true');
     }
 }
 
@@ -145,4 +144,19 @@ const setHomeText = () => {
 }
 setHomeText();
 
+const menuEffect = () => {
+    const menuLinks = document.querySelectorAll('.menu__link');
+    console.log(menuLinks)
 
+    menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const menuItem = link.closest('.home__menu__item');
+            const menuHovered = menuItem.querySelector('.menu__hovered');
+            const menuImg = menuItem.querySelector('.menu__img');
+            menuHovered.style.opacity = 1;
+            menuImg.style.opacity = 0;
+        })
+    })
+}
+menuEffect();
