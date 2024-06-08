@@ -18,9 +18,15 @@
     --header-transition: all .6s ease-out;
     --smooth-transition: all .6s ease-out;
     --quick-transition: all .3s ease-out;
-    --long-transition: all 1s ease-out
+    --long-transition: all 1s ease-out;
     --delayed-transition: all .3s ease-out .6s;
     --footer-width: 70%;
+}
+
+@media screen and (max-width: 410px) {
+    :root {
+    --footer-width: 80%;
+    }
 }
 
 *, *::before, *::after {
@@ -635,10 +641,6 @@ footer p {
     align-items: center;
 }
 
-.right__footer__container .socials li:nth-child(1) {
-    margin-right: 1rem;
-}
-
 .bottom__right__footer {
     color: #CCC;
     letter-spacing: 1.2;
@@ -660,6 +662,16 @@ footer p {
 
 .footer__txt__container strong {
     font-weight: 700;
+}
+
+
+footer .socials li {
+    margin: 0;
+}
+
+
+.right__footer__container .socials li:nth-child(1) {
+    margin-right: 1.5rem;
 }
 
 footer .socials li svg {

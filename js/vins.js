@@ -182,8 +182,7 @@ const modalsManagement = () => {
                     resetModalPointerEvent(modals, "none")
                     modals[newIndex].dataset.modalActive = true;
                     modals[newIndex].style.pointerEvents = "all";
-                }
-                else if (btn.dataset.modalButton === "next") {
+                } else if (btn.dataset.modalButton === "next") {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex++;
                     if (newIndex >= modals.length) newIndex = 0;
