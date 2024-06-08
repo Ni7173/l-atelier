@@ -505,6 +505,7 @@ nav .menu-list a {
     border-radius: 50%;
     transition: var(--quick-transition);
     z-index: 10;
+    pointer-events: all;
 }
 
 .modal__btn__close::before, .modal__btn__close::after {

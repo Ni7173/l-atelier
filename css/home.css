@@ -336,7 +336,7 @@ header {
     opacity: 0!important;
 } */
 
-.menu__hovered, .menu__img, .home__menu__item {
+.menu__hovered {
     pointer-events: none;
 }
 

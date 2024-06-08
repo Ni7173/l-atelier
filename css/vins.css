@@ -153,27 +153,109 @@ header .logo .turning__star {
 
 
 
+
+
 /* modals */
 
-.project_modal .modal_content {
+#modals {
+    pointer-events: none;
+    background: transparent;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    transition: var(--smooth-transition);
+    z-index: 7;
+}
+
+.project_modal .modal_content {
+    width: 0%;
+    height: 0%;
+    transition: var(--smooth-transition);
+    top: 0%;
+    left: 0%;
+    position: inherit;
+}
+
+.project_modal[data-modal-active] .modal_content {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+.project_modal {
+    position: absolute;
     background: white;
     height: 0%;
     width: 0%;
-    top: 50%;
-    left: 50%;
+    max-width: 0%;
+    max-height: 0%;
+    top: 0%;
+    left: 0%;
     opacity: 0;
+    pointer-events: none;
+    transition: var(--smooth-transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.project_modal[data-modal-active] .modal_content {
-    transition: var(--smooth-transition);
+.project_modal[data-modal-active] {
     opacity: 1;
-    width: 65%;
-    height: 65%;
-    z-index: 6;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#modals.active {
+    opacity: 1;
     top: 17.5%;
     left: 17.5%;
+    width: 65%;
+    height: 65%;
+}
+
+.modal__btn__close {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--quick-transition);
+    padding: 0;
+}
+
+.modal__btn__close.active {
+    opacity: 1;
+    pointer-events: all;
+    padding: 3.3rem;
+}
+
+@media screen and (min-width:1000px) {
+    .modal__btn__close.active {
+        padding: 1rem;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: var(--white);
+    }
+
+    .modal__btn__close::before, .modal__btn__close::after {
+        width: 60%;
+        top: 50%;
+        left: 20%;
+    }
+}
+
+@media screen and (min-width:2000px) {
+    .modal__btn__close.active {
+        padding: 1.5rem;
+    }
 }
 
 
@@ -208,7 +290,6 @@ header .logo .turning__star {
     align-items: flex-start;
     justify-content: flex-end;
     color: var(--main-color);
-    /* padding: 2rem; */
     text-align: left;
     padding: 0 5rem 7rem;
 }
@@ -262,13 +343,9 @@ header .logo .turning__star {
     pointer-events: none;
 }
 
-   
-/* .project_modal[data-modal-active] {
-    pointer-events: auto;
-} */
 
 
-
+/* button */
 
 button[data-modal-button] {
     display: block;
@@ -312,30 +389,38 @@ button[data-modal-button].active:hover {
 
 @media screen and (max-width:1350px) {
     .modal_left_content img {
-    height: 100%;
-}
- 
-.project_modal .modal_content {
-    top: 50%;
-    left: 50%;
-}
+        height: 100%;
+    }
 
-.project_modal[data-modal-active] .modal_content {
-    width: 65%;
-    height: 65%;
-    top: 17.5%;
-    left: 17.5%;
-}
+    .project_modal[data-modal-active]  {
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+    }
+
+    #modals.active {
+        opacity: 1;
+        top: 17.5%;
+        left: 17.5%;
+        width: 65%;
+        height: 65%;
+    }
 }
 
 .small_img {
     filter: grayscale(100%) brightness(90%);
+    scale: 1;
+    transition: var(--smooth-transition);
+    height: 100%;
+    width: 100%;
 }
 
 .project_link:hover + .small_img, .project_link:focus + .small_img, .project_link:active + .small_img {
     scale: 1.05;
     filter: grayscale(0%) brightness(100%);
 }
+
 
 @media screen and (max-width:1250px) {
     .modal_left_content {
@@ -353,27 +438,36 @@ button[data-modal-button].active:hover {
 
 @media screen and (max-width:1050px) {
 
-    .project_modal[data-modal-active] .modal_content {
+    .project_modal[data-modal-active]  {
         transition-delay: 0s;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        flex-direction: column;
+    }       
+
+    #modals.active {
         width: 80%;
         height: 70%;
         left: 10%;
         top: 15%;
         bottom: 0%;
-        flex-direction: column;
-   }
+    }
 
    .modal_left_content {
-    height: 60%;
-    width: 100%;
-    position: relative;
-   }
+        height: 60%;
+        width: 100%;
+        position: relative;
+    }
 
    .modal_right_content {
-    height: 40%;
-    width: 100%;
-    flex-direction: row;
-}
+        height: 40%;
+        width: 100%;
+        flex-direction: row;
+    }      
 
     .modal_text {
         position: static;
@@ -398,16 +492,8 @@ button[data-modal-button].active:hover {
 
 } */
 
-@media screen and (max-width:550px) {
-
-    .project_modal .modal_content {
-        width: 0%;
-        height: 0%;
-        min-height: 0%;
-        min-width: 0%;
-    }  
-    
-    .project_modal[data-modal-active] .modal_content {
+@media screen and (max-width:550px) {    
+    .project_modal[data-modal-active] {
        transition-delay: 0s;
         width: 100%;
         height: 100%;
@@ -419,6 +505,15 @@ button[data-modal-button].active:hover {
         flex-direction: column;
    }
 
+   #modals.active {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        min-width: 100%;
+        left: 0%;
+        top: 0%;
+        bottom: 0%;
+    }
 
     .wrapper {
         flex-direction: column;
@@ -445,10 +540,6 @@ button[data-modal-button].active:hover {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    .project_modal[data-modal-active] .modal_right_content .modal__btn__close {
-        pointer-events: all;
     }
 
     .project_modal[data-modal-active] .modal_text {
@@ -504,17 +595,22 @@ button[data-modal-button].active:hover {
     overflow: hidden;
 }
 
-
-/* animations */
-
-.small_img {
-    scale: 1;
+.modals__container {
+    position: relative;
+    height: 0%;
+    width: 0%;
+    pointer-events: none;
+    background: transparent;
     transition: var(--smooth-transition);
+}
+
+#modals.active .modals__container {
     height: 100%;
     width: 100%;
 }
 
-
-/* .modals__container .project_modal:nth-child(1) .project__modal__title {
-    color: #7C4DD0;
+/* .slider__container {
+    position: relative;
+    height: 100%;
+    width: 100%;
 } */
