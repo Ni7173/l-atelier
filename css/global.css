@@ -25,15 +25,13 @@
 
 @media screen and (max-width: 400px) {
     :root {
-    --footer-width: 80%;
+    --footer-width: 75%;
     }
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
-
 
 *:focus {
     outline: none;
@@ -655,6 +653,9 @@ footer p {
 .footer__txt__container {
     width: var(--footer-width);
     max-width: var(--footer-width);
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
 }   
 
 .right-footer {
