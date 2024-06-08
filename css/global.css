@@ -597,6 +597,7 @@ footer p {
 
 .top__left__footer {
     width: var(--footer-width);
+    max-width: var(--footer-width);
     justify-content: space-between;
 }
 
@@ -653,6 +654,7 @@ footer p {
 
 .footer__txt__container {
     width: var(--footer-width);
+    max-width: var(--footer-width);
 }   
 
 .right-footer {
@@ -695,7 +697,8 @@ footer .socials li svg {
 
     .right__footer__container .top__right__footer {
         width: var(--footer-width);
-        justify-content: left;
+        max-width: var(--footer-width);
+        justify-content: unset;
         align-items: start;
     }
 
