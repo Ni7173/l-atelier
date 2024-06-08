@@ -59,45 +59,47 @@ const modalsManagement = () => {
     let activeModal;
     let newIndex = 0;
 
-    const showSwitchBtns = () => {
-        let isOverModal = false;
-        let isOverSwitchBtn = false;
+    if (window.innerWidth > 900) {
+        const showSwitchBtns = () => {
+            let isOverModal = false;
+            let isOverSwitchBtn = false;
 
-        const updateSwitchBtnsVisibility = () => {
-            if (isOverModal || isOverSwitchBtn) {
-                switchBtns.forEach(btn => {
-                    btn.classList.add('active');
+            const updateSwitchBtnsVisibility = () => {
+                if (isOverModal || isOverSwitchBtn) {
+                    switchBtns.forEach(btn => {
+                        btn.classList.add('active');
+                    });
+                } else {
+                    switchBtns.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                }
+            };
+
+            modals.forEach(modal => {
+                modal.addEventListener('mouseenter', () => {
+                    isOverModal = true;
+                    updateSwitchBtnsVisibility();
                 });
-            } else {
-                switchBtns.forEach(btn => {
-                    btn.classList.remove('active');
+                modal.addEventListener('mouseleave', () => {
+                    isOverModal = false;
+                    updateSwitchBtnsVisibility();
                 });
-            }
-        };
+            });
 
-        modals.forEach(modal => {
-            modal.addEventListener('mouseenter', () => {
-                isOverModal = true;
-                updateSwitchBtnsVisibility();
+            switchBtns.forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    isOverSwitchBtn = true;
+                    updateSwitchBtnsVisibility();
+                });
+                btn.addEventListener('mouseleave', () => {
+                    isOverSwitchBtn = false;
+                    updateSwitchBtnsVisibility();
+                });
             });
-            modal.addEventListener('mouseleave', () => {
-                isOverModal = false;
-                updateSwitchBtnsVisibility();
-            });
-        });
-
-        switchBtns.forEach(btn => {
-            btn.addEventListener('mouseenter', () => {
-                isOverSwitchBtn = true;
-                updateSwitchBtnsVisibility();
-            });
-            btn.addEventListener('mouseleave', () => {
-                isOverSwitchBtn = false;
-                updateSwitchBtnsVisibility();
-            });
-        });
+        }
+        showSwitchBtns();
     }
-    showSwitchBtns();
 
     const showModal = () => {
         projectLinks.forEach(projectLink => {
@@ -227,14 +229,14 @@ const modalsManagement = () => {
                 transitionSetting(modalsTransition, "opacity .6s ease-out, width 0s")
 
 
-                if (startX > endX + 50) {
+                if (startX > endX) {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex++;
                     if (newIndex >= modals.length) newIndex = 0;
                     resetModalPointerEvent(modals, "none")
                     modals[newIndex].dataset.modalActive = true;
                     modals[newIndex].style.pointerEvents = "all";
-                } else if (startX < endX - 50) {
+                } else if (startX < endX) {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex = newIndex - 1;
                     if (newIndex < 0) newIndex = modals.length - 1;
