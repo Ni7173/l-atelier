@@ -16,18 +16,13 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/mask.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/cookies.css">
+    <script src="js/cookies.js" defer></script>
     <script src="js/global.js" defer></script>
     <script src="js/home.js" defer></script>
 
+
 </head>
-
-<!--
-
-    couleur mère: noir et blanc
-    police: futura
-    
-
-    -->
 
 <body>
     <header>
@@ -173,6 +168,21 @@
 
     <main>
 
+        <div id="cookies-banner">
+            <div class="cookies-container">
+                <div class="item">
+                    <img src="" alt="">
+                </div>
+                <div class="item">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, alias.</p>
+                </div>
+                <div class="item">
+                    <a class="cookie__confirm" href="html/cookies.html" id="decline">En savoir plus</a>
+                    <button class="cookie__confirm" id="allow">Accepter</button>
+                </div>
+            </div>
+        </div>
+
         <section id="home" class="home">
             <div class="container">
                 <div class="grid">
@@ -202,7 +212,7 @@
                 <div class="home__menu__item">
                     <a class="menu__link absoluted" href="html/vins.html"></a>
                     <img loading="lazy" class="menu__img object__fit-cover" src="img/home/COMBIER-ACCUEIL (1).jpg"
-                        alt="image création étiquette vin">
+                        alt="image menu création étiquette vin">
                     <div class="menu__hovered absoluted d-flex">
                         <div class="menu__hovered__container d-flex">
                             <img loading="lazy" class="menu__picto" src="img/home/PICTO-VIN.svg"
@@ -214,7 +224,7 @@
                 <div class="home__menu__item">
                     <a class="menu__link absoluted" href="html/graphisme.html"></a>
                     <img loading="lazy" class="menu__img object__fit-cover" src="img/home/AFFICHE-KATRAPLAT.jpg"
-                        alt="image réalisation graphisme affiche flyers chartes graphiques">
+                        alt="image menu réalisation graphisme affiche flyers chartes graphiques">
                     <div class="menu__hovered absoluted d-flex">
                         <div class="menu__hovered__container d-flex">
                             <img loading="lazy" class="menu__picto" src="img/home/PICTO-GRAPHISME.svg"
@@ -226,7 +236,7 @@
                 <div class="home__menu__item trigger">
                     <a class="menu__link absoluted" href="html/illustrations.html"></a>
                     <img loading="lazy" class="menu__img object__fit-cover" src="img/home/ILLUST-ACCUEIL.jpg"
-                        alt="image illustration artistique dessin définition">
+                        alt="image menu illustration artistique dessin définition">
                     <div class="menu__hovered absoluted d-flex">
                         <div class="menu__hovered__container d-flex">
                             <img loading="lazy" class="menu__picto" src="img/home/PICTO-ILLUS.svg"
@@ -239,7 +249,7 @@
                 <div class="home__menu__item">
                     <a class="menu__link absoluted" href="html/a-propos.html"></a>
                     <img loading="lazy" class="menu__img object__fit-cover" src="img/home/A-PROPO.jpg"
-                        alt="à propos graphiste valence">
+                        alt="image menu à propos graphiste valence">
                     <div class="menu__hovered absoluted d-flex">
                         <div class="menu__hovered__container d-flex">
                             <img loading="lazy" class="menu__picto" src="img/home/PICTO-APROPO.svg"
@@ -270,7 +280,7 @@
                         </div>
                     </div>
                     <div class="footer__txt__container">
-                        <p><strong>L'Atelier 8</strong></p>
+                        <h1><strong>L'Atelier 8</strong></h1>
                         <p>16, Place de la Fontaine</p>
                         <p>26210 Montmeyran</p>
                         <p>06 81 26 16 78</p>

@@ -5,9 +5,41 @@ const graphismeSlider = () => {
     const closeBtn = document.querySelector('.modal__btn__close')
     const images = document.querySelectorAll('.slider__img_container');
     const switchBtns = document.querySelectorAll('[data-slider-button]');
-
+    
+    const indicatorsContainer = document.querySelector('.indicators');
     let newIndex;
 
+    const createIndicators = (elements, container) => {
+
+        for (let i = 0; i < elements.length; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.dataset.dotNumber = i;
+            container.appendChild(dot);
+        }
+    }
+    createIndicators(images, indicatorsContainer);
+
+    const dots = document.querySelectorAll('.dot');
+
+
+    const resetActiveDot = () => {
+        let activeDot = indicatorsContainer.querySelector('.active');
+        activeDot.classList.remove('active');
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            transitionSetting(images, "var(--long-transition)");
+            newIndex = parseInt(dot.dataset.dotNumber, 10);
+            resetActiveDot();
+            let activeSlide = document.querySelector('[data-active]');
+            if (activeSlide) delete activeSlide.dataset.active;
+            dots[newIndex].classList.add('active');
+            images[newIndex].dataset.active = true;
+        });
+    });
+    
     imagesLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -21,6 +53,7 @@ const graphismeSlider = () => {
                 if (imgNumber === linkNumber) {
                     img.dataset.active = true;
                     newIndex = imgNumber;
+                    dots[newIndex].classList.add('active');
                 }
             })
         })
@@ -37,6 +70,8 @@ const graphismeSlider = () => {
                 // if (newIndex >= images.length) newIndex = 0;
                 if (newIndex < 0) newIndex = images.length - 1;
                 images[newIndex].dataset.active = true;
+                resetActiveDot();
+                dots[newIndex].classList.add('active');
             }
             else if (btn.dataset.sliderButton === "next") {
                 let activeSlide = document.querySelector('[data-active]');
@@ -45,6 +80,8 @@ const graphismeSlider = () => {
                 if (newIndex >= images.length) newIndex = 0;
                 // if (newIndex < 0) newIndex = images.length - 1;
                 images[newIndex].dataset.active = true;
+                resetActiveDot();
+                dots[newIndex].classList.add('active');
             }
         })
     })
@@ -76,6 +113,7 @@ const graphismeSlider = () => {
             sliderModal.classList.remove('active');
             if (activeSlide) delete activeSlide.dataset.active;
             enableScrolling();
+            resetActiveDot();
             document.body.style.pointerEvents = "auto";
         }
     }
@@ -104,12 +142,16 @@ const graphismeSlider = () => {
                     if (newIndex >= images.length) newIndex = 0;
                     if (newIndex < 0) newIndex = images.length - 1;
                     images[newIndex].dataset.active = true;
+                    resetActiveDot();
+                    dots[newIndex].classList.add('active');
                 } else if (startX < endX - 50) {
                     if (activeSlide) delete activeSlide.dataset.active;
                     newIndex = newIndex - 1;
                     if (newIndex >= images.length) newIndex = 0;
                     if (newIndex < 0) newIndex = images.length - 1;
                     images[newIndex].dataset.active = true;
+                    resetActiveDot();
+                    dots[newIndex].classList.add('active');
                 }
             });
         });
@@ -143,4 +185,9 @@ setMobileSliderImg();
 // document.addEventListener('DOMContentLoaded', () => {
 //     const images = document.querySelectorAll('.img__container > img')
 //     itemsAppearing(images);
+// })
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+    
 // })

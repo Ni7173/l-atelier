@@ -146,7 +146,6 @@ setHomeText();
 
 const menuEffect = () => {
     const menuLinks = document.querySelectorAll('.menu__link');
-    console.log(menuLinks)
 
     menuLinks.forEach(link => {
         link.addEventListener('click', (e) => {

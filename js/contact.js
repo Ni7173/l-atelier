@@ -8,17 +8,24 @@ let errorMessage = document.getElementById('error');
 
 const contactRequired = () => {
     form.addEventListener('submit', (e) => {
+
         const pushErrorMessage = () => {
             if (errorMessage.classList.contains('active') == false) {
-                e.preventDefault();
+                errorContainer.style.display = "block";
                 errorMessage.classList.add('active');
             }
+            e.preventDefault();
         }
+
         if (nameInput.value === "" || nameInput.value == null) {
             pushErrorMessage();
         }
 
         if (textInput.value.length <= 5) {
+            pushErrorMessage();
+        }
+
+        if (mailInput.value.length <= 5 && telInput.value.length <= 5) {
             pushErrorMessage();
         }
     })

@@ -618,3 +618,69 @@ button[data-modal-button].active:hover {
     height: 100%;
     width: 100%;
 } */
+
+/* indicator and dots */
+
+#modals.active .indicators {
+    pointer-events: all;
+    transition: var(--quick-transition);
+}
+
+.indicators {
+    position: absolute;
+    z-index: 8;
+    left: 0%;
+    right: 0%;
+    width: 100%;
+    height: 5%;
+    bottom: 2%;
+    transition: none;
+    opacity: 0;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    border: 2px solid var(--light-grey);
+    background-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    transition: var(--quick-transition);
+    cursor: pointer;
+}
+
+.dot.active {
+    background: var(--light-grey);
+}
+
+.dot:hover {
+    scale: 1.1;
+}
+
+@media screen and (min-width: 500px) {
+    .indicators {
+        bottom: -5%;
+    }
+
+    .dot {
+        height: 22px;
+        width: 22px;
+        margin: 0 7px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .indicators {
+        left: 25%;
+        right: 25%;
+        width: 50%;
+        bottom: -5%;
+    }
+
+    .dot {
+        height: 14px;
+        width: 14px;
+        margin: 0 6px;
+    }
+}
