@@ -51,9 +51,9 @@ header.show-nav .burger .bar::before {
     --footer-width: 70%
 }
 
-@media screen and (max-width:400px) {
+@media screen and (min-width:550px) {
     :root {
-        --footer-width: 75%
+        --footer-width: 40%;
     }
 }
 
@@ -706,10 +706,11 @@ footer .socials li svg {
     width: 32px
 }
 
-@media screen and (max-width:999px) {
-    .right-footer h3 {
-        display: none
-    }
+.right-footer h3 {
+    display: none;
+}
+
+@media screen and (max-width:1049px) {
 
     .footer__logo {
         width: 70%;
@@ -745,13 +746,13 @@ footer .socials li svg {
     }
 }
 
-@media screen and (min-width:750px) {
+@media screen and (min-width:550px) {
     .footer__img__container {
-        width: 12%
+        width: 22%
     }
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:1050px) {
     footer {
         margin-bottom: 3rem
     }
@@ -763,7 +764,9 @@ footer .socials li svg {
 
     .top__left__footer {
         justify-content: right;
-        align-items: flex-end
+        align-items: flex-end;
+        max-width: 100%;
+        width: 100%;
     }
 
     .left-footer {
@@ -796,13 +799,17 @@ footer .socials li svg {
     }
 
     .right-footer {
-        width: 30%;
+        width: 45%;
         text-align: right;
         justify-content: center
     }
 
     footer .socials {
         justify-content: space-between
+    }
+
+    .right-footer h3 {
+        display: block;
     }
 }
 
@@ -837,13 +844,13 @@ footer .socials li svg {
 
 @media screen and (min-width:1700px) {
     .footer__img__container {
-        width: 13%
+        width: 12%;
     }
 }
 
 @media screen and (min-width:2100px) {
     .footer__img__container {
-        width: 10%
+        width: 8%;
     }
 }
 

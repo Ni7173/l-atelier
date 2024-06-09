@@ -1,31 +1,31 @@
 .logo .turning__star {
-    color: var(--orange);
+    color: var(--orange)
 }
 
 p {
-    white-space: inherit;
+    white-space: inherit
 }
 
 section {
     width: 100%;
     height: auto;
-    margin-block: 2rem;
+    margin-block: 2rem
 }
 
-section > div {
-    max-width: 80%;
+section>div {
+    max-width: 80%
 }
 
 .home__hero {
     width: 60%;
     height: auto;
-    position: relative;
+    position: relative
 }
 
 .home__hero__lunettes__img {
     z-index: 2;
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .home__hero__img {
@@ -34,30 +34,27 @@ section > div {
     left: 0;
     width: 50%;
     height: 100%;
-    clip-path: circle(49%);
+    clip-path: circle(49%)
 }
 
 .home__p__container {
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 3rem
 }
 
 .home__p {
     font-weight: 600;
     width: auto;
-    white-space: pre-line;
+    white-space: pre-line
 }
 
-
-/* reviews slider */
-
 .reviews__section {
-    margin-bottom: 4rem;
+    margin-bottom: 4rem
 }
 
 .reviews__section__container {
     flex-direction: column;
-    max-width: 100%;
+    max-width: 100%
 }
 
 .reviews__viewport {
@@ -65,26 +62,25 @@ section > div {
     overflow: hidden;
     display: flex;
     transition: var(--quick-transition);
-    width: 100%;
+    width: 100%
 }
 
 .reviews__list {
-    transition: transform 0.5s ease-in-out;
+    transition: transform .5s ease-in-out;
     transform: translateX(270%);
     height: 100%;
-    width: 100%;
+    width: 100%
 }
 
 .review {
     min-width: 90%;
     padding-inline: 2rem;
-    height: 100%;
+    height: 100%
 }
 
 button[data-slider-button] {
-    display: none;
+    display: none
 }
-
 
 .dot {
     height: 18px;
@@ -94,32 +90,31 @@ button[data-slider-button] {
     background-color: #fff;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease;
-    cursor: pointer;
+    transition: background-color .6s;
+    cursor: pointer
 }
 
 .dot.active {
-    background: #000;
+    background: #000
 }
 
 @media screen and (min-width:550px) {
-    section > div {
-        max-width: 70%;
+    section>div {
+        max-width: 70%
     }
 
     .review {
-        padding-inline: 4rem;
+        padding-inline: 4rem
     }
 }
 
 @media screen and (min-width:950px) {
-
     p {
-        white-space: pre-line;
+        white-space: pre-line
     }
 
-    section > div {
-        max-width: 55%;
+    section>div {
+        max-width: 55%
     }
 
     .reviews__viewport {
@@ -127,7 +122,7 @@ button[data-slider-button] {
     }
 
     .review {
-        padding-inline: 5rem;
+        padding-inline: 5rem
     }
 
     button[data-slider-button] {
@@ -139,67 +134,64 @@ button[data-slider-button] {
         cursor: pointer;
         transition: var(--quick-transition);
         padding: 0;
-        z-index: 3;
+        z-index: 3
     }
 
     button[data-slider-button] svg {
         height: 30px;
         width: 30px;
-        opacity: 1;
+        opacity: 1
     }
 
     button.next {
-        right: 2.5rem;
+        right: 2.5rem
     }
 
     button.prev {
-        left: 2.5rem;
+        left: 2.5rem
     }
 
     .dot {
         height: 15px;
         width: 15px;
-        margin: 0 2px;
+        margin: 0 2px
     }
 
     .review p {
-        white-space: inherit;
+        white-space: inherit
     }
 }
 
 @media screen and (min-width:1650px) {
-    section > div {
-        max-width: 40%;
+    section>div {
+        max-width: 40%
     }
 
     .home__hero {
-        width: 80%;
+        width: 80%
     }
 
     p {
-        margin-block: 4rem;
+        margin-block: 4rem
     }
 
     .home__p {
-        margin-bottom: 0;
+        margin-bottom: 0
     }
 
     .reviews__viewport {
-        max-width: 50%;
+        max-width: 50%
     }
 
     .review {
-        padding-inline: 7rem;
+        padding-inline: 7rem
     }
 
     button.prev {
-        left: 6rem;
+        left: 6rem
     }
 
     button.next {
-        right: 6rem;        
+        right: 6rem
     }
-
 }
-
-

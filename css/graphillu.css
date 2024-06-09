@@ -1,68 +1,50 @@
 body {
     font-weight: 300;
-    letter-spacing: .7px;
+    letter-spacing: .7px
 }
 
 .graphisme__content {
     width: 100vw;
-    max-width: 100%;
+    max-width: 100%
+}
+
+.img__container img,
+.project {
+    width: 100%;
+    transition: var(--smooth-transition)
 }
 
 .graphisme__content .wrapper {
-    max-width: 100%;
+    max-width: 100%
 }
 
 .project {
-    width: 100%;
-    transition: var(--smooth-transition);
     position: relative;
-    aspect-ratio: 2/1;
+    aspect-ratio: 2/1
 }
 
-.img__container, .project__content {
+.img__container,
+.project__content {
     width: 50%;
     height: 100%;
     min-height: 100%;
     max-width: 50%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1
 }
-
-
-@media screen and (min-width: 1200px) {
-    .project {
-        width: 50%;
-    }
-    
-    .project__reversed {
-        flex-direction: row-reverse;
-    }
-}
-
-
-/* project img  */
 
 .project__link {
-    z-index: 2;
+    z-index: 2
 }
 
 .img__container {
-    /* position: relative; */
-    overflow: hidden;
+    overflow: hidden
 }
 
 .img__container img {
     aspect-ratio: 1/1;
-    /* aspect-ratio: ; */
     height: 100%;
-    width: 100%;
-    cursor: pointer;
-    transition: var(--smooth-transition);
+    cursor: pointer
 }
-
-
-
-
-/* project content  */
 
 .project__content {
     flex-direction: column;
@@ -71,7 +53,7 @@ body {
     color: #555;
     justify-content: end;
     text-align: left;
-    align-items: start;
+    align-items: start
 }
 
 .project__content p {
@@ -79,7 +61,7 @@ body {
     font-size: 1.6rem;
     white-space: pre-line;
     color: var(--white);
-    transition: var(--smooth-transition);
+    transition: var(--smooth-transition)
 }
 
 .project__content svg {
@@ -87,12 +69,8 @@ body {
     height: 25px;
     margin-bottom: 1.5rem;
     opacity: 0;
-    transition: var(--smooth-transition);
+    transition: var(--smooth-transition)
 }
-
-
-
-/* modals  */
 
 .slider__modal {
     position: fixed;
@@ -102,7 +80,7 @@ body {
     top: 50%;
     left: 50%;
     transition: var(--quick-transition);
-    pointer-events: none;
+    pointer-events: none
 }
 
 .slider__modal.active {
@@ -110,51 +88,62 @@ body {
     height: 60%;
     left: 0;
     top: 20%;
-    bottom: 0%;
-    right: 0%;
+    bottom: 0;
+    right: 0;
     background: var(--white);
     opacity: 1;
     z-index: 8;
     box-shadow: 0 0 30px #555;
-    pointer-events: all;
+    pointer-events: all
 }
 
+@media screen and (min-width:1200px) {
+    .project {
+        width: 50%
+    }
 
-@media screen and (min-width: 1200px) {
+    .project__reversed {
+        flex-direction: row-reverse
+    }
+
     .slider__modal.active {
         width: 60%;
         height: 75%;
         left: 20%;
         top: 12.5%;
         bottom: 12.5%;
-        right: 20%;
+        right: 20%
     }
 
-    .project__reversed .project__content{
+    .project__reversed .project__content {
         text-align: right;
-        align-items: end;
+        align-items: end
     }
 }
 
-.slider__container, .slider__img__list {
-    position: relative;
+.slider__container,
+.slider__img__list {
+    position: relative
 }
 
-.slider__container, .slider__img__list, .slider__img_container, .slider__img  {
+.slider__container,
+.slider__img,
+.slider__img__list,
+.slider__img_container {
     width: 100%;
     height: 100%;
     max-width: 100%;
-    max-height: 100%;
+    max-height: 100%
 }
 
 .slider__img_container {
     position: absolute;
     opacity: 0;
-    transition: var(--long-transition);
+    transition: var(--long-transition)
 }
 
 .slider__img_container[data-active] {
-    opacity: 1;
+    opacity: 1
 }
 
 .slider__txt__container {
@@ -165,32 +154,26 @@ body {
     right: 0;
     left: 0;
     background: hsl(0, 0%, 0%, .7);
-    display: none;
+    display: none
 }
 
 .slider__p {
-    color: var(--white);
+    color: var(--white)
 }
 
-
-
-
-/* buttons on the side */
-
-
-@media screen and (max-width: 1149px) {
+@media screen and (max-width:1149px) {
     button[data-slider-button] {
-        display: none;
+        display: none
     }
-    
+
     .project__content svg {
         opacity: 1;
         width: 20px;
-        height: 20px;
+        height: 20px
     }
 }
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width:1150px) {
     button[data-slider-button] {
         display: block;
         position: absolute;
@@ -202,192 +185,125 @@ body {
         opacity: 0;
         transform: translateY(2.5rem);
         transition: var(--quick-transition);
-        padding: 0;
+        padding: 0
+    }
+
+    button[data-slider-button]:hover {
+        opacity: .85;
     }
 
     button[data-slider-button] svg {
         height: 30px;
         width: 30px;
-        opacity: 1;
+        opacity: 1
     }
 
-    button[data-slider-button="prev"] {
-        left: 1rem;
+    button[data-slider-button=prev] {
+        left: 1rem
     }
 
-    button[data-slider-button="next"] {
-        right: 1rem;
-        /* rotate: 180deg; */
+    button[data-slider-button=next] {
+        right: 1rem
     }
 }
 
-.slider__container .slider__img_container:nth-child(9) img{
+.slider__container .slider__img_container:nth-child(9) img {
     object-position: center 100%;
-    -webkit-object-position: center 100%;
+    -webkit-object-position: center 100%
 }
 
-
-/* responsive */
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width:700px) {
     .project__content {
-        padding: 3rem;
+        padding: 3rem
     }
 
     .project__content p {
         margin-bottom: 1rem;
         line-height: 1.4em;
-        font-size: 1.45rem;
+        font-size: 1.45rem
     }
 
-    
     .slider__modal .modal__btn__close {
-        opacity: 1;
+        opacity: 1
     }
 }
 
-@media screen and (max-width: 1199px) {
-    .wrapper .project:nth-child(even) {
-        flex-direction: row-reverse;
+@media screen and (max-width:1199px) {
+    .wrapper .project:nth-child(2n) {
+        flex-direction: row-reverse
     }
-    
+
     .project {
         width: 100vw;
         max-width: 100vw;
-        height: auto;
-    }
-    
-    .project__content p {
-        text-align: left;
+        height: auto
     }
 
-    .wrapper .project:nth-child(even) .project__content p {
-        text-align: right;
+    .project__content p {
+        text-align: left
     }
-    
-    .wrapper .project:nth-child(even) .project__content {
+
+    .wrapper .project:nth-child(2n) .project__content p {
+        text-align: right
+    }
+
+    .wrapper .project:nth-child(2n) .project__content {
         text-align: right;
-        align-items:end;
+        align-items: end
     }
 }
 
-
-@media screen and (min-width: 701px) {
+@media screen and (min-width:701px) {
     .project__content {
-        padding: 5rem;
+        padding: 5rem
     }
 
     .project__content p {
         margin-bottom: 1rem;
         line-height: auto;
-        font-size: 1.6rem;
+        font-size: 1.6rem
     }
 }
 
-@media screen and (min-width: 1200px) {
-        .modal__btn__close {
+@media screen and (min-width:1350px) {
+    .project__content {
+        padding: 6rem
+    }
+}
+
+.slider__modal.active:hover button[data-slider-button] {
+    opacity: .7;
+    transform: translateY(0)
+}
+
+.modal__btn__close:hover {
+    opacity: 1;
+    scale: 1.08
+}
+
+.footer__txt__container strong {
+    font-weight: 700
+}
+
+.slider__modal.active .indicators {
+    pointer-events: all;
+    transition: var(--quick-transition);
+    opacity: 1
+}
+
+@media screen and (min-width:1200px) {
+    .modal__btn__close {
         top: 1.5rem;
-        right: 1.5rem;
+        right: 1.5rem
     }
 
     .modal__btn__close svg {
         width: 17px;
         height: 17px;
-        transition: var(--quick-transition);
+        transition: var(--quick-transition)
     }
 
     .project__content p {
-        margin-bottom: 0;
-    }
-}
-
-@media screen and (min-width: 1350px) {
-    .project__content {
-        padding: 6rem;
-    }
-}
-
-/* hover */
-
-.slider__modal.active:hover button[data-slider-button] {
-    opacity: .7;
-    transform: translateY(0);
-}
-
-.modal__btn__close:hover {
-    opacity: 1;
-    scale: 1.08;
-}
-
-.footer__txt__container strong {
-    font-weight: 700;
-}
-
-
-
-/* indicator and dots */
-
-.slider__modal.active .indicators {
-    pointer-events: all;
-    transition: var(--quick-transition);
-    opacity: 1;
-}
-
-.indicators {
-    position: absolute;
-    z-index: 8;
-    left: 0%;
-    right: 0%;
-    width: 100%;
-    height: 5%;
-    bottom: 2%;
-    transition: none;
-    opacity: 0;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 4px;
-    border: 2px solid var(--light-grey);
-    background-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    transition: var(--quick-transition);
-    cursor: pointer;
-}
-
-.dot.active {
-    background: var(--light-grey);
-}
-
-.dot:hover {
-    scale: 1.1;
-}
-
-@media screen and (min-width: 500px) {
-    .indicators {
-        bottom: -5%;
-    }
-
-    .dot {
-        height: 22px;
-        width: 22px;
-        margin: 0 7px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .indicators {
-        left: 25%;
-        right: 25%;
-        width: 50%;
-        bottom: -5%;
-    }
-
-    .dot {
-        height: 14px;
-        width: 14px;
-        margin: 0 6px;
+        margin-bottom: 0
     }
 }
