@@ -195,3 +195,23 @@ button[data-slider-button] {
         right: 6rem
     }
 }
+
+
+/* creators */
+
+.creators {
+    margin-block: 6rem 5rem;
+}
+
+.creators p {
+    margin: 1rem 0;
+}
+
+.creators a {
+    font-weight: 500;
+    transition: var(--quick-transition);
+}
+
+.creators a:hover {
+    color: var(--red);
+}

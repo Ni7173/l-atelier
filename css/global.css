@@ -705,7 +705,6 @@ footer .socials li svg {
     display: flex;
     justify-content: left;
     white-space: nowrap;
-    text-transform: uppercase;
     color: var(--grey);
     line-height: 1.4;
     text-align: left;
@@ -713,6 +712,10 @@ footer .socials li svg {
 
 .legal__mentions a {
     width: 100%;
+}
+
+.bottom__right__footer span {
+    font-size: 1.3rem;
 }
 
 @media screen and (max-width:1049px) {
@@ -749,15 +752,15 @@ footer .socials li svg {
     .footer__img__container img {
         width: 100%
     }
+
+    .top__right__footer {
+        margin-bottom: 2rem;
+    }
 }
 
 @media screen and (min-width:550px) {
     .footer__img__container {
         width: 22%
-    }
-
-    .bottom__right__footer span {
-        font-size: 1.3rem;
     }
 
     .legal__mentions {

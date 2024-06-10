@@ -388,19 +388,19 @@ header {
     }
 
     #home__menu .home__menu__item:first-child .menu__hovered {
-        background: hsl(275, 42%, 30%, .6);
+        background: hsl(275, 42%, 30%, .72);
     }
 
     #home__menu .home__menu__item:nth-child(2) .menu__hovered {
-        background: hsl(230, 31%, 53%, .6);
+        background: hsl(230, 31%, 53%, .72);
     }
 
     #home__menu .home__menu__item:nth-child(3) .menu__hovered {
-        background: hsl(189, 100%, 30%, .6);
+        background: hsl(189, 100%, 30%, .72);
     }
 
     #home__menu .home__menu__item:nth-child(4) .menu__hovered {
-        background: hsl(61, 59%, 42%, .6)
+        background: hsl(61, 59%, 42%, .72)
     }
 }
 
