@@ -123,7 +123,6 @@ header {
 .home__text__container {
     position: absolute;
     top: 77%;
-    left: 4%;
     flex-direction: row;
     width: auto;
     white-space: nowrap;
@@ -440,18 +439,25 @@ header {
     }
 
     .right__home__text {
-        justify-self: center;
         margin: 0;
-        text-align: left;
-        justify-content: left
+        text-align: left
     }
 
     .home__text__container {
         justify-self: center;
         justify-content: left;
         flex-direction: column;
-        left: 28%;
+        left: 24%;
         text-align: center
+    }
+
+    .home__text__container p {
+        margin-left: 1rem;
+    }
+
+    .right__home__text p {
+        margin: 0;
+        text-align: left;
     }
 }
 

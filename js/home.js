@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const switchingTxtOperator = () => {
     let switchingTxt = document.querySelector('.right__home__text #switching-text');
-    const texts = ["accueillant", "de création", "chaleureux", "d'échange", "de conception", "bienveillant", " d'écoute "];
+    const texts = ["de conception", "accueillant", "chaleureux", "d'échange", "bienveillant", " d'écoute ", "de création"];
 
 
 
