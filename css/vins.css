@@ -1,6 +1,7 @@
 .project_img,
-.project_modal .modal_right_content {
-    overflow: hidden
+.project_modal .modal_right_content,
+.project {
+    overflow: hidden;
 }
 
 .container {
@@ -475,11 +476,6 @@ button[data-modal-button].active:hover {
         bottom: 0
     }
 
-    .project,
-    .project_img {
-        overflow: hidden
-    }
-
     .project_modal[data-modal-active] {
         transition-delay: 0s;
         flex-direction: column
@@ -498,13 +494,13 @@ button[data-modal-button].active:hover {
     }
 
     .modal_left_content {
-        height: 60%;
+        height: 55%;
         width: 100%;
         position: relative
     }
 
     .project_modal[data-modal-active] .modal_right_content {
-        height: 40%;
+        height: 45%;
         width: 100%;
         flex-direction: column-reverse;
         display: flex;
