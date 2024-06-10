@@ -267,8 +267,8 @@ body {
 
     .project__content p {
         margin-bottom: 1rem;
-        line-height: auto;
-        font-size: 1.6rem
+        line-height: unset;
+        font-size: 2rem
     }
 }
 

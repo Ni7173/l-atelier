@@ -422,17 +422,6 @@
                 width: 40%;
             }
 
-        }
-
-        .project_modal:nth-child(1) .modal_content,
-        .project_modal:nth-child(2) .modal_content,
-        .project_modal:nth-child(7) .modal_content,
-        .project_modal:nth-child(8) .modal_content,
-        .project_modal:nth-child(10) .modal_content,
-        .project_modal:nth-child(11) .modal_content {
-            .modal_text {
-                width: 60% !important;
-            }
 
             p {
                 white-space: inherit;
@@ -675,7 +664,7 @@
         .modal_content {
 
             .modal_right_content .modal_text {
-                padding: 5rem 6rem;
+                padding: 8rem 6rem;
 
                 p {
                     white-space: inherit;
@@ -690,7 +679,7 @@
         .modal_content {
 
             .modal_right_content .modal_text {
-                padding: 2.5rem 6rem;
+                padding: 5.5rem 6rem;
 
                 p {
                     white-space: inherit;
@@ -736,7 +725,7 @@
         .modal_content {
 
             .modal_right_content .modal_text {
-                padding: 2.5rem 6rem;
+                padding: 5.5rem 6rem;
 
                 p {
                     white-space: inherit;

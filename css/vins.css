@@ -437,13 +437,13 @@ button[data-modal-button].active:hover {
     }
 
     .modal_left_content {
-        height: 60%;
+        height: 55%;
         width: 100%;
         position: relative
     }
 
     .modal_right_content {
-        height: 40%;
+        height: 45%;
         width: 100%;
         flex-direction: row
     }
@@ -564,4 +564,35 @@ button[data-modal-button].active:hover {
 #modals.active .indicators {
     pointer-events: all;
     transition: var(--quick-transition)
+}
+
+@media screen and (min-width:550px) and (max-width:1200px) {
+
+    .project_content p {
+        font-size: 2rem;
+    }
+
+    .project_modal p {
+        font-family: 1.8rem;
+    }
+
+    .modal_text {
+        padding: 11rem 9rem;
+        font-size: 2rem;
+        width: 70% !important;
+    }
+
+    .modal_text.illustrated {
+        width: 50% !important;
+        font-size: 2rem;
+    }
+
+    .modal_right_content .modal_text.modal_text.illustrated {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal_text.illustrated+.modal_img {
+        width: 50%;
+    }
 }

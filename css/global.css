@@ -57,6 +57,18 @@ header.show-nav .burger .bar::before {
     }
 }
 
+/* font-size tablette  */
+
+@media screen and (min-width:550px) and (max-width:1200px) {
+
+    html body,
+    header nav .menu-list a,
+    footer h1 {
+        font-size: 2.4rem;
+    }
+
+}
+
 *,
 ::after,
 ::before {
@@ -389,6 +401,16 @@ nav .socials li:hover svg {
     }
 
     .logo svg {
+        width: 300px
+    }
+}
+
+@media screen and (min-width:1400px) {
+    header {
+        padding-block: 5rem;
+    }
+
+    .logo svg {
         width: 210px
     }
 }
@@ -669,6 +691,9 @@ footer p {
     justify-content: left;
     display: flex;
     flex-direction: column;
+}
+
+.footer__txt__container p {
     white-space: nowrap;
 }
 
@@ -869,7 +894,7 @@ footer .socials li svg {
 
     .footer__logo,
     .right-footer {
-        margin-top: 2.5rem
+        margin-top: 1.5rem
     }
 
     .footer__txt__container {

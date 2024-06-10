@@ -1,85 +1,84 @@
-function menuMobile() {
-    const btn = document.querySelector('.burger');
-    const header = document.querySelector('header');
-    const links = document.querySelectorAll('.navbar a');
-    let logo = document.querySelector('.logo a');
-    const menuItems = document.querySelectorAll('.menu-list li')
-    const navbar = document.querySelector('.navbar');
-
-    let logoState;
-
-    const disableScrolling = () => {
-        var x = window.scrollX;
-        var y = window.scrollY;
-        window.onscroll = function () { window.scrollTo(x, y); };
-    }
-
-    const enableScrolling = () => {
-        window.onscroll = function () { };
-    }
-
-    const scrollManager = () => {
-        if (header.classList.contains("show-nav")) {
-            disableScrolling();
-        } else {
-            enableScrolling();
-        }
-    }
-
-    const menuEffect = () => {
-        menuItems.forEach(item => {
-            item.classList.add('--translated');
-            item.style.transition = ""
-        })
-    }
-
-    const clearMenuItemsClasses = () => {
-        menuItems.forEach(item => {
-            item.style.transition = "all 0s"
-            item.classList.remove('--translated');
-        })
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    function menuMobile() {
+        const menuItems = document.querySelectorAll('.menu-list li')
+        const btn = document.querySelector('.burger');
+        const header = document.querySelector('header');
+        const links = document.querySelectorAll('.navbar a');
+        let logo = document.querySelector('.logo a');
 
 
-    btn.addEventListener('click', () => {
-        header.classList.toggle('show-nav');
-        logo.style.animation = "var(--header-transition)";
+        let logoState;
 
-        if (header.classList.contains('show-nav')) {
-            setTimeout(() => {
-                menuEffect();
-            }, 300);
-        } else {
-            clearMenuItemsClasses();
+        const disableScrolling = () => {
+            var x = window.scrollX;
+            var y = window.scrollY;
+            window.onscroll = function () { window.scrollTo(x, y); };
         }
 
-        scrollManager();
-
-        if (logo.classList.contains('logo--is-translated')) {
-            logo.classList.remove('logo--is-translated');
-            logoState = "changed";
-            return
+        const enableScrolling = () => {
+            window.onscroll = function () { };
         }
-        if (logoState === "changed") {
-            logo.classList.add('logo--is-translated');
-            logoState = 0;
+
+        const scrollManager = () => {
+            if (header.classList.contains("show-nav")) {
+                disableScrolling();
+            } else {
+                enableScrolling();
+            }
         }
-    })
 
-    links.forEach(link =>
-        link.addEventListener('click', () => {
-            header.classList.remove('show-nav');
-            clearMenuItemsClasses();
-        })
-    );
-}
-menuMobile();
+        const menuEffect = () => {
+            menuItems.forEach(item => {
+                item.classList.add('--translated');
+                item.style.transition = ""
+            })
+        }
+
+        const clearMenuItemsClasses = () => {
+            menuItems.forEach(item => {
+                item.style.transition = "all 0s"
+                item.classList.remove('--translated');
+            })
+        }
 
 
-// if (window.history.replaceState) {
-//     window.history.replaceState(null, null, window.location.pathname.slice(0, -5));
-// }
+        const menuToggle = () => {
+            btn.addEventListener('click', () => {
+                header.classList.toggle('show-nav');
+                logo.style.animation = "var(--header-transition)";
 
+                if (header.classList.contains('show-nav')) {
+                    setTimeout(() => {
+                        menuEffect();
+                    }, 300);
+                } else {
+                    clearMenuItemsClasses();
+                }
+
+                scrollManager();
+
+                if (logo.classList.contains('logo--is-translated')) {
+                    logo.classList.remove('logo--is-translated');
+                    logoState = "changed";
+                    return
+                }
+                if (logoState === "changed") {
+                    logo.classList.add('logo--is-translated');
+                    logoState = 0;
+                }
+            })
+
+            links.forEach(link =>
+                link.addEventListener('click', () => {
+                    header.classList.remove('show-nav');
+                    clearMenuItemsClasses();
+                })
+            );
+        }
+        menuToggle();
+    }
+    menuMobile();
+});
 
 // fonctions spécifiques pour toutes pages
 
@@ -119,3 +118,4 @@ const itemsAppearing = (items) => {
         intersectionObserver.observe(item.parentElement);
     })
 }
+
