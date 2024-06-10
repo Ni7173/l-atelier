@@ -42,29 +42,6 @@ const switchingTxtOperator = () => {
 switchingTxtOperator();
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const menuItems = document.querySelectorAll('.home__menu__item');
-
-    menuItems.forEach(item => {
-        const link = item.querySelector('.menu__link');
-        const hovered = item.querySelector('.menu__hovered');
-
-        let isHovered = false;
-
-        item.addEventListener('click', (e) => {
-            hovered.style.opacity = '1';
-            window.location.href = link.href;
-        });
-
-        item.addEventListener('touchend', () => {
-            isHovered = false;
-            hovered.style.opacity = '0';
-            hovered.style.pointerEvents = 'none';
-        });
-    });
-});
-
-
 const adjustHomeLogo = () => {
     const logo = document.querySelector('.logo a');
     const trigger = document.querySelector('.trigger');
@@ -91,11 +68,6 @@ const adjustHomeLogo = () => {
 
 adjustHomeLogo();
 
-// const setStarAnimation = () => {
-//     const star = document.querySelector('.logo__star');
-//     star.style.animation = "turningStar 2.5s infinite";
-// }
-
 const setVideo = () => {
     const video = document.querySelector('.hero__video');
     if (video) {
@@ -108,16 +80,6 @@ const setVideo = () => {
         // video.setAttribute('muted', 'true');
     }
 }
-
-// const textsAnimation = () => {
-
-//     document.addEventListener('DOMContentLoaded', () => {
-//         const texts = document.querySelectorAll('.home__text__container p')
-//         console.log(texts)
-//         itemsAppearing(texts);
-//     })
-// }
-// textsAnimation();
 
 const textsAnimation = () => {
     const texts = document.querySelectorAll('.home__text__container p')
@@ -143,19 +105,3 @@ const setHomeText = () => {
     })
 }
 setHomeText();
-
-const menuEffect = () => {
-    const menuLinks = document.querySelectorAll('.menu__link');
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const menuItem = link.closest('.home__menu__item');
-            const menuHovered = menuItem.querySelector('.menu__hovered');
-            const menuImg = menuItem.querySelector('.menu__img');
-            menuHovered.style.opacity = 1;
-            menuImg.style.opacity = 0;
-        })
-    })
-}
-menuEffect();
