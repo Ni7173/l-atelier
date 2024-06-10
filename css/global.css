@@ -176,7 +176,7 @@ header {
     color: var(--light-color);
     z-index: 5;
     top: 0;
-    padding: 3rem 0
+    padding-block: 3rem;
 }
 
 .footer-container,
@@ -382,24 +382,10 @@ nav .socials li:hover svg {
     scale: 1.02
 }
 
-@media screen and (min-width:2000px) {
-    header {
-        padding-block: 8rem 7rem
-    }
-
-    .logo svg {
-        width: 260px
-    }
-
-    .show-nav .socials li svg {
-        height: 40px;
-        width: 40px
-    }
-}
 
 @media screen and (min-width:800px) {
     header {
-        padding-top: 7rem
+        padding-block: 5rem;
     }
 
     .logo svg {
@@ -407,25 +393,28 @@ nav .socials li:hover svg {
     }
 }
 
-@media screen and (max-width:1500px) {
-    header {
-        padding: 5rem 0
-    }
-}
-
 @media screen and (min-width:1501px) {
     header {
-        padding-top: 7rem
+        padding-block: 6rem;
     }
 
     .logo svg {
-        width: 240px
+        width: 250px
     }
 }
 
-@media screen and (min-width:1801px) {
+@media screen and (min-width:2000px) {
+    header {
+        padding-block: 7rem;
+    }
+
     .logo svg {
         width: 270px
+    }
+
+    .show-nav .socials li svg {
+        height: 40px;
+        width: 40px
     }
 }
 

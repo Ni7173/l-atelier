@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Error sending email
         echo "Oops! Something went wrong. Please try again later.";
     }
-} else {
+} else { 
     // If form is not submitted, redirect to the contact page
     header("Location: index.html");
     exit;
