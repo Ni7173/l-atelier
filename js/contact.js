@@ -31,3 +31,13 @@ const contactRequired = () => {
     })
 }
 contactRequired();
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth < 550) {
+        const setRightImage = () => {
+            const map = document.querySelector('.contact__map');
+            map.setAttribute('src', '../img/contact/PLAN-MONTMEYRAN-MOBILE.jpg')
+        }
+        setRightImage();
+    }
+})
