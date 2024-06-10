@@ -322,7 +322,7 @@ const modalsManagement = () => {
                         setTimeout(() => {
                             modal.style.pointerEvents = "all";
                             closeBtn.classList.add('active');
-                            indicatorsContainer.style.opacity = 1;
+                            indicatorsContainer.style.opacity = ".6";
                             dots[newIndex].classList.add('active');
                         }, 450);
                     }
