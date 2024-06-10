@@ -325,7 +325,7 @@ header {
 }
 
 #home__menu .home__menu__item:nth-child(3) .menu__hovered {
-    background: var(--green)
+    background: var(--green);
 }
 
 #home__menu .home__menu__item:nth-child(4) .menu__hovered {
@@ -352,6 +352,14 @@ header {
     width: 55px
 }
 
+#home__menu .home__menu__item .menu__hovered {
+    opacity: 0;
+    z-index: 2;
+    transition: var(--quick-transition);
+    width: 100%;
+    height: 100%
+}
+
 @media screen and (max-width:1200px) {
     .home__menu .home__menu__item .menu__hovered__container .menu__picto {
         max-height: 50%;
@@ -374,6 +382,26 @@ header {
     #home__menu .home__menu__item:first-child .menu__hovered .menu__picto {
         width: 70px
     }
+
+    #home__menu .home__menu__item .menu__hovered {
+        opacity: 1;
+    }
+
+    #home__menu .home__menu__item:first-child .menu__hovered {
+        background: hsl(275, 42%, 30%, .5);
+    }
+
+    #home__menu .home__menu__item:nth-child(2) .menu__hovered {
+        background: hsl(230, 31%, 53%, .5);
+    }
+
+    #home__menu .home__menu__item:nth-child(3) .menu__hovered {
+        background: hsl(189, 100%, 30%, .5);
+    }
+
+    #home__menu .home__menu__item:nth-child(4) .menu__hovered {
+        background: hsl(61, 59%, 42%, .5)
+    }
 }
 
 #home__menu .home__menu__item .menu__picto {
@@ -385,14 +413,6 @@ header {
 .menu__hovered__container h1 {
     margin: 0;
     width: 100%
-}
-
-#home__menu .home__menu__item .menu__hovered {
-    opacity: 0;
-    z-index: 2;
-    transition: var(--quick-transition);
-    width: 100%;
-    height: 100%
 }
 
 @media screen and (max-width:700px) {
