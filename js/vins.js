@@ -372,12 +372,6 @@ const modalsManagement = () => {
     }
     closeModal();
 
-    const transitionSetting = (elements, transition) => {
-        elements.forEach(elem =>
-            elem.style.transition = transition
-        )
-    }
-
     const resetModalPointerEvent = (elements, transition) => {
         elements.forEach(elem =>
             elem.style.pointerEvents = transition

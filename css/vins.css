@@ -113,12 +113,24 @@ button[data-modal-button] {
     opacity: 0
 }
 
+.width-0 {
+    width: 0% !important;
+    height: 0% !important;
+    max-width: 0% !important;
+    max-height: 0% !important;
+}
+
+#modals.active .width-0 {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
 #modals,
 .project_modal,
 .project_modal .modal_content {
     transition: var(--smooth-transition);
-    width: 0%;
-    height: 0%
 }
 
 .project_link {
@@ -159,12 +171,16 @@ button[data-modal-button] {
     background: 0 0;
     top: 50%;
     left: 50%;
-    z-index: 7
+    z-index: 7;
+    width: 0%;
+    height: 0%;
 }
 
 .project_modal .modal_content {
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     position: inherit
 }
 
@@ -173,17 +189,12 @@ button[data-modal-button] {
     height: 100%;
     min-height: 100%;
     min-width: 100%;
-    top: 0;
-    left: 0
 }
 
 .project_modal {
     position: absolute;
     background: #fff;
-    max-width: 0%;
-    max-height: 0%;
-    top: 0;
-    left: 0;
+    bottom: 0;
     opacity: 0;
     pointer-events: none;
     display: flex;
@@ -208,12 +219,6 @@ button[data-modal-button] {
     height: 65%
 }
 
-.modal__btn__close {
-    width: 0%;
-    height: 0%;
-    opacity: 0;
-    pointer-events: none
-}
 
 .modals__container,
 .small_img {
@@ -224,6 +229,13 @@ button[data-modal-button] {
     opacity: 1;
     pointer-events: all;
     padding: 3.3rem
+}
+
+.modal__btn__close {
+    opacity: 0;
+    width: 0%;
+    height: 0%;
+    pointer-events: none
 }
 
 @media screen and (min-width:1000px) {
@@ -239,6 +251,12 @@ button[data-modal-button] {
         width: 60%;
         top: 50%;
         left: 20%
+    }
+
+    #modals {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -270,8 +288,14 @@ button[data-modal-button] {
 }
 
 .modal_text {
+    padding: 0;
+}
+
+#modals.active .modal_text {
+    height: 100%;
     width: 100%;
     max-height: 100%;
+    max-width: 100%;
     height: inherit;
     position: relative;
     display: flex;
@@ -280,7 +304,6 @@ button[data-modal-button] {
     justify-content: flex-end;
     color: var(--main-color);
     text-align: left;
-    padding: 0 5rem 7rem
 }
 
 .modal_text.white__text h3,
@@ -510,6 +533,7 @@ button[data-modal-button].active:hover {
 
     .project_modal[data-modal-active] .modal_text {
         position: static;
+        padding: 0 5rem 7rem;
         height: 40%
     }
 
@@ -550,15 +574,11 @@ button[data-modal-button].active:hover {
 
 .modals__container {
     position: relative;
-    height: 0%;
-    width: 0%;
     pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: 0 0
-}
-
-#modals.active .modals__container {
-    height: 100%;
-    width: 100%
 }
 
 #modals.active .indicators {
@@ -576,15 +596,17 @@ button[data-modal-button].active:hover {
         font-family: 1.8rem;
     }
 
-    .modal_text {
-        padding: 11rem 9rem;
+    #modals.active .modal_text {
+        padding: 8rem 9rem;
         font-size: 2rem;
         width: 70% !important;
+        justify-content: center;
+        height: 100%;
     }
 
-    .modal_text.illustrated {
+    #modals.active .modal_text.illustrated {
         width: 50% !important;
-        font-size: 2rem;
+        padding: 5rem 4rem;
     }
 
     .modal_right_content .modal_text.modal_text.illustrated {
@@ -594,5 +616,52 @@ button[data-modal-button].active:hover {
 
     .modal_text.illustrated+.modal_img {
         width: 50%;
+    }
+}
+
+@media screen and (min-width:1201px) {
+    #modals.active .modal_text.modal_text.illustrated {
+        height: 50%;
+        padding: 6rem;
+    }
+
+    .modal_right_content .modal_text {
+        padding: 8rem 6rem;
+    }
+
+    #modals.active .modal_right_content .modal_text.illustrated.long {
+        padding: 3rem;
+    }
+}
+
+@media screen and (min-width:1401px) {
+
+    #modals.active .modal_text.modal_text.illustrated.long {
+        padding: 5rem;
+    }
+}
+
+@media screen and (min-width:1701px) {
+
+    #modals.active .modal_text.modal_text.illustrated,
+    #modals.active .modal_text.modal_text.illustrated.long {
+        padding: 8rem 6rem;
+    }
+
+    #modals.active .modal_text.modal_text {
+        padding: 15rem 10rem;
+    }
+}
+
+
+@media screen and (min-width:2200px) {
+
+    #modals.active .modal_text.modal_text {
+        padding: 23rem 16rem;
+    }
+
+    #modals.active .modal_text.modal_text.illustrated,
+    #modals.active .modal_text.modal_text.illustrated.long {
+        padding: 14rem 12rem;
     }
 }
