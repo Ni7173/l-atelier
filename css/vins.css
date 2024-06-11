@@ -592,16 +592,19 @@ button[data-modal-button].active:hover {
         font-size: 2rem;
     }
 
-    .project_modal p {
-        font-family: 1.8rem;
-    }
-
     #modals.active .modal_text {
         padding: 8rem 9rem;
-        font-size: 2rem;
         width: 70% !important;
         justify-content: center;
         height: 100%;
+    }
+
+    .project_modal .project__modal__title {
+        font-size: 2.4rem;
+    }
+
+    .project_modal p {
+        font-size: 2rem;
     }
 
     #modals.active .modal_text.illustrated {

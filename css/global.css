@@ -57,18 +57,6 @@ header.show-nav .burger .bar::before {
     }
 }
 
-/* font-size tablette  */
-
-@media screen and (min-width:550px) and (max-width:1200px) {
-
-    html body,
-    header nav .menu-list a,
-    footer h1 {
-        font-size: 2.4rem;
-    }
-
-}
-
 *,
 ::after,
 ::before {
@@ -129,6 +117,18 @@ h6 {
         margin: 0 auto 7rem;
         padding: 2rem
     }
+}
+
+/* font-size tablette  */
+
+@media screen and (min-width:550px) and (max-width:1200px) {
+
+    html body,
+    header nav .menu-list a,
+    footer h1 {
+        font-size: 2.4rem;
+    }
+
 }
 
 a {
@@ -876,6 +876,11 @@ footer .socials li svg {
 @media screen and (min-width:1250px) and (max-width:1400px) {
     .right-footer {
         width: 40%
+    }
+
+    .footer__txt__container,
+    .right-footer {
+        margin-top: .5rem
     }
 }
 

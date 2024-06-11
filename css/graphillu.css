@@ -161,7 +161,7 @@ body {
     color: var(--white)
 }
 
-@media screen and (max-width:1149px) {
+@media screen and (max-width:1349px) {
     button[data-slider-button] {
         display: none
     }
@@ -173,7 +173,7 @@ body {
     }
 }
 
-@media screen and (min-width:1150px) {
+@media screen and (min-width:1350px) {
     button[data-slider-button] {
         display: block;
         position: absolute;
@@ -211,6 +211,10 @@ body {
 
     button[data-slider-button=next] {
         right: 1rem
+    }
+
+    .project__content {
+        padding: 6rem
     }
 }
 
@@ -269,12 +273,6 @@ body {
         margin-bottom: 1rem;
         line-height: unset;
         font-size: 2rem
-    }
-}
-
-@media screen and (min-width:1350px) {
-    .project__content {
-        padding: 6rem
     }
 }
 

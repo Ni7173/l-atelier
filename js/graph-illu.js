@@ -5,7 +5,7 @@ const graphismeSlider = () => {
     const closeBtn = document.querySelector('.modal__btn__close')
     const images = document.querySelectorAll('.slider__img_container');
     const switchBtns = document.querySelectorAll('[data-slider-button]');
-    
+
     const indicatorsContainer = document.querySelector('.indicators');
     let newIndex;
 
@@ -39,7 +39,7 @@ const graphismeSlider = () => {
             images[newIndex].dataset.active = true;
         });
     });
-    
+
     imagesLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -162,7 +162,7 @@ graphismeSlider();
 
 const setMobileSliderImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
-        if (window.innerWidth <= 550) {
+        if (window.innerWidth <= 1000) {
             const squareImages = document.querySelectorAll('.img__container > img');
             const sliderImages = document.querySelectorAll('.slider__img');
 
@@ -181,13 +181,3 @@ const setMobileSliderImg = () => {
     })
 }
 setMobileSliderImg();
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const images = document.querySelectorAll('.img__container > img')
-//     itemsAppearing(images);
-// })
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-    
-// })
