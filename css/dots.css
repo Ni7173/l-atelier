@@ -14,7 +14,7 @@
     height: 8px;
     width: 8px;
     margin: 0 3px;
-    border: 2px solid var(--light-grey);
+    border: 2px solid #ababab;
     background-color: transparent;
     border-radius: 50%;
     display: inline-block;
@@ -23,7 +23,7 @@
 }
 
 .dot.active {
-    background: var(--light-grey)
+    background: #ababab
 }
 
 .dot:hover {
