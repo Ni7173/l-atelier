@@ -109,8 +109,6 @@ setHomeText();
 const setRightMobileImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 1350) {
-            const modalImgToChange1 = document.querySelector('.home__menu .home__menu__item:nth-child(1) .menu__img')
-            modalImgToChange1.setAttribute('src', 'img/home/mobile/TACSUM.jpg')
             const modalImgToChange2 = document.querySelector('.home__menu .home__menu__item:nth-child(2) .menu__img')
             modalImgToChange2.setAttribute('src', 'img/home/mobile/ACCUEIL-GRAPHISME.jpg')
             const modalImgToChange3 = document.querySelector('.home__menu .home__menu__item:nth-child(3) .menu__img')

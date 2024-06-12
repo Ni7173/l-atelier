@@ -32,8 +32,13 @@
 
         .home__menu__item:nth-child(4) {
             &:hover {
+
+                .menu__img {
+                    opacity: .3;
+                }
+
                 .menu__hovered {
-                    background: hsl(61, 59%, 42%, 1)
+                    background: hsl(61, 59%, 42%, .65)
                 }
             }
         }
