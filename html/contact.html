@@ -196,7 +196,7 @@
                             <label for="name" class="label label__first d-flex">
                                 Je suis
                             </label>
-                            <input type="text" name="name" id="name">
+                            <input type="text" name="name" id="name" autocomplete="name">
                         </div>
                         <div class="contact__form__p__container d-flex">
                             <p class="contact__form__p">et je souhaiterais discuter avec vous de mon futur projet,
@@ -210,18 +210,18 @@
                             <label for="email">
                                 Merci de me contacter par Email
                             </label>
-                            <input type="email" name="email" id="email" placeholder="">
+                            <input type="email" name="email" id="email" autocomplete="email">
                             <label for="tel">
                                 ou par téléphone
                             </label>
-                            <input type="tel" name="tel" id="tel" placeholder="">
+                            <input type="tel" name="tel" id="tel" autocomplete="tel">
                         </div>
                         <div class="error__container">
                             <span id="error">Merci de renseigner tous les champs nécessaires au traitement de votre
                                 demande.</span>
                         </div>
                         <div class="contact__form__btn__container d-flex">
-                            <button class="contact__form__btn">Envoyer</button>
+                            <button type="submit" class="contact__form__btn">Envoyer</button>
                         </div>
                     </form>
                 </div>

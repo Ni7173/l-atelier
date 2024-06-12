@@ -215,3 +215,7 @@ button[data-slider-button] {
 .creators a:hover {
     color: var(--red);
 }
+
+footer .footer__txt__container p {
+    white-space: nowrap;
+}
