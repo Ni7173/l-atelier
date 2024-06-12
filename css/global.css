@@ -71,7 +71,8 @@ a,
 button,
 input,
 span,
-textarea {
+textarea,
+div {
     -webkit-tap-highlight-color: transparent
 }
 
@@ -113,9 +114,7 @@ h6 {
 
     .container,
     .footer-container {
-        max-width: 1200px;
-        margin: 0 auto 7rem;
-        padding: 2rem
+        max-width: 1200px
     }
 }
 
@@ -185,13 +184,11 @@ nav .menu-list li {
 header {
     position: sticky;
     width: 100%;
-    color: var(--light-color);
     z-index: 5;
     top: 0;
     padding-block: 3rem;
 }
 
-.footer-container,
 .header-container {
     margin: 0 auto;
     padding: 1rem 2.2rem
@@ -406,10 +403,6 @@ nav .socials li:hover svg {
 }
 
 @media screen and (min-width:1400px) {
-    header {
-        padding-block: 5rem;
-    }
-
     .logo svg {
         width: 210px
     }
@@ -615,6 +608,7 @@ footer p {
 .footer-container {
     min-width: 100%;
     flex-direction: column;
+    margin: 0 auto;
     padding: 0
 }
 
@@ -765,7 +759,6 @@ footer .socials li svg {
     }
 
     .bottom__right__footer {
-        justify-content: center;
         width: var(--footer-width);
         white-space: nowrap;
         text-align: left;
@@ -891,19 +884,6 @@ footer .socials li svg {
 
     .left-footer {
         justify-content: left
-    }
-
-    .right-footer {
-        justify-content: center
-    }
-
-    .footer__logo,
-    .right-footer {
-        margin-top: 1.5rem
-    }
-
-    .footer__txt__container {
-        margin-top: 1.5rem
     }
 }
 

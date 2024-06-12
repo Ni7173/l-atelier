@@ -23,16 +23,6 @@ header {
     background: 0 0
 }
 
-.logo svg {
-    color: var(--black)
-}
-
-.burger .bar,
-.burger .bar::after,
-.burger .bar::before {
-    background: var(--black)
-}
-
 .bottom-footer,
 .burger_container,
 .logo,
@@ -76,23 +66,15 @@ header {
     .header-container .logo .logo--is-translated {
         transform: translateY(6.5rem) translateX(1rem)
     }
-
-    .home__menu__item:hover .menu__hovered {
-        opacity: 1 !important
-    }
 }
 
-@media screen and (min-width:1400px) {
+@media screen and (min-width:1350px) {
     .header-container .logo a {
         transform: translateY(0) translateX(1rem)
     }
 
     .header-container .logo .logo--is-translated {
         transform: translateY(8.5rem) translateX(1rem)
-    }
-
-    .home__menu__item:hover .menu__hovered {
-        opacity: 1 !important
     }
 }
 
@@ -128,8 +110,6 @@ header {
 
 .home .grid {
     position: relative;
-    width: 100%;
-    justify-items: center;
     align-items: center;
     background: var(--white)
 }
@@ -273,7 +253,7 @@ header {
 
 @media screen and (min-width:1100px) {
     .home__text__container {
-        top: 89%;
+        top: 82%;
         left: 39%
     }
 }
@@ -287,7 +267,6 @@ header {
 
 @media screen and (min-width:1700px) {
     .home__text__container {
-        top: 80%;
         left: 44%
     }
 }
@@ -337,7 +316,7 @@ header {
     z-index: 3
 }
 
-#home__menu .home__menu__item:first-child .menu__hovered {
+/* #home__menu .home__menu__item:first-child .menu__hovered {
     background: var(--brown)
 }
 
@@ -346,12 +325,12 @@ header {
 }
 
 #home__menu .home__menu__item:nth-child(3) .menu__hovered {
-    background: var(--green);
+    background: var(--green)
 }
 
 #home__menu .home__menu__item:nth-child(4) .menu__hovered {
     background: var(--orange)
-}
+} */
 
 .menu__title {
     font-optical-sizing: auto;
@@ -374,14 +353,11 @@ header {
 }
 
 #home__menu .home__menu__item .menu__hovered {
-    opacity: 0;
     z-index: 2;
-    transition: var(--quick-transition);
-    width: 100%;
-    height: 100%
+    transition: var(--quick-transition)
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1349px) {
     .home__menu .home__menu__item .menu__hovered__container .menu__picto {
         max-height: 50%;
         padding: 1rem
@@ -426,14 +402,9 @@ header {
 }
 
 #home__menu .home__menu__item .menu__picto {
-    width: 45px;
+    width: 31px;
     height: auto;
     margin-bottom: 1rem
-}
-
-.menu__hovered__container h1 {
-    margin: 0;
-    width: 100%
 }
 
 @media screen and (max-width:700px) {
@@ -462,7 +433,6 @@ header {
     }
 }
 
-.menu__hovered,
 .menu__img {
     transition: var(--smooth-transition);
     width: 100%;
@@ -470,7 +440,7 @@ header {
 }
 
 #home__menu .home__menu__item:first-child .menu__picto {
-    width: 80px;
+    width: 70px;
     height: auto
 }
 
@@ -508,12 +478,7 @@ header {
 }
 
 .menu__hovered {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2
+    pointer-events: none
 }
 
 .menu__hovered__container {
@@ -522,8 +487,8 @@ header {
     width: 30%;
     left: 35%;
     position: absolute;
-    flex-direction: column;
-    justify-content: center
+    transition: var(--quick-transition);
+    flex-direction: column
 }
 
 @media screen and (min-width:550px) and (max-width:1200px) {
@@ -536,7 +501,18 @@ header {
         font-size: 3rem;
     }
 
-    #home__menu .home__menu__item:not(:nth-child(2)) .menu__hovered .menu__picto {
+    #home__menu .home__menu__item:not(:nth-child(1)):not(:nth-child(2)) .menu__hovered .menu__picto {
         width: 55px;
+    }
+}
+
+@media screen and (min-width:2200px) {
+
+    #home__menu .home__menu__item:first-child .menu__picto {
+        width: 80px;
+    }
+
+    #home__menu .home__menu__item .menu__picto {
+        width: 45px;
     }
 }

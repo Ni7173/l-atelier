@@ -1,0 +1,50 @@
+@media screen and (min-width:1350px) {
+    .home__menu__item .menu__hovered__container {
+        opacity: 0
+    }
+
+    #home__menu {
+        .home__menu__item:first-child {
+
+            &:hover {
+                .menu__hovered {
+                    background: hsl(275, 42%, 30%, .6);
+                }
+            }
+        }
+
+        .home__menu__item:nth-child(2) {
+            &:hover {
+                .menu__hovered {
+                    background: hsl(230, 31%, 53%, .75);
+                }
+            }
+        }
+
+        .home__menu__item:nth-child(3) {
+
+            &:hover {
+                .menu__hovered {
+                    background: hsl(189, 100%, 30%, .75);
+                }
+            }
+        }
+
+        .home__menu__item:nth-child(4) {
+            &:hover {
+                .menu__hovered {
+                    background: hsl(61, 59%, 42%, 1)
+                }
+            }
+        }
+    }
+
+    .home__menu__item {
+        &:hover {
+            .menu__hovered__container {
+                opacity: 1
+            }
+        }
+    }
+
+}
