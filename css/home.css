@@ -402,7 +402,7 @@ header {
 }
 
 #home__menu .home__menu__item .menu__picto {
-    width: 31px;
+    width: 45px;
     height: auto;
     margin-bottom: 1rem
 }
@@ -440,7 +440,7 @@ header {
 }
 
 #home__menu .home__menu__item:first-child .menu__picto {
-    width: 70px;
+    width: 81px;
     height: auto
 }
 
@@ -506,13 +506,13 @@ header {
     }
 }
 
-@media screen and (min-width:2200px) {
+@media screen and (min-width:1000px) and (max-width:2200px) {
 
     #home__menu .home__menu__item:first-child .menu__picto {
-        width: 80px;
+        width: 70px;
     }
 
     #home__menu .home__menu__item .menu__picto {
-        width: 45px;
+        width: 31px;
     }
 }
