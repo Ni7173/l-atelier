@@ -465,13 +465,13 @@ const setRightMobileImg = () => {
             imgToReplace.setAttribute('src', imgIllustrated.src)
             // bartavelle
             const modalImgToChange1 = document.querySelector('[data-modals-id="modal-3"] .modal_left_content img')
-            modalImgToChange1.setAttribute('src', '../img/vins/modales/photos/mobile/BARTAVELLE-RECADRE-MOBILE.jpg')
+            modalImgToChange1.setAttribute('src', '../img/vins/modales/photos/mobile/BARTAVELLE-RECADRE-MOBILE.webp')
             const modalImgToChange2 = document.querySelector('[data-modals-id="modal-8"] .modal_left_content img')
-            modalImgToChange2.setAttribute('src', '../img/vins/modales/photos/mobile/PRIMEUR-MONTFRIN-RECADRE-MOBILE.jpg')
+            modalImgToChange2.setAttribute('src', '../img/vins/modales/photos/mobile/PRIMEUR-MONTFRIN-RECADRE-MOBILE.webp')
             const modalImgToChange3 = document.querySelector('[data-modals-id="modal-12"] .modal_left_content img')
-            modalImgToChange3.setAttribute('src', '../img/vins/modales/photos/mobile/BELLE-DES-CLOS-CARRE.jpg')
+            modalImgToChange3.setAttribute('src', '../img/vins/modales/photos/mobile/BELLE-DES-CLOS-CARRE.webp')
             const modalImgToChange4 = document.querySelector('[data-modals-id="modal-14"] .modal_left_content img')
-            modalImgToChange4.setAttribute('src', '../img/vins/modales/photos/mobile/CHATEAU-JAUNE-CARRE.jpg')
+            modalImgToChange4.setAttribute('src', '../img/vins/modales/photos/mobile/CHATEAU-JAUNE-CARRE.webp')
         }
     })
 }
