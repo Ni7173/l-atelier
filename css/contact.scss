@@ -13,7 +13,7 @@ section {
 }
 
 .section__contact__map {
-    height: 71%;
+    height: 80%;
     width: 100%;
 
     img {
@@ -143,10 +143,11 @@ input {
 
                 .contact__form__btn {
                     cursor: pointer;
-                    width: 35%;
+                    width: auto;
                     padding: 1rem 2rem;
                     border: 1px solid var(--black);
                     border-radius: 30px;
+                    background-color: var(--light-grey);
                     color: var(--black);
                     font-size: 2rem;
                     margin-top: 2.5rem;
