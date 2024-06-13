@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = "Nouveau message";
 
     // Email message
-    $email_message = "Nom: $name\n";
+    $email_message = "Name: $name\n";
     $email_message .= "Message: $message\n";
     $email_message .= "Telephone: $tel\n";
     $email_message .= "Email: $email\n";
