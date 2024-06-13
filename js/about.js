@@ -3,9 +3,8 @@ const reviewSlider = () => {
         const slides = document.querySelector('.reviews__list');
         const dots = document.querySelectorAll('.dot');
         const switchBtns = document.querySelectorAll('[data-slider-button]');
-        let newIndex = 0; // Start from the first index
+        let newIndex = 0;
 
-        // Calculate position starting from +270%
         const calculatePosition = (newIndex) => {
             return `${315 - 90 * newIndex}%`;
         };
@@ -17,7 +16,6 @@ const reviewSlider = () => {
             slides.style.transform = `translateX(${position})`;
         };
 
-        // Initially set the first review to the first slide
         setReview(calculatePosition(newIndex));
 
         switchBtns.forEach(btn => {
@@ -51,10 +49,14 @@ const reviewSlider = () => {
 
             slides.addEventListener('touchend', () => {
                 if (startX > endX + 50) {
-                    newIndex = (newIndex + 1) % dots.length;
+                    newIndex++;
+                    if (newIndex >= dots.length) newIndex = 0;
+                    if (newIndex < 0) newIndex = dots.length - 1;
                     setReview(calculatePosition(newIndex));
                 } else if (startX < endX - 50) {
-                    newIndex = (newIndex - 1 + dots.length) % dots.length;
+                    newIndex = newIndex - 1;
+                    if (newIndex >= dots.length) newIndex = 0;
+                    if (newIndex < 0) newIndex = dots.length - 1;
                     setReview(calculatePosition(newIndex));
                 }
             });
