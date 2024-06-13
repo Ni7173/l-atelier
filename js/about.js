@@ -7,10 +7,11 @@ const reviewSlider = () => {
 
         // Calculate position starting from +270%
         const calculatePosition = (newIndex) => {
-            return `${270 - 90 * newIndex}%`;
+            return `${315 - 90 * newIndex}%`;
         };
 
         const setReview = (position) => {
+            console.log(newIndex);
             dots.forEach(dot => dot.classList.remove('active'));
             dots[newIndex].classList.add('active');
             slides.style.transform = `translateX(${position})`;
@@ -40,10 +41,12 @@ const reviewSlider = () => {
 
             slides.addEventListener('touchstart', (event) => {
                 startX = event.touches[0].clientX;
+                console.log('touchstart', startX);
             });
 
             slides.addEventListener('touchmove', (event) => {
                 endX = event.touches[0].clientX;
+                console.log('touchmove', endX);
             });
 
             slides.addEventListener('touchend', () => {

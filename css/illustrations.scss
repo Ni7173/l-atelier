@@ -132,99 +132,51 @@
     .illustration__content .wrapper {
         .project:nth-child(1) {
             background-color: hsl(var(--project-1-color), .4);
-
-            svg {
-                color: hsl(var(--project-1-star-color));
-            }
         }
 
 
         .project:nth-child(2) {
             background-color: hsl(var(--project-2-color), .4);
-
-            svg {
-                color: hsl(var(--project-2-star-color));
-            }
         }
 
         .project:nth-child(3) {
             background-color: hsl(var(--project-3-color), .4);
-
-            svg {
-                color: hsl(var(--project-3-star-color));
-            }
         }
 
         .project:nth-child(4) {
             background-color: hsl(var(--project-4-color), .4);
-
-            svg {
-                color: hsl(var(--project-4-star-color));
-            }
         }
 
         .project:nth-child(5) {
             background-color: hsl(var(--project-5-color), .4);
-
-            svg {
-                color: hsl(var(--project-5-star-color), .4);
-            }
         }
 
         .project:nth-child(6) {
             background-color: hsl(var(--project-6-color), .4);
-
-            svg {
-                color: hsl(var(--project-6-star-color), .4);
-            }
         }
 
         .project:nth-child(7) {
             background-color: hsl(var(--project-7-color), .4);
-
-            svg {
-                color: hsl(var(--project-7-star-color), .4);
-            }
         }
 
         .project:nth-child(8) {
             background-color: hsl(var(--project-8-color), .4);
-
-            svg {
-                color: hsl(var(--project-8-star-color), .4);
-            }
         }
 
         .project:nth-child(9) {
             background-color: hsl(var(--project-9-color), .4);
-
-            svg {
-                color: hsl(var(--project-9-star-color), .4);
-            }
         }
 
         .project:nth-child(10) {
             background-color: hsl(var(--project-10-color), .4);
-
-            svg {
-                color: hsl(var(--project-10-star-color), .4);
-            }
         }
 
         .project:nth-child(11) {
             background-color: hsl(var(--project-11-color), .4);
-
-            svg {
-                color: hsl(var(--project-11-star-color), .4);
-            }
         }
 
         .project:nth-child(12) {
             background-color: hsl(var(--project-12-color), .4);
-
-            svg {
-                color: hsl(var(--project-12-star-color), .4);
-            }
         }
     }
 
@@ -232,99 +184,51 @@
 
         .project:nth-child(1):hover {
             background-color: hsl(var(--project-1-color));
-
-            svg {
-                color: hsl(var(--project-1-star-color));
-            }
         }
 
 
         .project:nth-child(2):hover {
             background-color: hsl(var(--project-2-color), 1);
-
-            svg {
-                color: hsl(var(--project-2-star-color), 1);
-            }
         }
 
         .project:nth-child(3):hover {
             background-color: hsl(var(--project-3-color), 1);
-
-            svg {
-                color: hsl(var(--project-3-star-color), 1);
-            }
         }
 
         .project:nth-child(4):hover {
             background-color: hsl(var(--project-4-color), 1);
-
-            svg {
-                color: hsl(var(--project-4-star-color), 1);
-            }
         }
 
         .project:nth-child(5):hover {
             background-color: hsl(var(--project-5-color), 1);
-
-            svg {
-                color: hsl(var(--project-5-star-color), 1);
-            }
         }
 
         .project:nth-child(6):hover {
             background-color: hsl(var(--project-6-color), 1);
-
-            svg {
-                color: hsl(var(--project-6-star-color), 1);
-            }
         }
 
         .project:nth-child(7):hover {
             background-color: hsl(var(--project-7-color), 1);
-
-            svg {
-                color: hsl(var(--project-7-star-color), 1);
-            }
         }
 
         .project:nth-child(8):hover {
             background-color: hsl(var(--project-8-color), 1);
-
-            svg {
-                color: hsl(var(--project-8-star-color), 1);
-            }
         }
 
         .project:nth-child(9):hover {
             background-color: hsl(var(--project-9-color), 1);
-
-            svg {
-                color: hsl(var(--project-9-star-color), 1);
-            }
         }
 
         .project:nth-child(10):hover {
             background-color: hsl(var(--project-10-color), 1);
-
-            svg {
-                color: hsl(var(--project-10-star-color), 1);
-            }
         }
 
         .project:nth-child(11):hover {
             background-color: hsl(var(--project-11-color), 1);
-
-            svg {
-                color: hsl(var(--project-11-star-color), 1);
-            }
         }
 
         .project:nth-child(12):hover {
             background-color: hsl(var(--project-12-color), 1);
-
-            svg {
-                color: hsl(var(--project-12-star-color), 1);
-            }
         }
     }
 
@@ -332,8 +236,7 @@
 
         .project__content {
 
-            p,
-            svg {
+            p {
                 opacity: 0;
             }
         }

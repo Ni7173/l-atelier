@@ -65,6 +65,7 @@ section>div {
     display: flex;
     transition: var(--quick-transition);
     pointer-events: none;
+    z-index: 1;
     width: 100%
 }
 
@@ -73,6 +74,7 @@ section>div {
     transform: translateX(270%);
     height: 100%;
     pointer-events: all;
+    z-index: 2;
     width: 100%
 }
 
@@ -134,11 +136,6 @@ footer .footer__txt__container p {
 
     .review {
         padding-inline: 4rem
-    }
-
-    .creators p {
-        margin: 1rem 0;
-        white-space: inherit;
     }
 }
 
