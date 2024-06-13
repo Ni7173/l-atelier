@@ -1,33 +1,33 @@
 <?php
-// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the form fields data
-    $name = $_POST['name'];
-    $message = $_POST['message'];
-    $tel = $_POST['tel'];
-    $email = $_POST['email'];
+    $name = htmlspecialchars($_POST['name']);
+    $message = htmlspecialchars($_POST['message']);
+    $tel = htmlspecialchars($_POST['tel']);
+    $email = htmlspecialchars($_POST['email']);
 
-    // Email address where you want to receive the form submission
     $to_email = "contact@latelier-8.fr";
+    
+    $to_email = base64_encode("contact@latelier-8.fr");
 
-    // Email subject
-    $subject = "Nouveau message";
+    $subject = "Nouveau message de $name";
 
-    // Email message
     $email_message = "Name: $name\n";
     $email_message .= "Message: $message\n";
     $email_message .= "Telephone: $tel\n";
     $email_message .= "Email: $email\n";
 
-    // Send email
-    if (mail($to_email, $subject, $email_message)) {
+    $headers = "From: L'Atelier 8 <noreply@latelier-8.fr>\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
+
+    if (mail($to_email, $subject, $email_message, $headers)) {
         header("Location: /html/thank-you.html");
+        exit();
     } else {
         echo "Oops! Something went wrong. Please try again later.";
     }
-} else { 
-    // If form is not submitted, redirect to the contact page
+} else {
     header("Location: index.html");
-    exit;
+    exit();
 }
 ?>
