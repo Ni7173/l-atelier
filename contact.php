@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     if (mail($to_email, $subject, $email_message)) {
-        header("Location: thank-you.html");
+        header("Location: /html/thank-you.html");
     } else {
         echo "Oops! Something went wrong. Please try again later.";
     }
