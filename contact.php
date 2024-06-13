@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $to_email = "contact@latelier-8.fr";
     
-    $to_email = base64_encode("contact@latelier-8.fr");
+    // $to_email = base64_encode("contact@latelier-8.fr");
 
     $subject = "Nouveau message de $name";
 
