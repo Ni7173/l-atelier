@@ -490,3 +490,17 @@
     </footer>
 
 </body>
+
+<!-- RewriteEngine On
+RewriteBase /
+
+# Redirect index.html to /
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)$ $1.html [L]
+
+# Redirect /html/vins.html to /vins
+RewriteRule ^vins$ /html/vins.html [L] -->
