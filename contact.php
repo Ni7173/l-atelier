@@ -8,23 +8,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
 
     // Email address where you want to receive the form submission
-    $to_email = "nino.bravais20@gmail.com";
+    $to_email = "contact@latelier-8.fr";
 
     // Email subject
-    $subject = "New Contact Form Submission";
+    $subject = "Nouveau message";
 
     // Email message
-    $email_message = "Name: $name\n";
+    $email_message = "Nom: $name\n";
     $email_message .= "Message: $message\n";
     $email_message .= "Telephone: $tel\n";
     $email_message .= "Email: $email\n";
 
     // Send email
     if (mail($to_email, $subject, $email_message)) {
-        // Email sent successfully
-        echo "Thank you for your message. We'll get back to you soon!";
+        header("Location: thank-you.html");
     } else {
-        // Error sending email
         echo "Oops! Something went wrong. Please try again later.";
     }
 } else { 

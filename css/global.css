@@ -67,6 +67,14 @@ header.show-nav .burger .bar::before {
     outline: 0
 }
 
+img:focus {
+    outline: none;
+}
+
+video:focus {
+    outline: none;
+}
+
 a,
 button,
 input,

@@ -1,0 +1,15 @@
+.thank__you__section {
+    height: 60vh;
+}
+
+.thank__you__text {
+    flex-direction: column;
+}
+
+.thank__you__button {
+    background: var(--light-grey);
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
