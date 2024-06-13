@@ -2,6 +2,7 @@ const reviewSlider = () => {
     document.addEventListener('DOMContentLoaded', () => {
         const slides = document.querySelector('.reviews__list');
         const dots = document.querySelectorAll('.dot');
+        const reviewsContainer = document.querySelector('.reviews__container')
         const switchBtns = document.querySelectorAll('[data-slider-button]');
         let newIndex = 0;
 
@@ -10,7 +11,6 @@ const reviewSlider = () => {
         };
 
         const setReview = (position) => {
-            console.log(newIndex);
             dots.forEach(dot => dot.classList.remove('active'));
             dots[newIndex].classList.add('active');
             slides.style.transform = `translateX(${position})`;
@@ -37,17 +37,15 @@ const reviewSlider = () => {
             let endX = 0;
 
 
-            slides.addEventListener('touchstart', (event) => {
+            reviewsContainer.addEventListener('touchstart', (event) => {
                 startX = event.touches[0].clientX;
-                console.log('touchstart', startX);
             });
 
-            slides.addEventListener('touchmove', (event) => {
+            reviewsContainer.addEventListener('touchmove', (event) => {
                 endX = event.touches[0].clientX;
-                console.log('touchmove', endX);
             });
 
-            slides.addEventListener('touchend', () => {
+            reviewsContainer.addEventListener('touchend', () => {
                 if (startX > endX + 50) {
                     newIndex++;
                     if (newIndex >= dots.length) newIndex = 0;
