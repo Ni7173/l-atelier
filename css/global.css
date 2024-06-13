@@ -63,12 +63,8 @@ header.show-nav .burger .bar::before {
     box-sizing: border-box
 }
 
-:focus {
-    outline: 0
-}
-
-img:focus {
-    outline: none;
+img::-ms-image-rect {
+    display: none;
 }
 
 video:focus {
