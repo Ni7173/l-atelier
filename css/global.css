@@ -289,27 +289,11 @@ li.--translated {
     color: var(--white)
 }
 
-.burger_container,
-.header__left {
+.burger_container {
     position: fixed;
     top: calc((var(--header-height)/ 2) - (10px));
-    z-index: 6
-}
-
-.burger_container {
+    z-index: 6;
     right: 2em
-}
-
-.header__left {
-    left: 3em;
-    width: fit-content;
-    height: fit-content
-}
-
-.header__left .page__icon {
-    height: auto;
-    width: 40px;
-    fill: currentColor
 }
 
 .burger .bar,
@@ -484,8 +468,7 @@ nav .menu-list a {
         padding: 3rem 0
     }
 
-    .burger_container,
-    .header__left {
+    .burger_container {
         top: calc((var(--mobile-header-height)/ 2) - (10px))
     }
 
