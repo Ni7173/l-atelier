@@ -14,9 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_message .= "Telephone: $tel\n";
     $email_message .= "Email: $email\n";
 
-    $headers = "From: L'Atelier 8 <noreply@latelier-8.fr>\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion();
+    $headers = "From: ".$email;
+    // $headers .= "Reply-To: $email\r\n";
+    // $headers .= "X-Mailer: PHP/" . phpversion();
 
     if (mail($to_email, $subject, $email_message, $headers)) {
         header("Location: /pages/thank-you.html");
