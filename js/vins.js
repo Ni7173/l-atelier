@@ -478,8 +478,8 @@ const setRightMobileImg = () => {
 setRightMobileImg();
 
 
-const setMobileModalsText = () => {
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+    const setMobileModalsText = () => {
         if (window.innerWidth < 550) {
             const textsToChange = document.querySelectorAll('.modal__long__text');
             texts = ["Le Design a été revisité, plus moderne, épuré, tout en conservant sa forte identité très haute en couleur et sa typographie bien particulière.",
@@ -492,6 +492,6 @@ const setMobileModalsText = () => {
                 textsToChange[i].innerText = texts[i]
             }
         }
-    })
-}
-setMobileModalsText();
+    }
+    setMobileModalsText();
+})
