@@ -9,14 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $subject = "Nouveau message de $name";
 
-    $email_message = "Name: $name\n";
-    $email_message .= "Telephone: $tel\n";
-    $email_message .= "Email: $email\n\n";
-    $email_message .= "Message: $message\n";
+    $email_message = "<html><body>";
+    $email_message .= "<p><strong>Name:</strong> $name</p>";
+    $email_message .= "<p><strong>Telephone:</strong> $tel</p>";
+    $email_message .= "<p><strong>Email:</strong> $email</p>";
+    $email_message .= "<p><strong>Message:</strong><br>$message</p>";
+    $email_message .= "</body></html>";
 
     $headers = "From: " . $email . "\r\n";
     $headers .= "Reply-To: " . $email . "\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
     if (mail($to_email, $subject, $email_message, $headers)) {
