@@ -64,6 +64,7 @@ header .logo .turning__star {
     .slide img {
         height: 100%;
         width: 100%;
+        aspect-ratio: auto 632/457;
         position: relative
     }
 
@@ -278,6 +279,7 @@ button[data-modal-button] {
 
 .modal_left_img {
     width: 100%;
+    aspect-ratio: auto 1/1;
     height: 100%
 }
 
@@ -405,6 +407,7 @@ button[data-modal-button].active:hover {
     filter: grayscale(100%) brightness(90%);
     scale: 1;
     height: 100%;
+    aspect-ratio: 1/1;
     width: 100%
 }
 

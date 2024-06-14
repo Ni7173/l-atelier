@@ -25,15 +25,17 @@ section>div {
 .home__hero__lunettes__img {
     z-index: 2;
     position: relative;
+    aspect-ratio: 2/1;
     overflow: hidden
 }
 
 .home__hero__img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 2%;
     width: 50%;
     height: 100%;
+    aspect-ratio: 1/1;
     clip-path: circle(49%)
 }
 

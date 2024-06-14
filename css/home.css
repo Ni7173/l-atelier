@@ -183,6 +183,7 @@ header {
     -webkit-mask-size: 45%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center center;
+    aspect-ratio: 2/1;
     pointer-events: none
 }
 
@@ -437,6 +438,7 @@ header {
 .menu__img {
     transition: var(--smooth-transition);
     width: 100%;
+    aspect-ratio: 2/1;
     height: 100%
 }
 

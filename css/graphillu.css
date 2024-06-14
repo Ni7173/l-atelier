@@ -120,6 +120,10 @@ body {
     }
 }
 
+.slider__img {
+    aspect-ratio: auto 3/2;
+}
+
 .slider__container,
 .slider__img__list {
     position: relative
