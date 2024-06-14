@@ -1,14 +1,12 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $message = htmlspecialchars($_POST['message']);
-    $tel = htmlspecialchars($_POST['tel']);
-    $email = htmlspecialchars($_POST['email']);
+    $name = $_POST['name'];
+    $message = $_POST['message'];
+    $tel = $_POST['tel'];
+    $email = $_POST['email'];
 
     $to_email = "contact@latelier-8.fr";
     
-    // $to_email = base64_encode("contact@latelier-8.fr");
-
     $subject = "Nouveau message de $name";
 
     $email_message = "Name: $name\n";
@@ -21,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "X-Mailer: PHP/" . phpversion();
 
     if (mail($to_email, $subject, $email_message, $headers)) {
-        header("Location: /html/thank-you.html");
+        header("Location: /pages/thank-you.html");
         exit();
     } else {
         echo "Oops! Something went wrong. Please try again later.";
