@@ -476,3 +476,22 @@ const setRightMobileImg = () => {
     })
 }
 setRightMobileImg();
+
+
+const setMobileModalsText = () => {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth < 550) {
+            const textsToChange = document.querySelectorAll('.modal__long__text');
+            texts = ["Le Design a été revisité, plus moderne, épuré, tout en conservant sa forte identité très haute en couleur et sa typographie bien particulière.",
+                "La refonte du Design de la cuvée Bois Fardeau, du nom du lieu - dit, est une ode à l’authenticité, alliée à une pureté toute contemporaine.",
+                "La mise en avant de la parcelle de veilles vignes dont est issue le raisin de cette cuvée souligne l'implantation typique des vignobles de l'appellation Crozes-Hermitage.",
+                "Le Design de cette cuvée du Domaine Combier tient son caractère tempétueux du climat particulièrement rude de l’année de sa première récolte.",
+                "Le paysage de cette parcelle de vieilles vignes dessiné à la main nous plonge dans cet univers poétique d'un autre temps."]
+
+            for (let i = 0; i < textsToChange.length; i++) {
+                textsToChange[i].innerText = texts[i]
+            }
+        }
+    })
+}
+setMobileModalsText();
