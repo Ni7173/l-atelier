@@ -32,8 +32,6 @@
 //     exit();
 // }
 
-
-<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Échapper toutes les données reçues du formulaire
     $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
@@ -92,7 +90,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: index.html");
     exit();
 }
-?>
-
-
 ?>
