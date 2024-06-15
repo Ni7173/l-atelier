@@ -8,7 +8,7 @@ const sliderImg = () => {
         const slides = document.querySelector("[data-slides]");
         const slideChildren = [...slides.children].filter(child => !child.matches('button'));
         const activeSlide = document.querySelector("[data-active]");
-        transitionSetting(slidesTransition, `${transitionDuration}s`)
+        transitionSetting(slidesTransition, `${transitionDuration}s`);
 
         let newIndex = slideChildren.indexOf(activeSlide) + 1;
         if (newIndex >= slideChildren.length) newIndex = 0;
@@ -42,7 +42,7 @@ const sliderImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
         intervalId = setInterval(switchSlideAutomatically, 4500);
     });
-}
+};
 sliderImg();
 
 const modalsManagement = () => {
@@ -66,7 +66,7 @@ const modalsManagement = () => {
             dot.dataset.dotNumber = i;
             container.appendChild(dot);
         }
-    }
+    };
     createIndicators(modals, indicatorsContainer);
 
     const dots = document.querySelectorAll('.dot');
@@ -75,7 +75,7 @@ const modalsManagement = () => {
     const resetActiveDot = () => {
         let activeDot = indicatorsContainer.querySelector('.active');
         if (activeDot) activeDot.classList.remove('active');
-    }
+    };
 
     dots.forEach(dot => {
         dot.addEventListener('click', () => {
@@ -128,7 +128,7 @@ const modalsManagement = () => {
                     updateSwitchBtnsVisibility();
                 });
             });
-        }
+        };
         showSwitchBtns();
     }
 
@@ -137,12 +137,13 @@ const modalsManagement = () => {
             projectLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 disableScrolling();
-                overlay.classList.add('active')
-                modalsContainer.classList.add('active')
+                overlay.classList.add('active');
+                modalsContainer.classList.add('active');
                 transitionSetting(switchBtns, "var(--quick-transition)");
                 transitionSetting(modals, "var(--smooth-transition)");
                 let projectId = projectLink.dataset.projectLink;
                 let linkNumber = projectLink.dataset.linkNumber;
+                console.log(linkNumber);
                 closeBtn.style.transition = "var(--quick-transition)";
                 modals.forEach(modal => {
                     if (modal.dataset.modalsId === projectId) {
@@ -307,20 +308,21 @@ const setRightMobileImg = () => {
 setRightMobileImg();
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const setMobileModalsText = () => {
-        if (window.innerWidth < 550) {
-            const textsToChange = document.querySelectorAll('.modal__long__text');
-            texts = ["Le Design a été revisité, plus moderne, épuré, tout en conservant sa forte identité très haute en couleur et sa typographie bien particulière.",
-                "La refonte du Design de la cuvée Bois Fardeau, du nom du lieu - dit, est une ode à l’authenticité, alliée à une pureté toute contemporaine.",
-                "La mise en avant de la parcelle de veilles vignes dont est issue le raisin de cette cuvée souligne l'implantation typique des vignobles de l'appellation Crozes-Hermitage.",
-                "Le Design de cette cuvée du Domaine Combier tient son caractère tempétueux du climat particulièrement rude de l’année de sa première récolte.",
-                "Le paysage de cette parcelle de vieilles vignes dessiné à la main nous plonge dans cet univers poétique d'un autre temps."]
+const setMobileModalsText = () => {
+    if (window.innerWidth <= 550) {
+        const textsToChange = document.querySelectorAll('.modal__long__text');
+        texts = ["Le Design a été revisité, plus moderne, épuré, tout en conservant sa forte identité très haute en couleur et sa typographie bien particulière.",
+            "La refonte du Design de la cuvée Bois Fardeau, du nom du lieu - dit, est une ode à l’authenticité, alliée à une pureté toute contemporaine.",
+            "La mise en avant de la parcelle de veilles vignes dont est issue le raisin de cette cuvée souligne l'implantation typique des vignobles de l'appellation Crozes-Hermitage.",
+            "Le Design de cette cuvée du Domaine Combier tient son caractère tempétueux du climat particulièrement rude de l’année de sa première récolte.",
+            "Le paysage de cette parcelle de vieilles vignes dessiné à la main nous plonge dans cet univers poétique d'un autre temps."]
 
-            for (let i = 0; i < textsToChange.length; i++) {
-                textsToChange[i].innerText = texts[i]
-            }
+        for (let i = 0; i < textsToChange.length; i++) {
+            textsToChange[i].innerText = texts[i]
         }
     }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
     setMobileModalsText();
 })
