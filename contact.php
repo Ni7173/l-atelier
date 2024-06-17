@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
 
     // Adresse email du destinataire
-    $to_email = "test-457z3dzqs@srv1.mail-tester.com";
+    $to_email = "test-pgkg0ggrs@srv1.mail-tester.com";
     
     // Sujet de l'email
     $subject = "Nouveau message de $name";
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // En-têtes de l'email
     $boundary = md5("random"); // pour les emails multipart
     $headers = "From: L'Atelier 8 <noreply@latelier-8.fr>\r\n";
-    // $headers .= "Reply-To: $email\r\n";
+    // $headers .= "Reply-To: contact@latelier-8.fr\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/alternative; boundary=$boundary\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
