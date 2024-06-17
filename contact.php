@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
 
     // Adresse email du destinataire
-    $to_email = "test-rujkunuwe@srv1.mail-tester.com";
+    $to_email = "test-vmqc2kdjf@srv1.mail-tester.com";
     
     // Sujet de l'email
     $subject = "Nouveau message de $name";
