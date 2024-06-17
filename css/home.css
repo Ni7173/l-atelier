@@ -130,7 +130,7 @@ header {
     margin: 0;
     padding: 0;
     max-width: unset;
-    transition: var(--smooth-transition);
+    /* transition: var(--smooth-transition); */
     opacity: 0;
     transform: translateY(2.5rem)
 }

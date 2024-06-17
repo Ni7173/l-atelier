@@ -264,6 +264,10 @@ header {
     transition: transform .7s cubic-bezier(.165, .84, .44, 1) .22s, opacity 1s cubic-bezier(.165, .84, .44, 1) .32s
 }
 
+.appear-delay-2-5 {
+    transition: transform .7s cubic-bezier(.165, .84, .44, 1) .25s, opacity 1s cubic-bezier(.165, .84, .44, 1) .35s
+}
+
 .appear-delay-3 {
     transition: transform .7s cubic-bezier(.165, .84, .44, 1) .28s, opacity 1s cubic-bezier(.165, .84, .44, 1) .38s
 }

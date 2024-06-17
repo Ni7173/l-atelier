@@ -71,13 +71,7 @@ adjustHomeLogo();
 const setVideo = () => {
     const video = document.querySelector('.hero__video');
     if (video) {
-        // video.muted = true;
-        // video.loop = true;
-        // video.autoplay = true;
         video.play();
-        // video.setAttribute('autoplay', 'true');
-        // video.setAttribute('loop', 'true');
-        // video.setAttribute('muted', 'true');
     }
 }
 
@@ -85,12 +79,12 @@ const textsAnimation = () => {
     const texts = document.querySelectorAll('.home__text__container p')
 
     document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-            texts.forEach(text => {
-                text.style.transform = "translateY(0px)";
-                text.style.opacity = "1";
-            })
-        }, 100);
+        // setTimeout(() => {
+        texts.forEach(text => {
+            text.style.transform = "translateY(0px)";
+            text.style.opacity = "1";
+        })
+        // }, 100);
     })
 }
 textsAnimation();
@@ -119,10 +113,3 @@ const setRightMobileImg = () => {
     })
 }
 setRightMobileImg();
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     const images = document.querySelectorAll('img');
-//     images.forEach(img => {
-//         img.style.pointerEvents = "none";
-//     });
-// });
