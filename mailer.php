@@ -2,12 +2,13 @@
 require '../secure/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
-    $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
-    $tel = htmlspecialchars($_POST['tel'], ENT_QUOTES, 'UTF-8');
-    $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $tel = filter_var($_POST['tel'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
-    $to_email = "contact@latelier-8.fr";
+    $message = nl2br(htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8'));
+
+    $to_email = $smtp_username;
     $subject = "Message de $name";
 
     // Envoyer l'email en utilisant la fonction définie dans config.php
