@@ -62,7 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // En-têtes de l'email
     $boundary = md5("random"); // pour les emails multipart
     $headers = "From: L'Atelier 8 <noreply@latelier-8.fr>\r\n";
-    // $headers .= "Reply-To: contact@latelier-8.fr\r\n";
+    $headers .= "Return-Path: bounce@latelier-8.fr\r\n"; // Utiliser une adresse de rebond valide
+    $headers .= "Reply-To: contact@latelier-8.fr\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/alternative; boundary=$boundary\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
