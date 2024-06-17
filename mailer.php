@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to_email = $smtp_username;
     $subject = "Message de $name";
 
-    // Envoyer l'email en utilisant la fonction définie dans config.php
     $send_result = sendEmail($to_email, $subject, $name, $tel, $email, $message);
 
     if ($send_result === true) {
