@@ -653,7 +653,7 @@ footer p {
 
 .right__footer__container .top__right__footer {
     flex-direction: column;
-    align-items: center
+    row-gap: .5rem;
 }
 
 .bottom__right__footer {
@@ -703,9 +703,9 @@ footer .socials li svg {
     width: 32px
 }
 
-.right-footer h3 {
+/* .right-footer h3 {
     display: none;
-}
+} */
 
 .right__footer__container .legal__mentions {
     padding: 0;
@@ -833,9 +833,9 @@ footer .socials li svg {
         justify-content: space-between
     }
 
-    .right-footer h3 {
+    /* .right-footer h3 {
         display: block;
-    }
+    } */
 
     .right__footer__container .bottom__right__footer {
         padding-bottom: 0;
