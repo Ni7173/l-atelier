@@ -32,54 +32,64 @@ header {
 
 .header-container .logo a {
     transition: var(--header-transition);
+    -webkit-transform: translateY(1rem) translateX(5px);
     transform: translateY(1rem) translateX(5px)
 }
 
 .header-container .logo .logo--is-translated {
+    -webkit-transform: translateY(17rem);
     transform: translateY(17rem)
 }
 
 @media screen and (max-width:400px) {
     .header-container .logo .logo--is-translated {
         transition: var(--quick-transition);
+        -webkit-transform: translateY(11rem) translateX(5px);
         transform: translateY(11rem) translateX(5px)
     }
 }
 
 @media screen and (min-width:599px) {
     .header-container .logo .logo--is-translated {
+        -webkit-transform: translateY(70px) translateX(5px);
         transform: translateY(70px) translateX(5px)
     }
 }
 
 @media screen and (min-width:699px) {
     .header-container .logo .logo--is-translated {
+        -webkit-transform: translateY(30rem);
         transform: translateY(30rem)
     }
 }
 
 @media screen and (min-width:1100px) {
     .header-container .logo a {
+        -webkit-transform: translateY(0) translateX(1rem);
         transform: translateY(0) translateX(1rem)
     }
 
     .header-container .logo .logo--is-translated {
+        -webkit-transform: translateY(6.5rem) translateX(1rem);
         transform: translateY(6.5rem) translateX(1rem)
     }
 }
 
 @media screen and (min-width:1350px) {
     .header-container .logo a {
+        -webkit-transform: translateY(0) translateX(1rem);
         transform: translateY(0) translateX(1rem)
     }
 
     .header-container .logo .logo--is-translated {
+        -webkit-transform: translateY(8.5rem) translateX(1rem);
         transform: translateY(8.5rem) translateX(1rem)
     }
 }
 
 @media screen and (min-width:1750px) {
     .header-container .logo .logo--is-translated {
+        -webkit-transform: translateY(6rem) translateX(1.5rem);
         transform: translateY(6rem) translateX(1.5rem)
     }
 
@@ -90,12 +100,14 @@ header {
 
 @media screen and (min-width:2100px) {
     .header-container .logo .logo--is-translated {
+        -webkit-transform: translateY(16rem) translateX(1.5rem);
         transform: translateY(16rem) translateX(1.5rem)
     }
 }
 
 @media screen and (min-width:2400px) {
     .header-container .logo .logo--is-translated {
+        -webkit-transform: translateY(20rem) translateX(1.5rem);
         transform: translateY(20rem) translateX(1.5rem)
     }
 }
@@ -132,6 +144,7 @@ header {
     max-width: unset;
     /* transition: var(--smooth-transition); */
     opacity: 0;
+    -webkit-transform: translateY(2.5rem);
     transform: translateY(2.5rem)
 }
 

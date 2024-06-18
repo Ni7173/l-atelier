@@ -186,6 +186,7 @@ body {
         color: var(--white);
         cursor: pointer;
         opacity: 0;
+        -webkit-transform: translateY(2.5rem);
         transform: translateY(2.5rem);
         transition: var(--quick-transition);
         padding: 0;
@@ -194,6 +195,7 @@ body {
     .slider__modal.active:hover button[data-slider-button],
     .slider__modal.active:hover button[data-slider-button] svg {
         opacity: .5;
+        -webkit-transform: translateY(0);
         transform: translateY(0)
     }
 

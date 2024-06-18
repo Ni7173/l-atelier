@@ -11,31 +11,37 @@
   <loc>https://www.latelier-8.fr/</loc>
   <lastmod>2024-06-18T08:08:34+00:00</lastmod>
   <priority>1.00</priority>
+  <changefreq>yearly</changefreq>
 </url>
 <url>
   <loc>https://www.latelier-8.fr/pages/vins</loc>
   <lastmod>2024-06-18T08:08:34+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://www.latelier-8.fr/pages/graphisme</loc>
   <lastmod>2024-06-18T08:08:34+00:00</lastmod>
   <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://www.latelier-8.fr/pages/illustrations</loc>
   <lastmod>2024-06-18T08:08:34+00:00</lastmod>
   <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://www.latelier-8.fr/pages/a-propos</loc>
   <lastmod>2024-06-18T08:08:34+00:00</lastmod>
   <priority>0.80</priority>
+    <changefreq>yearly</changefreq>
 </url>
 <url>
   <loc>https://www.latelier-8.fr/pages/contact</loc>
   <lastmod>2024-06-18T08:08:34+00:00</lastmod>
   <priority>0.80</priority>
+    <changefreq>yearly</changefreq>
 </url>
 
 

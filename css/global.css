@@ -238,10 +238,12 @@ header {
 
 @keyframes turningStar {
     from {
+        -webkit-transform: rotate(0);
         transform: rotate(0)
     }
 
     to {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg)
     }
 }
@@ -253,6 +255,7 @@ header {
 .menu-list li {
     margin: 0 7px;
     opacity: 0;
+    -webkit-transform: translateY(6rem);
     transform: translateY(6rem)
 }
 
@@ -286,6 +289,7 @@ header {
 
 li.--translated {
     opacity: 1;
+    -webkit-transform: translateY(0);
     transform: translateY(0)
 }
 
@@ -332,10 +336,12 @@ header .socials {
 }
 
 .burger .bar::before {
+    -webkit-transform: translateY(-8px);
     transform: translateY(-8px)
 }
 
 .burger .bar::after {
+    -webkit-transform: translateY(8px);
     transform: translateY(8px)
 }
 
@@ -486,10 +492,12 @@ nav .menu-list a {
 }
 
 .show-nav .burger .bar::before {
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg)
 }
 
 .show-nav .burger .bar::after {
+    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg)
 }
 
@@ -601,6 +609,7 @@ footer p {
     min-width: 100%;
     flex-direction: column;
     margin: 0 auto;
+    max-height: 100%;
     padding: 0
 }
 
@@ -608,18 +617,21 @@ footer p {
     width: 100%;
     flex-direction: column;
     justify-content: space-around;
+    max-height: 100%;
     height: 100%
 }
 
 .left-footer {
     flex-direction: column;
     line-height: 1.4;
+    max-height: 100%;
     width: 100%
 }
 
 .top__left__footer {
     width: var(--footer-width);
     max-width: var(--footer-width);
+    max-height: 100%;
     justify-content: space-between
 }
 
