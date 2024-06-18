@@ -697,7 +697,7 @@ footer p {
 }
 
 .right__footer__container div {
-    padding: 0.7rem 0
+    padding: 0.3rem 0
 }
 
 .right__footer__container .top__right__footer {
@@ -750,13 +750,13 @@ footer .socials {
 }
 
 .right__footer__container .socials li:first-child {
-    margin-right: 1.5rem
+    margin-right: 1rem
 }
 
 footer .socials li svg {
     color: var(--black);
-    height: 32px;
-    width: 32px
+    height: 26px;
+    width: 26px
 }
 
 .right__footer__container .legal__mentions {
@@ -887,7 +887,7 @@ footer .socials li svg {
 
     .footer__txt__container,
     .right-footer {
-        margin-top: 1.5rem
+        margin-top: 1rem
     }
 
     .right-footer {
