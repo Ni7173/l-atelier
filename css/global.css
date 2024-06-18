@@ -198,7 +198,7 @@ header {
     width: 100%;
     z-index: 5;
     top: 0;
-    padding-block: 3rem;
+    padding: 3rem 0;
 }
 
 .header-container {
@@ -697,7 +697,7 @@ footer p {
 }
 
 .right__footer__container div {
-    padding-block: 0.7rem
+    padding: 0.7rem 0
 }
 
 .right__footer__container .top__right__footer {

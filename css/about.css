@@ -9,7 +9,7 @@ p {
 section {
     width: 100%;
     height: auto;
-    margin-block: 2rem
+    margin: 2rem 0
 }
 
 section>div {
@@ -112,7 +112,7 @@ button[data-slider-button] {
 /* creators */
 
 .creators {
-    margin-block: 6rem 5rem;
+    margin: 6rem 0 5rem 0;
 }
 
 .creators p {
@@ -208,7 +208,7 @@ footer .footer__txt__container p {
     }
 
     p {
-        margin-block: 4rem
+        margin: 4rem 0
     }
 
     .home__p {
