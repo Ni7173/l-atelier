@@ -50,6 +50,7 @@ input {
     .contact__details__container,
     .contact__details__content {
         width: 100%;
+        -webkit-flex-direction: column;
         flex-direction: column;
     }
 
@@ -80,15 +81,16 @@ input {
 .contact__form {
     .contact__form__container {
         width: 80%;
+        -webkit-flex-direction: column;
         flex-direction: column;
 
         .wrapper {
             width: 100%;
+            -webkit-row-gap: 1rem;
             row-gap: 1rem;
 
             .contact__form__input {
                 width: 100%;
-                // padding-inline: 1rem;
                 display: flex;
 
                 label {
@@ -128,7 +130,9 @@ input {
             .contact__form__name__container {
                 width: 100%;
                 display: flex;
+                -webkit-flex-direction: column;
                 flex-direction: column;
+                -webkit-row-gap: .7rem;
                 row-gap: .7rem;
 
                 input {
@@ -162,9 +166,11 @@ input {
 
 @media screen and (min-width:700px) {
     .contact__form__input {
+        -webkit-justify-content: center;
         justify-content: center;
 
         label.label.label__first.d-flex {
+            -webkit-justify-content: end;
             justify-content: end;
             margin-right: 1rem;
             width: unset;
@@ -183,9 +189,11 @@ input {
     }
 
     .contact__form__input {
+        -webkit-justify-content: center;
         justify-content: center;
 
         label.label.label__first.d-flex {
+            -webkit-justify-content: end;
             justify-content: end;
             margin-right: 1rem;
             width: unset;
@@ -205,6 +213,7 @@ input {
     .section__contact__map .contact__map {
         object-fit: contain;
         height: auto;
+        -webkit-aspect-ratio: auto 2/1;
         aspect-ratio: auto 2/1;
     }
 
@@ -218,13 +227,18 @@ input {
     }
 
     main .contact__form .contact__form__container .wrapper .contact__form__name__container {
+        -webkit-flex-direction: row;
         flex-direction: row;
+        -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-justify-content: end;
         justify-content: end;
 
         label {
             width: 40%;
+            -webkit-justify-content: end;
             justify-content: end;
+            display: -webkit-flex;
             display: flex;
             margin-right: 1rem;
         }
@@ -241,6 +255,7 @@ input {
         &:active,
         &:focus,
         &:focus-visible {
+            -webkit-box-shadow: 0 0 1px var(--black);
             box-shadow: 0 0 1px var(--black);
             outline: unset;
         }

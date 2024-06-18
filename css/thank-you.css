@@ -3,6 +3,7 @@
 }
 
 .thank__you__text {
+    -webkit-flex-direction: column;
     flex-direction: column;
 }
 

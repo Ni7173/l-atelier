@@ -1,6 +1,7 @@
 .home__text,
 .home__text__container {
     color: var(--black);
+    display: -webkit-flex;
     display: flex;
     z-index: 2
 }
@@ -31,6 +32,7 @@ header {
 }
 
 .header-container .logo a {
+    -webkit-transition: var(--header-transition);
     transition: var(--header-transition);
     -webkit-transform: translateY(1rem) translateX(5px);
     transform: translateY(1rem) translateX(5px)
@@ -43,6 +45,7 @@ header {
 
 @media screen and (max-width:400px) {
     .header-container .logo .logo--is-translated {
+        -webkit-transition: var(--quick-transition);
         transition: var(--quick-transition);
         -webkit-transform: translateY(11rem) translateX(5px);
         transform: translateY(11rem) translateX(5px)
@@ -94,6 +97,7 @@ header {
     }
 
     .header-container .logo a {
+        -webkit-transition: .1s;
         transition: .1s
     }
 }
@@ -122,6 +126,7 @@ header {
 
 .home .grid {
     position: relative;
+    -webkit-align-items: center;
     align-items: center;
     pointer-events: none;
     background: var(--white)
@@ -130,6 +135,7 @@ header {
 .home__text__container {
     position: absolute;
     top: 77%;
+    -webkit-flex-direction: row;
     flex-direction: row;
     width: auto;
     white-space: nowrap;
@@ -142,17 +148,18 @@ header {
     margin: 0;
     padding: 0;
     max-width: unset;
-    /* transition: var(--smooth-transition); */
     opacity: 0;
     -webkit-transform: translateY(2.5rem);
     transform: translateY(2.5rem)
 }
 
 .home__text__container .right__home__text .home__text-2 {
+    -webkit-transition: var(--smooth-transition) .3s;
     transition: var(--smooth-transition) .3s
 }
 
 .home__text {
+    -webkit-gap: .5rem;
     gap: .5rem
 }
 
@@ -161,6 +168,7 @@ header {
 }
 
 .home__text-2 {
+    -webkit-justify-content: left;
     justify-content: left
 }
 
@@ -188,6 +196,7 @@ header {
 .hero__video {
     width: 100%;
     filter: brightness(103%);
+    -webkit-filter: brightness(103%);
     mask-image: url("../img/lunettes/LUNETTES-MASQUE.svg");
     mask-size: 45%;
     mask-repeat: no-repeat;
@@ -196,6 +205,7 @@ header {
     -webkit-mask-size: 45%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center center;
+    -webkit-aspect-ratio: 2/1;
     aspect-ratio: 2/1;
     pointer-events: none
 }
@@ -331,22 +341,6 @@ header {
     z-index: 3
 }
 
-/* #home__menu .home__menu__item:first-child .menu__hovered {
-    background: var(--brown)
-}
-
-#home__menu .home__menu__item:nth-child(2) .menu__hovered {
-    background: var(--blue)
-}
-
-#home__menu .home__menu__item:nth-child(3) .menu__hovered {
-    background: var(--green)
-}
-
-#home__menu .home__menu__item:nth-child(4) .menu__hovered {
-    background: var(--orange)
-} */
-
 .menu__title {
     font-optical-sizing: auto;
     font-size: 3rem;
@@ -369,6 +363,7 @@ header {
 
 #home__menu .home__menu__item .menu__hovered {
     z-index: 2;
+    -webkit-transition: var(--quick-transition);
     transition: var(--quick-transition)
 }
 
@@ -440,6 +435,7 @@ header {
     }
 
     .home__menu .home__menu__item .menu__hovered__container {
+        -webkit-justify-content: center;
         justify-content: center
     }
 
@@ -449,8 +445,10 @@ header {
 }
 
 .menu__img {
+    -webkit-transition: var(--smooth-transition);
     transition: var(--smooth-transition);
     width: 100%;
+    -webkit-aspect-ratio: 2/1;
     aspect-ratio: 2/1;
     height: 100%
 }
@@ -472,7 +470,9 @@ header {
 
     .home__text__container {
         justify-self: center;
+        -webkit-justify-content: left;
         justify-content: left;
+        -webkit-flex-direction: column;
         flex-direction: column;
         left: 24%;
         text-align: center
@@ -503,7 +503,9 @@ header {
     width: 30%;
     left: 35%;
     position: absolute;
+    -webkit-transition: var(--quick-transition);
     transition: var(--quick-transition);
+    -webkit-flex-direction: column;
     flex-direction: column
 }
 

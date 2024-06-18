@@ -25,6 +25,7 @@ section>div {
 .home__hero__lunettes__img {
     z-index: 2;
     position: relative;
+    -webkit-aspect-ratio: 2/1;
     aspect-ratio: 2/1;
     overflow: hidden
 }
@@ -35,6 +36,7 @@ section>div {
     left: 2%;
     width: 50%;
     height: 100%;
+    -webkit-aspect-ratio: 1/1;
     aspect-ratio: 1/1;
     clip-path: circle(49%)
 }
@@ -55,6 +57,7 @@ section>div {
 }
 
 .reviews__section__container {
+    -webkit-flex-direction: column;
     flex-direction: column;
     max-width: 100%
 }
@@ -63,11 +66,13 @@ section>div {
 .reviews__container {
     position: relative;
     overflow: hidden;
+    -webkit-transition: var(--quick-transition);
     transition: var(--quick-transition);
     width: 100%
 }
 
 .reviews__list {
+    -webkit-transition: transform .5s ease-in-out;
     transition: transform .5s ease-in-out;
     -webkit-transform: translateX(270%);
     transform: translateX(270%);
@@ -78,6 +83,7 @@ section>div {
 .review {
     min-width: 90%;
     padding-inline: 2rem;
+    -webkit-flex-direction: column;
     flex-direction: column;
     height: 100%
 }
@@ -94,6 +100,7 @@ button[data-slider-button] {
     background-color: #fff;
     border-radius: 50%;
     display: inline-block;
+    -webkit-transition: background-color .6s;
     transition: background-color .6s;
     cursor: pointer
 }
@@ -115,6 +122,7 @@ button[data-slider-button] {
 
 .creators a {
     font-weight: 500;
+    -webkit-transition: var(--quick-transition);
     transition: var(--quick-transition);
 }
 
@@ -160,6 +168,7 @@ footer .footer__txt__container p {
         border: unset;
         background: unset;
         cursor: pointer;
+        -webkit-transition: var(--quick-transition);
         transition: var(--quick-transition);
         pointer-events: all;
         padding: 0;

@@ -31,22 +31,30 @@ header .logo .turning__star {
 
 .project {
     display: flex;
+    display: -webkit-flex;
     width: 100%;
     position: relative;
+    -webkit-transition: var(--smooth-transition);
     transition: var(--smooth-transition);
+    -webkit-aspect-ratio: 2/1;
     aspect-ratio: 2/1
 }
 
 .project_img {
     width: 50%;
+    -webkit-aspect-ratio: 1/1;
     aspect-ratio: 1/1
 }
 
 .project_content {
+    -webkit-justify-content: center;
     justify-content: center;
     display: flex;
+    display: -webkit-flex;
+    -webkit-align-items: center;
     align-items: center;
     width: 50%;
+    -webkit-aspect-ratio: 1/1;
     aspect-ratio: 1/1
 }
 
@@ -57,6 +65,8 @@ header .logo .turning__star {
 @media screen and (min-width:1150px) {
     .container-grid {
         display: grid;
+        -webkit-grid-template-columns: repeat(3, 1fr);
+        -webkit-grid-template-areas: "projects projects lateral";
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: "projects projects lateral";
     }
@@ -64,6 +74,7 @@ header .logo .turning__star {
     .slide img {
         height: 100%;
         width: 100%;
+        -webkit-aspect-ratio: auto 632/457;
         aspect-ratio: auto 632/457;
         position: relative
     }
@@ -84,6 +95,7 @@ header .logo .turning__star {
 
     .slide {
         opacity: 0;
+        -webkit-transition: opacity .2s ease-in-out 0.2s;
         transition: opacity .2s ease-in-out 0.2s;
         max-width: 100%
     }
@@ -125,6 +137,7 @@ button[data-modal-button] {
 #modals,
 .project_modal,
 .project_modal .modal_content {
+    -webkit-transition: var(--smooth-transition);
     transition: var(--smooth-transition);
 }
 
@@ -134,19 +147,24 @@ button[data-modal-button] {
 
 .project_content {
     padding: 6rem;
+    -webkit-justify-content: flex-end;
     justify-content: flex-end;
+    -webkit-align-items: flex-end;
     align-items: flex-end;
     text-align: right;
+    -webkit-flex-direction: column;
     flex-direction: column
 }
 
 .modal__btn__close,
 button[data-modal-button] {
     padding: 0;
+    -webkit-transition: var(--quick-transition);
     transition: var(--quick-transition)
 }
 
 .projects_container .project:nth-of-type(2n) .project_content {
+    -webkit-align-items: flex-start;
     align-items: flex-start;
     text-align: left
 }
@@ -193,7 +211,10 @@ button[data-modal-button] {
     opacity: 0;
     pointer-events: none;
     display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
     pointer-events: none
 }
@@ -217,6 +238,7 @@ button[data-modal-button] {
 
 .modals__container,
 .small_img {
+    -webkit-transition: var(--smooth-transition);
     transition: var(--smooth-transition)
 }
 
@@ -250,7 +272,10 @@ button[data-modal-button] {
 
     #modals {
         display: flex;
+        display: -webkit-flex;
+        -webkit-justify-content: center;
         justify-content: center;
+        -webkit-align-items: center;
         align-items: center;
     }
 }
@@ -262,7 +287,9 @@ button[data-modal-button] {
 }
 
 .project_modal .wrapper {
+    -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -webkit-align-items: unset;
     align-items: unset
 }
 
@@ -272,6 +299,8 @@ button[data-modal-button] {
 
 .modal_right_content {
     display: flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
     flex-direction: column;
     width: 45%;
     height: 100%
@@ -279,6 +308,7 @@ button[data-modal-button] {
 
 .modal_left_img {
     width: 100%;
+    -webkit-aspect-ratio: auto 1/1;
     aspect-ratio: auto 1/1;
     height: 100%
 }
@@ -295,8 +325,12 @@ button[data-modal-button] {
     height: inherit;
     position: relative;
     display: flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
     flex-direction: column;
+    -webkit-align-items: flex-start;
     align-items: flex-start;
+    -webkit-justify-content: flex-end;
     justify-content: flex-end;
     color: var(--main-color);
     text-align: left;
@@ -406,9 +440,11 @@ button[data-modal-button].active:hover {
 }
 
 .small_img {
+    -webkit-filter: grayscale(100%) brightness(90%);
     filter: grayscale(100%) brightness(90%);
     scale: 1;
     height: 100%;
+    -webkit-aspect-ratio: 1/1;
     aspect-ratio: 1/1;
     width: 100%
 }
@@ -417,6 +453,7 @@ button[data-modal-button].active:hover {
 .project_link:focus+.small_img,
 .project_link:hover+.small_img {
     scale: 1.05;
+    -webkit-filter: grayscale(0%) brightness(100%);
     filter: grayscale(0%) brightness(100%)
 }
 
@@ -430,6 +467,7 @@ button[data-modal-button].active:hover {
     }
 
     .small_img {
+        -webkit-filter: grayscale(0%) brightness(100%);
         filter: grayscale(0%) brightness(100%)
     }
 }
@@ -443,10 +481,12 @@ button[data-modal-button].active:hover {
         top: 0;
         right: 0;
         bottom: 0;
+        -webkit-flex-direction: column;
         flex-direction: column
     }
 
     .project_modal[data-modal-active] .modal_content {
+        -webkit-flex-direction: column;
         flex-direction: column
     }
 
@@ -467,6 +507,7 @@ button[data-modal-button].active:hover {
     .modal_right_content {
         height: 45%;
         width: 100%;
+        -webkit-flex-direction: row;
         flex-direction: row
     }
 
@@ -500,10 +541,12 @@ button[data-modal-button].active:hover {
 
     .project_modal[data-modal-active] {
         transition-delay: 0s;
+        -webkit-flex-direction: column;
         flex-direction: column
     }
 
     .wrapper {
+        -webkit-flex-direction: column;
         flex-direction: column
     }
 
@@ -512,6 +555,7 @@ button[data-modal-button].active:hover {
         height: auto;
         padding: 0;
         margin-right: 2rem;
+        -webkit-justify-content: center;
         justify-content: center
     }
 
@@ -524,9 +568,13 @@ button[data-modal-button].active:hover {
     .project_modal[data-modal-active] .modal_right_content {
         height: 45%;
         width: 100%;
+        -webkit-flex-direction: column-reverse;
         flex-direction: column-reverse;
         display: flex;
+        display: -webkit-flex;
+        -webkit-align-items: center;
         align-items: center;
+        -webkit-justify-content: center;
         justify-content: center
     }
 
@@ -546,15 +594,18 @@ button[data-modal-button].active:hover {
     }
 
     .project {
+        -webkit-flex-direction: row;
         flex-direction: row;
         max-width: 100%;
         width: 100vw;
         height: auto;
+        -webkit-aspect-ratio: 2/1;
         aspect-ratio: 2/1
     }
 
     .project_content,
     .project_img {
+        -webkit-aspect-ratio: 1/1;
         aspect-ratio: 1/1;
         width: 50%;
         height: 100%;
@@ -575,13 +626,17 @@ button[data-modal-button].active:hover {
     position: relative;
     pointer-events: none;
     display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
     background: 0 0
 }
 
 #modals.active .indicators {
     pointer-events: all;
+    -webkit-transition: var(--quick-transition);
     transition: var(--quick-transition)
 }
 
@@ -594,6 +649,7 @@ button[data-modal-button].active:hover {
     #modals.active .modal_text {
         padding: 8rem 9rem;
         width: 70% !important;
+        -webkit-justify-content: center;
         justify-content: center;
         height: 100%;
     }
@@ -613,6 +669,8 @@ button[data-modal-button].active:hover {
 
     .modal_right_content .modal_text.modal_text.illustrated {
         display: flex;
+        display: -webkit-flex;
+        -webkit-justify-content: center;
         justify-content: center;
     }
 

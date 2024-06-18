@@ -11,6 +11,7 @@ body {
 .img__container img,
 .project {
     width: 100%;
+    -webkit-transition: var(--smooth-transition);
     transition: var(--smooth-transition)
 }
 
@@ -20,6 +21,7 @@ body {
 
 .project {
     position: relative;
+    -webkit-aspect-ratio: 2/1;
     aspect-ratio: 2/1
 }
 
@@ -29,6 +31,7 @@ body {
     height: 100%;
     min-height: 100%;
     max-width: 50%;
+    -webkit-aspect-ratio: 1/1;
     aspect-ratio: 1/1
 }
 
@@ -41,17 +44,21 @@ body {
 }
 
 .img__container img {
+    -webkit-aspect-ratio: 1/1;
     aspect-ratio: 1/1;
     height: 100%;
     cursor: pointer
 }
 
 .project__content {
+    -webkit-flex-direction: column;
     flex-direction: column;
     overflow: hidden;
     color: #555;
+    -webkit-justify-content: end;
     justify-content: end;
     text-align: left;
+    -webkit-align-items: start;
     align-items: start
 }
 
@@ -60,6 +67,7 @@ body {
     font-size: 1.6rem;
     white-space: pre-line;
     color: var(--white);
+    -webkit-transition: var(--smooth-transition);
     transition: var(--smooth-transition)
 }
 
@@ -68,6 +76,7 @@ body {
     height: 25px;
     margin-bottom: 1.5rem;
     opacity: 0;
+    -webkit-transition: var(--smooth-transition);
     transition: var(--smooth-transition)
 }
 
@@ -78,6 +87,7 @@ body {
     opacity: 0;
     top: 50%;
     left: 50%;
+    -webkit-transition: var(--quick-transition);
     transition: var(--quick-transition);
     pointer-events: none
 }
@@ -92,6 +102,7 @@ body {
     background: var(--white);
     opacity: 1;
     z-index: 8;
+    -webkit-box-shadow: 0 0 30px #555;
     box-shadow: 0 0 30px #555;
     pointer-events: all
 }
@@ -102,6 +113,7 @@ body {
     }
 
     .project__reversed {
+        -webkit-flex-direction: row-reverse;
         flex-direction: row-reverse
     }
 
@@ -116,11 +128,13 @@ body {
 
     .project__reversed .project__content {
         text-align: right;
+        -webkit-align-items: end;
         align-items: end
     }
 }
 
 .slider__img {
+    -webkit-aspect-ratio: auto 3/2;
     aspect-ratio: auto 3/2;
 }
 
@@ -142,6 +156,7 @@ body {
 .slider__img_container {
     position: absolute;
     opacity: 0;
+    -webkit-transition: var(--long-transition);
     transition: var(--long-transition)
 }
 
@@ -188,6 +203,7 @@ body {
         opacity: 0;
         -webkit-transform: translateY(2.5rem);
         transform: translateY(2.5rem);
+        -webkit-transition: var(--quick-transition);
         transition: var(--quick-transition);
         padding: 0;
     }
@@ -207,6 +223,7 @@ body {
     button[data-slider-button] svg {
         height: 30px;
         width: 30px;
+        -webkit-transition: var(--quick-transition);
         transition: var(--quick-transition);
     }
 
@@ -246,6 +263,7 @@ body {
 
 @media screen and (max-width:1199px) {
     .wrapper .project:nth-child(2n) {
+        -webkit-flex-direction: row-reverse;
         flex-direction: row-reverse
     }
 
@@ -265,6 +283,7 @@ body {
 
     .wrapper .project:nth-child(2n) .project__content {
         text-align: right;
+        -webkit-align-items: end;
         align-items: end
     }
 }
@@ -297,6 +316,7 @@ body {
 
 .slider__modal.active .indicators {
     pointer-events: all;
+    -webkit-transition: var(--quick-transition);
     transition: var(--quick-transition);
     opacity: .6
 }
@@ -310,6 +330,7 @@ body {
     .modal__btn__close svg {
         width: 17px;
         height: 17px;
+        -webkit-transition: var(--quick-transition);
         transition: var(--quick-transition)
     }
 
