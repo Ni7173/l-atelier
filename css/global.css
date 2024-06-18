@@ -363,7 +363,7 @@ header .socials {
 
 .socials li {
     max-width: 25px;
-    margin-inline: 1rem
+    margin: 0 1rem
 }
 
 header .socials {
@@ -411,7 +411,7 @@ nav .socials li:hover svg {
 
 @media screen and (min-width:800px) {
     header {
-        padding-block: 5rem;
+        padding: 5rem 0;
     }
 
     .logo svg {
@@ -427,7 +427,7 @@ nav .socials li:hover svg {
 
 @media screen and (min-width:1501px) {
     header {
-        padding-block: 6rem;
+        padding: 6rem 0;
     }
 
     .logo svg {
@@ -437,7 +437,7 @@ nav .socials li:hover svg {
 
 @media screen and (min-width:2000px) {
     header {
-        padding-block: 7rem;
+        padding: 7rem 0;
     }
 
     .logo svg {
