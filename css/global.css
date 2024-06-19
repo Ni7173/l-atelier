@@ -921,7 +921,7 @@ footer .socials li svg {
 
 @media screen and (min-width:1250px) and (max-width:1400px) {
     .right-footer {
-        width: 40%
+        width: 34%
     }
 
     .footer__txt__container,
@@ -945,11 +945,19 @@ footer .socials li svg {
     .footer__img__container {
         width: 11%;
     }
+
+    .left-footer {
+        width: 42%;
+    }
 }
 
 @media screen and (min-width:2100px) {
     .footer__img__container {
         width: 9%;
+    }
+
+    .left-footer {
+        width: 38%;
     }
 }
 
