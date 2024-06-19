@@ -1,0 +1,286 @@
+.burger_container .burger .bar {
+  background: var(--black);
+}
+
+.burger_container .burger .bar::before,
+.burger_container .burger .bar::after {
+  background: var(--black);
+}
+
+section {
+  width: 100%;
+  text-align: center;
+}
+
+.section__contact__map {
+  height: 85%;
+  width: 100%;
+}
+
+.section__contact__map img {
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+.contact__title {
+  font-weight: 500;
+}
+
+input,
+textarea {
+  border-radius: 5px;
+  border: unset;
+  background-color: var(--light-grey);
+  padding: 6px;
+  font-size: 1.6rem;
+}
+
+input {
+  height: 25px;
+}
+
+.contact__details {
+  padding-bottom: 2rem;
+}
+
+.contact__details .contact__details__container,
+.contact__details .contact__details__content {
+  width: 100%;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.contact__details .contact__details__txt {
+  width: 85%;
+  margin-bottom: 0.3rem;
+}
+
+.error__container {
+  color: red;
+  display: none;
+}
+
+#error {
+  width: 0%;
+  height: 0%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#error.active {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.contact__form .contact__form__container {
+  width: 80%;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.contact__form .contact__form__container .wrapper {
+  width: 100%;
+  -webkit-row-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__input label {
+  white-space: nowrap;
+  width: 22%;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__input input {
+  width: 78%;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__p__container {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__p__container p {
+  height: auto;
+  white-space: pre-line;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__txt {
+  margin-bottom: 2rem;
+  width: 100%;
+  overflow: visible;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__txt textarea {
+  width: 100%;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__name__container {
+  width: 100%;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-row-gap: 0.7rem;
+  row-gap: 0.7rem;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__name__container .input__container {
+  flex-direction: column;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__name__container input {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__btn__container {
+  width: 100%;
+  min-height: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.contact__form .contact__form__container .wrapper .contact__form__btn__container .contact__form__btn {
+  cursor: pointer;
+  width: auto;
+  padding: 1rem 2rem;
+  border: 1px solid var(--black);
+  border-radius: 30px;
+  background-color: var(--light-grey);
+  color: var(--black);
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 700px) {
+  .contact__form__input {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .contact__form__input label.label.label__first.d-flex {
+    -webkit-justify-content: end;
+    justify-content: end;
+    margin-right: 1rem;
+    width: unset;
+  }
+
+  .contact__form__input input#name {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  section {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .contact__form__input {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .contact__form__input label.label.label__first.d-flex {
+    -webkit-justify-content: end;
+    justify-content: end;
+    margin-right: 1rem;
+    width: unset;
+  }
+
+  .contact__form__input input#name {
+    width: 50%;
+  }
+
+  .section__contact__map {
+    height: auto;
+    margin-bottom: 3rem;
+  }
+
+  .section__contact__map .contact__map {
+    object-fit: contain;
+    height: auto;
+    -webkit-aspect-ratio: auto 2/1;
+    aspect-ratio: auto 2/1;
+  }
+
+  .contact__details {
+    margin-bottom: 3rem;
+  }
+
+  main .contact__form .contact__form__container .wrapper .contact__form__p__container p {
+    white-space: pre-line;
+    max-width: 80%;
+  }
+
+  main .contact__form .contact__form__container .wrapper .contact__form__name__container {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: end;
+    justify-content: end;
+  }
+
+  main .contact__form .contact__form__container .wrapper .contact__form__name__container .input__container {
+    width: 100%;
+    column-gap: 1rem;
+    -webkit-column-gap: 1rem;
+  }
+
+  main .contact__form .contact__form__container .wrapper .contact__form__name__container label {
+    width: 100%;
+    -webkit-justify-content: end;
+    justify-content: center;
+    display: -webkit-flex;
+    display: flex;
+    margin-right: 1rem;
+  }
+
+  main .contact__form .contact__form__container .wrapper .contact__form__name__container input {
+    width: 80%;
+  }
+
+  input:active,
+  input:focus,
+  input:focus-visible,
+  textarea:active,
+  textarea:focus,
+  textarea:focus-visible {
+    -webkit-box-shadow: 0 0 1px var(--black);
+    box-shadow: 0 0 1px var(--black);
+    outline: unset;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  form {
+    width: 60%;
+  }
+
+  .input__container {
+    flex-direction: row !important;
+    justify-content: end;
+  }
+
+  .input__container label {
+    justify-content: end !important;
+    width: 40% !important;
+    white-space: nowrap;
+  }
+
+  .contact__form__name__container input {
+    width: 50% !important;
+  }
+}
