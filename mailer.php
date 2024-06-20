@@ -1,11 +1,12 @@
 <?php
 
+use vendor\PHPMailer\src\PHPMailer;
+use vendor\PHPMailer\src\Exception;
+
 require 'path/to/PHPMailer/src/Exception.php';
 require 'path/to/PHPMailer/src/PHPMailer.php';
 require 'path/to/PHPMailer/src/SMTP.php';
-
-use vendor\PHPMailer\src\PHPMailer;
-use vendor\PHPMailer\src\Exception;
+require '../secure/config.php'
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
