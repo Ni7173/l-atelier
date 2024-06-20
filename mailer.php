@@ -4,14 +4,16 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-use vendor\PHPMailer\src\PHPMailer;
-use vendor\PHPMailer\src\Exception;
+require 'vendor/autoload.php';
+
 
 require 'vendor/phpmailer/src/Exception.php';
 require 'vendor/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/src/SMTP.php';
-require 'vendor/autoload.php';
 require '../secure/config.php'
+
+use vendor\PHPMailer\src\PHPMailer;
+use vendor\PHPMailer\src\Exception;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
