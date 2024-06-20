@@ -3,7 +3,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require __DIR__ . '/../secure/config.php';
+require '../public_html/vendor/autoload.php';
+require '/../secure/config.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
