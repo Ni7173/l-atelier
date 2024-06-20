@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 require '/vendor/autoload.php';
 require '/../secure/config.php';
 
-use vendor\PHPMailer\src\PHPMailer.php;
+use vendor\PHPMailer\src\PHPMailer;
 use vendor\PHPMailer\src\Exception;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
