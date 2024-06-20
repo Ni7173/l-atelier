@@ -183,16 +183,6 @@ header {
   margin-left: 6px
 }
 
-@keyframes switchingTxtAppear {
-  from {
-    right: 0
-  }
-
-  to {
-    right: -100%
-  }
-}
-
 .hero__video {
   width: 100%;
   filter: brightness(103%);

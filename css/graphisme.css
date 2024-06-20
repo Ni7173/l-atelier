@@ -33,228 +33,228 @@
   color: var(--blue);
 }
 
-.graphisme__content .wrapper .project:nth-child(1) {
+.wrapper .project:nth-child(1) {
   background-color: hsl(var(--project-1-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(1) svg {
+.wrapper .project:nth-child(1) svg {
   color: hsl(var(--project-1-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(2) {
+.wrapper .project:nth-child(2) {
   background-color: hsl(var(--project-2-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(2) svg {
+.wrapper .project:nth-child(2) svg {
   color: hsl(var(--project-2-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(3) {
+.wrapper .project:nth-child(3) {
   background-color: hsl(var(--project-3-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(3) svg {
+.wrapper .project:nth-child(3) svg {
   color: hsl(var(--project-3-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(4) {
+.wrapper .project:nth-child(4) {
   background-color: hsl(var(--project-4-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(4) svg {
+.wrapper .project:nth-child(4) svg {
   color: hsl(var(--project-4-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(5) {
+.wrapper .project:nth-child(5) {
   background-color: hsl(var(--project-5-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(5) svg {
+.wrapper .project:nth-child(5) svg {
   color: hsl(var(--project-5-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(6) {
+.wrapper .project:nth-child(6) {
   background-color: hsl(var(--project-6-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(6) svg {
+.wrapper .project:nth-child(6) svg {
   color: hsl(var(--project-6-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(7) {
+.wrapper .project:nth-child(7) {
   background-color: hsl(var(--project-7-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(7) svg {
+.wrapper .project:nth-child(7) svg {
   color: hsl(var(--project-7-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(8) {
+.wrapper .project:nth-child(8) {
   background-color: hsl(var(--project-8-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(8) svg {
+.wrapper .project:nth-child(8) svg {
   color: hsl(var(--project-8-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(9) {
+.wrapper .project:nth-child(9) {
   background-color: hsl(var(--project-9-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(9) svg {
+.wrapper .project:nth-child(9) svg {
   color: hsl(var(--project-9-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(10) {
+.wrapper .project:nth-child(10) {
   background-color: hsl(var(--project-10-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(10) svg {
+.wrapper .project:nth-child(10) svg {
   color: hsl(var(--project-10-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(11) {
+.wrapper .project:nth-child(11) {
   background-color: hsl(var(--project-11-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(11) svg {
+.wrapper .project:nth-child(11) svg {
   color: hsl(var(--project-11-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(12) {
+.wrapper .project:nth-child(12) {
   background-color: hsl(var(--project-12-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(12) svg {
+.wrapper .project:nth-child(12) svg {
   color: hsl(var(--project-12-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(13) {
+.wrapper .project:nth-child(13) {
   background-color: hsl(var(--project-13-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(13) svg {
+.wrapper .project:nth-child(13) svg {
   color: hsl(var(--project-13-star-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(14) {
+.wrapper .project:nth-child(14) {
   background-color: hsl(var(--project-14-color));
 }
 
-.graphisme__content .wrapper .project:nth-child(14) svg {
+.wrapper .project:nth-child(14) svg {
   color: hsl(var(--project-14-star-color));
 }
 
 @media screen and (min-width: 1350px) {
-  .graphisme__content .wrapper .project:nth-child(1) {
+  .wrapper .project:nth-child(1) {
     background-color: hsl(var(--project-1-color), 0.4);
   }
 
-  .graphisme__content .wrapper .project:nth-child(2) {
+  .wrapper .project:nth-child(2) {
     background-color: hsl(var(--project-2-color), 0.4);
   }
 
-  .graphisme__content .wrapper .project:nth-child(3) {
+  .wrapper .project:nth-child(3) {
     background-color: hsl(var(--project-3-color), 0.4);
   }
 
-  .graphisme__content .wrapper .project:nth-child(4) {
+  .wrapper .project:nth-child(4) {
     background-color: hsl(var(--project-4-color), 0.4);
   }
 
-  .graphisme__content .wrapper .project:nth-child(5) {
+  .wrapper .project:nth-child(5) {
     background-color: hsl(var(--project-5-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(6) {
+  .wrapper .project:nth-child(6) {
     background-color: hsl(var(--project-6-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(7) {
+  .wrapper .project:nth-child(7) {
     background-color: hsl(var(--project-7-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(8) {
+  .wrapper .project:nth-child(8) {
     background-color: hsl(var(--project-8-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(9) {
+  .wrapper .project:nth-child(9) {
     background-color: hsl(var(--project-9-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(10) {
+  .wrapper .project:nth-child(10) {
     background-color: hsl(var(--project-10-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(11) {
+  .wrapper .project:nth-child(11) {
     background-color: hsl(var(--project-11-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(12) {
+  .wrapper .project:nth-child(12) {
     background-color: hsl(var(--project-12-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(13) {
+  .wrapper .project:nth-child(13) {
     background-color: hsl(var(--project-13-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(14) {
+  .wrapper .project:nth-child(14) {
     background-color: hsl(var(--project-14-color), 0.25);
   }
 
-  .graphisme__content .wrapper .project:nth-child(1):hover {
+  .wrapper .project:nth-child(1):hover {
     background-color: hsl(var(--project-1-color));
   }
 
-  .graphisme__content .wrapper .project:nth-child(2):hover {
+  .wrapper .project:nth-child(2):hover {
     background-color: hsl(var(--project-2-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(3):hover {
+  .wrapper .project:nth-child(3):hover {
     background-color: hsl(var(--project-3-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(4):hover {
+  .wrapper .project:nth-child(4):hover {
     background-color: hsl(var(--project-4-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(5):hover {
+  .wrapper .project:nth-child(5):hover {
     background-color: hsl(var(--project-5-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(6):hover {
+  .wrapper .project:nth-child(6):hover {
     background-color: hsl(var(--project-6-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(7):hover {
+  .wrapper .project:nth-child(7):hover {
     background-color: hsl(var(--project-7-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(8):hover {
+  .wrapper .project:nth-child(8):hover {
     background-color: hsl(var(--project-8-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(9):hover {
+  .wrapper .project:nth-child(9):hover {
     background-color: hsl(var(--project-9-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(10):hover {
+  .wrapper .project:nth-child(10):hover {
     background-color: hsl(var(--project-10-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(11):hover {
+  .wrapper .project:nth-child(11):hover {
     background-color: hsl(var(--project-11-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(12):hover {
+  .wrapper .project:nth-child(12):hover {
     background-color: hsl(var(--project-12-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(13):hover {
+  .wrapper .project:nth-child(13):hover {
     background-color: hsl(var(--project-13-color), 1);
   }
 
-  .graphisme__content .wrapper .project:nth-child(14):hover {
+  .wrapper .project:nth-child(14):hover {
     background-color: hsl(var(--project-14-color), 1);
   }
 

@@ -529,90 +529,7 @@ nav .menu-list a {
     width: 100%
 }
 
-.modal__btn__close {
-    cursor: pointer;
-    border: unset;
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: hsl(0, 0%, 95%, .5);
-    opacity: .6;
-    padding: 3.3rem;
-    background: -webkit-radial-gradient (circle, #fff 30%, transparent 31%);
-    background: radial-gradient(circle, #fff 30%, transparent 31%);
-    height: fit-content;
-    width: fit-content;
-    border-radius: 50%;
-    -webkit-transition: var(--quick-transition);
-    transition: var(--quick-transition);
-    z-index: 10;
-    pointer-events: all
-}
-
-.modal__btn__close::after,
-.modal__btn__close::before {
-    content: "";
-    width: 27%;
-    height: 1px;
-    background-color: #929292;
-    position: absolute;
-    opacity: 1;
-    top: 50%;
-    left: 36.5%;
-    right: 40%;
-    -webkit-transition: var(--quick-transition);
-    transition: var(--quick-transition)
-}
-
-@media screen and (min-width:1000px) {
-    .modal__btn__close {
-        padding: 1rem;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: var(--white)
-    }
-
-    .modal__btn__close::after,
-    .modal__btn__close::before {
-        width: 60%;
-        top: 50%;
-        left: 20%
-    }
-}
-
-@media screen and (min-width:2000px) {
-    .modal__btn__close {
-        padding: 1.5rem
-    }
-}
-
-.modal__btn__close::before {
-    rotate: -45deg
-}
-
-.modal__btn__close::after {
-    rotate: 45deg
-}
-
-.modal__btn__close:active,
-.modal__btn__close:focus,
-.modal__btn__close:hover {
-    scale: 1.05
-}
-
-.modal__btn__close:active::before,
-.modal__btn__close:focus-visible:before,
-.modal__btn__close:focus::before,
-.modal__btn__close:hover::before {
-    rotate: 0deg
-}
-
-.modal__btn__close:active::after,
-.modal__btn__close:focus-visible:after,
-.modal__btn__close:focus::after,
-.modal__btn__close:hover::after {
-    rotate: -0deg
-}
+/* footer */
 
 footer {
     border-top: 1px solid var(--light-color)
@@ -959,28 +876,4 @@ footer .socials li svg {
     .left-footer {
         width: 38%;
     }
-}
-
-.modal__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--main-color);
-    height: 0;
-    width: 0;
-    opacity: 0;
-    z-index: 6;
-    pointer-events: none;
-    cursor: pointer
-}
-
-.modal__overlay.active {
-    height: 100%;
-    width: 100%;
-    opacity: .5;
-    -webkit-transition: opacity .3s ease-out;
-    transition: opacity .3s ease-out;
-    pointer-events: auto
 }
