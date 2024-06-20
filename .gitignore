@@ -1,5 +1,2 @@
-# Ignore composer dependencies
-/vendor
-
 # Ignore node dependencies (if using Node.js)
 /node_modules
