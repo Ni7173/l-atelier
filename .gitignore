@@ -1,2 +1,5 @@
 # Ignore node dependencies (if using Node.js)
 /node_modules
+
+# Ignore Composer directory
+/vendor/
