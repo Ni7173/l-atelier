@@ -7,13 +7,13 @@ error_reporting(E_ALL);
 require 'vendor/autoload.php';
 
 
-require 'vendor/phpmailer/src/Exception.php';
-require 'vendor/phpmailer/src/PHPMailer.php';
-require 'vendor/phpmailer/src/SMTP.php';
-require '../secure/config.php'
-
 use vendor\PHPMailer\src\PHPMailer;
 use vendor\PHPMailer\src\Exception;
+
+// require 'vendor/phpmailer/src/Exception.php';
+// require 'vendor/phpmailer/src/PHPMailer.php';
+// require 'vendor/phpmailer/src/SMTP.php';
+require '../secure/config.php'
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
