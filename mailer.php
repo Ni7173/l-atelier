@@ -2,6 +2,9 @@
 require '/vendor/autoload.php';
 require '../secure/config.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
     $tel = filter_var($_POST['tel'], FILTER_SANITIZE_STRING);
