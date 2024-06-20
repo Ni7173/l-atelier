@@ -4,12 +4,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require 'vendor/autoload.php';
-
-
-use vendor\PHPMailer\src\PHPMailer;
-use vendor\PHPMailer\src\Exception;
-
 // require 'vendor/phpmailer/src/Exception.php';
 // require 'vendor/phpmailer/src/PHPMailer.php';
 // require 'vendor/phpmailer/src/SMTP.php';
