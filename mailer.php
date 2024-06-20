@@ -3,9 +3,10 @@
 use vendor\PHPMailer\src\PHPMailer;
 use vendor\PHPMailer\src\Exception;
 
-require 'path/to/PHPMailer/src/Exception.php';
-require 'path/to/PHPMailer/src/PHPMailer.php';
-require 'path/to/PHPMailer/src/SMTP.php';
+require 'vendor/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/src/SMTP.php';
+require 'vendor/autoload.php';
 require '../secure/config.php'
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
