@@ -6,8 +6,8 @@ error_reporting(E_ALL);
 require '/vendor/autoload.php';
 require '/../secure/config.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+use vendor\PHPMailer\src\PHPMailer.php;
+use vendor\PHPMailer\src\Exception;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
