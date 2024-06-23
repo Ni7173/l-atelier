@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram OAuth</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .message {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message">
+        <h1>Processing...</h1>
+        <p id="statusMessage">Please wait while we process your request.</p>
+    </div>
+    <script>
+        // Fonction pour obtenir les paramètres de l'URL
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split("&").forEach(param => {
+                const [key, value] = param.split("=");
+                params[key] = decodeURIComponent(value);
+            });
+            return params;
+        }
+
+        // Obtenir le code d'autorisation
+        const queryParams = getQueryParams();
+        const authorizationCode = queryParams['code'];
+
+        if (authorizationCode) {
+            // Envoyer le code d'autorisation à votre serveur pour échanger contre un jeton d'accès
+            fetch('/exchange-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code: authorizationCode })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('statusMessage').innerText = 'Authorization successful!';
+                    } else {
+                        document.getElementById('statusMessage').innerText = 'Authorization failed. Please try again.';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('statusMessage').innerText = 'An error occurred. Please try again.';
+                    console.error('Error:', error);
+                });
+        } else {
+            document.getElementById('statusMessage').innerText = 'Authorization code not found.';
+        }
+    </script>
+</body>
+
+</html>
