@@ -294,32 +294,30 @@ const modalsManagement = () => {
             modal.addEventListener('touchend', () => {
                 activeModal = document.querySelector('[data-modal-active]');
                 transitionSetting(modals, "opacity .6s ease-out, width 0s");
+                // reset bars
+                bars.forEach(bar => {
+                    bar.classList.remove('active');
+                })
 
 
                 if (startX > endX) {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex++;
-                    // setActiveModal(newIndex);
                     newIndex = setActiveModal(newIndex);
                     resetActiveDot();
                     dots[newIndex].classList.add('active');
                     setTimeout(() => {
-                        activeModal = document.querySelector('[data-modal-active]');
-                        const bar = activeModal.querySelector('.modal__bar');
-                        bar.classList.add('active');
-                    }, 400);
+                        setActiveBar();
+                    }, 500);
                 } else if (startX < endX) {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex = newIndex - 1;
-                    // setActiveModal(newIndex);
                     newIndex = setActiveModal(newIndex);
                     resetActiveDot();
                     dots[newIndex].classList.add('active');
                     setTimeout(() => {
-                        activeModal = document.querySelector('[data-modal-active]');
-                        const bar = activeModal.querySelector('.modal__bar');
-                        bar.classList.add('active');
-                    }, 400);
+                        setActiveBar();
+                    }, 500);
                 }
             });
         });

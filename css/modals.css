@@ -33,7 +33,7 @@
     transition: var(--quick-transition)
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:1300px) {
     .modal__btn__close {
         padding: 1rem;
         top: 1.5rem;
