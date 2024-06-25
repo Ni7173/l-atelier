@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     switchingTxtOperator();
     setVideo();
+    adjustLogoPosition();
 })
 
 
@@ -131,3 +132,32 @@ const setLogoColor = () => {
     })
 }
 setLogoColor();
+
+const adjustLogoPosition = () => {
+    const logo = document.querySelector('.logo a');
+    const limit = document.querySelector('.video__mask__lunet');
+
+    const getRemInPixels = () => {
+        return parseFloat(getComputedStyle(document.documentElement).fontSize);
+    };
+
+    const checkAndAdjustPosition = () => {
+        const remInPixels = getRemInPixels();
+        const logoRect = logo.getBoundingClientRect();
+        const limitRect = limit.getBoundingClientRect();
+        const logoBottom = logoRect.bottom;
+        const topLimit = limitRect.top;
+
+        const currentTransform = getComputedStyle(logo).transform;
+        const currentTranslateY = currentTransform !== 'none' ? parseFloat(currentTransform.split(',')[5]) / remInPixels : 0;
+
+        if (logoBottom > topLimit) {
+            const newTranslateY = currentTranslateY + (topLimit - logoBottom) / remInPixels - 1;
+            logo.style.setProperty('--ytranslation', `${newTranslateY}rem`);
+        }
+    };
+
+    checkAndAdjustPosition();
+};
+
+adjustLogoPosition();
