@@ -78,6 +78,13 @@ header {
   }
 }
 
+@media screen and (min-width:1200px) {
+  .header-container .logo .logo--is-translated {
+    -webkit-transform: translateY(5.5rem) translateX(1rem);
+    transform: translateY(5.5rem) translateX(1rem)
+  }
+}
+
 @media screen and (min-width:1350px) {
   .header-container .logo a {
     -webkit-transform: translateY(0) translateX(1rem);
@@ -519,7 +526,7 @@ header {
   }
 }
 
-@media screen and (min-width:1000px) and (max-width:2200px) {
+@media screen and (min-width:1400px) and (max-width:2200px) {
 
   #home__menu .home__menu__item:first-child .menu__picto {
     width: 70px;
