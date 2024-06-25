@@ -1,0 +1,55 @@
+.ig-content {
+    width: 100%;
+}
+
+.ig-content__container {
+    padding: 5rem;
+    flex-direction: column;
+}
+
+.ig-feed {
+    width: 80%;
+}
+
+.instagram-post {
+    max-width: 25%;
+    min-width: 25%;
+    width: 33%;
+    aspect-ratio: 1/1;
+    margin: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--quick-transition);
+    /* border-radius: 10px; */
+    flex: 1;
+}
+
+.instagram-post img {
+    scale: 1;
+    filter: grayscale(100%);
+    transition: var(--quick-transition);
+}
+
+.ig__post__icon {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+    pointer-events: none;
+    z-index: 2;
+    pointer-events: none;
+    transition: var(--quick-transition);
+    opacity: 0;
+    color: var(--white);
+    fill: var(--white);
+}
+
+.instagram-post:hover img {
+    scale: 1.03;
+    filter: grayscale(0);
+}
+
+.instagram-post:hover .ig__post__icon {
+    opacity: 1;
+}

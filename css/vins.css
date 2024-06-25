@@ -156,7 +156,6 @@ button[data-modal-button] {
   flex-direction: column
 }
 
-.modal__btn__close,
 button[data-modal-button] {
   padding: 0;
   -webkit-transition: var(--quick-transition);
@@ -242,34 +241,14 @@ button[data-modal-button] {
   transition: var(--smooth-transition)
 }
 
-.modal__btn__close.active {
-  opacity: 1;
-  pointer-events: all;
-  padding: 3.3rem
-}
-
 .modal__btn__close {
-  opacity: 0;
-  width: 0%;
-  height: 0%;
-  pointer-events: none
+  transition-delay: .4s;
+  -o-transition-delay: .4s;
+  -webkit-transition-delay: .4s;
+  -moz-transition-delay: .4s;
 }
 
 @media screen and (min-width:1000px) {
-  .modal__btn__close.active {
-    padding: 1rem;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: var(--white)
-  }
-
-  .modal__btn__close::after,
-  .modal__btn__close::before {
-    width: 60%;
-    top: 50%;
-    left: 20%
-  }
-
   #modals {
     display: flex;
     display: -webkit-flex;
@@ -277,12 +256,6 @@ button[data-modal-button] {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-  }
-}
-
-@media screen and (min-width:2000px) {
-  .modal__btn__close.active {
-    padding: 1.5rem
   }
 }
 
@@ -366,9 +339,16 @@ button[data-modal-button] {
   content: "";
   height: 1px;
   min-height: 1px;
-  background-color: var(--black);
-  width: 90%;
+  background-color: var(--grey);
+  opacity: 0;
+  width: 0%;
+  transition: .7s ease-out;
   margin: 2.5rem 0
+}
+
+.modal__bar.active {
+  width: 90%;
+  opacity: 1;
 }
 
 .modal_right_img {
@@ -1102,12 +1082,6 @@ button[data-modal-button].active:hover {
     white-space: inherit;
   }
 
-  .modals__container .project_modal:nth-child(3) .modal_content .modal__bar,
-  .modals__container .project_modal:nth-child(4) .modal_content .modal__bar,
-  .modals__container .project_modal:nth-child(14) .modal_content .modal__bar {
-    width: 60%;
-  }
-
   .modals__container .project_modal:nth-child(1) .modal_content .modal__bar,
   .modals__container .project_modal:nth-child(2) .modal_content .modal__bar,
   .modals__container .project_modal:nth-child(5) .modal_content .modal__bar,
@@ -1121,13 +1095,6 @@ button[data-modal-button].active:hover {
 }
 
 @media screen and (min-width: 551px) and (max-width: 1050px) {
-
-  .modals__container .project_modal:nth-child(3) .modal_content .modal__bar,
-  .modals__container .project_modal:nth-child(4) .modal_content .modal__bar,
-  .modals__container .project_modal:nth-child(12) .modal_content .modal__bar,
-  .modals__container .project_modal:nth-child(14) .modal_content .modal__bar {
-    width: 40%;
-  }
 
   .modals__container .project_modal:nth-child(3) .modal_content p,
   .modals__container .project_modal:nth-child(4) .modal_content p,
@@ -1166,10 +1133,6 @@ button[data-modal-button].active:hover {
   color: #BB676E;
 }
 
-.modals__container .project_modal:nth-of-type(3) .modal_content .modal_right_content .modal__bar {
-  background-color: var(--grey);
-}
-
 .modals__container .project_modal:nth-of-type(4) .modal_content .modal_right_content {
   background: #E3DDD9;
 }
@@ -1178,16 +1141,8 @@ button[data-modal-button].active:hover {
   color: #775822;
 }
 
-.modals__container .project_modal:nth-of-type(4) .modal_content .modal_right_content .modal__bar {
-  background-color: var(--grey);
-}
-
 .modals__container .project_modal:nth-of-type(5) .modal_content h3 {
   color: #C6A443;
-}
-
-.modals__container .project_modal:nth-of-type(5) .modal_content .modal__bar {
-  background-color: var(--grey);
 }
 
 .project_modal:nth-of-type(6) .modal_content .modal_right_content {
@@ -1196,10 +1151,6 @@ button[data-modal-button].active:hover {
 
 .project_modal:nth-of-type(6) .modal_content .modal_right_content h3 {
   color: #994554;
-}
-
-.project_modal:nth-of-type(6) .modal_content .modal_right_content .modal__bar {
-  background-color: var(--grey);
 }
 
 .project_modal:nth-of-type(7) .modal_content .modal_right_content {

@@ -1,3 +1,6 @@
+
+const bars = document.querySelectorAll('.modal__bar');
+
 const sliderImg = () => {
     let clickZone = document.querySelector('.lateral_content');
     let intervalId;
@@ -53,6 +56,7 @@ const modalsManagement = () => {
     const closeBtn = document.querySelector('.modal__btn__close');
     const switchBtns = document.querySelectorAll('.modal-button');
 
+
     let activeModal;
     let newIndex = 0;
 
@@ -77,8 +81,27 @@ const modalsManagement = () => {
         if (activeDot) activeDot.classList.remove('active');
     };
 
+    const setActiveModal = (index) => {
+        if (index >= modals.length) index = 0;
+        if (index < 0) index = modals.length - 1;
+        resetModalPointerEvent(modals, "none")
+        modals[index].dataset.modalActive = true;
+        modals[index].style.pointerEvents = "all";
+        return index
+    }
+
+    const setActiveBar = () => {
+        activeModal = document.querySelector('[data-modal-active]');
+        const bar = activeModal.querySelector('.modal__bar');
+        bar.classList.add('active');
+    }
+
     dots.forEach(dot => {
         dot.addEventListener('click', () => {
+            // reset bars
+            bars.forEach(bar => {
+                bar.classList.remove('active');
+            })
             newIndex = parseInt(dot.dataset.dotNumber, 10);
             resetActiveDot();
             transitionSetting(modals, "opacity .6s ease-out, width 0s");
@@ -86,11 +109,15 @@ const modalsManagement = () => {
             activeModal = document.querySelector('[data-modal-active]');
             if (activeModal) delete activeModal.dataset.modalActive;
             modals[newIndex].dataset.modalActive = true;
-            modals[newIndex].style.pointerEvents = "all";
+            modals[newIndex].style.pointerEvents = "all"
+            dots[newIndex].classList.add('active');
+            setTimeout(() => {
+                setActiveBar();
+            }, 500);
         });
     });
 
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 1300) {
         const showSwitchBtns = () => {
             let isOverModal = false;
             let isOverSwitchBtn = false;
@@ -143,18 +170,21 @@ const modalsManagement = () => {
                 transitionSetting(modals, "var(--smooth-transition)");
                 let projectId = projectLink.dataset.projectLink;
                 let linkNumber = projectLink.dataset.linkNumber;
-                console.log(linkNumber);
-                closeBtn.style.transition = "var(--quick-transition)";
                 modals.forEach(modal => {
                     if (modal.dataset.modalsId === projectId) {
                         modal.dataset.modalActive = true;
                         newIndex = linkNumber;
                         setTimeout(() => {
                             modal.style.pointerEvents = "all";
-                            closeBtn.classList.add('active');
                             indicatorsContainer.style.opacity = ".6";
                             dots[newIndex].classList.add('active');
+                            closeBtn.style.transition = "var(--smooth-transition)";
+                            closeBtn.style.opacity = 1;
                         }, 450);
+                        setTimeout(() => {
+                            const bar = modal.querySelector(".modal__bar");
+                            bar.classList.add('active');
+                        }, 700);
                     }
                 })
             })
@@ -183,11 +213,11 @@ const modalsManagement = () => {
 
 
         const closeActiveModal = () => {
+            closeBtn.style.transition = "unset";
+            closeBtn.style.opacity = 0;
             switchBtns.forEach(btn => {
                 btn.classList.remove('active')
             })
-            closeBtn.classList.remove('active');
-            closeBtn.style.transition = "none";
             overlay.classList.remove('active')
             modalsContainer.classList.remove('active')
             activeModal = document.querySelector('[data-modal-active]');
@@ -198,6 +228,10 @@ const modalsManagement = () => {
             transitionSetting(switchBtns, "unset")
             resetActiveDot();
             indicatorsContainer.style.opacity = 0;
+            // reset bars
+            bars.forEach(bar => {
+                bar.classList.remove('active');
+            })
         }
     }
     closeModal();
@@ -213,25 +247,31 @@ const modalsManagement = () => {
             btn.addEventListener('click', () => {
                 transitionSetting(modals, "opacity .6s ease-out, width 0s");
                 activeModal = document.querySelector('[data-modal-active]');
+                // bar reset
+                bars.forEach(bar => {
+                    bar.classList.remove('active');
+                })
 
                 if (btn.dataset.modalButton === "prev") {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex = newIndex - 1;
-                    if (newIndex < 0) newIndex = modals.length - 1;
-                    resetModalPointerEvent(modals, "none")
-                    modals[newIndex].dataset.modalActive = true;
-                    modals[newIndex].style.pointerEvents = "all";
+                    newIndex = setActiveModal(newIndex);
                     resetActiveDot();
                     dots[newIndex].classList.add('active');
+                    // bars management
+                    setTimeout(() => {
+                        setActiveBar();
+                    }, 500);
                 } else if (btn.dataset.modalButton === "next") {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex++;
-                    if (newIndex >= modals.length) newIndex = 0;
-                    resetModalPointerEvent(modals, "none")
-                    modals[newIndex].dataset.modalActive = true;
-                    modals[newIndex].style.pointerEvents = "all";
+                    newIndex = setActiveModal(newIndex);
                     resetActiveDot();
                     dots[newIndex].classList.add('active');
+                    // bars management
+                    setTimeout(() => {
+                        setActiveBar();
+                    }, 500);
                 }
             })
         })
@@ -255,27 +295,31 @@ const modalsManagement = () => {
                 activeModal = document.querySelector('[data-modal-active]');
                 transitionSetting(modals, "opacity .6s ease-out, width 0s");
 
-                // transitionSetting(modals, "opacity .6s ease-out, width 0s")
-
 
                 if (startX > endX) {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex++;
-                    if (newIndex >= modals.length) newIndex = 0;
-                    resetModalPointerEvent(modals, "none")
-                    modals[newIndex].dataset.modalActive = true;
-                    modals[newIndex].style.pointerEvents = "all";
+                    // setActiveModal(newIndex);
+                    newIndex = setActiveModal(newIndex);
                     resetActiveDot();
                     dots[newIndex].classList.add('active');
+                    setTimeout(() => {
+                        activeModal = document.querySelector('[data-modal-active]');
+                        const bar = activeModal.querySelector('.modal__bar');
+                        bar.classList.add('active');
+                    }, 400);
                 } else if (startX < endX) {
                     if (activeModal) delete activeModal.dataset.modalActive;
                     newIndex = newIndex - 1;
-                    if (newIndex < 0) newIndex = modals.length - 1;
-                    resetModalPointerEvent(modals, "none")
-                    modals[newIndex].dataset.modalActive = true;
-                    modals[newIndex].style.pointerEvents = "all";
+                    // setActiveModal(newIndex);
+                    newIndex = setActiveModal(newIndex);
                     resetActiveDot();
                     dots[newIndex].classList.add('active');
+                    setTimeout(() => {
+                        activeModal = document.querySelector('[data-modal-active]');
+                        const bar = activeModal.querySelector('.modal__bar');
+                        bar.classList.add('active');
+                    }, 400);
                 }
             });
         });
@@ -305,7 +349,6 @@ const setRightMobileImg = () => {
         }
     })
 }
-setRightMobileImg();
 
 
 const setMobileModalsText = () => {
