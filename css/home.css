@@ -273,10 +273,15 @@ header {
   }
 }
 
+@media screen and (min-width:1200px) {
+  .home__text__container {
+    top: 87%;
+  }
+}
+
 @media screen and (min-width:1400px) {
   .home__text__container {
     top: 80%;
-    left: 39%
   }
 }
 
