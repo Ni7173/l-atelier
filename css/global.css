@@ -207,8 +207,8 @@ header {
 }
 
 .show-nav .logo>a .logo__svg {
-    fill: var(--white);
-    color: var(--white)
+    fill: var(--white) !important;
+    color: var(--white) !important
 }
 
 .show-nav .logo a .turning__star {
@@ -223,6 +223,7 @@ header {
 .logo svg {
     color: var(--black);
     fill: var(--black);
+    transition: all .2s ease-in;
     height: auto;
     width: 180px
 }

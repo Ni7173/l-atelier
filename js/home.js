@@ -113,3 +113,21 @@ const setRightMobileImg = () => {
     })
 }
 setRightMobileImg();
+
+const setLogoColor = () => {
+    const logo = document.querySelector('.logo__svg');
+    const menuSection = document.getElementById('home__menu');
+    window.addEventListener('scroll', () => {
+        const menuSectionTop = menuSection.getBoundingClientRect().top;
+        const logoBottom = logo.getBoundingClientRect().bottom;
+
+        if (logoBottom >= menuSectionTop) {
+            logo.style.color = 'white';
+            logo.style.fill = 'white';
+        } else {
+            logo.style.color = 'black';
+            logo.style.fill = 'black';
+        }
+    })
+}
+setLogoColor();
