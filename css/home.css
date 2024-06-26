@@ -124,8 +124,9 @@ header {
 }
 
 .home__text__container {
+  --top-distance: 77%;
   position: absolute;
-  top: 77%;
+  top: var(--top-distance);
   -webkit-flex-direction: row;
   flex-direction: row;
   width: auto;
@@ -214,7 +215,7 @@ header {
 
 @media screen and (min-width:550px) {
   .home__text__container {
-    top: 69%;
+    --top-distance: 69%;
     left: 33.5%;
     white-space: nowrap;
     text-align: left;
@@ -235,7 +236,7 @@ header {
   }
 
   .home__text__container {
-    top: 70%;
+    --top-distance: 70%;
     left: 37%;
     white-space: nowrap;
     text-align: left
@@ -252,27 +253,27 @@ header {
   }
 
   .home__text__container {
-    top: 75%;
+    --top-distance: 75%;
     left: 40%
   }
 }
 
 @media screen and (min-width:1100px) {
   .home__text__container {
-    top: 82%;
+    --top-distance: 82%;
     left: 39%
   }
 }
 
 @media screen and (min-width:1200px) {
   .home__text__container {
-    top: 87%;
+    --top-distance: 87%;
   }
 }
 
 @media screen and (min-width:1400px) {
   .home__text__container {
-    top: 80%;
+    --top-distance: 80%;
   }
 }
 
@@ -292,7 +293,7 @@ header {
   }
 
   .home__text__container {
-    top: 75%;
+    --top-distance: 75%;
     left: 45%
   }
 }

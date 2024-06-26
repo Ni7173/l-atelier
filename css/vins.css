@@ -342,7 +342,7 @@ button[data-modal-button] {
   background-color: var(--grey);
   opacity: 0;
   width: 0%;
-  transition: .7s ease-out;
+  transition: .7s ease-in-out;
   margin: 2.5rem 0
 }
 

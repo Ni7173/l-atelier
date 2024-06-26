@@ -94,9 +94,16 @@ const setHomeText = () => {
     document.addEventListener('DOMContentLoaded', () => {
         const textToChange = document.querySelector('.home__text__container .home__text');
 
-        if (window.innerWidth < 550) {
-            textToChange.innerText = "Déf. Atelier : n.m."
+        const textSetter = () => {
+            if (window.innerWidth < 550) {
+                textToChange.innerText = "Déf. Atelier : n.m."
+            } else {
+                textToChange.innerText = "Déf. Atelier :"
+            }
         }
+        textSetter();
+        window.addEventListener('resize', textSetter);
+
     })
 }
 setHomeText();
@@ -158,6 +165,32 @@ const adjustLogoPosition = () => {
     };
 
     checkAndAdjustPosition();
+
+    window.addEventListener('resize', checkAndAdjustPosition);
 };
 
 adjustLogoPosition();
+
+const adjustTxtPosition = () => {
+    const text = document.querySelector('.home__text__container');
+    const limit = document.querySelector('.video__mask__lunet');
+
+    const checkAndAdjustPosition = () => {
+        const windowHeight = window.innerHeight;
+        const textRect = text.getBoundingClientRect();
+        const limitRect = limit.getBoundingClientRect();
+        const txtTop = textRect.top;
+        const bottomLimit = limitRect.bottom;
+
+        if (txtTop < bottomLimit) {
+            const newTop = (((bottomLimit + 1) / windowHeight) * 100) + 3;
+            text.style.setProperty('--top-distance', `${newTop}%`);
+        }
+    };
+
+    checkAndAdjustPosition();
+
+    window.addEventListener('resize', checkAndAdjustPosition);
+};
+
+adjustTxtPosition();
