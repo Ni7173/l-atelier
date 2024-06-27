@@ -1,42 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     switchingTxtOperator();
     setVideo();
+    adjustLogoPosition();
 })
 
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    const adjustLogoPosition = () => {
-        const logo = document.querySelector('.logo a');
-        const limit = document.querySelector('.video__mask__lunet');
-
-        const getRemInPixels = () => {
-            return parseFloat(getComputedStyle(document.documentElement).fontSize);
-        };
-
-        const checkAndAdjustPosition = () => {
-            const remInPixels = getRemInPixels();
-            const logoRect = logo.getBoundingClientRect();
-            const limitRect = limit.getBoundingClientRect();
-            const logoBottom = logoRect.bottom;
-            const topLimit = limitRect.top;
-
-            const currentTransform = getComputedStyle(logo).transform;
-            const currentTranslateY = currentTransform !== 'none' ? parseFloat(currentTransform.split(',')[5]) / remInPixels : 0;
-
-            if (logoBottom > topLimit) {
-                const newTranslateY = currentTranslateY + (topLimit - logoBottom) / remInPixels - 1;
-                logo.style.setProperty('--ytranslation', `${newTranslateY}rem`);
-            }
-        };
-
-        checkAndAdjustPosition();
-
-        window.addEventListener('resize', checkAndAdjustPosition);
-    };
-
-    adjustLogoPosition();
-}, { once: true });
 
 const switchingTxtOperator = () => {
     let switchingTxt = document.querySelector('.right__home__text #switching-text');
@@ -172,6 +139,37 @@ const setLogoColor = () => {
     })
 }
 setLogoColor();
+
+const adjustLogoPosition = () => {
+    const logo = document.querySelector('.logo a');
+    const limit = document.querySelector('.video__mask__lunet');
+
+    const getRemInPixels = () => {
+        return parseFloat(getComputedStyle(document.documentElement).fontSize);
+    };
+
+    const checkAndAdjustPosition = () => {
+        const remInPixels = getRemInPixels();
+        const logoRect = logo.getBoundingClientRect();
+        const limitRect = limit.getBoundingClientRect();
+        const logoBottom = logoRect.bottom;
+        const topLimit = limitRect.top;
+
+        const currentTransform = getComputedStyle(logo).transform;
+        const currentTranslateY = currentTransform !== 'none' ? parseFloat(currentTransform.split(',')[5]) / remInPixels : 0;
+
+        if (logoBottom > topLimit) {
+            const newTranslateY = currentTranslateY + (topLimit - logoBottom) / remInPixels - 1;
+            logo.style.setProperty('--ytranslation', `${newTranslateY}rem`);
+        } else {
+            return
+        }
+    };
+
+    checkAndAdjustPosition();
+
+    window.addEventListener('resize', checkAndAdjustPosition);
+};
 
 const adjustTxtPosition = () => {
     const text = document.querySelector('.home__text__container');
