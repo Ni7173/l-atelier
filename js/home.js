@@ -160,9 +160,11 @@ const adjustLogoPosition = () => {
 
         if (logoBottom > topLimit) {
             const newTranslateY = currentTranslateY + (topLimit - logoBottom) / remInPixels - 1;
-            logo.style.setProperty('--ytranslation', `${newTranslateY}rem`);
-        } else {
-            return
+
+            const minTranslateY = 5;
+            const finalTranslateY = Math.max(newTranslateY, minTranslateY);
+
+            logo.style.setProperty('--ytranslation', `${finalTranslateY}rem`);
         }
     };
 
