@@ -169,7 +169,9 @@ const adjustLogoPosition = () => {
     window.addEventListener('resize', checkAndAdjustPosition);
 };
 
-adjustLogoPosition();
+document.addEventListener('DOMContentLoaded', () => {
+    adjustLogoPosition();
+})
 
 const adjustTxtPosition = () => {
     const text = document.querySelector('.home__text__container');
