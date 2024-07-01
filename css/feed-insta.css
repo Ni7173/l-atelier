@@ -2,14 +2,17 @@
     width: 100%;
 }
 
+
 .ig-content__container {
     padding: 5rem;
     flex-direction: column;
 }
 
+
 .ig-feed {
     width: 80%;
 }
+
 
 .instagram-post {
     max-width: 25%;
@@ -24,11 +27,13 @@
     flex: 1;
 }
 
+
 .instagram-post img {
     scale: 1;
     filter: grayscale(100%);
     transition: var(--quick-transition);
 }
+
 
 .ig__post__icon {
     position: absolute;
@@ -45,10 +50,12 @@
     fill: var(--white);
 }
 
+
 .instagram-post:hover img {
     scale: 1.03;
     filter: grayscale(0);
 }
+
 
 .instagram-post:hover .ig__post__icon {
     opacity: 1;
