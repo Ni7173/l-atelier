@@ -43,3 +43,9 @@ Options -Indexes
     Order deny,allow
     Deny from all
 </Directory>
+
+
+<Files "feed-insta.js">
+    Order allow,deny
+    Allow from all
+</Files>
