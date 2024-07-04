@@ -38,14 +38,12 @@ RewriteRule ^pages/([^.]+)\.html$ /pages/$1 [R=301,L]
 
 Options -Indexes
 
-# Restreindre l'accès au dossier "secure"
-<Directory domains/latelier-8.fr/secure>
-    Order deny,allow
-    Deny from all
-</Directory>
-
-
 <Files "feed-insta.js">
     Order allow,deny
     Allow from all
 </Files>
+
+<FilesMatch "\.(?i:js)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
