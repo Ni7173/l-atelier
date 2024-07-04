@@ -61,7 +61,7 @@ header.show-nav .burger .bar::before {
 *,
 ::after,
 ::before {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 img::-ms-image-rect {
@@ -529,6 +529,66 @@ nav .menu-list a {
     max-width: none;
     width: 100%
 }
+
+
+/* lang */
+
+.lang__container {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+    column-gap: .3rem;
+}
+
+.show-nav .lang__container {
+    width: auto;
+    height: auto;
+    opacity: 1;
+    padding: 0 .3rem;
+    transition: opacity .3s ease-out .6s;
+}
+
+.lang {
+    background-color: var(--white);
+    padding: 0 .3rem;
+}
+
+.show-nav .lang__container li:nth-child(2) {
+    height: 0;
+    transition: all .2s ease-in-out;
+}
+
+.show-nav .lang__container.--clicked li:nth-child(2) {
+    height: auto;
+}
+
+.arrow-down__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.arrow-down__container img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(90deg);
+    /* transition: all .2s ease-in-out; */
+    margin-top: .15rem;
+}
+
+.lang__container.--clicked .arrow-down__container img {
+    transform: rotate(-90deg);
+}
+
+
+
 
 /* footer */
 

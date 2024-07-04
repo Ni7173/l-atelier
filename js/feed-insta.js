@@ -1,5 +1,5 @@
-const accessToken = 'YOUR_ACCESS_TOKEN';
-const userId = 'YOUR_USER_ID';  // Remplacez par votre ID utilisateur Instagram
+const accessToken = 'token';
+const userId = 'id';
 const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`;
 
 fetch(url)

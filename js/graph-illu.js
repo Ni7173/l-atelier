@@ -67,7 +67,6 @@ const graphismeSlider = () => {
                 let activeSlide = document.querySelector('[data-active]');
                 if (activeSlide) delete activeSlide.dataset.active;
                 newIndex = newIndex - 1;
-                // if (newIndex >= images.length) newIndex = 0;
                 if (newIndex < 0) newIndex = images.length - 1;
                 images[newIndex].dataset.active = true;
                 resetActiveDot();
@@ -78,7 +77,6 @@ const graphismeSlider = () => {
                 if (activeSlide) delete activeSlide.dataset.active;
                 newIndex++;
                 if (newIndex >= images.length) newIndex = 0;
-                // if (newIndex < 0) newIndex = images.length - 1;
                 images[newIndex].dataset.active = true;
                 resetActiveDot();
                 dots[newIndex].classList.add('active');

@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const switchingTxtOperator = () => {
     let switchingTxt = document.querySelector('.right__home__text #switching-text');
-    const texts = ["de conception", "accueillant", "chaleureux", "d'échange", "bienveillant", " d'écoute ", "de création"];
-
-
+    const texts = ["for design", "to exchange", "for care", "for creativity"];
 
     let newIndex = 0;
 
@@ -111,11 +109,11 @@ const setRightMobileImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 1350) {
             const modalImgToChange2 = document.querySelector('.home__menu .home__menu__item:nth-child(2) .menu__img')
-            modalImgToChange2.setAttribute('src', 'img/home/mobile/ACCUEIL-GRAPHISME.jpg')
+            modalImgToChange2.setAttribute('src', '../img/home/mobile/ACCUEIL-GRAPHISME.jpg')
             const modalImgToChange3 = document.querySelector('.home__menu .home__menu__item:nth-child(3) .menu__img')
-            modalImgToChange3.setAttribute('src', 'img/home/mobile/VIGNERONS-ACCUEIL2.jpg')
+            modalImgToChange3.setAttribute('src', '../img/home/mobile/VIGNERONS-ACCUEIL2.jpg')
             const modalImgToChange4 = document.querySelector('.home__menu .home__menu__item:nth-child(4) .menu__img')
-            modalImgToChange4.setAttribute('src', 'img/home/mobile/A-PROPOS-2.jpg')
+            modalImgToChange4.setAttribute('src', '../img/home/mobile/A-PROPOS-2.jpg')
         }
     })
 }
