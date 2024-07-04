@@ -1,6 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,10 +15,10 @@ app.post('/exchange-code', async (req, res) => {
 
     if (authorizationCode) {
         const params = new URLSearchParams();
-        params.append('client_id', '759677299412346');
-        params.append('client_secret', '72c1b9474ba7799f1b87130e42db8dc4');
+        params.append('client_id', process.env.INSTAGRAM_CLIENT_ID);
+        params.append('client_secret', process.env.INSTAGRAM_CLIENT_SECRET);
         params.append('grant_type', 'authorization_code');
-        params.append('redirect_uri', 'https://latelier-8.fr/oauth/instagram.html');
+        params.append('redirect_uri', process.env.INSTAGRAM_REDIRECT_URI);
         params.append('code', authorizationCode);
 
         try {
