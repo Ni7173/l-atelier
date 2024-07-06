@@ -33,6 +33,9 @@ RewriteRule ^pages/([^.]+)\.html$ /pages/$1 [R=301,L]
     <FilesMatch "\.(mov|webp|jpg|svg|xml|ico|css|js)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
+    <FilesMatch "\.(css|js|htaccess)$">
+        Header set Cache-Control "max-age=2592000, public, must-revalidate"
+    </FilesMatch>
 </IfModule>
 
 
