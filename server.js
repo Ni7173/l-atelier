@@ -1,24 +1,24 @@
-const express = require('express');
-const dotenv = require('dotenv');
-dotenv.config();
+// const express = require('express');
+// const dotenv = require('dotenv');
+// dotenv.config();
 
-const app = express();
-const PORT = process.env.PORT || 3002;
+// const app = express();
+// const PORT = process.env.PORT || 3002;
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get('/config', (req, res) => {
-    try {
-        res.json({ apiKey: process.env.API_KEY });
-    } catch (error) {
-        console.error('Error fetching configuration:', error);
-        res.status(500).json({ success: false, error: 'Server error' });
-    }
-});
+// app.get('/config', (req, res) => {
+//     try {
+//         res.json({ apiKey: process.env.API_KEY });
+//     } catch (error) {
+//         console.error('Error fetching configuration:', error);
+//         res.status(500).json({ success: false, error: 'Server error' });
+//     }
+// });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+// });
 
 // import express from 'express';
 // import fetch from 'node-fetch';
@@ -70,3 +70,33 @@ app.listen(PORT, () => {
 // app.listen(PORT, () => {
 //     console.log(`Server running on port ${PORT}`);
 // });
+
+// server.js
+import dotenv from 'dotenv';
+
+dotenv.config()
+
+import express from 'express';
+import fetch from 'node-fetch';
+const app = express();
+
+const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
+const userId = process.env.INSTAGRAM_USER_ID;
+const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`;
+
+app.get('/instagram/posts', async (req, res) => {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching Instagram posts:', error);
+        res.status(500).json({ error: 'Failed to fetch Instagram posts' });
+    }
+});
+
+const port = process.env.PORT || 3003;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
