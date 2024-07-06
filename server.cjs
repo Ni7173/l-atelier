@@ -3,13 +3,17 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
-// Endpoint pour envoyer des informations sensibles au client
+app.use(express.json());
+
 app.get('/config', (req, res) => {
-    res.json({ accessToken: process.env.INSTAGRAM_ACCESS_TOKEN });
-    res.json({ userId: process.env.INSTAGRAM_USER_ID });
-    res.json({ redirectUri: process.env.INSTAGRAM_REDIRECT_URI });
+    try {
+        res.json({ apiKey: process.env.API_KEY });
+    } catch (error) {
+        console.error('Error fetching configuration:', error);
+        res.status(500).json({ success: false, error: 'Server error' });
+    }
 });
 
 app.listen(PORT, () => {
