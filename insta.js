@@ -31,7 +31,7 @@
 // })
 // .catch(error => console.error('Error fetching configuration:', error));
 
-require('dotenv').config;
+require('dotenv').config();
 
 const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
 const userId = process.env.INSTAGRAM_USER_ID;
