@@ -38,15 +38,16 @@ RewriteRule ^pages/([^.]+)\.html$ /pages/$1 [R=301,L]
     </FilesMatch>
 </IfModule>
 
+<Directory /var/www/html>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
 
 Options -Indexes
 
-# <Files "feed-insta.js">
-#     Order allow,deny
-#     Allow from all
-# </Files>
-
-# <FilesMatch "\.(?i:js)$">
-#     Order deny,allow
-#     Deny from all
-# </FilesMatch>
+<Files "feed-insta.js">
+    Order allow,deny
+    Allow from all
+</Files>
