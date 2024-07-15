@@ -49,24 +49,21 @@ const port = process.env.PORT || 3000;
 
 (async () => {
     const fetch = (await import('node-fetch')).default;
-    console.log("dans le fetch")
+    console.log("Importation de node-fetch réussie");
 
     // Vérifier les variables d'environnement chargées
     const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
     const userId = process.env.INSTAGRAM_USER_ID;
-    if (!accessToken || !userId) {
-        console.error('Les variables d\'environnement INSTAGRAM_ACCESS_TOKEN et INSTAGRAM_USER_ID ne sont pas définies');
-        return;
-    }
 
     const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`;
 
     app.get('/instagram/posts', async (req, res) => {
+        console.log('Requête reçue sur /instagram/posts');
         try {
             const response = await fetch(url);
             const data = await response.json();
             res.json(data);
-            console.log("Data chargée")
+            console.log('Données récupérées depuis Instagram :', data);
         } catch (error) {
             console.error('Erreur lors de la récupération des publications Instagram :', error);
             res.status(500).json({ error: 'Échec de récupération des publications Instagram' });
