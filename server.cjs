@@ -3,6 +3,7 @@ const path = require('path');
 dotenv.config({ path: '/home/u672716419/domains/latelier-8.fr/secure/.env' });
 
 const express = require('express');
+console.log("coucou, cest le server");
 
 const app = express();
 const port = process.env.PORT || 3000;
