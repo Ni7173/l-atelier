@@ -49,6 +49,7 @@ const port = process.env.PORT || 3000;
 
 (async () => {
     const fetch = (await import('node-fetch')).default;
+    console.log("dans le fetch")
 
     // Vérifier les variables d'environnement chargées
     const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
