@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()({ path: '/home/u672716419/domains/latelier-8.fr/secure/.env' });
 const express = require('express');
 const fetch = require('node-fetch');
 const path = require('path');
