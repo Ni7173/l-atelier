@@ -3,13 +3,13 @@
   "name": "my-project",
   "version": "1.0.0",
   "description": "A description of your project",
-  "main": "global.js",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs"
+  },
   "jest": {
     "testEnvironment": "jsdom",
     "verbose": true
-  },
-  "scripts": {
-    "test": "jest"
   },
   "devDependencies": {
     "jest": "^29.7.0",
