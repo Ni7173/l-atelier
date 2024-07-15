@@ -65,6 +65,7 @@ const port = process.env.PORT || 3000;
             const response = await fetch(url);
             const data = await response.json();
             res.json(data);
+            console.log("Data chargée")
         } catch (error) {
             console.error('Erreur lors de la récupération des publications Instagram :', error);
             res.status(500).json({ error: 'Échec de récupération des publications Instagram' });
