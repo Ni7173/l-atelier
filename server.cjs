@@ -1,42 +1,11 @@
-// const dotenv = require('dotenv');
-// const path = require('path');
-// dotenv.config({ path: '/home/u672716419/domains/latelier-8.fr/secure/.env' });
-
-// const express = require('express');
-
-// const app = express();
-// const port = process.env.PORT || 3000;
-
-// (async () => {
-//     const fetch = (await import('node-fetch')).default;
-
-//     const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
-//     const userId = process.env.INSTAGRAM_USER_ID;
-//     const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`;
-
-//     app.get('/instagram/posts', async (req, res) => {
-//         try {
-//             const response = await fetch(url);
-//             const data = await response.json();
-//             res.json(data);
-//         } catch (error) {
-//             console.error('Erreur lors de la récupération des publications Instagram :', error);
-//             res.status(500).json({ error: 'Échec de récupération des publications Instagram' });
-//         }
-//     });
-
-//     app.listen(port, () => {
-//         console.log(`Serveur démarré sur le port ${port}`);
-//     });
-// })();
-
 const dotenv = require('dotenv');
+const fs = require('fs');
 const path = require('path');
 
-// Charger le fichier .env
-const result = dotenv.config({ path: '/home/u672716419/domains/latelier-8.fr/secure/.env' });
+const envPath = '/home/u672716419/domains/latelier-8.fr/secure/.env';
 
-// Vérifier si le chargement a réussi
+const result = dotenv.config({ path: envPath });
+
 if (result.error) {
     console.error('Erreur lors du chargement du fichier .env', result.error);
 } else {
@@ -52,15 +21,54 @@ app.use(cors({
     origin: true
 }));
 
+const updateEnvFile = (key, value) => {
+    // Lire le contenu actuel du fichier .env
+    const envConfig = dotenv.parse(fs.readFileSync(envPath));
+
+    // Mettre à jour la valeur du jeton
+    envConfig[key] = value;
+
+    // Construire le contenu mis à jour du fichier .env
+    const updatedEnvContent = Object.keys(envConfig).map(k => `${k}=${envConfig[k]}`).join('\n');
+
+    // Écrire le contenu mis à jour dans le fichier .env
+    fs.writeFileSync(envPath, updatedEnvContent);
+};
+
 (async () => {
     const fetch = (await import('node-fetch')).default;
     console.log("Importation de node-fetch réussie");
 
-    // Vérifier les variables d'environnement chargées
     const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
     const userId = process.env.INSTAGRAM_USER_ID;
 
-    const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${accessToken}`;
+    const renewInstagramToken = async () => {
+        const longLivedToken = accessToken; // Récupérez le jeton actuel
+        const renewTokenUrl = `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${longLivedToken}`;
+
+        try {
+            const renewTokenResponse = await fetch(renewTokenUrl);
+            const renewTokenData = await renewTokenResponse.json();
+            const renewedToken = renewTokenData.access_token;
+
+            // Sauvegardez le renewedToken dans votre .env ou une base de données
+            console.log('Nouveau jeton d\'accès à long terme :', renewedToken);
+            // Mettre à jour le .env avec le nouveau token
+
+            updateEnvFile('INSTAGRAM_ACCESS_TOKEN', renewedToken);
+
+            return renewedToken;
+
+        } catch (error) {
+            console.error('Erreur lors du renouvellement du jeton d\'accès à long terme :', error);
+        }
+
+        return longLivedToken;
+    };
+
+    const tokenToUse = await renewInstagramToken();
+
+    const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${tokenToUse}`;
 
     app.get('/instagram/posts', async (req, res) => {
         console.log('Requête reçue sur /instagram/posts');

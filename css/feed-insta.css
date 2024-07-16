@@ -5,10 +5,11 @@
 .ig-content__container {
     padding: 5rem;
     flex-direction: column;
+    width: 100%;
 }
 
 .ig-feed {
-    width: 80%;
+    width: 90%;
 }
 
 .instagram-post {
@@ -20,14 +21,22 @@
     position: relative;
     overflow: hidden;
     transition: var(--quick-transition);
-    /* border-radius: 10px; */
     flex: 1;
 }
 
 .instagram-post img {
     scale: 1;
-    filter: grayscale(100%);
     transition: var(--quick-transition);
+}
+
+@media screen and (min-width:1399px) {
+    .instagram-post img {
+        filter: grayscale(100%);
+    }
+
+    .instagram-post:hover img {
+        filter: grayscale(0);
+    }
 }
 
 .ig__post__icon {
@@ -45,11 +54,12 @@
     fill: var(--white);
 }
 
-.instagram-post:hover img {
-    scale: 1.03;
-    filter: grayscale(0);
+.instagram-post:hover .ig__post__icon,
+.instagram-post:focus .ig__post__icon {
+    opacity: 1;
 }
 
-.instagram-post:hover .ig__post__icon {
-    opacity: 1;
+.instagram-post:hover img,
+.instagram-post:focus img {
+    scale: 1.03;
 }
