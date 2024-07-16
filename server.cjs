@@ -6,11 +6,11 @@ const envPath = '/home/u672716419/domains/latelier-8.fr/secure/.env';
 
 const result = dotenv.config({ path: envPath });
 
-if (result.error) {
-    console.error('Erreur lors du chargement du fichier .env', result.error);
-} else {
-    console.log('Variables d\'environnement chargées:', result.parsed);
-}
+// if (result.error) {
+//     console.error('Erreur lors du chargement du fichier .env', result.error);
+// } else {
+//     console.log('Variables d\'environnement chargées:', result.parsed);
+// }
 
 const express = require('express');
 const app = express();
@@ -37,7 +37,6 @@ const updateEnvFile = (key, value) => {
 
 (async () => {
     const fetch = (await import('node-fetch')).default;
-    console.log("Importation de node-fetch réussie");
 
     const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
     const userId = process.env.INSTAGRAM_USER_ID;
@@ -68,7 +67,11 @@ const updateEnvFile = (key, value) => {
 
     const tokenToUse = await renewInstagramToken();
 
+    console.log("token récupéré" + tokenToUse)
+
     const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${tokenToUse}`;
+
+    console.log("url créée" + url)
 
     app.get('/instagram/posts', async (req, res) => {
         console.log('Requête reçue sur /instagram/posts');
