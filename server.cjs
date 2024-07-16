@@ -67,11 +67,11 @@ const updateEnvFile = (key, value) => {
 
     const tokenToUse = await renewInstagramToken();
 
-    console.log("token récupéré" + tokenToUse)
+    console.log("token récupéré " + tokenToUse)
 
     const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${tokenToUse}`;
 
-    console.log("url créée" + url)
+    console.log("url créée " + url)
 
     app.get('/instagram/posts', async (req, res) => {
         console.log('Requête reçue sur /instagram/posts');

@@ -51,3 +51,7 @@ Options -Indexes
     Order allow,deny
     Allow from all
 </Files>
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/instagram/posts
+RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]
