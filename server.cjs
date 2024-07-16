@@ -50,9 +50,7 @@ const updateEnvFile = (key, value) => {
             const renewTokenData = await renewTokenResponse.json();
             const renewedToken = renewTokenData.access_token;
 
-            // Sauvegardez le renewedToken dans votre .env ou une base de données
-            // console.log('Nouveau jeton d\'accès à long terme :', renewedToken);
-            // Mettre à jour le .env avec le nouveau token
+            console.log('Nouveau jeton d\'accès à long terme :', renewedToken);
 
             updateEnvFile('INSTAGRAM_ACCESS_TOKEN', renewedToken);
 
@@ -66,8 +64,6 @@ const updateEnvFile = (key, value) => {
     };
 
     const tokenToUse = await renewInstagramToken();
-
-    // console.log("token récupéré " + tokenToUse)
 
     const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${tokenToUse}`;
 
