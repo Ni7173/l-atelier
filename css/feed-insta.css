@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+.insta-title {
+    font-family: "EB Garamond", serif;
+}
+
 .ig-content__container {
     padding: 5rem;
     flex-direction: column;
