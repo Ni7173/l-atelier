@@ -10,7 +10,7 @@ fetch(apiUrl)
         return response.json();
     })
     .then(data => {
-        console.log('Data received:', data);
+        // console.log('Data received:', data);
 
         const feedContainer = document.getElementById('ig-feed');
         data.data.forEach(post => {
