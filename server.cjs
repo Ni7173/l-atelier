@@ -6,11 +6,6 @@ const envPath = '/home/u672716419/domains/latelier-8.fr/secure/.env';
 
 const result = dotenv.config({ path: envPath });
 
-// if (result.error) {
-//     console.error('Erreur lors du chargement du fichier .env', result.error);
-// } else {
-//     console.log('Variables d\'environnement chargées:', result.parsed);
-// }
 
 const express = require('express');
 const app = express();
