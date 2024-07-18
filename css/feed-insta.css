@@ -9,15 +9,16 @@
 }
 
 .ig-feed {
-    width: 90%;
+    width: 95%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 4rem 2rem;
 }
 
 .instagram-post {
     width: 100%;
     aspect-ratio: 1/1;
-    margin: 2rem;
     position: relative;
     overflow: hidden;
     transition: var(--quick-transition);
@@ -41,7 +42,13 @@
 
 @media screen and (max-width:499px) {
     .ig-content__container {
-        padding: 4rem 2rem;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width:899px) {
+    .ig-content__container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
