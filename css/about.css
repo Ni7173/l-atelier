@@ -52,63 +52,6 @@ section>div {
     white-space: pre-line
 }
 
-.reviews__section {
-    margin-bottom: 4rem
-}
-
-.reviews__section__container {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    max-width: 100%
-}
-
-.reviews__viewport,
-.reviews__container {
-    position: relative;
-    overflow: hidden;
-    -webkit-transition: var(--quick-transition);
-    transition: var(--quick-transition);
-    width: 100%
-}
-
-.reviews__list {
-    -webkit-transition: transform .5s ease-in-out;
-    transition: transform .5s ease-in-out;
-    -webkit-transform: translateX(270%);
-    transform: translateX(270%);
-    height: 100%;
-    width: 100%
-}
-
-.review {
-    min-width: 90%;
-    padding-inline: 2rem;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    height: 100%
-}
-
-button[data-slider-button] {
-    display: none
-}
-
-.dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 6px;
-    border: 2px solid #000;
-    background-color: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    -webkit-transition: background-color .6s;
-    transition: background-color .6s;
-    cursor: pointer
-}
-
-.dot.active {
-    background: #000
-}
-
 /* creators */
 
 .creators {
@@ -138,10 +81,6 @@ footer .footer__txt__container p {
     section>div {
         max-width: 70%
     }
-
-    .review {
-        padding-inline: 4rem
-    }
 }
 
 @media screen and (min-width:950px) {
@@ -151,50 +90,6 @@ footer .footer__txt__container p {
 
     section>div {
         max-width: 55%
-    }
-
-    .reviews__viewport {
-        max-width: 70%
-    }
-
-    .review {
-        padding-inline: 5rem
-    }
-
-    button[data-slider-button] {
-        display: block;
-        position: absolute;
-        top: calc(50% - 15px);
-        border: unset;
-        background: unset;
-        cursor: pointer;
-        -webkit-transition: var(--quick-transition);
-        transition: var(--quick-transition);
-        pointer-events: all;
-        padding: 0;
-        z-index: 3
-    }
-
-    button[data-slider-button] svg {
-        height: 30px;
-        width: 30px;
-        opacity: 1
-    }
-
-    button.next {
-        right: 2.5rem
-    }
-
-    button.prev {
-        left: 2.5rem
-    }
-
-    .dot {
-        margin: 0 4px
-    }
-
-    .review p {
-        white-space: inherit
     }
 }
 
@@ -213,21 +108,5 @@ footer .footer__txt__container p {
 
     .home__p {
         margin-bottom: 0;
-    }
-
-    .reviews__viewport {
-        max-width: 50%
-    }
-
-    .review {
-        padding-inline: 7rem
-    }
-
-    button.prev {
-        left: 6rem
-    }
-
-    button.next {
-        right: 6rem
     }
 }
