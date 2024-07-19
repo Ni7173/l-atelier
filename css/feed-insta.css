@@ -3,7 +3,7 @@
 }
 
 .ig-content__container {
-    padding: 5rem;
+    padding: 3rem 5rem;
     flex-direction: column;
     width: 100%;
 }
@@ -49,6 +49,18 @@
 @media screen and (max-width:899px) {
     .ig-feed {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width:1599px) {
+    .ig-feed {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width:1899px) {
+    .ig-feed {
+        width: 87%;
     }
 }
 
