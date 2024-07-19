@@ -11,30 +11,12 @@ RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/pages/([^.]+)\.html [NC]
 RewriteRule ^pages/([^.]+)\.html$ /pages/$1 [R=301,L]
 
 
-<IfModule mod_expires.c>
-    ExpiresActive On
-    # Images
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType image/x-icon "access plus 1 year"
-    # Video
-    ExpiresByType video/quicktime "access plus 1 year"
-    # CSS and JavaScript
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType application/x-javascript "access plus 1 month"
-    # XML
-    ExpiresByType application/xml "access plus 1 month"
-    ExpiresByType text/xml "access plus 1 month"
-</IfModule>
-
 <IfModule mod_headers.c>
     <FilesMatch "\.(mov|webp|jpg|svg|xml|ico|css|js)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
     <FilesMatch "\.(css|js|htaccess)$">
-        Header set Cache-Control "max-age=604800, public"
+        Header set Cache-Control "max-age=604800, public, must-revalidate"
     </FilesMatch>
 </IfModule>
 
