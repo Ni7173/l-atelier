@@ -1,33 +1,44 @@
 .ig-content {
     width: 100%;
+    max-width: 100%;
+    margin: 2rem 0 4rem 0;
 }
 
 .ig-content__container {
     padding: 3rem 5rem;
     flex-direction: column;
     width: 100%;
+    max-width: 100%;
 }
 
 .ig-feed {
     width: 95%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    margin: 4rem 2rem;
+    margin: 4rem 1rem;
+    padding: 0 3rem;
 }
 
 .instagram-post {
     width: 100%;
+    max-width: 100%;
     aspect-ratio: 1/1;
     position: relative;
     overflow: hidden;
     transition: var(--quick-transition);
-    flex: 1;
 }
 
 .instagram-post img {
     scale: 1;
     transition: var(--quick-transition);
+}
+
+@media screen and (min-width:599px) {
+    .ig-feed {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
 }
 
 @media screen and (min-width:1399px) {
@@ -38,31 +49,24 @@
     .instagram-post:hover img {
         filter: grayscale(0);
     }
-}
 
-@media screen and (max-width:499px) {
     .ig-feed {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+        width: 100%;
+    }
+
+    .ig__post__icon {
+        opacity: 0;
+    }
+
+    .instagram-post:hover .ig__post__icon,
+    .instagram-post:focus .ig__post__icon {
+        opacity: 1;
     }
 }
 
-@media screen and (max-width:899px) {
-    .ig-feed {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media screen and (min-width:1599px) {
-    .ig-feed {
-        width: 90%;
-    }
-}
-
-@media screen and (min-width:1899px) {
-    .ig-feed {
-        width: 87%;
-    }
-}
 
 .ig__post__icon {
     position: absolute;
@@ -74,14 +78,8 @@
     z-index: 2;
     pointer-events: none;
     transition: var(--quick-transition);
-    opacity: 0;
     color: var(--white);
     fill: var(--white);
-}
-
-.instagram-post:hover .ig__post__icon,
-.instagram-post:focus .ig__post__icon {
-    opacity: 1;
 }
 
 .instagram-post:hover img,
