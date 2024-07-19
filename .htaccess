@@ -34,7 +34,7 @@ RewriteRule ^pages/([^.]+)\.html$ /pages/$1 [R=301,L]
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
     <FilesMatch "\.(css|js|htaccess)$">
-        Header set Cache-Control "max-age=604800, public, must-revalidate"
+        Header set Cache-Control "max-age=604800, public"
     </FilesMatch>
 </IfModule>
 
@@ -43,14 +43,6 @@ RewriteRule ^pages/([^.]+)\.html$ /pages/$1 [R=301,L]
     AllowOverride All
     Require all granted
 </Directory>
-
-
-Options -Indexes
-
-<Files "feed-insta.js">
-    Order allow,deny
-    Allow from all
-</Files>
 
 # server insta rewrote
 
