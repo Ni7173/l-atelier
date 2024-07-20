@@ -45,7 +45,7 @@ switchingTxtOperator();
 
 const adjustHomeLogo = () => {
     const logo = document.querySelector('.logo a');
-    const trigger = document.querySelector('.trigger');
+    const trigger = document.querySelector('.home__menu');
 
     window.addEventListener('scroll', () => {
         const logoBottom = logo.getBoundingClientRect().bottom;
