@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const switchingTxtOperator = () => {
     let switchingTxt = document.querySelector('.right__home__text #switching-text');
-    const texts = ["de conception", "accueillant", "chaleureux", "d'échange", "bienveillant", " d'écoute ", "de création"];
-
-
+    const texts = ["for design", "to exchange", "for care", "for creativity"];
 
     let newIndex = 0;
 
@@ -46,17 +44,26 @@ switchingTxtOperator();
 
 const adjustHomeLogo = () => {
     const logo = document.querySelector('.logo a');
-    const trigger = document.querySelector('.home__menu');
+    const trigger = document.querySelector('.trigger');
 
-    window.addEventListener('scroll', () => {
-        const logoBottom = logo.getBoundingClientRect().bottom;
-        const triggerTop = trigger.getBoundingClientRect().top;
-        if (logoBottom >= triggerTop) {
-            logo.classList.remove('logo--is-translated');
-        } else {
-            logo.classList.add('logo--is-translated');
-        }
-    })
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                logo.classList.remove('logo--is-translated');
+            } else {
+                logo.classList.add('logo--is-translated');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observer.observe(trigger);
 }
 
 adjustHomeLogo();
@@ -102,53 +109,33 @@ const setRightMobileImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 1350) {
             const modalImgToChange2 = document.querySelector('.home__menu .home__menu__item:nth-child(2) .menu__img')
-            modalImgToChange2.setAttribute('src', 'img/home/mobile/ACCUEIL-GRAPHISME.jpg')
+            modalImgToChange2.setAttribute('src', '../img/home/mobile/ACCUEIL-GRAPHISME.jpg')
             const modalImgToChange3 = document.querySelector('.home__menu .home__menu__item:nth-child(3) .menu__img')
-            modalImgToChange3.setAttribute('src', 'img/home/mobile/VIGNERONS-ACCUEIL2.jpg')
+            modalImgToChange3.setAttribute('src', '../img/home/mobile/VIGNERONS-ACCUEIL2.jpg')
             const modalImgToChange4 = document.querySelector('.home__menu .home__menu__item:nth-child(4) .menu__img')
-            modalImgToChange4.setAttribute('src', 'img/home/mobile/A-PROPOS-2.jpg')
+            modalImgToChange4.setAttribute('src', '../img/home/mobile/A-PROPOS-2.jpg')
         }
     })
 }
 setRightMobileImg();
 
-
-
-
-
 const setLogoColor = () => {
     const logo = document.querySelector('.logo__svg');
     const menuSection = document.getElementById('home__menu');
-    const reviewSection = document.getElementById('reviews__section');
-
     window.addEventListener('scroll', () => {
         const menuSectionTop = menuSection.getBoundingClientRect().top;
-        const reviewSectionTop = reviewSection.getBoundingClientRect().top;
-
         const logoBottom = logo.getBoundingClientRect().bottom;
 
         if (logoBottom >= menuSectionTop) {
             logo.style.color = 'white';
             logo.style.fill = 'white';
-            // console.log("under menu")
-        }
-
-        if (logoBottom <= menuSectionTop) {
-            logo.style.color = 'black';
-            logo.style.fill = 'black';
-            // console.log("above menu")
-        }
-
-        if (logoBottom >= reviewSectionTop) {
+        } else {
             logo.style.color = 'black';
             logo.style.fill = 'black';
         }
     })
 }
 setLogoColor();
-
-
-
 
 const adjustLogoPosition = () => {
     const logo = document.querySelector('.logo a');

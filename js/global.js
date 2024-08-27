@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const menuItems = document.querySelectorAll('.menu-list li')
         const btn = document.querySelector('.burger');
         const header = document.querySelector('header');
-        const links = document.querySelectorAll('.navbar a');
+        const allLinks = document.querySelectorAll('.navbar a');
+        const links = Array.from(allLinks).filter(link => !link.classList.contains('lang__link'))
         let logo = document.querySelector('.logo a');
 
 

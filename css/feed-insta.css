@@ -11,6 +11,10 @@
     max-width: 100%;
 }
 
+.container {
+    max-width: unset;
+}
+
 .ig-feed {
     width: 95%;
     display: grid;
