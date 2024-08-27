@@ -194,6 +194,7 @@ const adjustTxtPosition = () => {
 
 adjustTxtPosition();
 
+
 const langSwitcher = () => {
     const switcher = document.getElementById('langContainer');
 
