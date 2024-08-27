@@ -917,6 +917,11 @@ footer .socials li svg {
         -webkit-justify-content: left;
         justify-content: left
     }
+
+    .footer__txt__container,
+    .right-footer {
+        margin-top: 0
+    }
 }
 
 @media screen and (min-width:1700px) {
