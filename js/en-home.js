@@ -206,4 +206,11 @@ const langSwitcher = () => {
             switcher.classList.remove('--clicked')
         }
     })
+
+    const burger = document.querySelector('.burger');
+    burger.addEventListener('click', () => {
+        if (switcher.classList.contains('--clicked')) {
+            switcher.classList.remove('--clicked');
+        }
+    })
 }
