@@ -1,4 +1,4 @@
-const apiUrl = '/instagram/posts';
+const apiUrl = '../instagram/posts';
 
 fetch(apiUrl)
     .then(response => {
