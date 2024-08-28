@@ -45,10 +45,29 @@ fetch(apiUrl)
         const feedContainer = document.getElementById('ig-feed');
 
         let postsDisplayed = 0;
-        const initialPostsToShow = 3;
+
+        let initialPostsToShow = 4;
+        let postsToAdd = 2;
+
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 599) {
+                initialPostsToShow = 6;
+                postsToAdd = 3;
+            }
+
+            if (window.innerWidth > 1399) {
+                initialPostsToShow = 10;
+                postsToAdd = 5;
+            }
+        })
+
+
+
         const showMoreButton = document.querySelector('.ig__show__more__button');
 
         const displayPosts = (postsToShow) => {
+
             const posts = data.data.slice(postsDisplayed, postsDisplayed + postsToShow);
 
             posts.forEach(post => {
@@ -66,15 +85,14 @@ fetch(apiUrl)
             postsDisplayed += postsToShow;
 
             // Si tous les posts sont affichés, on cache le bouton
-            // if (postsDisplayed >= data.data.length) {
-            //     showMoreButton.innerText = "Afficher moins";
-            // }
+            if (postsDisplayed >= data.data.length) {
+                showMoreButton.classList.add('hidden');
+            }
         };
-
         displayPosts(initialPostsToShow);
 
         showMoreButton.addEventListener('click', () => {
-            displayPosts(1);
+            displayPosts(postsToAdd);
         });
     })
     .catch(error => {
