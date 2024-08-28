@@ -50,7 +50,7 @@
     .ig-feed {
         grid-template-columns: repeat(5, 1fr);
         padding: 0;
-        width: 90%;
+        width: 85%;
     }
 
     .ig__post__icon {
