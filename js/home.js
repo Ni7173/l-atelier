@@ -130,13 +130,11 @@ const setLogoColor = () => {
         if (logoBottom >= menuSectionTop) {
             logo.style.color = 'white';
             logo.style.fill = 'white';
-            // console.log("under menu")
         }
 
         if (logoBottom <= menuSectionTop) {
             logo.style.color = 'black';
             logo.style.fill = 'black';
-            // console.log("above menu")
         }
 
         if (logoBottom >= reviewSectionTop) {

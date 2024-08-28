@@ -122,14 +122,25 @@ setRightMobileImg();
 const setLogoColor = () => {
     const logo = document.querySelector('.logo__svg');
     const menuSection = document.getElementById('home__menu');
+    const reviewSection = document.getElementById('reviews__section');
+
     window.addEventListener('scroll', () => {
         const menuSectionTop = menuSection.getBoundingClientRect().top;
+        const reviewSectionTop = reviewSection.getBoundingClientRect().top;
+
         const logoBottom = logo.getBoundingClientRect().bottom;
 
         if (logoBottom >= menuSectionTop) {
             logo.style.color = 'white';
             logo.style.fill = 'white';
-        } else {
+        }
+
+        if (logoBottom <= menuSectionTop) {
+            logo.style.color = 'black';
+            logo.style.fill = 'black';
+        }
+
+        if (logoBottom >= reviewSectionTop) {
             logo.style.color = 'black';
             logo.style.fill = 'black';
         }
