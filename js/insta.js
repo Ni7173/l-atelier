@@ -11,7 +11,11 @@ fetch(apiUrl)
         // console.log('Data received:', data);
 
         const feedContainer = document.getElementById('ig-feed');
-        data.data.forEach(post => {
+
+        const latestPosts = data.data.slice(0, 5);
+
+
+        latestPosts.forEach(post => {
             const postElement = document.createElement('div');
             postElement.className = 'instagram-post';
             postElement.innerHTML = `
