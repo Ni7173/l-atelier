@@ -37,7 +37,22 @@ header {
   --ytranslation: 17rem;
   --xtranslation: 5px;
   -webkit-transform: translateY(1rem) translateX(var(--xtranslation));
-  transform: translateY(1rem) translateX(var(--xtranslation))
+  transform: translateY(1rem) translateX(var(--xtranslation));
+}
+
+.logo a {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.logo .logo--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+header.show-nav .logo .logo--hidden {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .header-container .logo .logo--is-translated {

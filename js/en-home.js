@@ -114,6 +114,8 @@ const setLogoColor = () => {
     const logo = document.querySelector('.logo__svg');
     const menuSection = document.getElementById('home__menu');
     const reviewSection = document.getElementById('reviews__section');
+    const fullLogo = document.querySelector('.logo a')
+
 
     window.addEventListener('scroll', () => {
         const menuSectionTop = menuSection.getBoundingClientRect().top;
@@ -124,16 +126,17 @@ const setLogoColor = () => {
         if (logoBottom >= menuSectionTop) {
             logo.style.color = 'white';
             logo.style.fill = 'white';
+            fullLogo.classList.remove('logo--hidden')
         }
 
         if (logoBottom <= menuSectionTop) {
             logo.style.color = 'black';
             logo.style.fill = 'black';
+            fullLogo.classList.remove('logo--hidden')
         }
 
         if (logoBottom >= reviewSectionTop) {
-            logo.style.color = 'black';
-            logo.style.fill = 'black';
+            fullLogo.classList.add('logo--hidden')
         }
     })
 }

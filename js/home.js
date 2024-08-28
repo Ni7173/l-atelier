@@ -118,6 +118,7 @@ setRightMobileImg();
 
 const setLogoColor = () => {
     const logo = document.querySelector('.logo__svg');
+    const fullLogo = document.querySelector('.logo a')
     const menuSection = document.getElementById('home__menu');
     const reviewSection = document.getElementById('reviews__section');
 
@@ -130,16 +131,17 @@ const setLogoColor = () => {
         if (logoBottom >= menuSectionTop) {
             logo.style.color = 'white';
             logo.style.fill = 'white';
+            fullLogo.classList.remove('logo--hidden')
         }
 
         if (logoBottom <= menuSectionTop) {
             logo.style.color = 'black';
             logo.style.fill = 'black';
+            fullLogo.classList.remove('logo--hidden')
         }
 
         if (logoBottom >= reviewSectionTop) {
-            logo.style.color = 'black';
-            logo.style.fill = 'black';
+            fullLogo.classList.add('logo--hidden')
         }
     })
 }
