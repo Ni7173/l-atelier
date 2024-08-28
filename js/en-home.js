@@ -44,26 +44,17 @@ switchingTxtOperator();
 
 const adjustHomeLogo = () => {
     const logo = document.querySelector('.logo a');
-    const trigger = document.querySelector('.trigger');
+    const trigger = document.querySelector('.home__menu');
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0
-    };
-
-    const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                logo.classList.remove('logo--is-translated');
-            } else {
-                logo.classList.add('logo--is-translated');
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    observer.observe(trigger);
+    window.addEventListener('scroll', () => {
+        const logoBottom = logo.getBoundingClientRect().bottom;
+        const triggerTop = trigger.getBoundingClientRect().top;
+        if (logoBottom >= triggerTop) {
+            logo.classList.remove('logo--is-translated');
+        } else {
+            logo.classList.add('logo--is-translated');
+        }
+    })
 }
 
 adjustHomeLogo();
