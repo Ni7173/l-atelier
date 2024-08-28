@@ -198,24 +198,3 @@ const adjustTxtPosition = () => {
 };
 
 adjustTxtPosition();
-
-
-const langSwitcher = () => {
-    const switcher = document.getElementById('langContainer');
-
-    switcher.addEventListener('click', e => {
-        if (switcher.classList.contains('--clicked') == false) {
-            e.preventDefault();
-            switcher.classList.add('--clicked')
-        } else {
-            switcher.classList.remove('--clicked')
-        }
-    })
-
-    const burger = document.querySelector('.burger');
-    burger.addEventListener('click', () => {
-        if (switcher.classList.contains('--clicked')) {
-            switcher.classList.remove('--clicked');
-        }
-    })
-}
