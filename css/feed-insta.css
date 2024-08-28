@@ -96,7 +96,12 @@
     background: none;
     border: unset;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
+    outline: unset;
+    color: black;
+    border: 1px solid var(--black);
+    padding: 5px 1rem;
+    border-radius: 1rem;
 }
 
 .ig__show__more__button.hidden {
