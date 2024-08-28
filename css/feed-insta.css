@@ -88,3 +88,17 @@
 .instagram-post:focus img {
     scale: 1.03;
 }
+
+
+/* show more button */
+
+.ig__show__more__button {
+    background: none;
+    border: unset;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ig__show__more__button.hidden {
+    display: none;
+}
