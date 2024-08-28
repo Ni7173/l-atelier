@@ -59,5 +59,5 @@ fetch(apiUrl)
 
         // ajout d'un message d'erreur dans le feed instagram
         const errorContainer = document.getElementById('ig-error-container');
-        errorContainer.innerHTML = '<p style="text-align: center;">Une erreur est survenue lors de la récupération des publications Instagram. Veuillez rafraîchir votre page.</p>'
+        errorContainer.innerHTML = '<p style="text-align: center;"><i>Une erreur est survenue lors de la récupération des publications Instagram. Veuillez rafraîchir votre page.</i></p>'
     });    
