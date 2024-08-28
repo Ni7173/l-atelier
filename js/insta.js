@@ -49,8 +49,23 @@ fetch(apiUrl)
         let initialPostsToShow = 4;
         let postsToAdd = 2;
 
+        if (window.innerWidth > 599) {
+            initialPostsToShow = 6;
+            postsToAdd = 3;
+        }
+
+        if (window.innerWidth > 1399) {
+            initialPostsToShow = 10;
+            postsToAdd = 5;
+        }
+
 
         window.addEventListener('resize', () => {
+            if (window.innerWidth < 599) {
+                initialPostsToShow = 4;
+                postsToAdd = 2;
+            }
+
             if (window.innerWidth > 599) {
                 initialPostsToShow = 6;
                 postsToAdd = 3;
