@@ -536,7 +536,7 @@ nav .menu-list a {
 .lang__container {
     position: absolute;
     top: 0;
-    left: 4rem;
+    left: 3rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
