@@ -3,6 +3,9 @@ RewriteBase /
 
 RewriteRule ^index\.html$ / [R=301,L]
 
+RewriteCond %{REQUEST_URI} ^/en/.*\.html$ [NC]
+RewriteRule ^en/(.*)\.html$ /en/$1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^pages/([^/]+)$ pages/$1.html [L]
