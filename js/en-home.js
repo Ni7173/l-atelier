@@ -83,7 +83,7 @@ const setHomeText = () => {
 
         const textSetter = () => {
             if (window.innerWidth < 550) {
-                textToChange.innerText = "Déf. Atelier : n.m."
+                textToChange.innerText = "Déf. Atelier : n."
             } else {
                 textToChange.innerText = "Déf. Atelier :"
             }
