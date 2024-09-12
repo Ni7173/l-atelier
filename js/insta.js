@@ -49,48 +49,19 @@ fetch(apiUrl)
         let initialPostsToShow = 4;
         let postsToAdd = 2;
 
-        // if (window.innerWidth >= 599 && window.innerWidth <= 1399) {
-        //     initialPostsToShow = 6;
-        //     postsToAdd = 3;
-        // }
-
-        // if (window.innerWidth > 1399) {
-        //     initialPostsToShow = 10;
-        //     postsToAdd = 5;
-        // }
-
         switch (true) {
             case (window.innerWidth >= 599 && window.innerWidth <= 1399):
                 initialPostsToShow = 6;
                 postsToAdd = 3;
-                console.log(initialPostsToShow);
-                console.log(postsToAdd);
                 break;
             case (window.innerWidth > 1399):
                 initialPostsToShow = 10;
                 postsToAdd = 5;
-                console.log(initialPostsToShow);
-                console.log(postsToAdd);
                 break;
         }
 
 
         window.addEventListener('resize', () => {
-            // if (window.innerWidth < 599) {
-            //     initialPostsToShow = 4;
-            //     postsToAdd = 2;
-            // }
-
-            // if (window.innerWidth > 599 && window.innerWidth <= 1399) {
-            //     initialPostsToShow = 6;
-            //     postsToAdd = 3;
-            // }
-
-            // if (window.innerWidth > 1399) {
-            //     initialPostsToShow = 10;
-            //     postsToAdd = 5;
-            // }
-
             switch (true) {
                 case (window.innerWidth < 599):
                     initialPostsToShow = 4;
