@@ -96,11 +96,14 @@ fetch(apiUrl)
                     <img class="ig__post__icon" src="../img/INSTA.svg" alt="instagram icon"/>
                 `;
                 feedContainer.appendChild(postElement);
+
+                setTimeout(() => {
+                    postElement.classList.add('show');
+                }, 100 * index);
             });
 
             postsDisplayed += postsToShow;
 
-            // Si tous les posts sont affichés, on cache le bouton
             if (postsDisplayed >= data.data.length) {
                 showMoreButton.classList.add('hidden');
             }
