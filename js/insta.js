@@ -63,10 +63,14 @@ fetch(apiUrl)
             case (window.innerWidth >= 599 && window.innerWidth <= 1399):
                 initialPostsToShow = 6;
                 postsToAdd = 3;
+                console.log(initialPostsToShow);
+                console.log(postsToAdd);
                 break;
             case (window.innerWidth > 1399):
                 initialPostsToShow = 10;
                 postsToAdd = 5;
+                console.log(initialPostsToShow);
+                console.log(postsToAdd);
                 break;
         }
 
