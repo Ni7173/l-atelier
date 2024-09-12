@@ -24,6 +24,10 @@
     padding: 0 2rem;
 }
 
+.insta-title {
+    padding-inline: 2rem;
+}
+
 .instagram-post {
     width: 100%;
     max-width: 100%;
