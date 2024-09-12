@@ -34,10 +34,10 @@
     aspect-ratio: 1/1;
     position: relative;
     overflow: hidden;
-    transition: var(--quick-transition);
+    transition: var(--smooth-transition);
     border-radius: 15px;
     opacity: 0;
-    transform: translateY(2rem);
+    transform: translateY(4rem);
 }
 
 .instagram-post.show {

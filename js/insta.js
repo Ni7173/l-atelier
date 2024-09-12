@@ -99,7 +99,7 @@ fetch(apiUrl)
 
                 setTimeout(() => {
                     postElement.classList.add('show');
-                }, 100);
+                }, 300);
             });
 
             postsDisplayed += postsToShow;
