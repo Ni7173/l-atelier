@@ -52,7 +52,7 @@ fetch(apiUrl)
 
             const posts = data.data.slice(postsDisplayed, postsDisplayed + postsToShow);
 
-            posts.forEach(post => {
+            posts.forEach((post, index) => {
                 const postElement = document.createElement('div');
                 postElement.className = 'instagram-post';
                 postElement.innerHTML = `
@@ -65,7 +65,7 @@ fetch(apiUrl)
 
                 setTimeout(() => {
                     postElement.classList.add('show');
-                }, 100);
+                }, 100 * index);
             });
 
             postsDisplayed += postsToShow;
