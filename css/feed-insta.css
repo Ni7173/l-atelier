@@ -113,6 +113,11 @@
     border: 1px solid var(--black);
     padding: 5px 1rem;
     border-radius: 1rem;
+    transition: var(--quick-transition);
+}
+
+.ig__show__more__button:hover {
+    box-shadow: 0 0 10px #bfbdbd;
 }
 
 .ig__show__more__button.hidden {
