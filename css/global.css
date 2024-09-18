@@ -531,48 +531,6 @@ nav .menu-list a {
 }
 
 
-/* lang */
-
-.lang__container {
-    position: absolute;
-    top: 0;
-    left: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    cursor: pointer;
-    column-gap: .3rem;
-    overflow: hidden;
-}
-
-.show-nav .lang__container {
-    width: auto;
-    height: auto;
-    opacity: 1;
-    padding: 0 .3rem;
-    transition: opacity .3s ease-out .6s;
-}
-
-.lang {
-    background-color: var(--white);
-    border-radius: 0 0 5px 5px;
-}
-
-.lang-option {
-    margin: 7px 4px;
-    rotate: -90deg;
-}
-
-@media screen and (min-width:599px) {
-    .lang__container {
-        left: 5rem;
-    }
-}
-
-
 /* footer */
 
 footer {

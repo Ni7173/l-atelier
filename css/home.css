@@ -1,3 +1,54 @@
+/* lang */
+
+.lang__container {
+  top: 0;
+  right: 2em;
+
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: auto;
+  height: auto;
+
+  pointer-events: all;
+  cursor: pointer;
+
+  padding: 0 .3rem;
+  margin-right: 6px;
+
+  opacity: 1;
+  z-index: 6;
+}
+
+.show-nav .lang {
+  box-shadow: 0 0 1px 1px #FFF;
+}
+
+.lang {
+  background-color: var(--black);
+  border-radius: 0 0 5px 5px;
+  transition: box-shadow .6s ease-out;
+}
+
+.lang-option {
+  margin: 7px 4px;
+  rotate: -90deg;
+}
+
+.lang__link {
+  color: var(--white);
+}
+
+@media screen and (min-width:599px) {
+  .lang__container {
+    right: 2em;
+  }
+}
+
+/* rest */
+
 .home__text,
 .home__text__container {
   color: var(--black);
