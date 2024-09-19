@@ -27,7 +27,7 @@
 }
 
 .lang {
-  background-color: var(--black);
+  background-color: #0000007a;
   border-radius: 0 0 5px 5px;
   transition: box-shadow .6s ease-out;
 }
@@ -39,11 +39,22 @@
 
 .lang__link {
   color: var(--white);
+  font-size: 1.3rem;
 }
 
 @media screen and (min-width:599px) {
   .lang__container {
     right: 2em;
+  }
+
+  .lang__link {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width:999px) {
+  .lang__link {
+    font-size: 1.6rem;
   }
 }
 
