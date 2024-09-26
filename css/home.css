@@ -45,6 +45,7 @@
 @media screen and (min-width:599px) {
   .lang__container {
     right: 2em;
+    margin-right: 0;
   }
 
   .lang__link {
@@ -55,6 +56,11 @@
 @media screen and (min-width:999px) {
   .lang__link {
     font-size: 1.6rem;
+  }
+
+  .lang__container {
+    padding: 0;
+    margin-right: 6px;
   }
 }
 
