@@ -514,9 +514,9 @@ nav .menu-list a {
     }
 }
 
-.show-nav .burger .bar {
+/* .show-nav .burger .bar {
     width: 0
-}
+} */
 
 .show-nav .burger .bar::before {
     -webkit-transform: rotate(45deg);
