@@ -310,10 +310,6 @@ body {
     scale: 1.08
 }
 
-.footer__txt__container strong {
-    font-weight: 700
-}
-
 .slider__modal.active .indicators {
     pointer-events: all;
     -webkit-transition: var(--quick-transition);

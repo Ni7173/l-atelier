@@ -661,10 +661,6 @@ footer p {
     justify-content: start
 }
 
-.footer__txt__container strong {
-    font-weight: 700
-}
-
 footer .socials {
     width: 100%;
     -webkit-justify-content: flex-start;
