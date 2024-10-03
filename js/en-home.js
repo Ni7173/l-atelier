@@ -99,11 +99,11 @@ const setRightMobileImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 1350) {
             const modalImgToChange2 = document.querySelector('.home__menu .home__menu__item:nth-child(2) .menu__img')
-            modalImgToChange2.setAttribute('src', '../img/home/mobile/ACCUEIL-GRAPHISME.jpg')
+            modalImgToChange2.setAttribute('src', '../img/home/mobile/ACCUEIL-GRAPHISME.webp')
             const modalImgToChange3 = document.querySelector('.home__menu .home__menu__item:nth-child(3) .menu__img')
-            modalImgToChange3.setAttribute('src', '../img/home/mobile/VIGNERONS-ACCUEIL2.jpg')
+            modalImgToChange3.setAttribute('src', '../img/home/mobile/VIGNERONS-ACCUEIL2.webp')
             const modalImgToChange4 = document.querySelector('.home__menu .home__menu__item:nth-child(4) .menu__img')
-            modalImgToChange4.setAttribute('src', '../img/home/mobile/A-PROPOS-2.jpg')
+            modalImgToChange4.setAttribute('src', '../img/home/mobile/A-PROPOS-2.webp')
         }
     })
 }
