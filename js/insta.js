@@ -91,9 +91,9 @@ fetch(apiUrl)
                 postElement.className = 'instagram-post';
                 postElement.innerHTML = `
                     <a class="absoluted" href="${post.permalink}" target="_blank">
-                    <img class="object__fit-cover" src="${post.media_url}" alt="${post.caption} post instagram l'Atelier 8" />
+                    <img loading="lazy" class="object__fit-cover" src="${post.media_url}" alt="${post.caption} post instagram l'Atelier 8" />
                     </a>
-                    <img class="ig__post__icon" src="../img/INSTA.svg" alt="instagram icon"/>
+                    <img loading="lazy" class="ig__post__icon" src="../img/INSTA.svg" alt="instagram icon"/>
                 `;
                 feedContainer.appendChild(postElement);
 
