@@ -1,0 +1,9 @@
+#content {
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    opacity: 1;
+}
+
+#content.hidden {
+    opacity: 0;
+}

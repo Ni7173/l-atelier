@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="..//css/global.css?v=1.0.6">
     <link rel="stylesheet" href="..//css/about.css">
     <link rel="stylesheet" href="..//css/normalize.css">
+    <link rel="stylesheet" href="..//css/page-transition.css">
     <script src="..//js/global.js" defer></script>
-    <script src="..//js/global.js" defer></script>
+    <script src="..//js/page-transition.js" defer></script>
 </head>
 
 <body>
@@ -95,11 +96,13 @@
             <nav class="navbar d-flex">
                 <ul class="list-unstyled menu-list">
                     <li class="appear-delay-1"><a href="../index.html">Accueil</a></li>
-                    <li class="appear-delay-2"><a href="../pages/vins.html">Le Vin</a></li>
-                    <li class="appear-delay-3"><a href="../pages/graphisme.html">Graphisme</a></li>
-                    <li class="appear-delay-4"><a href="../pages/illustrations.html">Illustration</a></li>
-                    <li class="appear-delay-5"><a href="../pages/a-propos.html">A propos</a></li>
-                    <li class="appear-delay-6"><a href="../pages/contact.html">Contact</a></li>
+                    <li class="appear-delay-2"><a class="same-page-link" href="../pages/vins.html">Le Vin</a></li>
+                    <li class="appear-delay-3"><a class="same-page-link" href="../pages/graphisme.html">Graphisme</a>
+                    </li>
+                    <li class="appear-delay-4"><a class="same-page-link"
+                            href="../pages/illustrations.html">Illustration</a></li>
+                    <li class="appear-delay-5"><a class="same-page-link" href="../pages/a-propos.html">A propos</a></li>
+                    <li class="appear-delay-6"><a class="same-page-link" href="../pages/contact.html">Contact</a></li>
                 </ul>
                 <ul class="socials list-unstyled d-flex">
                     <li class="d-flex"><a target="_blank" href="https://www.linkedin.com/in/anne-bonnet-b708722a5/">
@@ -161,7 +164,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="content">
 
         <section id="home" class="home d-flex">
             <div class="home__container">
