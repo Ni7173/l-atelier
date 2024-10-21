@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.addEventListener('click', () => {
                     header.classList.remove('show-nav');
                     clearMenuItemsClasses();
+                    scrollManager();
                 })
             );
         }

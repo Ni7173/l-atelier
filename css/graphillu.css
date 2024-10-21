@@ -22,7 +22,8 @@ body {
 .project {
     position: relative;
     -webkit-aspect-ratio: 2/1;
-    aspect-ratio: 2/1
+    aspect-ratio: 2/1;
+    min-height: 170px;
 }
 
 .img__container,

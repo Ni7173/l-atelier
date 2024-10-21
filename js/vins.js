@@ -31,22 +31,29 @@ const sliderImg = () => {
         const offset = 1;
         const slides = document.querySelector('[data-slides]');
         const activeSlide = document.querySelector("[data-active]");
-        const slideChildren = [...slides.children].filter(child => !child.matches('button'));
+        if ([...slides.children]) {
+            const slideChildren = [...slides.children].filter(child => !child.matches('button'));
 
-        transitionSetting(slidesTransition, `${transitionDuration}s`);
-        let newIndex = slideChildren.indexOf(activeSlide) + offset;
-        if (newIndex < 0) newIndex = slideChildren.length - 1;
-        if (newIndex >= slideChildren.length) newIndex = 0;
+            transitionSetting(slidesTransition, `${transitionDuration}s`);
+            let newIndex = slideChildren.indexOf(activeSlide) + offset;
+            if (newIndex < 0) newIndex = slideChildren.length - 1;
+            if (newIndex >= slideChildren.length) newIndex = 0;
 
-        slideChildren[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
+            slideChildren[newIndex].dataset.active = true;
+            delete activeSlide.dataset.active;
+        }
     };
 
     document.addEventListener('DOMContentLoaded', () => {
-        intervalId = setInterval(switchSlideAutomatically, 4500);
+        if (!intervalId) {
+            intervalId = setInterval(switchSlideAutomatically, 4500);
+        }
     });
+
+    if (document.readyState === "complete" && !intervalId) {
+        intervalId = setInterval(switchSlideAutomatically, 4500);
+    }
 };
-sliderImg();
 
 const modalsManagement = () => {
     const modals = document.querySelectorAll('[data-modals-id]');
@@ -326,7 +333,6 @@ const modalsManagement = () => {
         mobileSwipe();
     });
 }
-modalsManagement();
 
 const setRightMobileImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
@@ -364,6 +370,6 @@ const setMobileModalsText = () => {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    setMobileModalsText();
-})
+setMobileModalsText();
+modalsManagement();
+sliderImg();
