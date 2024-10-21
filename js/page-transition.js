@@ -30,6 +30,8 @@ function loadContent(url, addToHistory = true) {
                 const contentPageTitle = doc.title || "No Title";
                 document.title = contentPageTitle;
 
+                setUpDynamicNavigation();
+
             }).catch(error => {
                 console.error("Erreur lors du chargement de la page :", error);
                 document.querySelector('#content').classList.remove('hidden');
@@ -46,13 +48,25 @@ function filterAssets(docHead, selector, type) {
     const currentHrefs = new Set(currentAssets.map(asset => type === 'css' ? asset.href : asset.src));
     const newHrefs = new Set(newAssets.map(asset => type === 'css' ? asset.href : asset.src));
 
+    // retire les anciens fichiers non utiles
     currentAssets.forEach(asset => {
         const assetUrl = type === 'css' ? asset.href : asset.src;
         if (!newHrefs.has(assetUrl)) {
-            console.log("asset removed :", asset)
+            console.log("anciens fichiers inutiles :", assetUrl)
             asset.remove();
         }
     });
+
+    // retire les nouveaux fichiers déjà présents
+    newAssets.forEach(asset => {
+        const assetUrl = type === 'css' ? asset.href : asset.src;
+        if (currentHrefs.has(assetUrl)) {
+            console.log("nouveaux fichiers déjà présents :", assetUrl)
+            asset.remove();
+        }
+    });
+
+
 
     newAssets.forEach(asset => {
         const assetUrl = type === 'css' ? asset.href : asset.src;
@@ -62,13 +76,11 @@ function filterAssets(docHead, selector, type) {
                 newLink.rel = 'stylesheet';
                 newLink.href = asset.href;
                 head.appendChild(newLink);
-                console.log("asset added :", newLink)
             } else if (type === 'js') {
                 const newScript = document.createElement('script');
                 newScript.src = asset.src;
                 newScript.async = true;
                 head.appendChild(newScript);
-                console.log("asset added :", newScript)
             }
         }
     });

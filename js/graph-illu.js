@@ -1,3 +1,6 @@
+console.log("j'existe")
+
+
 const graphismeSlider = () => {
     const imagesLinks = document.querySelectorAll('.project__link');
     const sliderModal = document.getElementById('slider__modal');

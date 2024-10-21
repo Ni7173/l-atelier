@@ -1,3 +1,6 @@
+console.log("le vin est là")
+
+
 
 const bars = document.querySelectorAll('.modal__bar');
 
