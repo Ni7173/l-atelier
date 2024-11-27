@@ -24,6 +24,7 @@ fetch(apiUrl)
             })
             .then(data => {
                 console.log('Données locales utilisées.');
+                console.log(data);
                 displayInstagramFeed(data);
             })
             .catch(localError => {

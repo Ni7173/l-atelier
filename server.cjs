@@ -75,6 +75,7 @@ const updateEnvFile = (key, value) => {
             if (fs.existsSync(localDataFile)) {
                 const localData = JSON.parse(fs.readFileSync(localDataFile));
                 shouldUpdateLocalData = JSON.stringify(localData) !== JSON.stringify(data);
+                console.log(shouldUpdateLocalData)
             }
 
             if (shouldUpdateLocalData) {
