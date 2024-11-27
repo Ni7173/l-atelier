@@ -5,6 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 const envPath = '/home/u672716419/domains/latelier-8.fr/secure/.env';
+const localDataFile = path.join(__dirname, 'instagram_data.json'); // Fichier JSON local pour fallback
 
 const result = dotenv.config({ path: envPath });
 
@@ -64,12 +65,38 @@ const updateEnvFile = (key, value) => {
         console.log('Requête reçue sur /instagram/posts');
         try {
             const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('API Instagram indisponible');
+            }
+
             const data = await response.json();
+
+            let shouldUpdateLocalData = true;
+            if (fs.existsSync(localDataFile)) {
+                const localData = JSON.parse(fs.readFileSync(localDataFile));
+                shouldUpdateLocalData = JSON.stringify(localData) !== JSON.stringify(data);
+            }
+
+            // Mise à jour du fichier local uniquement si nécessaire
+            if (shouldUpdateLocalData) {
+                console.log('Mise à jour des données locales.');
+                fs.writeFileSync(localDataFile, JSON.stringify(data, null, 2));
+            } else {
+                console.log('Les données locales sont déjà à jour.');
+            }
+
             res.json(data);
-            // console.log('Données récupérées depuis Instagram :', data);
         } catch (error) {
             console.error('Erreur lors de la récupération des publications Instagram :', error);
-            res.status(500).json({ error: 'Échec de récupération des publications Instagram' });
+
+            if (fs.existsSync(localDataFile)) {
+                console.log('Envoi des données depuis le fichier local.');
+                const fallbackData = JSON.parse(fs.readFileSync(localDataFile));
+                res.json(fallbackData);
+            } else {
+                console.error('Pas de données locales disponibles.');
+                res.status(500).json({ error: 'Échec de récupération des publications Instagram et aucune donnée locale disponible.' });
+            }
         }
     });
 
