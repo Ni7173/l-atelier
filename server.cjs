@@ -1,15 +1,15 @@
 const dotenv = require('dotenv');
 const fs = require('fs');
 const path = require('path');
+const express = require('express');
+const cors = require('cors');
 
 const envPath = '/home/u672716419/domains/latelier-8.fr/secure/.env';
 
 const result = dotenv.config({ path: envPath });
 
 
-const express = require('express');
 const app = express();
-const cors = require('cors');
 const port = process.env.PORT || 3000;
 
 app.use(cors({
@@ -17,17 +17,13 @@ app.use(cors({
 }));
 
 const updateEnvFile = (key, value) => {
-    // Lire le contenu actuel du fichier .env
     const envConfig = dotenv.parse(fs.readFileSync(envPath));
 
-    // Mettre à jour la valeur du jeton
-    envConfig[key] = value;
+    envConfig[key] = value;  // Mettre à jour la valeur du jeton
 
-    // Construire le contenu mis à jour du fichier .env
-    const updatedEnvContent = Object.keys(envConfig).map(k => `${k}=${envConfig[k]}`).join('\n');
+    const updatedEnvContent = Object.keys(envConfig).map(k => `${k}=${envConfig[k]}`).join('\n'); // Construire le contenu mis à jour du fichier .env
 
-    // Écrire le contenu mis à jour dans le fichier .env
-    fs.writeFileSync(envPath, updatedEnvContent);
+    fs.writeFileSync(envPath, updatedEnvContent); // Écrire le contenu mis à jour dans le fichier .env
 };
 
 (async () => {
