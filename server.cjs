@@ -77,7 +77,6 @@ const updateEnvFile = (key, value) => {
                 shouldUpdateLocalData = JSON.stringify(localData) !== JSON.stringify(data);
             }
 
-            // Mise à jour du fichier local uniquement si nécessaire
             if (shouldUpdateLocalData) {
                 console.log('Mise à jour des données locales.');
                 fs.writeFileSync(localDataFile, JSON.stringify(data, null, 2));
@@ -87,16 +86,8 @@ const updateEnvFile = (key, value) => {
 
             res.json(data);
         } catch (error) {
-            console.error('Erreur lors de la récupération des publications Instagram :', error);
-
-            if (fs.existsSync(localDataFile)) {
-                console.log('Envoi des données depuis le fichier local.');
-                const fallbackData = JSON.parse(fs.readFileSync(localDataFile));
-                res.json(fallbackData);
-            } else {
-                console.error('Pas de données locales disponibles.');
-                res.status(500).json({ error: 'Échec de récupération des publications Instagram et aucune donnée locale disponible.' });
-            }
+            console.error('Erreur lors de la récupération des publications Instagram :', error, Date.now);
+            res.status(500).json({ error: 'Échec de récupération des publications Instagram' });
         }
     });
 
