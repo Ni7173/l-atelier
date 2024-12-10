@@ -100,6 +100,12 @@ const updateEnvFile = (key, value) => {
     });
 })();
 
+const cron = require('node-cron');
+
+cron.schedule('0 0 */30 * *', async () => {
+    console.log('Tâche CRON : Renouvellement du jeton d\'accès à long terme');
+    await renewInstagramToken();
+});
 
 process.on('uncaughtException', (err) => {
     console.error('Uncaught Exception:', err);
