@@ -66,8 +66,11 @@ const updateEnvFile = (key, value) => {
         try {
             const response = await fetch(url);
             if (!response.ok) {
+                const errorResponse = await response.json().catch(() => ({})); // Essayez de lire le JSON de l'erreur
+                console.error(`Erreur API Instagram : ${response.status} - ${response.statusText}`, errorResponse);
                 throw new Error('API Instagram indisponible');
             }
+
 
             const data = await response.json();
 
@@ -96,3 +99,12 @@ const updateEnvFile = (key, value) => {
         console.log(`Serveur démarré sur le port ${port}`);
     });
 })();
+
+
+process.on('uncaughtException', (err) => {
+    console.error('Uncaught Exception:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection:', reason);
+});
