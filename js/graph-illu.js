@@ -161,7 +161,7 @@ graphismeSlider();
 const setMobileSliderImg = () => {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 1000) {
-            const squareImages = document.querySelectorAll('.img__container > img');
+            const squareImages = document.querySelectorAll('.square_img');
             const sliderImages = document.querySelectorAll('.slider__img');
 
             for (let i = 0; i < squareImages.length; i++) {
