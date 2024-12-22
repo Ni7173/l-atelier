@@ -431,7 +431,10 @@ button[data-modal-button].active:hover {
 
 .project_link:active+.small_img,
 .project_link:focus+.small_img,
-.project_link:hover+.small_img {
+.project_link:hover+.small_img,
+.project_link:active+.small_img .small_img,
+.project_link:focus+.small_img .small_img,
+.project_link:hover+.small_img .small_img {
   scale: 1.05;
   -webkit-filter: grayscale(0%) brightness(100%);
   filter: grayscale(0%) brightness(100%)
