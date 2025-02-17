@@ -86,6 +86,7 @@ const displayInstagramFeed = (data) => {
 
         posts.forEach((post, index) => {
             const postElement = document.createElement('div');
+            console.log(post);
             postElement.className = 'instagram-post';
             postElement.innerHTML = `
                 <a class="absoluted" href="${post.permalink}" target="_blank">
