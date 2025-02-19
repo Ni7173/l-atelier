@@ -1,14 +1,25 @@
 const reviewSlider = () => {
     document.addEventListener('DOMContentLoaded', () => {
         const slides = document.querySelector('.reviews__list');
-        const dots = document.querySelectorAll('.dot');
         const reviewsContainer = document.querySelector('.reviews__container')
         const switchBtns = document.querySelectorAll('[data-slider-button]');
+        const dotsContainer = document.querySelector('.indicator');
         let newIndex = 0;
 
         const calculatePosition = (newIndex) => {
             return `${315 - 90 * newIndex}%`;
         };
+
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            dot.dataset.dotNumber = index;
+            dotsContainer.appendChild(dot);
+            dot.addEventListener('click', () => {
+                newIndex = parseInt(dot.dataset.dotNumber, 10);
+                setReview(calculatePosition(newIndex));
+            });
+        })
 
         const setReview = (position) => {
             dots.forEach(dot => dot.classList.remove('active'));
@@ -21,13 +32,6 @@ const reviewSlider = () => {
         switchBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 newIndex = (newIndex + (btn.dataset.sliderButton === "prev" ? -1 : 1) + dots.length) % dots.length;
-                setReview(calculatePosition(newIndex));
-            });
-        });
-
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                newIndex = parseInt(dot.dataset.dotNumber, 10);
                 setReview(calculatePosition(newIndex));
             });
         });
