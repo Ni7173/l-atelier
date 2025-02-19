@@ -30,7 +30,11 @@ fetch(apiUrl)
             .catch(localError => {
                 console.error('Error fetching Instagram posts from local JSON:', localError);
 
-                // Message d'erreur final si aucune donnée n'est disponible
+                const feedSection = document.getElementById('ig-content');
+                if (feedSection) {
+                    feedSection.style.display = "none";
+                }
+
                 const errorContainer = document.getElementById('ig-error-container');
                 errorContainer.innerHTML = '<p style="text-align: center;"><i>Une erreur est survenue lors de la récupération des publications Instagram. Veuillez réessayer plus tard.</i></p>';
 
