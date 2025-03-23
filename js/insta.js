@@ -93,6 +93,7 @@ const displayInstagramFeed = (data) => {
             postElement.className = 'instagram-post';
             postElement.innerHTML = `
                 <a class="absoluted" href="${post.permalink}" target="_blank">
+                </a>
                  ${post.permalink.includes('reel')
                     ? `<video muted playsinline preload="auto" class="object__fit-cover ig_post_media">
                         <source src="${post.media_url}" type="video/mp4">
@@ -100,7 +101,6 @@ const displayInstagramFeed = (data) => {
                     </video>`
                     : `<img loading="lazy" class="object__fit-cover ig_post_media" src="${post.media_url}" alt="${post.caption} post instagram l'Atelier 8" />`
                 }
-                </a>
                 <img loading="lazy" class="ig__post__icon" src="../img/INSTA.svg" alt="instagram icon"/>
             `;
             feedContainer.appendChild(postElement);
