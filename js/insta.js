@@ -94,7 +94,7 @@ const displayInstagramFeed = (data) => {
             postElement.innerHTML = `
                 <a class="absoluted" href="${post.permalink}" target="_blank">
                  ${post.permalink.includes('reel')
-                    ? `<video muted playsinline preload="auto" class="object__fit-cover ig_post_media">
+                    ? `<video muted playsinline controls preload="auto" class="object__fit-cover ig_post_media">
                         <source src="${post.media_url}" type="video/mp4">
                         Votre navigateur ne supporte pas les vidéos HTML5.
                     </video>`
