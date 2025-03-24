@@ -86,16 +86,16 @@ const displayInstagramFeed = (data) => {
 
     const displayPosts = (postsToShow) => {
         const posts = data.data.slice(postsDisplayed, postsDisplayed + postsToShow);
-        // <img loading="lazy" class="object__fit-cover ig_post_media" src="${post.media_url}" alt="${post.caption} post instagram l'Atelier 8" />
 
         posts.forEach((post, index) => {
+            console.log(post);
             const postElement = document.createElement('div');
             postElement.className = 'instagram-post';
             postElement.innerHTML = `
                 <a class="absoluted" href="${post.permalink}" target="_blank">
                 </a>
                  ${post.permalink.includes('reel')
-                    ? `<video muted playsinline preload="auto" class="object__fit-cover ig_post_media">
+                    ? `<video muted class="object__fit-cover ig_post_media">
                         <source src="${post.media_url}" type="video/mp4">
                         Votre navigateur ne supporte pas les vidéos HTML5.
                     </video>`
