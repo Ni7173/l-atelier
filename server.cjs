@@ -57,7 +57,7 @@ const updateEnvFile = (key, value) => {
 
     const tokenToUse = await renewInstagramToken();
 
-    const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,thumbnail_url,media_url,permalink&access_token=${tokenToUse}`;
+    const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink&access_token=${tokenToUse}`;
 
     console.log("url créée " + url)
 
