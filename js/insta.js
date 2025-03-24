@@ -88,7 +88,6 @@ const displayInstagramFeed = (data) => {
         const posts = data.data.slice(postsDisplayed, postsDisplayed + postsToShow);
 
         posts.forEach((post, index) => {
-            console.log(post);
             const postElement = document.createElement('div');
             postElement.className = 'instagram-post';
             postElement.innerHTML = `
