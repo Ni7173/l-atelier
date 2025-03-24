@@ -49,6 +49,7 @@
 .instagram-post .ig_post_media {
     scale: 1;
     transition: var(--quick-transition);
+    aspect-ratio: 1;
 }
 
 .instagram-post video {

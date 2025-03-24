@@ -35,9 +35,6 @@ fetch(apiUrl)
                     feedSection.style.display = "none";
                 }
 
-                const errorContainer = document.getElementById('ig-error-container');
-                errorContainer.innerHTML = '<p style="text-align: center;"><i>Une erreur est survenue lors de la récupération des publications Instagram. Veuillez réessayer plus tard.</i></p>';
-
                 const showMoreButton = document.querySelector('.ig__show__more__button');
                 if (showMoreButton) {
                     showMoreButton.classList.add('hidden');
