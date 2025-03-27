@@ -10,7 +10,8 @@ const reviewSlider = () => {
 
         const calculatePosition = (newIndex) => {
             // commencer par le début (inspect) puis enlever 90
-            return `${405 - 90 * newIndex}%`;
+            const initialPosition = ((reviews.length * 90) / 2) - 45;
+            return `${initialPosition - 90 * newIndex}%`;
         };
 
         const createDots = () => {
