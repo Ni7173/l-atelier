@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /docs/mentions-legales.pdf
+Disallow: /img/
