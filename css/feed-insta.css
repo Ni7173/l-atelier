@@ -112,7 +112,7 @@
 
 .instagram-post:hover .ig_post_media,
 .instagram-post:focus .ig_post_media {
-    transform: scale(1.08);
+    transform: translateY(-50%) translateX(-50%) scale(1.08);
 }
 
 
