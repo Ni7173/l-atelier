@@ -1,4 +1,4 @@
-const apiUrl = "/instagram/posts";
+const apiUrl = "/instagram/posts.php";
 const localFallbackUrl = "../instagram_data.json";
 const CACHE_KEY = "instagram_posts_cache";
 const CACHE_DURATION = 60 * 60 * 1000; // 1 heure en millisecondes
