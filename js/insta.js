@@ -57,7 +57,11 @@ function displayInstagramFeed(data) {
 			postElement.innerHTML = `
                 <a class="absoluted" href="${post.permalink}" target="_blank">
                 </a>
-					<img loading="lazy" class="object__fit-cover ig_post_media" src="${post.thumbnail_url}" alt="${post.caption || "post instagram"} l'Atelier 8" />
+                 ${
+										post.thumbnail_url
+											? `<img loading="lazy" class="object__fit-cover ig_post_media" src="${post.thumbnail_url}" alt="${post.caption || "post instagram"} l'Atelier 8" />`
+											: `<img loading="lazy" class="object__fit-cover ig_post_media" src="${post.media_url}" alt="${post.caption || "post instagram"} l'Atelier 8" />`
+									}
                 <img loading="lazy" class="ig__post__icon" src="../img/INSTA.svg" alt="instagram icon"/>
             `;
 			feedContainer.appendChild(postElement);
