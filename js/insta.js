@@ -57,11 +57,7 @@ function displayInstagramFeed(data) {
 			postElement.innerHTML = `
                 <a class="absoluted" href="${post.permalink}" target="_blank">
                 </a>
-                 ${
-					post.permalink.includes("reel")
-						? `<img loading="lazy" class="object__fit-cover ig_post_media" src="${post.thumbnail_url}" alt="${post.caption || "post instagram"} l'Atelier 8" />`
-						: `<img loading="lazy" class="object__fit-cover ig_post_media" src="${post.media_url}" alt="${post.caption || "post instagram"} l'Atelier 8" />`
-				}
+					<img loading="lazy" class="object__fit-cover ig_post_media" src="${post.thumbnail_url}" alt="${post.caption || "post instagram"} l'Atelier 8" />
                 <img loading="lazy" class="ig__post__icon" src="../img/INSTA.svg" alt="instagram icon"/>
             `;
 			feedContainer.appendChild(postElement);
@@ -131,7 +127,7 @@ if (cachedData) {
 }
 
 // Charger les données depuis le fichier JSON
-fetch(localFallbackUrl + '?t=' + Date.now()) // Ajouter timestamp pour éviter cache navigateur
+fetch(localFallbackUrl + "?t=" + Date.now()) // Ajouter timestamp pour éviter cache navigateur
 	.then((response) => {
 		if (!response.ok) {
 			throw new Error("Network response was not ok " + response.statusText);
@@ -140,7 +136,7 @@ fetch(localFallbackUrl + '?t=' + Date.now()) // Ajouter timestamp pour éviter c
 	})
 	.then((localData) => {
 		console.log("Données Instagram chargées depuis le fichier JSON");
-		
+
 		// Normaliser le format : gérer {data: [...], lastUpdate: "..."} et {data: [...]}
 		let postsData;
 
@@ -157,7 +153,10 @@ fetch(localFallbackUrl + '?t=' + Date.now()) // Ajouter timestamp pour éviter c
 		setCache(postsData);
 
 		// Réafficher seulement si différent du cache
-		if (!cachedData || JSON.stringify(cachedData) !== JSON.stringify(postsData)) {
+		if (
+			!cachedData ||
+			JSON.stringify(cachedData) !== JSON.stringify(postsData)
+		) {
 			console.log("Mise à jour avec données fraîches");
 			const feedContainer = document.getElementById("ig-feed");
 			if (feedContainer) {
