@@ -31,7 +31,7 @@ const updateInstagramData = async () => {
 		const userId = process.env.INSTAGRAM_USER_ID;
 
 		let allPosts = [];
-		let url = `https://graph.instagram.com/${userId}/media?fields=id,caption,thumbnail_url,media_url,permalink&access_token=${accessToken}&limit=100`;
+		let url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_type,thumbnail_url,media_url,permalink&access_token=${accessToken}&limit=100`;
 
 		// Récupérer tous les posts avec pagination
 		while (url) {

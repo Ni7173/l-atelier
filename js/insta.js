@@ -46,12 +46,24 @@ function displayInstagramFeed(data) {
 		}
 	});
 
-	const showMoreButton = document.querySelector(".ig__show__more__button");
+	let showMoreButton = document.querySelector(".ig__show__more__button");
 
 	const displayPosts = (postsToShow) => {
 		const posts = data.data.slice(postsDisplayed, postsDisplayed + postsToShow);
 
 		posts.forEach((post, index) => {
+			// DEBUG - à retirer une fois le problème résolu
+			if (post.media_type === "VIDEO" && !post.permalink.includes("reel")) {
+				console.log("[DEBUG VIDEO POST]", {
+					id: post.id,
+					media_type: post.media_type,
+					has_thumbnail_url: !!post.thumbnail_url,
+					thumbnail_url: post.thumbnail_url,
+					media_url: post.media_url,
+					permalink: post.permalink,
+				});
+			}
+
 			const postElement = document.createElement("div");
 			postElement.className = "instagram-post";
 			postElement.innerHTML = `
@@ -83,6 +95,7 @@ function displayInstagramFeed(data) {
 	// Remplacer l'event listener
 	const newShowMoreButton = showMoreButton.cloneNode(true);
 	showMoreButton.parentNode.replaceChild(newShowMoreButton, showMoreButton);
+	showMoreButton = newShowMoreButton; // mettre à jour la référence pour que displayPosts cache le bon bouton
 
 	newShowMoreButton.addEventListener("click", () => {
 		displayPosts(postsToAdd);
