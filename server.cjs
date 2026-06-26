@@ -94,7 +94,7 @@ const updateInstagramData = async () => {
 	// Fonction de renouvellement du token
 	renewInstagramToken = async () => {
 		const longLivedToken = process.env.INSTAGRAM_ACCESS_TOKEN;
-		const renewTokenUrl = `https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${process.env.INSTAGRAM_APP_ID}&client_secret=${process.env.INSTAGRAM_APP_SECRET}&fb_exchange_token=${longLivedToken}`;
+		const renewTokenUrl = `https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${process.env.INSTAGRAM_CLIENT_ID}&client_secret=${process.env.INSTAGRAM_CLIENT_SECRET}&fb_exchange_token=${longLivedToken}`;
 
 		try {
 			const renewTokenResponse = await fetch(renewTokenUrl);
