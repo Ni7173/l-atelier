@@ -8,19 +8,26 @@ const localDataFile = path.join(__dirname, "instagram_data.json");
 const publicDataFile =
 	"/home/u672716419/domains/latelier-8.fr/public_html/instagram_data.json";
 
-const result = dotenv.config({ path: envPath });
+dotenv.config({ path: envPath });
 
-const updateEnvFile = (key, value) => {
-	const envConfig = dotenv.parse(fs.readFileSync(envPath));
-	envConfig[key] = value;
-	const updatedEnvContent = Object.keys(envConfig)
-		.map((k) => `${k}=${envConfig[k]}`)
-		.join("\n");
-	fs.writeFileSync(envPath, updatedEnvContent);
+const checkTokenExpiry = () => {
+	const expiresAt = process.env.INSTAGRAM_TOKEN_EXPIRES_AT;
+	if (!expiresAt) {
+		console.warn("⚠️ INSTAGRAM_TOKEN_EXPIRES_AT non défini dans le .env — impossible de vérifier l'expiration du token");
+		return;
+	}
+	const expiryDate = new Date(expiresAt);
+	const daysLeft = Math.floor((expiryDate - Date.now()) / (1000 * 60 * 60 * 24));
+	if (daysLeft < 0) {
+		console.error(`❌ Token Instagram expiré depuis ${Math.abs(daysLeft)} jours — renouveler manuellement`);
+	} else if (daysLeft <= 10) {
+		console.warn(`⚠️ Token Instagram expire dans ${daysLeft} jours — renouvellement manuel requis`);
+	} else {
+		console.log(`✓ Token Instagram valide — expire dans ${daysLeft} jours (${expiresAt})`);
+	}
 };
 
 let fetch;
-let renewInstagramToken;
 
 // Fonction pour mettre à jour les données Instagram
 const updateInstagramData = async () => {
@@ -91,35 +98,7 @@ const updateInstagramData = async () => {
 (async () => {
 	fetch = (await import("node-fetch")).default;
 
-	// Fonction de renouvellement du token
-	renewInstagramToken = async () => {
-		const longLivedToken = process.env.INSTAGRAM_ACCESS_TOKEN;
-		const renewTokenUrl = `https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${process.env.INSTAGRAM_CLIENT_ID}&client_secret=${process.env.INSTAGRAM_CLIENT_SECRET}&fb_exchange_token=${longLivedToken}`;
-
-		try {
-			const renewTokenResponse = await fetch(renewTokenUrl);
-			const renewTokenData = await renewTokenResponse.json();
-
-			if (!renewTokenResponse.ok || !renewTokenData.access_token) {
-				console.error("❌ Réponse de renouvellement invalide:", renewTokenData);
-				console.log("⚠️ Conservation du token actuel");
-				return longLivedToken;
-			}
-
-			const renewedToken = renewTokenData.access_token;
-			console.log("✓ Nouveau jeton d'accès Instagram obtenu");
-			updateEnvFile("INSTAGRAM_ACCESS_TOKEN", renewedToken);
-			process.env.INSTAGRAM_ACCESS_TOKEN = renewedToken;
-
-			return renewedToken;
-		} catch (error) {
-			console.error("❌ Erreur lors du renouvellement du jeton:", error);
-			return longLivedToken;
-		}
-	};
-
-	// Renouveler le token au démarrage
-	await renewInstagramToken();
+	checkTokenExpiry();
 
 	// Mettre à jour les données au démarrage
 	console.log("🚀 Mise à jour initiale des données Instagram...");
@@ -134,12 +113,9 @@ const updateInstagramData = async () => {
 	);
 })();
 
-// CRON : Renouveler le token tous les 30 jours
-cron.schedule("0 0 */30 * *", async () => {
-	console.log("⏰ CRON : Renouvellement du jeton d'accès Instagram");
-	if (renewInstagramToken) {
-		await renewInstagramToken();
-	}
+// CRON : Vérifier l'expiration du token tous les jours à 9h
+cron.schedule("0 9 * * *", () => {
+	checkTokenExpiry();
 });
 
 // CRON : Mettre à jour les données toutes les heures
@@ -166,5 +142,3 @@ console.log("📱 Serveur Instagram démarré en mode fichier JSON");
 console.log(`📂 Fichier local: ${localDataFile}`);
 console.log(`🌐 Fichier public: ${publicDataFile}`);
 console.log("⏰ Mise à jour automatique: toutes les heures");
-
-// modifs factices
