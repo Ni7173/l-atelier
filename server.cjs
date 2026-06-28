@@ -10,37 +10,27 @@ const publicDataFile =
 
 dotenv.config({ path: envPath });
 
-const checkTokenExpiry = () => {
-	const expiresAt = process.env.INSTAGRAM_TOKEN_EXPIRES_AT;
-	if (!expiresAt) {
-		console.warn("⚠️ INSTAGRAM_TOKEN_EXPIRES_AT non défini dans le .env — impossible de vérifier l'expiration du token");
-		return;
-	}
-	const expiryDate = new Date(expiresAt);
-	const daysLeft = Math.floor((expiryDate - Date.now()) / (1000 * 60 * 60 * 24));
-	if (daysLeft < 0) {
-		console.error(`❌ Token Instagram expiré depuis ${Math.abs(daysLeft)} jours — renouveler manuellement`);
-	} else if (daysLeft <= 10) {
-		console.warn(`⚠️ Token Instagram expire dans ${daysLeft} jours — renouvellement manuel requis`);
-	} else {
-		console.log(`✓ Token Instagram valide — expire dans ${daysLeft} jours (${expiresAt})`);
-	}
+const updateEnvFile = (key, value) => {
+	const envConfig = dotenv.parse(fs.readFileSync(envPath));
+	envConfig[key] = value;
+	const updatedEnvContent = Object.keys(envConfig)
+		.map((k) => `${k}=${envConfig[k]}`)
+		.join("\n");
+	fs.writeFileSync(envPath, updatedEnvContent);
 };
 
 let fetch;
+let renewInstagramToken;
 
-// Fonction pour mettre à jour les données Instagram
 const updateInstagramData = async () => {
 	console.log("Début de la mise à jour des données Instagram...");
 
 	try {
 		const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
-		const userId = process.env.INSTAGRAM_USER_ID;
 
 		let allPosts = [];
-		let url = `https://graph.facebook.com/${userId}/media?fields=id,caption,media_type,thumbnail_url,media_url,permalink&access_token=${accessToken}&limit=100`;
+		let url = `https://graph.instagram.com/v25.0/me/media?fields=id,caption,media_type,thumbnail_url,media_url,permalink&access_token=${accessToken}&limit=100`;
 
-		// Récupérer tous les posts avec pagination
 		while (url) {
 			const response = await fetch(url);
 			if (!response.ok) {
@@ -57,17 +47,14 @@ const updateInstagramData = async () => {
 			url = data.paging?.next || null;
 		}
 
-		// Préparer les données avec timestamp
 		const dataToSave = {
 			data: allPosts,
 			lastUpdate: new Date().toISOString(),
 		};
 
-		// Sauvegarder dans le dossier du serveur (backup)
 		fs.writeFileSync(localDataFile, JSON.stringify(dataToSave, null, 2));
 		console.log(`✓ Données sauvegardées dans ${localDataFile}`);
 
-		// Sauvegarder dans le dossier public (accessible au web)
 		fs.writeFileSync(publicDataFile, JSON.stringify(dataToSave, null, 2));
 		console.log(`✓ Données copiées vers ${publicDataFile}`);
 
@@ -80,7 +67,6 @@ const updateInstagramData = async () => {
 			error,
 		);
 
-		// En cas d'erreur, essayer de copier le backup local vers public
 		if (fs.existsSync(localDataFile)) {
 			try {
 				const backupData = fs.readFileSync(localDataFile);
@@ -98,9 +84,31 @@ const updateInstagramData = async () => {
 (async () => {
 	fetch = (await import("node-fetch")).default;
 
-	checkTokenExpiry();
+	renewInstagramToken = async () => {
+		const currentToken = process.env.INSTAGRAM_ACCESS_TOKEN;
+		const renewUrl = `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${currentToken}`;
 
-	// Mettre à jour les données au démarrage
+		try {
+			const response = await fetch(renewUrl);
+			const data = await response.json();
+
+			if (!response.ok || !data.access_token) {
+				console.error("❌ Échec du renouvellement du token:", data);
+				console.log("⚠️ Conservation du token actuel");
+				return currentToken;
+			}
+
+			const renewedToken = data.access_token;
+			console.log("✓ Token Instagram renouvelé avec succès");
+			updateEnvFile("INSTAGRAM_ACCESS_TOKEN", renewedToken);
+			process.env.INSTAGRAM_ACCESS_TOKEN = renewedToken;
+			return renewedToken;
+		} catch (error) {
+			console.error("❌ Erreur lors du renouvellement du token:", error);
+			return currentToken;
+		}
+	};
+
 	console.log("🚀 Mise à jour initiale des données Instagram...");
 	try {
 		await updateInstagramData();
@@ -113,9 +121,12 @@ const updateInstagramData = async () => {
 	);
 })();
 
-// CRON : Vérifier l'expiration du token tous les jours à 9h
-cron.schedule("0 9 * * *", () => {
-	checkTokenExpiry();
+// CRON : Renouveler le token le 1er de chaque mois (bien dans la fenêtre des 60 jours)
+cron.schedule("0 0 1 * *", async () => {
+	console.log("⏰ CRON : Renouvellement du token Instagram");
+	if (renewInstagramToken) {
+		await renewInstagramToken();
+	}
 });
 
 // CRON : Mettre à jour les données toutes les heures
