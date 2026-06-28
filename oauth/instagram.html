@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta name="robots" content="noindex, nofollow">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram OAuth</title>
@@ -13,62 +12,83 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #f0f0f0;
+            margin: 0;
         }
 
         .message {
             text-align: center;
-            padding: 20px;
+            padding: 32px;
             background: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
         }
+
+        h1 { font-size: 1.2rem; margin-bottom: 8px; }
+        p { color: #555; font-size: 0.9rem; margin-bottom: 16px; }
+
+        #code-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 12px;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 0.8rem;
+            text-align: left;
+            margin-bottom: 12px;
+        }
+
+        button {
+            padding: 8px 20px;
+            background: #0095f6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .error { color: #c00; }
+        .success { color: green; font-size: 0.8rem; margin-top: 8px; }
     </style>
 </head>
 
 <body>
     <div class="message">
-        <h1>Processing...</h1>
-        <p id="statusMessage">Please wait while we process your request.</p>
+        <div id="content"></div>
     </div>
+
     <script>
-        // Fonction pour obtenir les paramètres de l'URL
-        function getQueryParams() {
-            const params = {};
-            window.location.search.substring(1).split("&").forEach(param => {
-                const [key, value] = param.split("=");
-                params[key] = decodeURIComponent(value);
-            });
-            return params;
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        const error = params.get('error');
+        const el = document.getElementById('content');
+
+        if (error) {
+            const h1 = document.createElement('h1');
+            h1.className = 'error';
+            h1.textContent = 'Autorisation refusée';
+            const p = document.createElement('p');
+            p.textContent = error;
+            el.appendChild(h1);
+            el.appendChild(p);
+        } else if (code) {
+            el.innerHTML = `
+                <h1>Code d'autorisation Instagram</h1>
+                <p>Copie ce code et utilise-le pour générer le token via curl.</p>
+                <div id="code-box"></div>
+                <button onclick="copyCode()">Copier</button>
+                <div class="success" id="copied" style="display:none">Copié !</div>
+            `;
+            document.getElementById('code-box').textContent = code;
+        } else {
+            el.innerHTML = `<h1 class="error">Aucun code reçu</h1><p>Relance le flux OAuth depuis le début.</p>`;
         }
 
-        // Obtenir le code d'autorisation
-        const queryParams = getQueryParams();
-        const authorizationCode = queryParams['code'];
-
-        if (authorizationCode) {
-            // Envoyer le code d'autorisation à votre serveur pour échanger contre un jeton d'accès
-            fetch('/exchange-code', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ code: authorizationCode })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('statusMessage').innerText = 'Authorization successful!';
-                    } else {
-                        document.getElementById('statusMessage').innerText = 'Authorization failed. Please try again.';
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('statusMessage').innerText = 'An error occurred. Please try again.';
-                    console.error('Error:', error);
-                });
-        } else {
-            document.getElementById('statusMessage').innerText = 'Authorization code not found.';
+        function copyCode() {
+            navigator.clipboard.writeText(document.getElementById('code-box').textContent);
+            document.getElementById('copied').style.display = 'block';
         }
     </script>
 </body>

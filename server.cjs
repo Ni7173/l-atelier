@@ -44,7 +44,8 @@ const updateInstagramData = async () => {
 
 			const data = await response.json();
 			allPosts = allPosts.concat(data.data);
-			url = data.paging?.next || null;
+			const next = data.paging?.next || null;
+			url = next && next.startsWith("https://graph.instagram.com/") ? next : null;
 		}
 
 		const dataToSave = {
